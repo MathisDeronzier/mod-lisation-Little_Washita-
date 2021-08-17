@@ -1,0 +1,34 @@
+\begin{thebibliography}{}
+
+\bibitem[B{\"u}ning, 2002]{buning2002robustness}
+B{\"u}ning, H. (2002).
+\newblock Robustness and power of modified lepage, kolmogorov-smirnov and
+  crame{\'{}} r-von mises two-sample tests.
+\newblock {\em Journal of Applied Statistics}, 29(6):907--924.
+
+\bibitem[Durrett, 2019]{durrett2019probability}
+Durrett, R. (2019).
+\newblock {\em Probability: theory and examples}, volume~49.
+\newblock Cambridge university press.
+
+\bibitem[{\'E}thier, 2011]{ethier2011propos}
+{\'E}thier, F. (2011).
+\newblock {\em {\`A} propos de divers tests statistiques pour l'{\'e}galit{\'e}
+  des lois}.
+\newblock PhD thesis, Universit{\'e} du Qu{\'e}bec {\`a} Trois-Rivi{\`e}res.
+
+\bibitem[Fisz, 1963]{walker1965probability}
+Fisz, M. (1963).
+\newblock Probability theory and mathematical statistics.
+
+\bibitem[Robin et~al., 2019]{robin2019multivariate}
+Robin, Y., Vrac, M., Naveau, P., and Yiou, P. (2019).
+\newblock Multivariate stochastic bias corrections with optimal transport.
+\newblock {\em Hydrology and Earth System Sciences}, 23(2):773--786.
+
+\bibitem[Villani, 2003]{villani2003topics}
+Villani, C. (2003).
+\newblock {\em Topics in optimal transportation}.
+\newblock Number~58. American Mathematical Soc.
+
+\end{thebibliography}

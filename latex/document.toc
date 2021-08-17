@@ -1,0 +1,19 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Downscaling}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Introduction \IeC {\`a} la probl\IeC {\'e}matique du downscaling}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Cumulative Distribution Function transform (CDFt)}{4}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Quantile-Quantile}{4}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}CDFt}{4}{subsubsection.1.2.2}
+\contentsline {subsection}{\numberline {1.3}Transport optimal}{5}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Probl\IeC {\'e}matique}{5}{subsubsection.1.3.1}
+\contentsline {section}{\numberline {2}Analyse des r\IeC {\'e}sultats obtenus par downscaling}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Tests bas\IeC {\'e}s sur les fonctions de r\IeC {\'e}partition empiriques}{6}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Quelques outils math\IeC {\'e}matiques}{6}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Kolmogorov-Smirnov}{7}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Cram\IeC {\'e}r-von Mises}{7}{subsubsection.2.1.3}
+\contentsline {section}{\numberline {3}Pr\IeC {\'e}dictions climatiques}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Les donn\IeC {\'e}es NARR et la m\IeC {\'e}thodologie}{8}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Projection Lambert conformale}{8}{subsubsection.3.1.1}
+\contentsline {section}{\numberline {4}Upscaling}{8}{section.4}
+\contentsline {section}{\numberline {5}Indexe 1}{8}{section.5}
+\contentsline {subsection}{\numberline {5.1}Lemme \ref {C-v} sur la statistique de Kantorovitch}{8}{subsection.5.1}

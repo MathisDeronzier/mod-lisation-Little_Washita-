@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: document.aux
+The style file: apalike.bst
+Database file #1: mabib.bib
+Repeated entry---line 17 of file mabib.bib
+ : @phdthesis{ethier2011propos
+ :                            ,
+I'm skipping whatever remains of this entry
+Warning--there's a number but no series in villani2003topics
+You've used 6 entries,
+            1935 wiz_defined-function locations,
+            509 strings with 4542 characters,
+and the built_in function-call counts, 1922 in all, are:
+= -- 190
+> -- 58
+< -- 7
++ -- 18
+- -- 18
+* -- 150
+:= -- 355
+add.period$ -- 18
+call.type$ -- 6
+change.case$ -- 36
+chr.to.int$ -- 6
+cite$ -- 7
+duplicate$ -- 78
+empty$ -- 139
+format.name$ -- 24
+if$ -- 366
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 6
+newline$ -- 32
+num.names$ -- 18
+pop$ -- 31
+preamble$ -- 1
+purify$ -- 39
+quote$ -- 0
+skip$ -- 61
+stack$ -- 0
+substring$ -- 122
+swap$ -- 7
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 32
+warning$ -- 1
+while$ -- 16
+width$ -- 0
+write$ -- 77
+(There was 1 error message)
