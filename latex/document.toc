@@ -6,14 +6,29 @@
 \contentsline {subsubsection}{\numberline {1.2.2}CDFt}{4}{subsubsection.1.2.2}
 \contentsline {subsection}{\numberline {1.3}Transport optimal}{5}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Probl\IeC {\'e}matique}{5}{subsubsection.1.3.1}
-\contentsline {section}{\numberline {2}Analyse des r\IeC {\'e}sultats obtenus par downscaling}{5}{section.2}
+\contentsline {subsubsection}{\numberline {1.3.2}R\IeC {\'e}solution du probl\IeC {\`e}me dans le cas fini et downscaling}{6}{subsubsection.1.3.2}
+\contentsline {section}{\numberline {2}Analyse des r\IeC {\'e}sultats obtenus par downscaling}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Tests bas\IeC {\'e}s sur les fonctions de r\IeC {\'e}partition empiriques}{6}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Quelques outils math\IeC {\'e}matiques}{6}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Quelques outils math\IeC {\'e}matiques}{7}{subsubsection.2.1.1}
 \contentsline {subsubsection}{\numberline {2.1.2}Kolmogorov-Smirnov}{7}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Cram\IeC {\'e}r-von Mises}{7}{subsubsection.2.1.3}
-\contentsline {section}{\numberline {3}Pr\IeC {\'e}dictions climatiques}{7}{section.3}
-\contentsline {subsection}{\numberline {3.1}Les donn\IeC {\'e}es NARR et la m\IeC {\'e}thodologie}{8}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Projection Lambert conformale}{8}{subsubsection.3.1.1}
-\contentsline {section}{\numberline {4}Upscaling}{8}{section.4}
-\contentsline {section}{\numberline {5}Indexe 1}{8}{section.5}
-\contentsline {subsection}{\numberline {5.1}Lemme \ref {C-v} sur la statistique de Kantorovitch}{8}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {2.1.3}Cram\IeC {\'e}r-von Mises}{8}{subsubsection.2.1.3}
+\contentsline {section}{\numberline {3}Upscaling des mod\IeC {\`e}les hydrologiques}{8}{section.3}
+\contentsline {subsection}{\numberline {3.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur les interactions atmosph\IeC {\`e}re - surface continentale - sol}{8}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Les \IeC {\'e}coulements}{9}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Transferts d'eau entre le sol et l'atmosph\IeC {\`e}re}{10}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Les concepts hydrologiques}{11}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Quelques d\IeC {\'e}finitions}{11}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Les \IeC {\'e}quations pour mod\IeC {\'e}liser l'\IeC {\'e}coulement}{11}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}La loi de Darcy}{12}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Des \IeC {\'e}quations de Navier Stokes aux \IeC {\'e}quations de Darcy}{12}{subsubsection.3.2.4}
+\contentsline {subsection}{\numberline {3.3}Les mod\IeC {\`e}les}{12}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Mod\IeC {\`e}le de surface continentale}{12}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Mod\IeC {\`e}le de colonne d'eau}{12}{subsubsection.3.3.2}
+\contentsline {section}{\numberline {4}Pr\IeC {\'e}dictions climatiques}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Les donn\IeC {\'e}es NARR et la m\IeC {\'e}thodologie}{13}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Analyse de la structure spatiale des donn\IeC {\'e}es NARRs}{13}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Pr\IeC {\'e}sentation des r\IeC {\'e}sultats de pr\IeC {\'e}dictions climatiques}{14}{subsection.4.3}
+\contentsline {section}{\numberline {5}Indexes}{14}{section.5}
+\contentsline {subsection}{\numberline {5.1}Indexe \ref {C-v} : La statistique de Cram\IeC {\'e}r-von Mises}{14}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Indexe 2: Projection conique conforme de Lambert}{15}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Indexe 3: Classification des populations de d\IeC {\'e}bit}{17}{subsection.5.3}

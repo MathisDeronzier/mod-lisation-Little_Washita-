@@ -1,10 +1,35 @@
 \begin{thebibliography}{}
 
+\bibitem[Ayar et~al., 2016]{ayar2016intercomparison}
+Ayar, P.~V., Vrac, M., Bastin, S., Carreau, J., D{\'e}qu{\'e}, M., and
+  Gallardo, C. (2016).
+\newblock Intercomparison of statistical and dynamical downscaling models under
+  the euro-and med-cordex initiative framework: present climate evaluations.
+\newblock {\em Climate dynamics}, 46(3-4):1301--1329.
+
 \bibitem[B{\"u}ning, 2002]{buning2002robustness}
 B{\"u}ning, H. (2002).
 \newblock Robustness and power of modified lepage, kolmogorov-smirnov and
-  crame{\'{}} r-von mises two-sample tests.
+  cram{\'e}r-von mises two-sample tests.
 \newblock {\em Journal of Applied Statistics}, 29(6):907--924.
+
+\bibitem[Cappus, 1960]{cappus1960etude}
+Cappus, P. (1960).
+\newblock Etude des lois de l'{\'e}coulement-application au calcul et {\`a} la
+  pr{\'e}vision des d{\'e}bits.
+\newblock {\em La houille blanche}, pages 493--520.
+
+\bibitem[Christensen et~al., 2008]{christensen2008need}
+Christensen, J.~H., Boberg, F., Christensen, O.~B., and Lucas-Picher, P.
+  (2008).
+\newblock On the need for bias correction of regional climate change
+  projections of temperature and precipitation.
+\newblock {\em Geophysical Research Letters}, 35(20).
+
+\bibitem[De~Marsily, 1986]{de1986quantitative}
+De~Marsily, G. (1986).
+\newblock Quantitative hydrogeology.
+\newblock Technical report, Paris School of Mines, Fontainebleau.
 
 \bibitem[Durrett, 2019]{durrett2019probability}
 Durrett, R. (2019).
@@ -21,6 +46,52 @@ Durrett, R. (2019).
 Fisz, M. (1963).
 \newblock Probability theory and mathematical statistics.
 
+\bibitem[Grafarend and Krumm, 2014]{grafarend2014map}
+Grafarend, E.~W. and Krumm, F.~W. (2014).
+\newblock {\em Map projections}.
+\newblock Springer.
+
+\bibitem[Hillel, 2003]{hillel2003introduction}
+Hillel, D. (2003).
+\newblock {\em Introduction to environmental soil physics}.
+\newblock Elsevier.
+
+\bibitem[Horton, 1933]{horton1933role}
+Horton, R.~E. (1933).
+\newblock The role of infiltration in the hydrologic cycle.
+\newblock {\em Eos, Transactions American Geophysical Union}, 14(1):446--460.
+
+\bibitem[Huang and Chen, 2012]{huang2012optimal}
+Huang, W.-L. and Chen, S.-P. (2012).
+\newblock Optimal aggregate production planning with fuzzy data.
+\newblock {\em International Journal of Industrial and Manufacturing
+  Engineering}, 6(8):1633--1638.
+
+\bibitem[Lindgren et~al., 2011]{lindgren2011explicit}
+Lindgren, F., Rue, H., and Lindstr{\"o}m, J. (2011).
+\newblock An explicit link between gaussian fields and gaussian markov random
+  fields: the stochastic partial differential equation approach.
+\newblock {\em Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)}, 73(4):423--498.
+
+\bibitem[Maquin, 2016]{maquin2016developpement}
+Maquin, M. (2016).
+\newblock {\em D{\'e}veloppement d'un mod{\`e}le hydrologique de colonne
+  repr{\'e}sentant l'interaction nappe-v{\'e}g{\'e}tation-atmosph{\`e}re et
+  applications {\`a} l'{\'e}chelle du bassin versant}.
+\newblock PhD thesis, Universit{\'e} Paris-Saclay (ComUE).
+
+\bibitem[Maraun, 2012]{maraun2012nonstationarities}
+Maraun, D. (2012).
+\newblock Nonstationarities of regional climate model biases in european
+  seasonal mean temperature and precipitation sums.
+\newblock {\em Geophysical Research Letters}, 39(6).
+
+\bibitem[Nahar et~al., 2017]{nahar2017assessing}
+Nahar, J., Johnson, F., and Sharma, A. (2017).
+\newblock Assessing the extent of non-stationary biases in gcms.
+\newblock {\em Journal of Hydrology}, 549:148--162.
+
 \bibitem[Robin et~al., 2019]{robin2019multivariate}
 Robin, Y., Vrac, M., Naveau, P., and Yiou, P. (2019).
 \newblock Multivariate stochastic bias corrections with optimal transport.
@@ -30,5 +101,12 @@ Robin, Y., Vrac, M., Naveau, P., and Yiou, P. (2019).
 Villani, C. (2003).
 \newblock {\em Topics in optimal transportation}.
 \newblock Number~58. American Mathematical Soc.
+
+\bibitem[Vrac et~al., 2012]{vrac2012dynamical}
+Vrac, M., Drobinski, P., Merlo, A., Herrmann, M., Lavaysse, C., Li, L., and
+  Somot, S. (2012).
+\newblock Dynamical and statistical downscaling of the french mediterranean
+  climate: uncertainty assessment.
+\newblock {\em Natural Hazards and Earth System Sciences}, 12(9):2769--2784.
 
 \end{thebibliography}
