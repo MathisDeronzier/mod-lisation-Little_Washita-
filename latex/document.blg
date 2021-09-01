@@ -7,46 +7,47 @@ Repeated entry---line 17 of file mabib.bib
  : @phdthesis{ethier2011propos
  :                            ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "de1986quantitative"
 Warning--there's a number but no series in villani2003topics
-You've used 19 entries,
+You've used 22 entries,
             1935 wiz_defined-function locations,
-            588 strings with 7062 characters,
-and the built_in function-call counts, 6904 in all, are:
-= -- 681
-> -- 256
-< -- 16
-+ -- 88
-- -- 84
-* -- 571
-:= -- 1235
-add.period$ -- 57
-call.type$ -- 19
-change.case$ -- 132
-chr.to.int$ -- 19
-cite$ -- 20
-duplicate$ -- 262
-empty$ -- 482
-format.name$ -- 107
-if$ -- 1325
+            602 strings with 7510 characters,
+and the built_in function-call counts, 7850 in all, are:
+= -- 767
+> -- 304
+< -- 17
++ -- 104
+- -- 100
+* -- 643
+:= -- 1414
+add.period$ -- 65
+call.type$ -- 22
+change.case$ -- 152
+chr.to.int$ -- 22
+cite$ -- 23
+duplicate$ -- 300
+empty$ -- 543
+format.name$ -- 126
+if$ -- 1503
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 19
-newline$ -- 97
-num.names$ -- 57
-pop$ -- 109
+missing$ -- 23
+newline$ -- 111
+num.names$ -- 66
+pop$ -- 135
 preamble$ -- 1
-purify$ -- 137
+purify$ -- 159
 quote$ -- 0
-skip$ -- 208
+skip$ -- 236
 stack$ -- 0
-substring$ -- 482
-swap$ -- 28
+substring$ -- 518
+swap$ -- 30
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
+type$ -- 120
 warning$ -- 1
-while$ -- 57
+while$ -- 63
 width$ -- 0
-write$ -- 244
+write$ -- 278
 (There was 1 error message)

@@ -1,11 +1,22 @@
 \begin{thebibliography}{}
 
+\bibitem[Allaire, 2005]{allaire2005analyse}
+Allaire, G. (2005).
+\newblock {\em Analyse num{\'e}rique et optimisation: une introduction {\`a} la
+  mod{\'e}lisation math{\'e}matique et {\`a} la simulation num{\'e}rique}.
+\newblock Editions Ecole Polytechnique.
+
 \bibitem[Ayar et~al., 2016]{ayar2016intercomparison}
 Ayar, P.~V., Vrac, M., Bastin, S., Carreau, J., D{\'e}qu{\'e}, M., and
   Gallardo, C. (2016).
 \newblock Intercomparison of statistical and dynamical downscaling models under
   the euro-and med-cordex initiative framework: present climate evaluations.
 \newblock {\em Climate dynamics}, 46(3-4):1301--1329.
+
+\bibitem[Boyd et~al., 2004]{boyd2004convex}
+Boyd, S., Boyd, S.~P., and Vandenberghe, L. (2004).
+\newblock {\em Convex optimization}.
+\newblock Cambridge university press.
 
 \bibitem[B{\"u}ning, 2002]{buning2002robustness}
 B{\"u}ning, H. (2002).
@@ -26,7 +37,7 @@ Christensen, J.~H., Boberg, F., Christensen, O.~B., and Lucas-Picher, P.
   projections of temperature and precipitation.
 \newblock {\em Geophysical Research Letters}, 35(20).
 
-\bibitem[De~Marsily, 1986]{de1986quantitative}
+\bibitem[De~Marsily, 1986]{marsily_de1986quantitative}
 De~Marsily, G. (1986).
 \newblock Quantitative hydrogeology.
 \newblock Technical report, Paris School of Mines, Fontainebleau.
@@ -66,6 +77,10 @@ Huang, W.-L. and Chen, S.-P. (2012).
 \newblock Optimal aggregate production planning with fuzzy data.
 \newblock {\em International Journal of Industrial and Manufacturing
   Engineering}, 6(8):1633--1638.
+
+\bibitem[Jones et~al., 01  ]{scipy}
+Jones, E., Oliphant, T., Peterson, P., et~al. (2001--).
+\newblock {SciPy}: Open source scientific tools for {Python}.
 
 \bibitem[Lindgren et~al., 2011]{lindgren2011explicit}
 Lindgren, F., Rue, H., and Lindstr{\"o}m, J. (2011).
