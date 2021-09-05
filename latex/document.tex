@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 %Les packages pour écrire des math
 \usepackage{amsmath}
@@ -19,19 +19,21 @@
 \usepackage{algorithm}
 \usepackage{algorithmic}
 
-\usepackage[francais]{babel}	
+%\usepackage[francais]{babel}	
 \usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
 
 \usepackage{graphicx}
 %\usepackage{pst-solides3d}
 \graphicspath{ {./images/} }
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
 
 
 \textwidth16.5cm
 \oddsidemargin-0.38cm
 \textheight22cm
-\topmargin-2cm
+\topmargin-1cm
 \pagestyle{plain}
 
 
@@ -76,7 +78,7 @@
 		\emph{Auteur}\\
 	\end{flushleft}
 \end{minipage}
-~
+
 \begin{minipage}{0.4\textwidth}
 	\begin{flushright} \Large
 		\emph{Maîtres de stage} \\
@@ -271,7 +273,7 @@ La résolution de ce problème dans le cas fini a été traité de nombreuses fo
 \[\sum_{j=1}^{n} \pi_{i,j}= P(X=X_i) \textrm{ et } \sum_{i=1}^{m} \pi_{i,j}= P(Y=Y_j),\]
 avec $\pi$ minimisant 
 \[\mathcal{I}[\pi]=\sum_{i,j}d(X_i,Y_j)\pi_{i,j}.\]  
-Le papier utilise la norme euclidienne comme distance, l'obtention de cette solution peut se faire par un algorithme de simplexe, voir par exemple \cite{huang2012optimal}. Pour corriger le biais d'estimation on peut alors pour chaque $x$ tirés récupérer (par interpolation linéaire ou méthode de krigeage) le $\pi(x,\cdot)$. D'après la construction de $\pi$, on peut alors normaliser la fonction $y\mapsto \pi(x,y)$ et tirer aléatoirement un point selon la loi ainsi trouvée (voir \cite{robin2019multivariate} pour plus de détails).
+Le papier utilise la norme euclidienne comme distance, l'obtention de cette solution peut se faire par un algorithme de simplexe, voir par exemple \cite{huang2012optimal}. Pour corriger le biais d'estimation on peut alors pour chaque $x$ tirés récupérer (par méthode de krigeage par exemple) le $\pi(x,\cdot)$. D'après la construction de $\pi$, on peut alors normaliser la fonction $y\mapsto \pi(x,y)$ et tirer aléatoirement un point selon la loi ainsi trouvée (voir \cite{robin2019multivariate} pour plus de détails).
 
 
 
@@ -330,10 +332,11 @@ La suite de variables aléatoires $K_{n,m}$ converge vers une variable aléatoir
 \begin{equation}
 	Q(x)=P(K>x)=\sum_{j=1}^{\infty}(-1)^{j-1}\exp(-2(jx)^2)
 \end{equation}
-On peut alors l'approximer avec les premiers termes de la série pour construire le test statistique. La démonstration de ce théorème peut être trouvée dans le livre \cite{walker1965probability}(chap 12.5). Nous voyons cependant que ce test est sensible aux données aberrantes, nous privilégierons alors le test de \textbf{Cramér-von Mises} (section \ref{C-v}).
+On peut alors l'approximer avec les premiers termes de la série pour construire le test statistique. La démonstration de ce théorème peut être trouvée dans le livre \cite{walker1965probability}(chap 12.5). Nous voyons cependant que ce test est sensible aux données aberrantes, nous privilégierons alors le test de \textbf{Cramér-von Mises} (section \ref{ch:Cv-M}).
 
 
 \subsubsection{distance de Cramér-von Mises}
+\label{ch:Cv-M}
 On considère ici les deux fonctions de répartitions $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ continues des variables aléatoires $X$ et $Y$. Nous voulons tester les hypothèses
 \begin{equation*}
 	\mathcal{H}_0 : \mathcal{F}_{n} = \mathcal{G}_{m} \hspace{3mm}\textrm{et}\hspace{3mm} \mathcal{H}_1 : \mathcal{F}_{n} \neq \mathcal{G}_{m}.
@@ -386,6 +389,7 @@ Les processus hydrologiques sont classiquement étudiés à l’échelle du bass
 Il possède son équivalent en mathématiques, soit $(E,d)$ un espace métrique et $S:E\to E$ un endomorphisme sur $E$. On définit le bassin d'attraction d'un point $a$ qu'on appelle $B(a)$ l'ensemble des points $x$ dans $E$ tels que la suite $(x_n)_{n \in \mathbb{N}}=(S^n(x))_{n \in \mathbb{N}}$ converge vers $a$. En considérant qu'il existe une fonction $S$ définissant la trajectoire d'une goutte d'eau déposée au point $x$ les deux définitions ont la même signification.
 
 \begin{center}
+	\captionsetup{type=figure}
 	\includegraphics[scale=0.15]{bassin_versant.png}
 	\captionof{figure}{Bassin versant (Source :http://rqes-gries.ca/).}
 \end{center} 
@@ -394,18 +398,20 @@ Il possède son équivalent en mathématiques, soit $(E,d)$ un espace métrique 
 
 \textbf{Les écoulements de subsurface}:\\
 
-La notion d'écoulement de subsurface se rapporte à l'écoulement de l'eau dans les pores du sol. L'écoulement de subsurface dépends de plusieurs paramètres comme les caractéristiques du sol(la porosité, la perméabilité), la saturation en eau du sol la topographie et le climat (précipitation, évaporation, transpiration). Ces écoulements sont traités par les équations de la mécanique des fluides (voir section  à citer) et pour plus de détails \cite{de1986quantitative}. 
+La notion d'écoulement de subsurface se rapporte à l'écoulement de l'eau dans les pores du sol. L'écoulement de subsurface dépends de plusieurs paramètres comme les caractéristiques du sol(la porosité, la perméabilité), la saturation en eau du sol la topographie et le climat (précipitation, évaporation, transpiration). Ces écoulements sont traités par les équations de la mécanique des fluides (voir section  \ref{eq-Richards}) et pour plus de détails \cite{maquin2016developpement} et \cite{marsily_de1986quantitative}. 
 
 \textbf{Les écoulements de surface:}\\
 
-Les écoulements de surface, aussi qualifiés de ruissellement, sont la conséquence de deux phénomènes distincts. Le ruissellement peut apparaître lorsque le sol est saturé en surface. En effet, lorsque le sol est saturé, l’eau ne peut s’y infiltrer \cite{cappus1960etude}. Cette condition de saturation à la surface du sol peut être la conséquence d'une nappe affleurant la surface, la zone satisfaisant cette propriété est appelée zone de suintement. Cela arrive naturellement lors d'épisode pluvieux pour les nappes peu profondes. Le ruissellement peut aussi être causé par de fortes précipitations, ainsi le débit surfacique peut devenir supérieur à la quantité d'infiltration et ainsi créer un ruissellement (voir la figure). La quantité d'infiltration décroit exponentiellement lors d'évènements pluvieux \cite{horton1933role}.  
+Les écoulements de surface, aussi qualifiés de ruissellement. Le ruissellement apparaît lorsque le sol est saturé en surface et que le débit d'eau sur le sol est supérieur à sa capacité d'infiltration. Deux phénomènes distincts sont responsables du ruissellement, lorsque le sol est saturé, l’eau ne peut plus s’y infiltrer \cite{cappus1960etude}. Cette condition de saturation à la surface du sol peut être la conséquence d'une nappe affleurant la surface, la zone satisfaisant cette propriété est appelée zone de suintement. Cela arrive aussi naturellement lors d'épisode pluvieux pour les nappes peu profondes. Le ruissellement peut aussi être causé par de fortes précipitations, ainsi le débit surfacique peut devenir supérieur à la quantité d'infiltration et ainsi créer un ruissellement. La quantité d'infiltration décroit exponentiellement lors d'évènements pluvieux \cite{horton1933role}.  
 
 \begin{center}
+	\captionsetup{type=figure}
 	\includegraphics[scale=0.2]{ruissellement.png}
 	\captionof{figure}{Estimation du ruissellement en fonction du temps modèle de Horton}
 \end{center} 
 
 \subsubsection{Transferts d'eau entre le sol et l'atmosphère}
+\label{ch:mecanismes}
 
 La végétation constitue le lien entre l'atmosphère et le sol. Les végétaux transfèrent de l'eau dans les deux sens, via les racines et la canopée. Il y a aussi des interactions directes entre le sol et l'atmosphère. Les trois principaux processus décrits sont l'évaporation du sol, la transpiration des végétaux ainsi que l'évaporation de l'eau interceptée par la canopée (mécanisme visant à conserver l'eau).\\
 
@@ -419,19 +425,19 @@ Sur les surfaces de sol non recouvertes de végétation (sol nu), l’eau prése
 
 \textbf{Pertes par interception:}\\
 
-Lors d’un épisode pluvieux, une partie de l’eau incidente est interceptée par le feuillage. Il s’agit du phénomène dit d’interception. Cette eau présente sur la canopée peut ensuite s’évaporer directement. On désigne ce processus d’évaporation sur la canopée comme les pertes par interception. L’importance de ce flux d’eau dépend de l’ampleur du feuillage et de la capacité de stockage d’eau de la canopée, c’est-à-dire de l’épaisseur maximale de la lame d’eau par unité de surface de feuillage\\
+Lors d’un épisode pluvieux, une partie de l’eau incidente est interceptée par le feuillage. Il s’agit du phénomène dit d’interception. Cette eau présente sur la canopée peut ensuite s’évaporer directement. On désigne ce processus d’évaporation sur la canopée comme les pertes par interception. L’importance de ce flux d’eau dépend de l’ampleur du feuillage et de la capacité de stockage d’eau de la canopée, c’est-à-dire de l’épaisseur maximale de la lame d’eau par unité de surface de feuillage.\\
 
 
 \textbf{l'évapotranspiration potentielle:}\\
 
-On désigne par « évapotranspiration potentielle » la quantité d’eau maximale que l’atmosphère peut extraire via les trois processus décrits précédemment. Elle correspond ainsi à la demande atmosphérique évoquée auparavant. L’évapotranspiration potentielle correspond à l’évaporation d’une surface saturée en eau. Elle dépend de paramètres atmosphériques comme l’humidité de l’air, le vent et la température. Ce taux potentiel a la propriété de majorer la somme des flux de transpiration, d’évaporation et des pertes par interception.
+On désigne par  ``évapotranspiration potentielle'' la quantité d’eau maximale que l’atmosphère peut extraire via les trois processus décrits précédemment. Elle correspond ainsi à la demande atmosphérique évoquée auparavant. L’évapotranspiration potentielle correspond à l’évaporation d’une surface saturée en eau. Elle dépend de paramètres atmosphériques comme l’humidité de l’air, le vent et la température. Ce taux potentiel a la propriété de majorer la somme des flux de transpiration, d’évaporation et des pertes par interception. Attention l'évapotranspiration potentielle ne dépend pas de la couverture végétale (on la pondère généralement par la densité de la végétation présente sur le sol).
 
 \subsection{Les concepts hydrologiques}
 \label{hydro}
 
-Nous allons ici introduire les principale notions à l'étude hydrologique des sols. Plusieurs caractéristiques définissent un sol, mais avant d'étudier en détail ce qui définit un sol, il est important de comprendre que l'étude hydro d'un sol est simplement un bilan d'eau dans celui-ci. Il faut alors commencer par déterminer ce qui rentre et ce qui sort. L'estimation de ces quantités est l'objet d'étude du downscaling qui cherche à prévoir la précipitation et l'évapotranspiration (l'eau drainée par les plantes recouvrant la surface).
+Nous allons ici introduire les principale notions propres à l'étude hydrologique des sols. Plusieurs caractéristiques définissent un sol, mais avant d'étudier  plus en détail ce qui définit un sol, il est important de comprendre que l'étude hydrologique d'un sol est simplement un bilan d'eau dans celui-ci. Il faut alors commencer par déterminer ce qui rentre et ce qui sort. L'estimation de ces quantités est l'objet d'étude du downscaling qui cherche à prévoir la précipitation et l'évapotranspiration réelle (l'eau drainée par les plantes recouvrant la surface).
 
-\subsubsection{Quelques définitions}
+\subsubsection{Quelques définitions pour l'étude en milieu poreux}
 
 \label{modelisation}
 \begin{definition}
@@ -472,7 +478,7 @@ L'équation de de conservation de la matière:
 \end{equation}
 Où $\rho$ est la masse volumique et $\overrightarrow{u}$ le vecteur vitesse du fluide. On écrit maintenant l'équation de Navier-Stokes
 \begin{equation}
-	\frac{\partial p}{\partial x^i}-(\zeta+\frac{\mu}{3})\frac{\partial}{\partial x^i}(div\overrightarrow{u}) - \mu \nabla^2u^i=\rho(F^i -\frac{du^i}{dt}),
+	\frac{\partial p}{\partial x^i}-(\zeta+\frac{\mu}{3})\frac{\partial}{\partial x^i}(div\overrightarrow{u}) - \mu \nabla^2u^i=\rho(F^i -\frac{du^i}{dt}).
 \end{equation}
 $\zeta$ coefficient de viscosité du volume, (très souvent négligeable de vant $mu$) $[ML^{-1}T^{-1}]$,\\
 $\mu$ coefficient de viscosité dynamique, $[ML^{-1}T^{-1}]$\\
@@ -481,6 +487,8 @@ $F^i$ composante des forces à distance par unité de masse,\\
 $i$ un vecteur unitaire de l'espace $3D$.
 
 En milieu poreux les équations de Navier-Stokes deviennent difficilement applicables car le milieu dans lequel s'écoule le fluide dépend lui-même de l'écoulement du fluide. On donne des hypothèse simplificatrices pour résoudre l'équation de Navier-Stokes. 
+
+\vspace{0.7cm}
 
 \noindent \textbf{Hypothèses simplificatrice:}\\
 En milieu poreux on peut émettre de nombreuses hypothèses simplificatrices qui permettent de simplifier l'équation de Navier Stokes, on commence par supposer les écoulement permanents
@@ -498,12 +506,13 @@ Dans ces hypothèses l'équation de Navier-Stokes devient
 Plusieurs méthodes numériques permettent de trouver des solutions à ce problèmes notamment la méthode de Galerkine ou des méthodes de différences finies voir \cite{allaire2005analyse} (chap 2, chap 6). 
 
 \vspace{7mm}
+
 Remarquons que ces équations ne prennent pas en compte la porosité du milieu, l'équation \eqref{cons-mat} peut être modifié en prenant en compte $\omega$ le coefficient de porosité et un terme source $q$ lié à la matière créant des interstices sans fluide (le coefficient est compté négativement). Alors l'équation de conservation s'écrit finalement
 \begin{equation}
 	\label{eq-mass-por}
 	div(\overrightarrow{U})+\frac{\partial}{\partial t}(\theta)+ q=0.
 \end{equation}
-Remarquons que l'on considère la porosité $w$ comme continue nous étudions des éléments de longueures $dx$ suffisamment petite pour que les équations de continuité \eqref{eq-cons-simp} et \eqref{eq-mass-por} soient considérée vrais et suffisamment grandes pour que l'on puisse considérer une porosité moyenne dans un élément de volume.
+Remarquons que l'on considère la porosité $w$ comme continue nous étudions des éléments de longueures $dx$ suffisamment petite pour que les équations de continuité \eqref{eq-cons-m-simp} et \eqref{eq-mass-por} soient considérée vrais et suffisamment grandes pour que l'on puisse considérer une porosité moyenne dans un élément de volume.
 
 \subsubsection{La loi de Darcy et l'équation de diffusivité en milieu poreux}
 \label{Darcy}
@@ -530,7 +539,7 @@ on peut alors injecter l'équation de Darcy \eqref{eq-Darcy} dans l'équation de
 	\label{eq-Richards}
 	-\overrightarrow{\nabla} \cdot (K\overrightarrow{\nabla}H)+\frac{\partial\theta}{\partial t}+ q=0.
 \end{equation}  
-On définit parfois des lois de porosité liées à la grandeur $f(H)=\theta$ la quantité d'eau est liée à la cote piézométrique et l'on pose 
+On définit parfois des lois de porosité liées à la grandeur $f(H)=\theta$ la quantité d'eau est liée à la cote piézométrique \footnote{Le niveau, la cote ou la surface piézométrique est l'altitude ou la profondeur (par rapport à la surface du sol) de la limite entre la nappe phréatique et la zone vadose dans une formation aquifère. Ce niveau est mesuré à l'aide d'un piézomètre.} et l'on pose 
 \[S_s(H)\frac{\partial H}{\partial t}=\frac{\partial\theta}{\partial t},\]
 $S_s$ est appelé le coefficient d'emmagasinement. On appelle l'équation ainsi obtenu en injectant la formule sur la porosité, \textbf{l'équation de Richard généralisée}
 \begin{equation}
@@ -542,18 +551,25 @@ Ceux sont avec ces équations que les géologues travaillent, nous pouvons remar
 
 
 \subsection{Les modèles}
-Il existe plusieurs modèles permettant de prédire les écoulements d'eau. Les premiers modèles sont des de résolution des équations de la mécanique des fluides en milieu poreux qui assurent une grande précision sur les résultats obtenus. Leurs temps de calcul les rendent inutilisables sur de grands domaines. On utilise alors des modèles moins précis mais aussi moins coûteux c'est le cas du modèle Orchidée et des domaines de surface continentale.
+Il existe plusieurs modèles permettant de prédire les écoulements d'eau. Les premiers modèles sont issus de la résolution des équations de la mécanique des fluides en milieu poreux. Cependant, bien que cette méthode assure une grande précision sur les résultats obtenus, leur temps de calcul les rendent inutilisables sur de grands domaines. On utilise alors des modèles moins précis mais aussi moins coûteux c'est le cas du modèle Orchidée et des domaines de surface continentale.
 
 \subsubsection{Modèle de surface continentale Orchidée}
 
-Il s’agit d’un modèle dynamique, développé à l’échelle globale simulant les processus continentaux à partir des interactions sol-végétation-atmosphère. Ses résultats sont intégrés comme condition à la limite basse du modèle général de circulation atmosphérique du Laboratoire de Météorologie Dynamique (modèle LMDZ). Il modélise les interactions entre surface continentale et atmosphère, en particulier les flux d'énergie, d'eau et de carbone.
+Le modèle continentale Orchidée est un modèle dynamique, développé à l’échelle globale simulant les processus continentaux à partir des interactions sol-végétation-atmosphère. Ses résultats sont intégrés comme condition à la limite basse du modèle général de circulation atmosphérique du Laboratoire de Météorologie Dynamique (modèle LMDZ). Il modélise les interactions entre surface continentale et atmosphère, en particulier les flux d'énergie, d'eau et de carbone. 
+
+
+
+\subsubsection{Modèle à base physique: Hydrogéosphère}
+
+HydroGéoSphère (HGS) [Aquanty Inc, 2013] est un code de calcul hydrologique tri-dimensionnel, intégré
+et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de surbsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes.
 
 
 \section{Prédictions climatiques et modélisation hydrologiques}
 \label{ch-pred-cli}
 L'étude que nous avons menée a été réalisée sur le bassin du Little Washita. Nous avons eu accès aux données NARR (North American Real Reanalysis) de $1979$ à $2014$ qui se présentent sous la forme d'un maillage de largeur de maille de $32 km$ ainsi qu'aux données de l'IPSL qui se présentent elles sous la forme d'un maillage de largeur de maille $200 km$.
 
-Les données NARR (North American Regional Reanalysis) couvrent l'entièreté du continent nord américain. La méthode de projection pour passer de $\mathcal{S}(\mathbb{R}^3)$ à $\mathbb{R}^2$ est ce qu'on appelle la \textbf{projection Lambert}. Cette projection d'après le théorème de Gauss ne pas être une isométrie, cependant nous verrons que l'on pourra faire l'approximation que la géométrie obtenue est encore euclidienne pour le bassin du Washita et ses alentours (voir \ref{proj-Lambert}). Dans notre étude nous ferons comme si nous étions dans $\mathbb{R}^2$ en considérant le maillage carré, la longueur de grille du maillage est d'une trentaines de kilomètres (voir figure 1).
+Les données NARR (North American Regional Reanalysis) couvrent l'entièreté du continent nord américain. La méthode de projection pour passer de $\mathcal{S}(\mathbb{R}^3)$ à $\mathbb{R}^2$ est ce qu'on appelle la \textbf{projection Lambert}. Cette projection d'après le théorème de Gauss ne pas être une isométrie, cependant nous verrons que l'on pourra faire l'approximation que la géométrie pour le bassin du Washita et ses alentours peut être considérée comme euclidienne (voir \ref{proj-Lambert}). Dans notre étude nous ferons comme si nous étions dans $\mathbb{R}^2$ en considérant le maillage carré, la longueur de grille du maillage est d'une trentaines de kilomètres (voir figure 1).
 
 
 Afin de déterminer l'efficacité du downscaling dans le cas où l'on ajoute du bruit à la variable que l'on cherche à prédire nous avons dégradé spatialement nos données en moyennant sur différentes échelles de grille (voir \ref{deg-NARR}).
@@ -562,14 +578,17 @@ Nous les avons ensuite downscalées et puis les avons injectées dans un modèle
 
 \begin{center}
 	\label{maillage NARR}
+	\captionsetup{type=figure}
 	\includegraphics[scale=0.4]{grid_prop.png}
 	\captionof{figure}{Description du maillage NARR}
 \end{center} 
 
 \subsection{Analyse de la structure spatiale des données NARRs}
-Nous avons considéré les coordonnées du Little Washita à $34.981^{\circ}N,-97.859^{\circ}W$. Nous repérons les coordonnées du point sur le maillage NARR étant le plus de ces coordonnées pour définir le point correspondant au Little Washita, en effet l'échelle du maillage NARR correspond à l'échelle du Little Washita, cette hypothèse est déjà faite dans la thèse \cite{maquin2016developpement}. 
+\label{ch:spat-NARR}
 
-On commence par regarder les résultats autour du bassin du little washita, on fait un moyennage des précipitations et de l'évaporation sur un carré autour du little washita, le point de coordonnée (0,0) est le point correspondant au Little Washita sur ces figures. 
+Nous avons considéré les coordonnées du Little Washita à $34.981^{\circ}N,-97.859^{\circ}W$. Nous repérons les coordonnées du point sur le maillage NARR étant le plus proche de ces coordonnées pour définir le point correspondant au Little Washita. En effet l'échelle de maillage NARR  correspond à l'échelle du Little Washita, il est donc suffisant de ne considérer qu'un seul point.
+
+On commence par regarder les résultats autour du bassin du little washita, on fait un moyennage des précipitations et de l'évaporation sur un carré autour du little washita, le point de coordonnée (0,0) est le point correspondant au Little Washita sur ces figures. La méthode de moyennage est expliquée dans la section 
 
 \begin{figure}[h]
 	\begin{minipage}[b]{0.48\linewidth}
@@ -590,46 +609,53 @@ On remarque de plus que la fonction $K$ ainsi définie est symétrique, $K(y)=K(
 
 \[K(m,n)=\frac{1}{T(M-m+1)(N-n+1)-1}\sum_{t=1}^{T}\sum_{i=m}^{M}\sum_{j=n}^{N}(\mathcal{T}_{t,i,j}-\overline{\mathcal{T}}_{1,m,n})(\mathcal{T}_{t,i-m,j-n}-\overline{\mathcal{T}}_{2,m,n}),\]
 où,
-\[\overline{\mathcal{T}}_{1,m,n}=\frac{1}{T(M-m+1)(N-n+1)}\sum_{t=1}^{T}\sum_{i=m}^{M}\sum_{j=n}^{N}(\mathcal{T}_{t,i,j}), \hspace{4mm}\overline{\mathcal{T}}_{2,m,n}=\frac{1}{T(M-m+1)(N-n+1)}\sum_{t=1}^{T}\sum_{i=0}^{M-m}\sum_{j=0}^{N-n}(\mathcal{T}_{t,i,j}).\]
+\[\overline{\mathcal{T}}_{1,m,n}=\frac{1}{T(M-m+1)(N-n+1)}\sum_{t=1}^{T}\sum_{i=m}^{M}\sum_{j=n}^{N}(\mathcal{T}_{t,i,j}),\]
+et 
+\[\overline{\mathcal{T}}_{2,m,n}=\frac{1}{T(M-m+1)(N-n+1)}\sum_{t=1}^{T}\sum_{i=0}^{M-m}\sum_{j=0}^{N-n}(\mathcal{T}_{t,i,j}).\]
 On peut donc tracer le noyau de covariance $K(i,j)$, $i \in\{-N/2,N/2\}$, $j \in \{-M/2,M/2\}$. 
 
 \noindent \textbf{Résultats:}
 
-Pour obtenir nos résultats, nous avons pris en compte la saisonnalité. En effet, les résultats ont été obtenus sur chaque mois. Voici les résultats obtenus en fonction de la saisonnalité.
+Pour obtenir nos résultats, nous avons pris en compte la saisonnalité. En effet, les résultats ont été obtenus sur chaque mois. Voici les résultats obtenus en fonction des mois de l'année.
 
 
 \hspace{-3cm}
 \begin{tabular}{ccc} 
 	\includegraphics[scale=0.4]{images/kernel_precip_m1.png} & \includegraphics[scale=0.4]{images/kernel_precip_m2.png} & \includegraphics[scale=0.4]{images/kernel_precip_m3.png} \\ 
 	\includegraphics[scale=0.4]{images/kernel_precip_m4.png} & \includegraphics[scale=0.4]{images/kernel_precip_m5.png} & \includegraphics[scale=0.4]{images/kernel_precip_m6.png} \\
+\end{tabular}
+
+\hspace{-3cm}
+\begin{tabular}{ccc}
 	\includegraphics[scale=0.4]{images/kernel_precip_m7.png} & \includegraphics[scale=0.4]{images/kernel_precip_m8.png} & \includegraphics[scale=0.4]{images/kernel_precip_m9.png} \\ 
 	\includegraphics[scale=0.4]{images/kernel_precip_m10.png} & \includegraphics[scale=0.4]{images/kernel_precip_m11.png} & \includegraphics[scale=0.4]{images/kernel_precip_m12.png} \\
 \end{tabular} 
 
 Rappelons que l'axe $X$ correspond aux latitudes et l'axe $Y$ aux longitudes. Nous voyons qu'en été la covariance entre deux points s'effondre relativement vite alors qu'en hiver c'est plutôt l'inverse.
-Il semble intéressant de remarquer les échelles d'effondrement, en effet même si l'on est à plusieurs centaines de kilomètres d'un point, on observe encore une covariance positive, on pourrait s'attendre à ce que ca s'effondre beaucoup plus vite. 
+Il semble intéressant de constater que même à plusieurs centaines de kilomètres il y a encore une covariance entre les précipitations. On voit aussi que la covariance spatiale diminue plus vite selon l'axe $X$ qui correspond à la latitude.
 
 \hspace{-3cm}
 \begin{tabular}{ccc} 
-	\includegraphics[scale=0.4]{images/kernel_evap_m1.png} & \includegraphics[scale=0.4]{images/kernel_precip_m2.png} & \includegraphics[scale=0.4]{images/kernel_evap_m3.png} \\ 
-	\includegraphics[scale=0.4]{images/kernel_evap_m4.png} & \includegraphics[scale=0.4]{images/kernel_precip_m5.png} & \includegraphics[scale=0.4]{images/kernel_evap_m6.png} \\
-	\includegraphics[scale=0.4]{images/kernel_evap_m7.png} & \includegraphics[scale=0.4]{images/kernel_precip_m8.png} & \includegraphics[scale=0.4]{images/kernel_evap_m9.png} \\ 
-	\includegraphics[scale=0.4]{images/kernel_evap_m10.png} & \includegraphics[scale=0.4]{images/kernel_precip_m11.png} & \includegraphics[scale=0.4]{images/kernel_evap_m12.png} \\
+	\includegraphics[scale=0.4]{images/kernel_evap_m1.png} & \includegraphics[scale=0.4]{images/kernel_evap_m2.png} & \includegraphics[scale=0.4]{images/kernel_evap_m3.png} \\ 
+	\includegraphics[scale=0.4]{images/kernel_evap_m4.png} & \includegraphics[scale=0.4]{images/kernel_evap_m5.png} & \includegraphics[scale=0.4]{images/kernel_evap_m6.png} \\
+\end{tabular}
+
+\hspace{-3cm}
+\begin{tabular}{ccc}
+	\includegraphics[scale=0.4]{images/kernel_evap_m7.png} & \includegraphics[scale=0.4]{images/kernel_evap_m8.png} & \includegraphics[scale=0.4]{images/kernel_evap_m9.png} \\ 
+	\includegraphics[scale=0.4]{images/kernel_evap_m10.png} & \includegraphics[scale=0.4]{images/kernel_evap_m11.png} & \includegraphics[scale=0.4]{images/kernel_evap_m12.png} \\
 \end{tabular} 
 
-Il semble beaucoup plus difficile d'interpréter le noyau de covariance de l'évapotranspiration à partir de la saisonnalité. On voit alors que mai et août ont un noyau de covariance qui s'effondre relativement vite spatialement, que ce n'est pas le cas pour les mois de juin et juillet.
+Il semble beaucoup plus difficile d'interpréter le noyau de covariance de l'évapotranspiration à partir de la saisonnalité. On voit alors l'impact de la saisonnalité sur le noyau de covariance des précipitations.
 
- 
-\newpage
 \subsection{Présentation des résultats de prédictions climatiques}
 
-Nous allons travailler avec plusieurs séries différentes, comme nous l'avons dit précédemment nous avons travailler avec plusieurs séries temporelles.
+Nous avons travaillé avec plusieurs séries, la série de référence, des estimateurs de la série de référence et ces mêmes séries après transformation pour qu'elle réduisent leur distance de Cramer-Von Mises. 
+On commence par réintroduire le tenseur $\mathcal{T}$ de dimension $T \times M\times N$, nous pouvons représenter les données NARRs par le tenseur $\mathcal{T}$. 
+\[\mathcal{T}_{t,m,n}=\mathcal{S}_V(t,lat_m,lon_n).\]
+où $t$ correspond à un temps et $(m,n)$ une position, et $\mathcal{S}_V$ la fonction aléatoire introduite à la définition \ref{simu_terre}.
 
-On commence par réintroduire le tenseur $\mathcal{T}$ de dimension $T \times M\times N$. Nous pouvons exprimer données NARRs par un tenseur. 
-\[\mathcal{T}_{t,m,n}=\mathcal{T}_V(t,lat_m,lon_n).\]
-où $t$ correspond à un temps et $(m,n)$ une position.
-
-\subsubsection{La dégradation}
+\subsubsection{La dégradation des données}
 
 \label{deg-NARR}
 
@@ -643,23 +669,33 @@ Nous avons alors étudié le point correspondant au bassin du Little Washita de 
 
 \subsection{Les résultats de la dégradation et du downscaling sur les données}
 \label{resultats}
-Nous allons utiliser les outils définis dans la section \ref{analyse-pred} pour analyser la qualité de nos prédictions.
+Pour évaluer nos prédictions nous avons utilisé des méthodes de validations croisées. Nous avons utilisé les données NARRs, NARRs dégradée ainsi que celles de l'IPSL pour tester les méthodes citées précédemment. On a définit la transformation sur les années $1979$ à $1996$, et la période de $1996$ à $2014$ pour prédire et vérifier la qualité de nos prédictions. Nous utiliserons les outils définis dans la section \ref{analyse-pred} pour analyser nos prédictions.
 
 \subsubsection{tracé des boxplot}
 
-Nous avons tracé les boxplot des précipitations et de l'évapotranspiration afin de voir visuellement répartitions des points.
+Pour avoir une première idée des données que nous avons récupérées, nous tracons les boxplots de chaque série temporelle.
+Nous avons ainsi les boxplot pour la précipitation et l'évapotranspiration pour juger de la répartition des points pour chaque série.
 
-
-\hspace{-1cm}
+\hspace{-1.2cm}
 \begin{tabular}{ccc}
-	\includegraphics[scale=0.4]{images/boxplot_precip.png} & \includegraphics[scale=0.4]{images/boxplot_evap.png}   \\
+	\includegraphics[scale=0.4]{images/boxplot_precip.png} & \includegraphics[scale=0.4]{images/boxplot_evap.png} \\
 \end{tabular} 
 
-On voit que la dégradation de l'évapotranspiration n'a quasiment aucune influence sur les séries temporelle, ce qui été à prévoir d'après le noyau de covariance que nous obtenu précédemment. On peut aussi voir que le modèle de climat de l'IPSL prédit relativement mal l'évapotranspiration sur la région du Little Washita. On peut aussii voir la méthode de prédiction utilisée pour downscaler les série temporelles dégradées est la méthode  \textbf{CDF-t avec support égale}. 
+Les colonnes représentent pour chaque variable:
+\begin{itemize}
+	\item 1- la série de observée sur le Little Washita. 
+	\item 2-3-4-5- Les séries downscalées des dégradations $d \in \{2,3,4,5\}$.
+	\item 6- La série downscalée de l'IPSL. 
+	\item 7-8-9-10- Les séries des dégradations $d \in \{2,3,4,5\}$.
+	\item 11- La série de l'IPSL. 
+\end{itemize}
+On voit que la dégradation de l'évapotranspiration n'a quasiment aucune influence sur les séries temporelle, ce qui été à prévoir d'après le noyau de covariance que nous obtenu précédemment pour l'évapotranspiration. On peut aussi voir que le modèle de climat de l'IPSL prédit relativement mal l'évapotranspiration sur la région du Little Washita. On peut aussii voir la méthode de prédiction utilisée pour downscaler les série temporelles dégradées est la méthode  \textbf{CDF-t avec support égale} (cf section \ref{CDf-t-algo}). 
 
-\subsubsection{affichage des données prédites en fonction des données réelles}
+\subsubsection{Affichage des données prédites en fonction des données réelles}
+\label{ch:plot-dswnsc/deg}
+On commence par afficher les résultats sur un graphique en mettant les données de précipitation prédites (dégradée ou dégradées puis downscalées) en fonction des données de précipitation réelles. Cette méthode, permet de juger visuellement de l'efficacité du downscaling sur les données. Les figures qui sont affichées en dessous ont un titre indiquant le degré de déformation dans leur titre sous la forme $(2d-1)^2$ où $d$ est le degré de l'équation \eqref{eq-degradation}. Les figures de gauches sont les figure dégradées puis downscalées et celles de droites les figures dégradée, une ligne correspond à la même dégradation.	
 
-On commence par afficher les résultats sur un graphique en mettant les données de précipitation prédites en fonction des données de précipitation réelles, cette méthode permet de juger visuellement de l'efficacité du downscaling sur les données. Les figures qui affichées indiquent le degrée de déformation dans leur titre sous la forme $(2d-1)^2$ où $d$ est le degrés que celui de l'équation \eqref{eq-degradation}. L'on peut voir sur chaque ligne à droite les données dégradées et à gauches les mêmes série après avoir appliquer un downscaling sur ces données.
+\vspace{0.7cm}
 
 \hspace{-1cm}
 \begin{tabular}{cc} 
@@ -674,11 +710,14 @@ On commence par afficher les résultats sur un graphique en mettant les données
 \end{tabular} 
 
 
-Visuellement il semble que le downscaling améliore les prédictions. Nous avons tracé pour chaque figure en noir la droite identité et en rouge les droites de régression linéaire de la forme $y=ax+b$, où $y$ est la précipitation de référence et $x$ le prédicteur de $y$ dans notre cas c'est soit la dégradation $\mathcal{T}_{d,a,b}$ soit son downscalé à partir de la méthode définie dans la section \ref{CDf-t-algo}. Remarquons que la dégradation de nos données ne crée pas de changement important de l'éparpillement des points dans les graphiques, c'est en accord avec les figures obtenues dans la section \ref{spat-NARR} montrant une grande corrélation spatiale. Il semble cependant que la dégradation ait une tendance à sous-évaluer les précipitations élevées, ce qui ne semble pas abérrant si l'on considère les tailles des cumunolimbus (allant de $2$ à $10$km ), inférieur à la largeur de grille des données NARRs ($32$km). 
+Visuellement il semble que le downscaling améliore les prédictions. Nous avons tracé pour chaque figure en noir la droite identité et en rouge les droites de régression linéaire de la forme $y=ax+b$, où $x$ est la précipitation de référence et $y$ la donnée prédite de $x$. Dans notre cas c'est soit la dégradation $\mathcal{T}_{d,a,b}$, soit son downscalé à partir de la méthode définie dans la section \ref{CDf-t-algo}. Remarquons que la dégradation de nos données ne crée pas de changement important de l'éparpillement des points dans les graphiques, c'est en accord avec les figures obtenues dans la section \ref{ch:spat-NARR} montrant une grande corrélation spatiale. Il semble cependant que la dégradation ait une tendance à sous-évaluer les précipitations élevées, ce qui ne semble pas aberrant si l'on considère les tailles des cumulonimbus\footnote{Les cumulonimbus sont des nuages responsables des gros orages en été et leur taille va de $2$ à $10$km de diamètre}, inférieur à la largeur de grille des données NARRs ($32$km). Alors on peut considérer une grosse précipitation comme un évènement localisé sur un seul point de grille NARR.
+
+ 
 
 \subsubsection{Différence analyse Root Mean Square error et distance de Cramér-von Mises}
+\label{ch:diff-RMSE}
 
-Nous avons calculer la distance quadratique moyenne entre la série de référence et les différentes séries de dégradation. Les résultats ainsi obtenues sont:
+Nous avons calculé la distance quadratique moyenne entre la série de référence et les différentes séries de dégradation. Les résultats ainsi obtenues sont:
 
 \vspace{0.5cm}
 
@@ -687,7 +726,7 @@ Nous avons calculer la distance quadratique moyenne entre la série de référen
 	\includegraphics[scale=0.4]{images/RMSE_precip.png} & \includegraphics[scale=0.4]{images/RMSE_evap.png}  \\
 \end{tabular} 
 
-Nous voyons que les résultats sont mauvais, mais encore une fois, ce n'est pas cette distance que nous cherchons à minimiser avec le downsaling, mais une distance sur les fonctions de répartition. Regardons maintenant la distance de Cramér-Von Mises.
+Nous voyons que les résultats sont plus mauvais pour les séries downscalées. C'était à prévoir d'après les figures de la section précédente \ref{ch:plot-dswnsc/deg} car la dispersion semblait plus grande pour les séries downscalées. Mais encore une fois, ce n'est pas cette distance que nous cherchons à minimiser avec le downsaling, mais une distance sur les fonctions de répartition. Regardons maintenant la distance de Cramér-Von Mises présentée en section \ref{ch:Cv-M}.
 
 \vspace{0.5cm}
 
@@ -697,7 +736,7 @@ Nous voyons que les résultats sont mauvais, mais encore une fois, ce n'est pas 
 \end{tabular} 
 
 
-L'on voit qu'encore une fois la prédiction après downscaling est plus mauvaise que seulement la série dégradée, jusqu`à la dégradation $d=5$ et $d=6$ sont les données $IPSL$. L'algorithme effectue alors une grosse correction pour ce cas-ci. Cette erreur de prédiction soulève un point que nous n'avons pas encore abordé jusqu'à présent, c'est le fait que notre échantillon de précipitation possède de nombreuses valeurs à $0$, ce qui signifie que la densité n'est plus une fonction mais un distribution avec un poids non nul en $0$. C'est ce détail qui crée cette différence, si l'on enlève les précipitations nulle, nous obtenons:
+L'on voit qu'encore une fois la prédiction après downscaling est plus mauvaise que seulement la série dégradée, jusqu`à la dégradation $d=4$, et qu'à partir de la dégradation $5$ la série donwscalées est plus efficace ($d=6$ sont les données $IPSL$). L'algorithme effectue une grosse correction pour les données IPSL, il semble que la correction soit efficace à partir d'une certaine dégradation ce qui paraît tout de même étonnant. Cette erreur de prédiction soulève un point que nous n'avons pas encore abordé jusqu'à présent, c'est le fait que notre échantillon de précipitation possède de nombreuses valeurs à $0$, ce qui signifie que la densité n'est plus une fonction mais un distribution avec un poids non nul en $0$. C'est ce détail qui rend l'analyse CDF-t ``inconsistante'', si on enlève les précipitations nulle, nous obtenons:
 
 \vspace{0.5 cm}
 
@@ -706,22 +745,80 @@ L'on voit qu'encore une fois la prédiction après downscaling est plus mauvaise
 	\includegraphics[scale=0.4]{images/Dist_CVM_precip.png} & \includegraphics[scale=0.4]{images/Dist_CVM_evap.png}  \\
 \end{tabular} 
 
+Donc le downscaling diminue la distance de Cramer-von Mises, on peut considérer la méthode comme efficace
 
+
+
+\subsection{Les résultats hydrologiques}
+
+Nous avons donc récupérer les données climatiques de précipitation et d'évapotranspiration et nous les avons injectées dans le modèle d'hydrogéosphère, pour faire les prévisions hydrologiques. Nous avons vu précédemment qu'HydroGéoSphère est un modèle à base physique donc un modèle $3D$. Mathilde Maquin a fait tourner HydroGéosphère sur le Little Washita en faisant une triangulation du domaine d'étude. Cependant, nos prévisions étant sur $18$ ans les temps de calculs n'étaient pas à l'échelle du stage (environ 3 mois). Nous avons utilisé un modèle simplifié, proposé par Fanny Picourlat l'article est encore en cours de publication. Ce modèle a l'avantage de réduire énormément les temps de calcul (de quelques heures). Nous avons alors fait tourner HydroGéosphère sur toutes nos différentes séries et nous avons réaliser encore une fois les mêmes études que dans la partie précédente.
+
+  
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[scale=0.2]{images/little_washita3D.png}
+	\captionof{figure}{Maillage tridimensionnel du bassin versant du Little Washita, image issue de la thèse \cite{maquin2016developpement}}
+\end{center}
+
+
+\subsubsection{Modèle de pente simple pour la modélisation hydrologique du modèle du Little Washita}
+
+Le modèle que nous avons utilisé est un modèle de pente simple. Les paramètres ont été ajustés pour être les plus proches possibles des résultats obtenus à partir du modèle $3D$. C'est un modèle $2D$, on considère un pente simple d'angle $\alpha$ et longueur $L$. $L$ et $\alpha$ on été choisis pour que les résultats des débits sortis par le modèle soient le plus proche de ceux produits par le modèle $3D$ d'Hydrogéosphère. Au lieu de faire une analyse fonctionnelle ou topographique du bassin du Washita pour déterminer les paramètres $L$ et $\alpha$, ceux-ci ont été déterminés par des méthodes d'optimisation, on les a choisis pour minimiser les distances entre les débits sortis par les deux modèles. Il ne semble cependant pas impossible de trouver une méthode pour déterminer rigoureusement les coefficients $\alpha$ et $L$. (Insérer une figure de modèle de pente simple).     
+
+\subsubsection{Les données d'entrées dans HydroGéoSphère et l'initialisation}
+
+Plusieurs problèmes se posent à nous lorsque l'on est confronté à une modélisation hydrologique. Le premier problème qui vient en tête est : Comment est la nappe à l'état initial? En effet, l'état initial de la nappe créera une grande différence sur les débit sortant comme nous l'avons brièvement expliqué dans la section \ref{ch:mecanismes} (c'est causé par la saturation en eau du sol en surface). Afin de déterminer l'état initial de la nappe les hydrologues ont l'habitude d'utiliser des méthodes de \textbf{spin-up}. Le spin up consiste à faire tourner le modèle plusieurs fois sur les données d'entrées d'une année et de s'arrêter lorsque les résultats ont convergé. Théoriquement on suppose que les résultats du modèle converge, cependant sur le modèle à pente simple du bassin du Little washita, les résultats ne convergent pas et l'on observe un phénomène d'aridifiction de la nappe. Ce phénomène est peut-être lié au faible stockage d'eau dans le modèle simplifié de bassin (constitué de deux maille en largeur au lieu de plusieurs centaines). Nous avons, comme conseillé dans la thèse de Mathilde Maquin décidé de faire un spin-up pendant trois ans sans évapotranspiration potentielle puis pendant six ans en ajoutant l'évapotranspiration. 
+
+Une deuxième question vient alors naturellement doit-on utiliser la méthode de spin-up pour chaque série temporelle ou alors définir une même nappe dans l'état initiale. Nous avons fait le spin-up seulement pour la série de référence et utiliser le même résultat de nappe pour tous les modèles obtenus. 
+
+
+\subsection{L'influence de la pluie sur les débits}
+
+Nous allons regarder l'influence de la pluie sur les résultats de débits. Nous étudions les séries des différences des précipitations en fonction des séries des différences des débits. Soient $(R^{*}_t)_{t \in \llbracket 0, T\rrbracket}$ une série prédite de précipitation et $(R_t)_{t \in \llbracket 0, T\rrbracket}$ la série réelle des précipitations, ainsi que $(Q^{*}_t)_{t \in \llbracket 0, T\rrbracket}$ et $(Q_t)_{t \in \llbracket 0, T\rrbracket}$ les séries de débits prédites et réelles. On s'intéresse alors à voir l'influence de la différence entre les séries prédites et la série réelle de précipitation sur la différence entre les débits prédits et les débits réels. On appelles alors quand c'est définit les $\Delta R$ et $\Delta Q$. 
+\[\Delta R_t=\frac{R^{*}_t-R_t}{R_t}, \hspace{4mm} \frac{Q^{*}_t-Q_t}{Q_t}.\]
+Voici les résultats obtenus pour la série downscalée correspondant à la dégradation  
+    
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[scale=0.25]{deb_prec_dec1.png}
+	\captionof{figure}{Tracé des $\Delta Q_t$ en fonction des $\Delta R_{t+1}$}
+\end{center}
+
+Nous avons en effet affiché les débits du temps $t$ en fonction des précipitation du temps $t+1$, on voit clairement un phénomène corrélation linéaire pour certains débits. Nous cherchons donc à trouver les droites de corrélation (voir section \ref{indexe3:cl_deb}). Après avoir classifié nos points en deux échantillons, la méthode classification est très simple on associe chaque point à sa droite la plus proche. On obtient visuellement cette classification
+
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[scale=0.33]{classification_deb_pr.png}
+	\captionof{figure}{Classification des points selon leur droite de régression}
+\end{center}
+
+On considère maintenant les précipitations réelles entrée dans le sol, HydroGéosphère considère la pluie entrant dans le sol comme étant: 
+\[\textit{pluie entrant dans le sol}=\max(\textit{précipitation}-\textit{évapotranspiration},0).\]
+On regarde alors la figure des points correspondants pour la pluie entrant dans le sol (on a enlevé toutes le points où la pluie entrant dans le sol était nulle).
+
+\begin{center}
+	\captionsetup{type=figure}
+	\includegraphics[scale=0.33]{classification_deb_prr.png}
+	\captionof{figure}{Classification des points selon leur droite de régression pour la pluie entrant dans le sol}
+\end{center}
+
+Il semble que de nombreux points bleus ont été supprimés. 
+\newpage
 
 \section{Indexes}
 
 \subsection{Indexe \ref{C-v} : La statistique de Cramér-von Mises}
 \label{lemme Cramer-von Mise}
-Soient $(X_i)_{i\in \llbracket 1,n \rrbracket}$ et $(Y_i)_{i\in \llbracket 1,m \rrbracket }$ des réalisations indépendante issues de variables aléatoires réelles $X$ et $Y$. On appelle $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ les fonctions de répartitions empiriques définie à partir de ces réalisation et $\mathcal{H}_{m,n}$ la fonction de répartition empirique définie à partir de l'ensemble de ces réalisations $(Z_i)_{i\in \llbracket 1,m+n \rrbracket }=X_1,...,X_n,Y_1,...,Y_m$. Par la suite on considéra que tous les éléments sont triés dans leur ensemble ($i\leq j \Rightarrow E_i\leq E_j$). Nous avons alors l'égalité suivante
+Soient $(X_i)_{i\in \llbracket 1,n \rrbracket}$ et $(Y_i)_{i\in \llbracket 1,m \rrbracket }$ des réalisations indépendante issues des variables aléatoires réelles $X$ et $Y$. On appelle $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ les fonctions de répartitions empiriques définie à partir de ces réalisation et $\mathcal{H}_{m,n}$ la fonction de répartition empirique définie à partir des réalisations $(Z_i)_{i\in \llbracket 1,m+n \rrbracket }=X_1,...,X_n,Y_1,...,Y_m$. Par la suite on considéra que tous les éléments sont triés dans leur ensemble ($i\leq j \Rightarrow E_i\leq E_j$). Nous avons alors l'égalité suivante
 \begin{equation}
 	C_{n,m}=\frac{nm}{n+m}\int_{\mathbb{R}}\big[ \mathcal{F}_{n}(x)-\mathcal{G}_{m}(x)\big]^{2} \mathrm{d} \mathcal{H}_{m,n}(x)=\frac{1}{nm(m+n)}\Big[ n\sum_{i=1}^{n}(R_{X_i}-i)^2+ m\sum_{i=1}^{m}(R_{Y_i}-i)^2\Big]-\frac{4nm-1}{6(m+n)}.
 \end{equation}
-	où $R_{X_i}$ est le rang de $X_i$ dans $X_1,...,X_n,Y_1,...,Y_n$ autrement dit 
-	\[R_{X_i}=Card(\{j \in \llbracket 1,m+n \rrbracket , Z_j\leq X_i\}).\] 
+	où $R_{Z_i}$ est le rang de $Z_i$ dans $X_1,...,X_n,Y_1,...,Y_n$ autrement dit 
+	\[R_{X_i}=Card(\{j \in \llbracket 1,m+n \rrbracket , Z_j\leq Z_i\}).\] 
 Notons que cette égalité transforme un problème d'analyse en un problème de dénombrement beaucoup plus simple. On rappelle la définition de l'intégrale par rapport à une fonction.
 \begin{definition}
-	Soient $f$ une fonction continue par morceaux de $\mathbb{R}$ dans $\mathbb{R}$, soit $g$ une fonction continue par morceaux on définit l'intégrale en appelant $x_{i,n}=i/n$
-	\[\int_{\mathbb{R}}f(x)\, dg(x)=lim_{n\to\infty}\sum_{i \in \mathbb{Z}}f(x_{i,n})\big( g\big(x_{i,n}\big)-g\big(x_{i,n-1})\big).\]
+	Soient $f:\mathbb{R} \to \mathbb{R}$ et $g:\mathbb{R} \to \mathbb{R}$ deux fonctions continues par morceaux on définit l'intégrale de $f$ par rapport à $g$ comme étant
+	\[\int_{\mathbb{R}}f(x)\, dg(x)=lim_{n\to\infty}\sum_{i \in \mathbb{Z}}f(x_{i,n})\big( g\big(x_{i,n}\big)-g\big(x_{i,n-1})\big),\hspace{4mm}x_{i,n}=i/n.\]
 \end{definition}
 
 \begin{proof}
@@ -761,6 +858,7 @@ La plupart des fonctions de projection de $S(\mathbb{R}^3)$ dans $\mathbb{R}^2$ 
 
 
 \begin{center}
+	\captionsetup{type=figure}
 	\includegraphics[scale=0.4]{lambert.jpg}
 	\captionof{figure}{Projection conique conforme de Lambert}
 \end{center}
@@ -797,6 +895,7 @@ On commence par étudier les courbes $\gamma$ dans $\mathcal{C}_1$ injectives, o
 \[\|\gamma\|_{\|\cdot\|_{S(\mathbb{R}^3)}}=\|\gamma\|_{\|\cdot\|_{S(\mathbb{R}^2)}}=\int_{0}^{1}|\gamma'(t)|dt.\]
 
 \begin{center}
+	\captionsetup{type=figure}
 	\includegraphics[scale=0.25]{images/geogebra_lambert.png}
 	\captionof{figure}{Figure explicative de la projection lambert conformale}
 \end{center}
@@ -815,9 +914,12 @@ Finalement, on peut voir que dans notre cas où $\theta=\pi 33/180$ et $\epsilon
 \[0.84\leq \frac{\|P(\gamma)\|_{\|\cdot\|_{\mathbb{R}^2}}}{\|\gamma\|_{\|\cdot\|_{S(\mathbb{R}^3)}}} \leq 1.\]
 
 \subsection{Indexe 3: Classification des populations de débit}
+\label{indexe3:cl_deb}
+
 On commence par rappeler ce que sont les données $\Delta Q$ et $\Delta R$, sont les différences entre les séries prédites et les séries de référence ($R$ correspond à la pluie et $Q$ au débit). Nous avons vu  que les schémas nous incitent à considérer deux classes de points (citer la partie correspondante).
 
 \begin{center}
+	\captionsetup{type=figure}
 	\includegraphics[scale=0.28]{images/deb_prec_dec1.png}
 	\captionof{figure}{tracé des $\Delta Q(t)$ en fonction des $\Delta R(t-1)$}
 \end{center}
@@ -883,6 +985,7 @@ où \[\mathcal{I^{-}}_{x_i}((u_1,v_1),(u_2,v_2))=\mathds{1}_{]-\infty,0]}(f_{x_i
 On peut appliquer l'algorithme d'Uzawa (voir par exemple \cite{boyd2004convex}) pour trouver le minimum sur  $(\mathcal{U}_1(\mathbb{R}^2)\times\mathbb{R}^2)^2$ en considérant le plongement de $F$ dans  $(\mathbb{R}^2\times\mathbb{R}^2)^2$ avec les contraintes $|u_i|=1$. Nous avons chercher ces droites avec la fonction de minimize de ``scipy.optimize'' voir \cite{scipy}. Les deux droites trouvées sont alors 
 
 \begin{center}
+	\captionsetup{type=figure}
 	\includegraphics[scale=0.28]{images/deb_prec_dec1_droites.png}
 	\captionof{figure}{tracé des $\Delta Q(t)$ en fonction des $\Delta R(t-1)$ avec droites de classification}
 \end{center}

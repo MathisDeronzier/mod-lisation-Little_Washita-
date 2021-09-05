@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2020.12.1)  1 SEP 2021 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2020.12.1)  5 SEP 2021 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -590,45 +590,10 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip52
 \algorithmicindent=\skip53
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/02/24 3.9q The Babel package
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
-Language: frenchb 2016/02/13 v3.1l French support from the babel system
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count128
-\U@D=\dimen121
-)
-\l@acadian = a dialect from \language\l@french 
-\l@canadien = a dialect from \language\l@french 
-\FBcolonskip=\skip54
-\FBthinskip=\skip55
-Package babel Info: Making : an active character on input line 342.
-Package babel Info: Making ; an active character on input line 343.
-Package babel Info: Making ! an active character on input line 344.
-Package babel Info: Making ? an active character on input line 345.
-\FBguillskip=\skip56
-\FBguill@level=\count129
-\FB@everypar=\toks30
-\FB@Mht=\dimen122
-\std@mcc=\count130
-\dec@mcc=\count131
-
-
-Package frenchb.ldf Warning: Please load the "listings" package
-(frenchb.ldf)                AFTER babel/frenchb; reported on input line 947.
-
-\listindentFB=\skip57
-\labelwidthFB=\skip58
-\leftmarginFB=\skip59
-\parindentFFN=\dimen123
-)) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks31
-\inpenc@posthook=\toks32
+\inpenc@prehook=\toks30
+\inpenc@posthook=\toks31
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2015/12/03 v1.1r UTF-8 support for inputenc
@@ -953,10 +918,10 @@ Package graphics Info: Driver file: pdftex.def on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count132
+\Gread@gobject=\count128
 ))
-\Gin@req@height=\dimen124
-\Gin@req@width=\dimen125
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
@@ -964,85 +929,83 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen126
-\captionmargin@=\dimen127
-\captionwidth=\dimen128
-\caption@tempdima=\dimen129
-\caption@indent=\dimen130
-\caption@parindent=\dimen131
-\caption@hangindent=\dimen132
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@tempdima=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
 )
-\c@ContinuedFloat=\count133
+\c@ContinuedFloat=\count129
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 )
-\c@theorem=\count134
-\c@conjecture=\count135
-\c@lemma=\count136
-\c@proposition=\count137
-\c@corollary=\count138
-\c@definition=\count139
-\c@example=\count140
-\c@note=\count141
- (./document.aux)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+\c@subfigure=\count130
+\c@subtable=\count131
+)
+\c@theorem=\count132
+\c@conjecture=\count133
+\c@lemma=\count134
+\c@proposition=\count135
+\c@corollary=\count136
+\c@definition=\count137
+\c@example=\count138
+\c@note=\count139
+
+(./document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-\c@lstlisting=\count142
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/mathx/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+\c@lstlisting=\count140
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count143
+\c@section@level=\count141
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
 
 (./document.out) (./document.out)
 \@outlinefile=\write3
 \openout3 = `document.out'.
 
-LaTeX Info: Redefining \degres on input line 62.
-LaTeX Info: Redefining \dots on input line 62.
-LaTeX Info: Redefining \up on input line 62.
-
-
-Package frenchb.ldf Warning: OT1 encoding should not be used for French.
-(frenchb.ldf)                Add \usepackage[T1]{fontenc} to the preamble
-(frenchb.ldf)                of your document, on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count144
-\scratchdimen=\dimen133
+\scratchcounter=\count142
+\scratchdimen=\dimen130
 \scratchbox=\box33
-\nofMPsegments=\count145
-\nofMParguments=\count146
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count147
-\MPscratchDim=\dimen134
-\MPnumerator=\count148
-\makeMPintoPDFobject=\count149
-\everyMPtoPDFconversion=\toks34
+\nofMPsegments=\count143
+\nofMParguments=\count144
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count145
+\MPscratchDim=\dimen131
+\MPnumerator=\count146
+\makeMPintoPDFobject=\count147
+\everyMPtoPDFconversion=\toks33
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1060,20 +1023,20 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 78.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 78.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+stmry on input line 78.
+LaTeX Font Info:    Try loading font information for U+stmry on input line 80.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-Underfull \hbox (badness 10000) in paragraph at lines 74--100
+Underfull \hbox (badness 10000) in paragraph at lines 82--102
 
  []
 
@@ -1084,76 +1047,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--100
 \openout4 = `document.toc'.
 
 
-[2]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 152.
+[2] [3]
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 154.
 
  (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [3]
-[4] [5] [6] [7] [8] [9]
-<./images/bassin_versant.png, id=332, 1412.27625pt x 810.02625pt>
+)
+Overfull \hbox (7.85822pt too wide) in paragraph at lines 170--171
+[]\OT1/cmr/m/n/10.95 La probl^^Sematique ^^Ra laque-lle nous cher-chons de r^^S
+epondre est la suiv-ante: con-nais-sant $\OML/cmm/m/it/10.95 X[]; X[]; :::; X[]
+$
+ []
+
+[4]
+Overfull \hbox (8.66623pt too wide) in paragraph at lines 214--215
+\OT1/cmr/m/n/10.95 L'algorithme de \OT1/cmr/bx/n/10.95 Cu-mu-la-tive Dis-tri-bu
+-tion Func-tion trans-fer \OT1/cmr/m/n/10.95 (CDFt) vise ^^Ra rem^^Sedier au pr
+obl^^Reme
+ []
+
+[5] [6] [7] [8] [9] [10]
+Overfull \hbox (6.58136pt too wide) in paragraph at lines 383--384
+\OT1/cmr/m/n/10.95 Cette sec-tion reprend bri^^Revement les prin-ci-paux m^^Sec
+anismes en-trant en compte dans les mod^^Selisations
+ []
+
+<./images/bassin_versant.png, id=360, 1412.27625pt x 810.02625pt>
 File: ./images/bassin_versant.png Graphic file (type png)
 
 <use ./images/bassin_versant.png>
-Package pdftex.def Info: ./images/bassin_versant.png used on input line 389.
+Package pdftex.def Info: ./images/bassin_versant.png used on input line 393.
 (pdftex.def)             Requested size: 211.83229pt x 121.49869pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 390.
-See the caption package documentation for explanation.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
-(Font)              using `OT1/cmr/bx/n' instead on input line 390.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
-
- []
-
-
-Package natbib Warning: Citation `de1986quantitative' on page 10 undefined on i
-nput line 397.
-
-
-Overfull \hbox (5.75911pt too wide) in paragraph at lines 397--398
-[]\OT1/cmr/m/n/10 La no-tion d'^^Secoulement de sub-sur-face se rap-porte ^^Ra 
-l'^^Secoulement de l'eau dans les pores du sol. L'^^Secoulement
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 399--400
 
  []
 
-<./images/ruissellement.png, id=337, 1366.10374pt x 831.105pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--404
+
+ []
+
+[11 <./images/bassin_versant.png>]
+<./images/ruissellement.png, id=378, 1366.10374pt x 831.105pt>
 File: ./images/ruissellement.png Graphic file (type png)
 
 <use ./images/ruissellement.png>
-Package pdftex.def Info: ./images/ruissellement.png used on input line 404.
+Package pdftex.def Info: ./images/ruissellement.png used on input line 409.
 (pdftex.def)             Requested size: 273.21591pt x 166.21805pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 405.
-See the caption package documentation for explanation.
-
-[10 <./images/bassin_versant.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
@@ -1175,496 +1116,519 @@ Underfull \hbox (badness 10000) in paragraph at lines 422--423
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 
  []
 
-[11 <./images/ruissellement.png>] [12]
-Overfull \hbox (0.44696pt too wide) in paragraph at lines 498--499
-[]\OT1/cmr/m/n/10 Plusieurs m^^Sethodes num^^Seriques per-mettent de trou-ver d
-es so-lu-tions ^^Ra ce probl^^Remes no-tam-ment la m^^Sethode
+[12 <./images/ruissellement.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
+
  []
 
 
-LaTeX Warning: Reference `eq-cons-simp' on page 13 undefined on input line 506.
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
 
-
-[13]
-Overfull \hbox (8.27919pt too wide) in paragraph at lines 556--557
-[]\OT1/cmr/m/n/10 Les donn^^Sees NARR (North Ame-ri-can Re-gio-nal Rea-na-ly-si
-s) couvrent l'enti^^Reret^^Se du conti-nent nord am^^Sericain.
  []
 
-[14] <./images/grid_prop.png, id=397, 1208.515pt x 676.5275pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+[13] [14] [15] [16] <./images/grid_prop.png, id=437, 1208.515pt x 676.5275pt>
 File: ./images/grid_prop.png Graphic file (type png)
 
 <use ./images/grid_prop.png>
-Package pdftex.def Info: ./images/grid_prop.png used on input line 565.
+Package pdftex.def Info: ./images/grid_prop.png used on input line 582.
 (pdftex.def)             Requested size: 483.39743pt x 270.6062pt.
 
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 566.
-See the caption package documentation for explanation.
-
-
-Overfull \hbox (13.92697pt too wide) in paragraph at lines 565--566
+Overfull \hbox (13.92697pt too wide) in paragraph at lines 582--583
  [] 
  []
 
-<images/mean_precip.png, id=401, 462.528pt x 346.896pt>
+<images/mean_precip.png, id=439, 462.528pt x 346.896pt>
 File: images/mean_precip.png Graphic file (type png)
 
 <use images/mean_precip.png>
-Package pdftex.def Info: images/mean_precip.png used on input line 576.
+Package pdftex.def Info: images/mean_precip.png used on input line 595.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (5.91962pt too wide) in paragraph at lines 576--577
+Overfull \hbox (5.91962pt too wide) in paragraph at lines 595--596
  [][] 
  []
 
-<images/mean_evap.png, id=402, 462.528pt x 346.896pt>
+<images/mean_evap.png, id=440, 462.528pt x 346.896pt>
 File: images/mean_evap.png Graphic file (type png)
 
 <use images/mean_evap.png>
-Package pdftex.def Info: images/mean_evap.png used on input line 579.
+Package pdftex.def Info: images/mean_evap.png used on input line 598.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (5.91962pt too wide) in paragraph at lines 579--580
+Overfull \hbox (5.91962pt too wide) in paragraph at lines 598--599
  [][] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15 <./images/grid_prop.png>]
-Overfull \hbox (34.84454pt too wide) detected at line 593
-[][] \U/matha/m/n/10 ^^P [] [] [] []p\OMS/cmsy/m/n/10 T[]\U/matha/m/n/10 q\OML/
-cmm/m/it/10 ;  [][] \U/matha/m/n/10 ^^P [] [] [] []p\OMS/cmsy/m/n/10 T[]\U/math
-a/m/n/10 q\OML/cmm/m/it/10 :
- []
-
-<images/kernel_precip_m1.png, id=410, 462.528pt x 346.896pt>
+[17 <./images/grid_prop.png>]
+<images/kernel_precip_m1.png, id=448, 462.528pt x 346.896pt>
 File: images/kernel_precip_m1.png Graphic file (type png)
 
 <use images/kernel_precip_m1.png>
-Package pdftex.def Info: images/kernel_precip_m1.png used on input line 603.
+Package pdftex.def Info: images/kernel_precip_m1.png used on input line 624.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m2.png, id=411, 462.528pt x 346.896pt>
+<images/kernel_precip_m2.png, id=449, 462.528pt x 346.896pt>
 File: images/kernel_precip_m2.png Graphic file (type png)
 
 <use images/kernel_precip_m2.png>
-Package pdftex.def Info: images/kernel_precip_m2.png used on input line 603.
+Package pdftex.def Info: images/kernel_precip_m2.png used on input line 624.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m3.png, id=412, 462.528pt x 346.896pt>
+<images/kernel_precip_m3.png, id=450, 462.528pt x 346.896pt>
 File: images/kernel_precip_m3.png Graphic file (type png)
 
 <use images/kernel_precip_m3.png>
-Package pdftex.def Info: images/kernel_precip_m3.png used on input line 603.
+Package pdftex.def Info: images/kernel_precip_m3.png used on input line 624.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m4.png, id=413, 462.528pt x 346.896pt>
+<images/kernel_precip_m4.png, id=451, 462.528pt x 346.896pt>
 File: images/kernel_precip_m4.png Graphic file (type png)
 
 <use images/kernel_precip_m4.png>
-Package pdftex.def Info: images/kernel_precip_m4.png used on input line 604.
+Package pdftex.def Info: images/kernel_precip_m4.png used on input line 625.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m5.png, id=414, 462.528pt x 346.896pt>
+<images/kernel_precip_m5.png, id=452, 462.528pt x 346.896pt>
 File: images/kernel_precip_m5.png Graphic file (type png)
 
 <use images/kernel_precip_m5.png>
-Package pdftex.def Info: images/kernel_precip_m5.png used on input line 604.
+Package pdftex.def Info: images/kernel_precip_m5.png used on input line 625.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m6.png, id=415, 462.528pt x 346.896pt>
+<images/kernel_precip_m6.png, id=453, 462.528pt x 346.896pt>
 File: images/kernel_precip_m6.png Graphic file (type png)
 
 <use images/kernel_precip_m6.png>
-Package pdftex.def Info: images/kernel_precip_m6.png used on input line 604.
+Package pdftex.def Info: images/kernel_precip_m6.png used on input line 625.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m7.png, id=416, 462.528pt x 346.896pt>
+Overfull \hbox (55.62833pt too wide) in paragraph at lines 622--627
+[]  [] 
+ []
+
+[18 <./images/mean_precip.png> <./images/mean_evap.png>]
+<images/kernel_precip_m7.png, id=462, 462.528pt x 346.896pt>
 File: images/kernel_precip_m7.png Graphic file (type png)
 
 <use images/kernel_precip_m7.png>
-Package pdftex.def Info: images/kernel_precip_m7.png used on input line 605.
+Package pdftex.def Info: images/kernel_precip_m7.png used on input line 630.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m8.png, id=417, 462.528pt x 346.896pt>
+<images/kernel_precip_m8.png, id=463, 462.528pt x 346.896pt>
 File: images/kernel_precip_m8.png Graphic file (type png)
 
 <use images/kernel_precip_m8.png>
-Package pdftex.def Info: images/kernel_precip_m8.png used on input line 605.
+Package pdftex.def Info: images/kernel_precip_m8.png used on input line 630.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m9.png, id=418, 462.528pt x 346.896pt>
+<images/kernel_precip_m9.png, id=464, 462.528pt x 346.896pt>
 File: images/kernel_precip_m9.png Graphic file (type png)
 
 <use images/kernel_precip_m9.png>
-Package pdftex.def Info: images/kernel_precip_m9.png used on input line 605.
+Package pdftex.def Info: images/kernel_precip_m9.png used on input line 630.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m10.png, id=419, 462.528pt x 346.896pt>
+<images/kernel_precip_m10.png, id=465, 462.528pt x 346.896pt>
 File: images/kernel_precip_m10.png Graphic file (type png)
 
 <use images/kernel_precip_m10.png>
-Package pdftex.def Info: images/kernel_precip_m10.png used on input line 606.
+Package pdftex.def Info: images/kernel_precip_m10.png used on input line 631.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m11.png, id=420, 462.528pt x 346.896pt>
+<images/kernel_precip_m11.png, id=466, 462.528pt x 346.896pt>
 File: images/kernel_precip_m11.png Graphic file (type png)
 
 <use images/kernel_precip_m11.png>
-Package pdftex.def Info: images/kernel_precip_m11.png used on input line 606.
+Package pdftex.def Info: images/kernel_precip_m11.png used on input line 631.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m12.png, id=421, 462.528pt x 346.896pt>
+<images/kernel_precip_m12.png, id=467, 462.528pt x 346.896pt>
 File: images/kernel_precip_m12.png Graphic file (type png)
 
 <use images/kernel_precip_m12.png>
-Package pdftex.def Info: images/kernel_precip_m12.png used on input line 606.
+Package pdftex.def Info: images/kernel_precip_m12.png used on input line 631.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (53.4172pt too wide) in paragraph at lines 601--608
+Overfull \hbox (55.62833pt too wide) in paragraph at lines 628--633
 []  [] 
  []
 
-[16 <./images/mean_precip.png> <./images/mean_evap.png>]
-<images/kernel_evap_m1.png, id=430, 462.528pt x 346.896pt>
-File: images/kernel_evap_m1.png Graphic file (type png)
-
-<use images/kernel_evap_m1.png>
-Package pdftex.def Info: images/kernel_evap_m1.png used on input line 614.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-File: images/kernel_precip_m2.png Graphic file (type png)
- <use images/kernel_precip_m2.png>
-Package pdftex.def Info: images/kernel_precip_m2.png used on input line 614.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m3.png, id=431, 462.528pt x 346.896pt>
-File: images/kernel_evap_m3.png Graphic file (type png)
-
-<use images/kernel_evap_m3.png>
-Package pdftex.def Info: images/kernel_evap_m3.png used on input line 614.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m4.png, id=432, 462.528pt x 346.896pt>
-File: images/kernel_evap_m4.png Graphic file (type png)
-
-<use images/kernel_evap_m4.png>
-Package pdftex.def Info: images/kernel_evap_m4.png used on input line 615.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-File: images/kernel_precip_m5.png Graphic file (type png)
- <use images/kernel_precip_m5.png>
-Package pdftex.def Info: images/kernel_precip_m5.png used on input line 615.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m6.png, id=433, 462.528pt x 346.896pt>
-File: images/kernel_evap_m6.png Graphic file (type png)
-
-<use images/kernel_evap_m6.png>
-Package pdftex.def Info: images/kernel_evap_m6.png used on input line 615.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m7.png, id=434, 462.528pt x 346.896pt>
-File: images/kernel_evap_m7.png Graphic file (type png)
-
-<use images/kernel_evap_m7.png>
-Package pdftex.def Info: images/kernel_evap_m7.png used on input line 616.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-File: images/kernel_precip_m8.png Graphic file (type png)
- <use images/kernel_precip_m8.png>
-Package pdftex.def Info: images/kernel_precip_m8.png used on input line 616.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m9.png, id=435, 462.528pt x 346.896pt>
-File: images/kernel_evap_m9.png Graphic file (type png)
-
-<use images/kernel_evap_m9.png>
-Package pdftex.def Info: images/kernel_evap_m9.png used on input line 616.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m10.png, id=436, 462.528pt x 346.896pt>
-File: images/kernel_evap_m10.png Graphic file (type png)
-
-<use images/kernel_evap_m10.png>
-Package pdftex.def Info: images/kernel_evap_m10.png used on input line 617.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-File: images/kernel_precip_m11.png Graphic file (type png)
- <use images/kernel_precip_m11.png>
-Package pdftex.def Info: images/kernel_precip_m11.png used on input line 617.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m12.png, id=437, 462.528pt x 346.896pt>
-File: images/kernel_evap_m12.png Graphic file (type png)
-
-<use images/kernel_evap_m12.png>
-Package pdftex.def Info: images/kernel_evap_m12.png used on input line 617.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-Overfull \hbox (53.4172pt too wide) in paragraph at lines 612--619
-[]  [] 
- []
-
-[17 <./images/kernel_precip_m1.png> <./images/kernel_precip_m2.png> <./images/k
+[19 <./images/kernel_precip_m1.png> <./images/kernel_precip_m2.png> <./images/k
 ernel_precip_m3.png> <./images/kernel_precip_m4.png> <./images/kernel_precip_m5
 .png> <./images/kernel_precip_m6.png> <./images/kernel_precip_m7.png> <./images
 /kernel_precip_m8.png> <./images/kernel_precip_m9.png> <./images/kernel_precip_
 m10.png> <./images/kernel_precip_m11.png> <./images/kernel_precip_m12.png>]
-[18 <./images/kernel_evap_m1.png> <./images/kernel_evap_m3.png> <./images/kerne
-l_evap_m4.png> <./images/kernel_evap_m6.png> <./images/kernel_evap_m7.png> <./i
-mages/kernel_evap_m9.png> <./images/kernel_evap_m10.png> <./images/kernel_evap_
-m12.png>] <images/boxplot_precip.png, id=468, 602.25pt x 371.3875pt>
+<images/kernel_evap_m1.png, id=485, 462.528pt x 346.896pt>
+File: images/kernel_evap_m1.png Graphic file (type png)
+
+<use images/kernel_evap_m1.png>
+Package pdftex.def Info: images/kernel_evap_m1.png used on input line 639.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m2.png, id=486, 462.528pt x 346.896pt>
+File: images/kernel_evap_m2.png Graphic file (type png)
+
+<use images/kernel_evap_m2.png>
+Package pdftex.def Info: images/kernel_evap_m2.png used on input line 639.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m3.png, id=487, 462.528pt x 346.896pt>
+File: images/kernel_evap_m3.png Graphic file (type png)
+
+<use images/kernel_evap_m3.png>
+Package pdftex.def Info: images/kernel_evap_m3.png used on input line 639.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m4.png, id=488, 462.528pt x 346.896pt>
+File: images/kernel_evap_m4.png Graphic file (type png)
+
+<use images/kernel_evap_m4.png>
+Package pdftex.def Info: images/kernel_evap_m4.png used on input line 640.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m5.png, id=489, 462.528pt x 346.896pt>
+File: images/kernel_evap_m5.png Graphic file (type png)
+
+<use images/kernel_evap_m5.png>
+Package pdftex.def Info: images/kernel_evap_m5.png used on input line 640.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m6.png, id=490, 462.528pt x 346.896pt>
+File: images/kernel_evap_m6.png Graphic file (type png)
+
+<use images/kernel_evap_m6.png>
+Package pdftex.def Info: images/kernel_evap_m6.png used on input line 640.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (55.62833pt too wide) in paragraph at lines 637--642
+[]  [] 
+ []
+
+<images/kernel_evap_m7.png, id=491, 462.528pt x 346.896pt>
+File: images/kernel_evap_m7.png Graphic file (type png)
+
+<use images/kernel_evap_m7.png>
+Package pdftex.def Info: images/kernel_evap_m7.png used on input line 645.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m8.png, id=492, 462.528pt x 346.896pt>
+File: images/kernel_evap_m8.png Graphic file (type png)
+
+<use images/kernel_evap_m8.png>
+Package pdftex.def Info: images/kernel_evap_m8.png used on input line 645.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m9.png, id=493, 462.528pt x 346.896pt>
+File: images/kernel_evap_m9.png Graphic file (type png)
+
+<use images/kernel_evap_m9.png>
+Package pdftex.def Info: images/kernel_evap_m9.png used on input line 645.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m10.png, id=494, 462.528pt x 346.896pt>
+File: images/kernel_evap_m10.png Graphic file (type png)
+
+<use images/kernel_evap_m10.png>
+Package pdftex.def Info: images/kernel_evap_m10.png used on input line 646.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m11.png, id=495, 462.528pt x 346.896pt>
+File: images/kernel_evap_m11.png Graphic file (type png)
+
+<use images/kernel_evap_m11.png>
+Package pdftex.def Info: images/kernel_evap_m11.png used on input line 646.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m12.png, id=496, 462.528pt x 346.896pt>
+File: images/kernel_evap_m12.png Graphic file (type png)
+
+<use images/kernel_evap_m12.png>
+Package pdftex.def Info: images/kernel_evap_m12.png used on input line 646.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (55.62833pt too wide) in paragraph at lines 643--648
+[]  [] 
+ []
+
+[20 <./images/kernel_evap_m1.png> <./images/kernel_evap_m2.png> <./images/kerne
+l_evap_m3.png> <./images/kernel_evap_m4.png> <./images/kernel_evap_m5.png> <./i
+mages/kernel_evap_m6.png> <./images/kernel_evap_m7.png> <./images/kernel_evap_m
+8.png> <./images/kernel_evap_m9.png> <./images/kernel_evap_m10.png> <./images/k
+ernel_evap_m11.png> <./images/kernel_evap_m12.png>]
+<images/boxplot_precip.png, id=515, 602.25pt x 371.3875pt>
 File: images/boxplot_precip.png Graphic file (type png)
 
 <use images/boxplot_precip.png>
-Package pdftex.def Info: images/boxplot_precip.png used on input line 655.
+Package pdftex.def Info: images/boxplot_precip.png used on input line 681.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/boxplot_evap.png, id=469, 602.25pt x 371.3875pt>
+<images/boxplot_evap.png, id=516, 602.25pt x 371.3875pt>
 File: images/boxplot_evap.png Graphic file (type png)
 
 <use images/boxplot_evap.png>
-Package pdftex.def Info: images/boxplot_evap.png used on input line 655.
+Package pdftex.def Info: images/boxplot_evap.png used on input line 681.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (25.09045pt too wide) in paragraph at lines 653--657
+Overfull \hbox (21.6111pt too wide) in paragraph at lines 679--683
 []  [] 
  []
 
-[19 <./images/boxplot_precip.png> <./images/boxplot_evap.png>]
-<images/pr_1_ds.png, id=480, 602.25pt x 371.3875pt>
+[21]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 686.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 686.
+
+<images/pr_1_ds.png, id=525, 602.25pt x 371.3875pt>
 File: images/pr_1_ds.png Graphic file (type png)
  <use images/pr_1_ds.png>
-Package pdftex.def Info: images/pr_1_ds.png used on input line 666.
+Package pdftex.def Info: images/pr_1_ds.png used on input line 702.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/pr_1_dg.png, id=481, 602.25pt x 371.3875pt>
+<images/pr_1_dg.png, id=526, 602.25pt x 371.3875pt>
 File: images/pr_1_dg.png Graphic file (type png)
  <use images/pr_1_dg.png>
-Package pdftex.def Info: images/pr_1_dg.png used on input line 666.
+Package pdftex.def Info: images/pr_1_dg.png used on input line 702.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/pr_2_ds.png, id=482, 602.25pt x 371.3875pt>
+<images/pr_2_ds.png, id=527, 602.25pt x 371.3875pt>
 File: images/pr_2_ds.png Graphic file (type png)
  <use images/pr_2_ds.png>
-Package pdftex.def Info: images/pr_2_ds.png used on input line 667.
+Package pdftex.def Info: images/pr_2_ds.png used on input line 703.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/pr_2_dg.png, id=483, 602.25pt x 371.3875pt>
+<images/pr_2_dg.png, id=528, 602.25pt x 371.3875pt>
 File: images/pr_2_dg.png Graphic file (type png)
  <use images/pr_2_dg.png>
-Package pdftex.def Info: images/pr_2_dg.png used on input line 667.
+Package pdftex.def Info: images/pr_2_dg.png used on input line 703.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (25.09045pt too wide) in paragraph at lines 664--669
+Overfull \hbox (27.30157pt too wide) in paragraph at lines 700--705
 []  [] 
  []
 
-<images/pr_3_ds.png, id=484, 602.25pt x 371.3875pt>
+[22 <./images/boxplot_precip.png> <./images/boxplot_evap.png>]
+<images/pr_3_ds.png, id=535, 602.25pt x 371.3875pt>
 File: images/pr_3_ds.png Graphic file (type png)
  <use images/pr_3_ds.png>
-Package pdftex.def Info: images/pr_3_ds.png used on input line 672.
+Package pdftex.def Info: images/pr_3_ds.png used on input line 708.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/pr_3_dg.png, id=485, 602.25pt x 371.3875pt>
+<images/pr_3_dg.png, id=536, 602.25pt x 371.3875pt>
 File: images/pr_3_dg.png Graphic file (type png)
  <use images/pr_3_dg.png>
-Package pdftex.def Info: images/pr_3_dg.png used on input line 672.
+Package pdftex.def Info: images/pr_3_dg.png used on input line 708.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/pr_4_ds.png, id=486, 602.25pt x 371.3875pt>
+<images/pr_4_ds.png, id=537, 602.25pt x 371.3875pt>
 File: images/pr_4_ds.png Graphic file (type png)
  <use images/pr_4_ds.png>
-Package pdftex.def Info: images/pr_4_ds.png used on input line 673.
+Package pdftex.def Info: images/pr_4_ds.png used on input line 709.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/pr_4_dg.png, id=487, 602.25pt x 371.3875pt>
+<images/pr_4_dg.png, id=538, 602.25pt x 371.3875pt>
 File: images/pr_4_dg.png Graphic file (type png)
  <use images/pr_4_dg.png>
-Package pdftex.def Info: images/pr_4_dg.png used on input line 673.
+Package pdftex.def Info: images/pr_4_dg.png used on input line 709.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (25.09045pt too wide) in paragraph at lines 670--675
+Overfull \hbox (27.30157pt too wide) in paragraph at lines 706--711
 []  [] 
  []
 
-[20 <./images/pr_1_ds.png> <./images/pr_1_dg.png> <./images/pr_2_ds.png> <./ima
-ges/pr_2_dg.png>]
-
-LaTeX Warning: Reference `spat-NARR' on page 21 undefined on input line 677.
-
-<images/RMSE_precip.png, id=497, 602.25pt x 371.3875pt>
+[23 <./images/pr_1_ds.png> <./images/pr_1_dg.png> <./images/pr_2_ds.png> <./ima
+ges/pr_2_dg.png> <./images/pr_3_ds.png> <./images/pr_3_dg.png> <./images/pr_4_d
+s.png> <./images/pr_4_dg.png>]
+<images/RMSE_precip.png, id=554, 602.25pt x 371.3875pt>
 File: images/RMSE_precip.png Graphic file (type png)
 
 <use images/RMSE_precip.png>
-Package pdftex.def Info: images/RMSE_precip.png used on input line 687.
+Package pdftex.def Info: images/RMSE_precip.png used on input line 726.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/RMSE_evap.png, id=498, 602.25pt x 371.3875pt>
+<images/RMSE_evap.png, id=555, 602.25pt x 371.3875pt>
 File: images/RMSE_evap.png Graphic file (type png)
 
 <use images/RMSE_evap.png>
-Package pdftex.def Info: images/RMSE_evap.png used on input line 687.
+Package pdftex.def Info: images/RMSE_evap.png used on input line 726.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (25.09045pt too wide) in paragraph at lines 685--689
+Overfull \hbox (27.30157pt too wide) in paragraph at lines 724--728
 []  [] 
  []
 
-[21 <./images/pr_3_ds.png> <./images/pr_3_dg.png> <./images/pr_4_ds.png> <./ima
-ges/pr_4_dg.png>] <images/Dist_CVM_precip.png, id=507, 602.25pt x 371.3875pt>
+<images/Dist_CVM_precip.png, id=558, 602.25pt x 371.3875pt>
 File: images/Dist_CVM_precip.png Graphic file (type png)
 
 <use images/Dist_CVM_precip.png>
-Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 696.
+Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 735.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-<images/Dist_CVM_evap.png, id=508, 602.25pt x 371.3875pt>
+<images/Dist_CVM_evap.png, id=559, 602.25pt x 371.3875pt>
 File: images/Dist_CVM_evap.png Graphic file (type png)
 
 <use images/Dist_CVM_evap.png>
-Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 696.
+Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 735.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (25.09045pt too wide) in paragraph at lines 694--698
+Overfull \hbox (27.30157pt too wide) in paragraph at lines 733--737
 []  [] 
  []
 
+[24 <./images/RMSE_precip.png> <./images/RMSE_evap.png> <./images/Dist_CVM_prec
+ip.png> <./images/Dist_CVM_evap.png>]
 File: images/Dist_CVM_precip.png Graphic file (type png)
-<use images/Dist_CVM_precip.png>
-Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 706.
+ <use images/Dist_CVM_precip.png>
+Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 745.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 File: images/Dist_CVM_evap.png Graphic file (type png)
- <use images/Dist_CVM_evap.png>
-Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 706.
+
+<use images/Dist_CVM_evap.png>
+Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 745.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (25.09045pt too wide) in paragraph at lines 704--708
+Overfull \hbox (27.30157pt too wide) in paragraph at lines 743--747
 []  [] 
  []
 
-[22 <./images/RMSE_precip.png> <./images/RMSE_evap.png> <./images/Dist_CVM_prec
-ip.png> <./images/Dist_CVM_evap.png>] [23]
-<./images/lambert.jpg, id=527, 361.35pt x 301.8778pt>
+<images/little_washita3D.png, id=569, 1752.5475pt x 928.46875pt>
+File: images/little_washita3D.png Graphic file (type png)
+
+<use images/little_washita3D.png>
+Package pdftex.def Info: images/little_washita3D.png used on input line 759.
+(pdftex.def)             Requested size: 350.5033pt x 185.69046pt.
+ [25] [26 <./images/little_washita3D.png>]
+<./images/deb_prec_dec1.png, id=585, 1633.10126pt x 856.19875pt>
+File: ./images/deb_prec_dec1.png Graphic file (type png)
+
+<use ./images/deb_prec_dec1.png>
+Package pdftex.def Info: ./images/deb_prec_dec1.png used on input line 783.
+(pdftex.def)             Requested size: 408.27432pt x 214.04916pt.
+
+<./images/classification_deb_pr.png, id=587, 1387.584pt x 677.8926pt>
+File: ./images/classification_deb_pr.png Graphic file (type png)
+
+<use ./images/classification_deb_pr.png>
+Package pdftex.def Info: ./images/classification_deb_pr.png used on input line 
+791.
+(pdftex.def)             Requested size: 457.90413pt x 223.70525pt.
+ [27 <./images/deb_prec_dec1.png>]
+<./images/classification_deb_prr.png, id=596, 1387.584pt x 677.8926pt>
+File: ./images/classification_deb_prr.png Graphic file (type png)
+
+<use ./images/classification_deb_prr.png>
+Package pdftex.def Info: ./images/classification_deb_prr.png used on input line
+ 801.
+(pdftex.def)             Requested size: 457.90413pt x 223.70525pt.
+ [28 <./images/classification_deb_pr.png> <./images/classification_deb_prr.png>
+]
+Overfull \hbox (23.46872pt too wide) detected at line 815
+[]\OML/cmm/m/it/10.95 C[] \U/matha/m/n/10.95 ^^P [] [][] []\OMS/cmsy/m/n/10.95 
+F[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 x\U/matha/m/n/10.95 q ^^A \OMS/cmsy/
+m/n/10.95 G[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 x\U/matha/m/n/10.95 q[][]\
+OT1/cmr/m/n/10.95 d\OMS/cmsy/m/n/10.95 H[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.
+95 x\U/matha/m/n/10.95 q ^^P [][]\OML/cmm/m/it/10.95 n []\U/matha/m/n/10.95 p\O
+ML/cmm/m/it/10.95 R[] \U/matha/m/n/10.95 ^^A \OML/cmm/m/it/10.95 i\U/matha/m/n/
+10.95 q[] ^^@ \OML/cmm/m/it/10.95 m []\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 R
+[] \U/matha/m/n/10.95 ^^A \OML/cmm/m/it/10.95 i\U/matha/m/n/10.95 q[][] ^^A []\
+OML/cmm/m/it/10.95 :
+ []
+
+[29] <./images/lambert.jpg, id=615, 361.35pt x 301.8778pt>
 File: ./images/lambert.jpg Graphic file (type jpg)
 
 <use ./images/lambert.jpg>
-Package pdftex.def Info: ./images/lambert.jpg used on input line 764.
+Package pdftex.def Info: ./images/lambert.jpg used on input line 862.
 (pdftex.def)             Requested size: 144.53743pt x 120.74898pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 765.
-See the caption package documentation for explanation.
-
-[24 <./images/lambert.jpg>]
-<images/geogebra_lambert.png, id=534, 888.31876pt x 852.18375pt>
+ [30]
+<images/geogebra_lambert.png, id=621, 888.31876pt x 852.18375pt>
 File: images/geogebra_lambert.png Graphic file (type png)
 
 <use images/geogebra_lambert.png>
-Package pdftex.def Info: images/geogebra_lambert.png used on input line 800.
+Package pdftex.def Info: images/geogebra_lambert.png used on input line 899.
 (pdftex.def)             Requested size: 222.07915pt x 213.04541pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 801.
-See the caption package documentation for explanation.
-
-[25 <./images/geogebra_lambert.png>]
-<images/deb_prec_dec1.png, id=544, 1633.10126pt x 856.19875pt>
+ [31 <./images/lambert.jpg>] [32 <./images/geogebra_lambert.png>]
+<images/deb_prec_dec1.png, id=638, 1633.10126pt x 856.19875pt>
 File: images/deb_prec_dec1.png Graphic file (type png)
 
 <use images/deb_prec_dec1.png>
-Package pdftex.def Info: images/deb_prec_dec1.png used on input line 821.
+Package pdftex.def Info: images/deb_prec_dec1.png used on input line 923.
 (pdftex.def)             Requested size: 457.26524pt x 239.73401pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 822.
-See the caption package documentation for explanation.
-
-[26 <./images/deb_prec_dec1.png>] [27]
-<images/deb_prec_dec1_droites.png, id=568, 1627.07875pt x 847.165pt>
+ [33 <./images/deb_prec_dec1.png>]
+<images/deb_prec_dec1_droites.png, id=649, 1627.07875pt x 847.165pt>
 File: images/deb_prec_dec1_droites.png Graphic file (type png)
 
 <use images/deb_prec_dec1_droites.png>
-Package pdftex.def Info: images/deb_prec_dec1_droites.png used on input line 88
-6.
+Package pdftex.def Info: images/deb_prec_dec1_droites.png used on input line 98
+9.
 (pdftex.def)             Requested size: 455.57895pt x 237.20457pt.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 887.
-See the caption package documentation for explanation.
-
-[28 <./images/deb_prec_dec1_droites.png>] (./document.bbl [29])
-
-Package natbib Warning: There were undefined citations.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 895.
-[30]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 895.
+ [34] [35 <./images/deb_prec_dec1_droites.png>] (./document.bbl [36])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 998.
+ [37]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 998.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 895.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 895.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 998.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 998.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: EC429B6397729D925D4335FE65F739C0;3180.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 895.
+(rerunfilecheck)             Checksum: E98502988E2E50D8B52DB50CE67DA5B5;3795.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 998.
  ) 
 Here is how much of TeX's memory you used:
- 11363 strings out of 493029
- 164889 string characters out of 6136234
- 262133 words of memory out of 5000000
- 14528 multiletter control sequences out of 15000+600000
- 23449 words of font info for 87 fonts, out of 8000000 for 9000
+ 10485 strings out of 493029
+ 153034 string characters out of 6136234
+ 239478 words of memory out of 5000000
+ 13637 multiletter control sequences out of 15000+600000
+ 26345 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,17n,39p,1360b,566s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,17n,42p,1360b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublest
-roke/dsrom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type
-1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/m
-atha5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha8.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha9.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm5.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/stmaryrd/stmary7.pfb>
-Output written on document.pdf (30 pages, 2740214 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/d
+oublestroke/dsrom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/matha
+bx-type1/matha10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-
+type1/matha6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type
+1/matha7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/ma
+tha8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/matha9
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathabx-type1/mathx10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary8.pfb>
+Output written on document.pdf (37 pages, 3876620 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
- 571 compressed objects within 6 object streams
- 150 named destinations out of 1000 (max. 500000)
- 488 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 814 PDF objects out of 1000 (max. 8388607)
+ 641 compressed objects within 7 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 568 words of extra memory for PDF output out of 10000 (max. 10000000)
 
