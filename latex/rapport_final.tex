@@ -1,0 +1,128 @@
+\documentclass[a4paper,11pt]{article}
+
+%Les packages pour écrire des math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathabx}
+\usepackage{dsfont} %Fonction caractéristique
+\usepackage{stmaryrd}
+
+
+\usepackage{listings}
+\usepackage[authoryear]{natbib}
+
+
+\usepackage{hyperref}
+\usepackage{url}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%\usepackage[francais]{babel}	
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+%\usepackage{pst-solides3d}
+\graphicspath{ {./images/} }
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+
+
+\textwidth16cm
+\oddsidemargin-0.55cm
+\textheight21.5cm
+\topmargin-1cm
+\pagestyle{plain}
+
+
+\renewcommand {\algorithmicrequire } {\textbf{\textsc{Entrée(s):} } }
+\renewcommand {\algorithmicensure } {\textbf{\textsc{Sortie:} } }
+\renewcommand {\algorithmicwhile } {\textbf{Tant que} }
+\renewcommand {\algorithmicdo } {\textbf{faire} }
+\renewcommand {\algorithmicendwhile } {\textbf{fin du Tant que} }
+\renewcommand {\algorithmicif } {\textbf{Si} }
+\renewcommand {\algorithmicfor } {\textbf{Pour} }
+\renewcommand {\algorithmicendfor } {\textbf{fin du Pour} }
+\renewcommand {\algorithmicthen } {\textbf{alors} }
+\renewcommand {\algorithmicendif } {\textbf{fin du Si} }
+\renewcommand {\algorithmicelse } {\textbf{Sinon} }
+\renewcommand {\algorithmicreturn } {\textbf{Renvoyer} }
+
+\newtheorem{theorem}{Théorème}[section]
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{lemma}{Lemme}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollaire}
+\newtheorem{definition}{Définition}
+\newtheorem{example}{Exemple}
+\newtheorem{note}{Note}
+
+
+
+\begin{document}
+	\begin{center}
+			\includegraphics[scale=0.5]{images/LSCE.jpg}
+	\end{center}
+	\hypersetup{pdfborder=0 0 0}
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+	\begin{center}
+		\textsc{\LARGE Laboratoire des Sciences du Climat} \\[0.3cm]
+		\textsc{\LARGE et de l'Environnement}\\[1.5cm] 
+		\HRule \\[0.5cm]
+		{\huge \bfseries Changement d’échelles dans les projections climatiques et leurs impacts hydrologiques: Cas des grandes plaines américaines}\\[0.4cm] 
+		\HRule \\[1.5cm]
+	\end{center}
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \Large
+			\emph{Auteur}\\
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright} \Large
+			\emph{Maîtres de stage} \\
+		\end{flushright}
+	\end{minipage}\\[0.5 cm]
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft} \large
+			\textsc{Mathis Deronzier}\\
+			\textsc{Mines Saint-Étienne}
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright} \large
+			\textsc{Emmanuel Mouche}\\
+			\textsc{C.E.A.}\\
+			\textsc{Mathieu Vrac}\\
+			\textsc{C.N.R.S.}
+		\end{flushright}
+	\end{minipage}\\[2cm]
+	\begin{center}
+		\textsc{\Large Stage de recherche de master 2}\\[0.5cm]  
+		\large Avril-Septembre\\2021\\[2cm]
+	\end{center}
+
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+
+Alors que le rapport du GIEC 2021 sorti cet été projette une augmentation de $1.5^{\circ}$C d'ici $2050$ sur l'ensemble de la planète ainsi que des modifications des climats dans plusieurs région du monde. Il semble aujourd'hui primordial de comprendre les conséquences locales d'un changement climatique global. Les changements climatiques locaux ont un intérêt politique et économique majeur et les enjeux de leurs prévisions sont aujourd'hui vitaux.
+
+Les projections climatiques sont données par des modèles de climat travaillant à grande échelle de l'ordre de quelques centaines de kilomètres, on cherche alors à prévoir des résultat sur des zones de quelques kilomètres. Le domaine du climat étudiant les questions de changement d'échelle du global au local est le \textit{downscaling}. La question inverse du changement d'échelle du local au global est non moins intéressante pour les climatologues. En effet, comment savoir si les modèles à grande échelle sont vraiment représentatifs de la réalité? Alors que les modèles climatiques et hydrologiques travaillent sur des échelles globales, les lois de la physique sont elles, locales. On cherche alors à comprendre à partir des équations de la physique les interactions ou équations qu'elles engendrent à grande échelle, ce domaine de recherche s'appelle l'\textit{upscaling}.
+
+C'est dans ces problématiques de changement d'échelles que s'ancre ce stage. Pour concentrer et enrichir nos réflexions, nous nous intéresserons plus précisément à la question de l'impact du changement d'échelle sur les modélisations hydrologiques. Le domaine d'étude ayant été choisi pour modéliser et concrétiser ces problématiques a été le bassin du Little Washita. Ce bassin situé aux États-Unis dans l’état d’Oklahoma, possède de nombreuses caractéristiques qui le rendent intéressant. Sa superficie de $611km^2$ est de l'ordre de grandeur d'une maille de modèle continentale. Il a déjà fait l'objet de nombreuses études (voir par exemple \cite{maxwell2007groundwater}, \cite{rosero2011ensemble}, \cite{maquin2016developpement}). Sa surface est recouverte pour $67\%$ par de la prairie, $20\%$ par des cultures et le reste par des feuillus sa riche couverture végétale rendent les mécanismes d'évaporation et de transpiration des végétaux pertinent dans les bilans hydrique.
+
+
+
+
+
+\newpage
+\bibliographystyle{apalike} 
+\bibliography{mabib}
+
+\end{document}

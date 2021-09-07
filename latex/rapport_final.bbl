@@ -1,0 +1,24 @@
+\begin{thebibliography}{}
+
+\bibitem[Maquin, 2016]{maquin2016developpement}
+Maquin, M. (2016).
+\newblock {\em D{\'e}veloppement d'un mod{\`e}le hydrologique de colonne
+  repr{\'e}sentant l'interaction nappe-v{\'e}g{\'e}tation-atmosph{\`e}re et
+  applications {\`a} l'{\'e}chelle du bassin versant}.
+\newblock PhD thesis, Universit{\'e} Paris-Saclay (ComUE).
+
+\bibitem[Maxwell et~al., 2007]{maxwell2007groundwater}
+Maxwell, R.~M., Chow, F.~K., and Kollet, S.~J. (2007).
+\newblock The groundwater--land-surface--atmosphere connection: Soil moisture
+  effects on the atmospheric boundary layer in fully-coupled simulations.
+\newblock {\em Advances in Water Resources}, 30(12):2447--2466.
+
+\bibitem[Rosero et~al., 2011]{rosero2011ensemble}
+Rosero, E., Gulden, L.~E., Yang, Z.-L., De~Goncalves, L.~G., Niu, G.-Y., and
+  Kaheil, Y.~H. (2011).
+\newblock Ensemble evaluation of hydrologically enhanced noah-lsm: Partitioning
+  of the water balance in high-resolution simulations over the little washita
+  river experimental watershed.
+\newblock {\em Journal of Hydrometeorology}, 12(1):45--64.
+
+\end{thebibliography}
