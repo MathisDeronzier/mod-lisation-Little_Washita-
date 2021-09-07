@@ -1,39 +1,39 @@
 \contentsline {section}{\numberline {1}Downscaling}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Introduction \IeC {\`a} la probl\IeC {\'e}matique du downscaling}{3}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Cumulative Distribution Function transform (CDFt)}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.2}Cumulative Distribution Function transform (CDFt)}{5}{subsection.1.2}
 \contentsline {subsubsection}{\numberline {1.2.1}Quantile-Quantile}{5}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {1.2.2}CDFt}{5}{subsubsection.1.2.2}
-\contentsline {subsection}{\numberline {1.3}Transport optimal}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.3}Transport optimal}{7}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {1.3.1}Probl\IeC {\'e}matique}{7}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}R\IeC {\'e}solution du probl\IeC {\`e}me dans le cas fini et downscaling}{7}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.2}R\IeC {\'e}solution du probl\IeC {\`e}me dans le cas fini et downscaling}{8}{subsubsection.1.3.2}
 \contentsline {subsection}{\numberline {1.4}Analyse des r\IeC {\'e}sultats obtenus par downscaling}{8}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {1.4.1}Quelques outils math\IeC {\'e}matiques}{8}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {1.4.2}distance de Kolmogorov-Smirnov}{9}{subsubsection.1.4.2}
-\contentsline {subsubsection}{\numberline {1.4.3}distance de Cram\IeC {\'e}r-von Mises}{9}{subsubsection.1.4.3}
-\contentsline {section}{\numberline {2}Upscaling des mod\IeC {\`e}les hydrologiques}{10}{section.2}
+\contentsline {subsubsection}{\numberline {1.4.1}Quelques outils math\IeC {\'e}matiques}{9}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}Distance de Kolmogorov-Smirnov}{10}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}Distance de Cram\IeC {\'e}r-von Mises}{10}{subsubsection.1.4.3}
+\contentsline {section}{\numberline {2}Upscaling des mod\IeC {\`e}les hydrologiques}{11}{section.2}
 \contentsline {subsection}{\numberline {2.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur les interactions atmosph\IeC {\`e}re - surface continentale - sol}{11}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Les \IeC {\'e}coulements}{11}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Transferts d'eau entre le sol et l'atmosph\IeC {\`e}re}{12}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Les concepts hydrologiques}{13}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Quelques d\IeC {\'e}finitions pour l'\IeC {\'e}tude en milieu poreux}{13}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Les \IeC {\'e}quations pour mod\IeC {\'e}liser l'\IeC {\'e}coulement}{14}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}La loi de Darcy et l'\IeC {\'e}quation de diffusivit\IeC {\'e} en milieu poreux}{15}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Les mod\IeC {\`e}les}{16}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Mod\IeC {\`e}le de surface continentale Orchid\IeC {\'e}e}{16}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Mod\IeC {\`e}le \IeC {\`a} base physique: Hydrog\IeC {\'e}osph\IeC {\`e}re}{16}{subsubsection.2.3.2}
-\contentsline {section}{\numberline {3}Pr\IeC {\'e}dictions climatiques et mod\IeC {\'e}lisation hydrologiques}{16}{section.3}
-\contentsline {subsection}{\numberline {3.1}Analyse de la structure spatiale des donn\IeC {\'e}es NARRs}{17}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Pr\IeC {\'e}sentation des r\IeC {\'e}sultats de pr\IeC {\'e}dictions climatiques}{21}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}La d\IeC {\'e}gradation des donn\IeC {\'e}es}{21}{subsubsection.3.2.1}
-\contentsline {subsection}{\numberline {3.3}Les r\IeC {\'e}sultats de la d\IeC {\'e}gradation et du downscaling sur les donn\IeC {\'e}es}{21}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}trac\IeC {\'e} des boxplot}{21}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Affichage des donn\IeC {\'e}es pr\IeC {\'e}dites en fonction des donn\IeC {\'e}es r\IeC {\'e}elles}{22}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {2.1.2}Transferts d'eau entre le sol et l'atmosph\IeC {\`e}re}{13}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Les concepts hydrologiques}{14}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Quelques d\IeC {\'e}finitions pour l'\IeC {\'e}tude en milieu poreux}{14}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Les \IeC {\'e}quations pour mod\IeC {\'e}liser l'\IeC {\'e}coulement}{15}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}La loi de Darcy et l'\IeC {\'e}quation de diffusivit\IeC {\'e} en milieu poreux}{16}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Les mod\IeC {\`e}les}{17}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Mod\IeC {\`e}le de surface continentale Orchid\IeC {\'e}e}{17}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Mod\IeC {\`e}le \IeC {\`a} base physique: Hydrog\IeC {\'e}osph\IeC {\`e}re}{17}{subsubsection.2.3.2}
+\contentsline {section}{\numberline {3}Projections climatiques et mod\IeC {\'e}lisation hydrologique}{17}{section.3}
+\contentsline {subsection}{\numberline {3.1}Analyse de la structure spatiale des donn\IeC {\'e}es NARRs}{18}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Pr\IeC {\'e}sentation des r\IeC {\'e}sultats de projection climatiques}{22}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}La d\IeC {\'e}gradation des donn\IeC {\'e}es}{22}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Les r\IeC {\'e}sultats de la d\IeC {\'e}gradation et du downscaling sur les donn\IeC {\'e}es}{22}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Trac\IeC {\'e} des Boxplot}{22}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Affichage des donn\IeC {\'e}es projet\IeC {\'e}es en fonction des donn\IeC {\'e}es r\IeC {\'e}elles}{23}{subsubsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.3}Diff\IeC {\'e}rence analyse Root Mean Square error et distance de Cram\IeC {\'e}r-von Mises}{24}{subsubsection.3.3.3}
-\contentsline {subsection}{\numberline {3.4}Les r\IeC {\'e}sultats hydrologiques}{25}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Mod\IeC {\`e}le de pente simple pour la mod\IeC {\'e}lisation hydrologique du mod\IeC {\`e}le du Little Washita}{26}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Les donn\IeC {\'e}es d'entr\IeC {\'e}es dans HydroG\IeC {\'e}oSph\IeC {\`e}re et l'initialisation}{26}{subsubsection.3.4.2}
-\contentsline {subsection}{\numberline {3.5}L'influence de la pluie sur les d\IeC {\'e}bits}{27}{subsection.3.5}
-\contentsline {section}{\numberline {4}Indexes}{29}{section.4}
-\contentsline {subsection}{\numberline {4.1}Indexe \ref {C-v} : La statistique de Cram\IeC {\'e}r-von Mises}{29}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Indexe 2: Projection conique conforme de Lambert}{30}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Indexe 3: Classification des populations de d\IeC {\'e}bit}{33}{subsection.4.3}
+\contentsline {subsection}{\numberline {3.4}Les r\IeC {\'e}sultats hydrologiques}{26}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Mod\IeC {\`e}le de pente simple pour la mod\IeC {\'e}lisation hydrologique du mod\IeC {\`e}le du Little Washita}{27}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Les donn\IeC {\'e}es d'entr\IeC {\'e}es dans HydroG\IeC {\'e}oSph\IeC {\`e}re et l'initialisation}{28}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}L'influence de la pluie sur les d\IeC {\'e}bits}{28}{subsection.3.5}
+\contentsline {section}{\numberline {4}Indexes}{31}{section.4}
+\contentsline {subsection}{\numberline {4.1}Indexe \ref {C-v}: La statistique de Cram\IeC {\'e}r-von Mises}{31}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Indexe 2: Projection conique conforme de Lambert}{32}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Indexe 3: Classification des populations de d\IeC {\'e}bit}{35}{subsection.4.3}

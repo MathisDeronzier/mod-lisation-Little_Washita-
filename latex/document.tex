@@ -30,9 +30,9 @@
 \usepackage{subcaption}
 
 
-\textwidth16.5cm
-\oddsidemargin-0.38cm
-\textheight22cm
+\textwidth16cm
+\oddsidemargin-0.55cm
+\textheight21.5cm
 \topmargin-1cm
 \pagestyle{plain}
 
@@ -78,7 +78,7 @@
 		\emph{Auteur}\\
 	\end{flushleft}
 \end{minipage}
-
+~
 \begin{minipage}{0.4\textwidth}
 	\begin{flushright} \Large
 		\emph{Maîtres de stage} \\
@@ -110,7 +110,7 @@
 
 \section{Downscaling}
 \label{dwnsc}
-Le downscaling (voir par exemple \cite{vrac2012dynamical} et \cite{ayar2016intercomparison}) est une méthode statistique utilisée dans les sciences du climat permettant d'améliorer les prédictions des modèles climatiques. À partir des données obtenues par un modèle climatique (modèle de circulation général, modèle climatique régional) et des données observées, on cherche à observer et corriger les biais systématiques introduits par les modèles. Le nom ``downscaling'' vient du domaine d'application de cette méthode. On passe d'un modèle à grande échelle à des données observées à petite échelle. Cette méthode est très utile dans la pratique où l'on a des simulateurs donnant des informations sur des maillage de grande distance de grille ($\sim 200km$). Dans notre cas, nous utilisons le downscaling pour prédire les variables climatiques de \textit{précipitation} et d'\textit{évapotranspiration} sur le bassin du \textbf{Little Washita} un bassin d'une centaine de kilomètres carrés. Nous avons testé les principales méthodes de downscaling à partir de deux jeux de données: les données NARRs (de taille de grille de $30\times 30 km^2$) ainsi que celles de l'IPSL (de taille de grille de $200\times200 km^2$), nous décrivons ce travail dans la section \ref{ch-pred-cli}.
+Le downscaling statistique (voir par exemple \cite{vrac2012dynamical} et \cite{ayar2016intercomparison}) est une méthode utilisée dans les sciences du climat permettant d'améliorer les projections des modèles climatiques. À partir des données obtenues par un modèle climatique (modèle de circulation général, modèle climatique régional) et des données observées, on cherche à observer et corriger les biais systématiques introduits par les modèles. Le nom ``downscaling'' vient du domaine d'application de cette méthode. On passe d'un modèle à grande échelle à des données observées à petite échelle. Cette méthode est très utile dans la pratique où l'on a des modèles de climat donnant des informations sur des maillages de grande échelle ($\sim 200km\times 200km$). Dans notre cas, nous utilisons le downscaling pour projeter les variables climatiques de \textit{précipitation} et d'\textit{évapotranspiration} sur le bassin du \textbf{Little Washita} un bassin d'une centaine de kilomètres carrés. Nous n'avons testé qu'une méthode de downscaling mais d'autre existent. Nous l'avons testée à partir du jeux de données: les données NARRs (de taille de grille de $30km\times 30 km$) ainsi que celles de l'IPSL (de taille de grille de $200\times200 km^2$), nous décrivons ce travail dans la section \ref{ch-pred-cli}.
 
 Pour formuler rigoureusement l'approche du downscaling nous introduisons des hypothèses communément admises dans les sciences du climat. On suppose que les variables étudiées sont des variables aléatoires réelles dépendantes du temps et de l'espace. On appelle $\mathcal{M}(\Omega,\mathbb{R})$ l'espace des variables aléatoires réelles et $S(\mathbb{R}^3)$ la spère unité dans $\mathbb{R}^3$, on suppose de plus que l'on peut faire correspondre chaque point de la terre à un point de la sphère unité. Nous travaillerons par la suite sur la sphère unité que l'on considérera être la terre.
 
@@ -134,8 +134,7 @@ Pour formuler rigoureusement l'approche du downscaling nous introduisons des hyp
 		\end{array}
 	\end{equation}
 \end{definition}
-
-On peut alors estimer la qualité des simulations en mesurant une distance entre la réalisation $\mathcal{T}_V([0,T])$ et celle de $S_V([0,T])$. Le travail du downscaling est de trouver des transformations sur les variables aléatoires $S_V(t,x)$ pour minimiser ces distances. Les géostatistiques essaient d'étudier la structure de covariance entre les variables aléatoires pour améliorer les résultats des prédictions (voir par exemple \cite{lindgren2011explicit}).  
+On peut alors estimer la qualité des simulations en mesurant une distance entre la réalisation $\mathcal{T}_V([0,T])$ et celle de $S_V([0,T])$. Le travail du downscaling est de trouver des transformations sur les variables aléatoires $S_V(t,x)$ pour minimiser ces distances. Plusieurs méthodes peuvent-être utilisée pour réduire ces distances et les géostatistiques essaient entre autres d'étudier la structure de covariance sur l'espace sur lequel on considère ces variables. Des méthodes de résolution d'équations différentielles permettent d'interpoler les résultats (voir par exemple \cite{lindgren2011explicit}). Ces méthodes ne sont pas celles que nous allons étudier, mais il semble important de  
 
 \subsection{Introduction à la problématique du downscaling}
 \label{intro-dwnsc}
@@ -164,10 +163,10 @@ Le downscaling consiste donc à effectuer des transformations sur des variables 
 Remarquons qu'une variable aléatoire ne possède pas nécessairement de fonction de répartition (notamment les variables aléatoires à valeurs discrètes), on peut cependant les étudier dans la théorie des distributions.
 
 
-Commençons par établir notre problématique dans le cas le plus simple où l'on cherche à prédire une variable $V$ dans l'avenir alors que nous connaissons ses réalisations dans le passé à un endroit donné $x$.
+Commençons par établir notre problématique dans le cas le plus simple où l'on cherche à projeter une variable $V$ dans l'avenir alors que nous connaissons ses réalisations dans le passé à un endroit donné $x$.
 On peut alors considérer deux processus aléatoires à valeurs dans $\mathbb{R}$, $(X_t)_{t \in \mathbb{N}}=(\mathcal{S}_{V}(t, x))_{t \in \mathbb{N}}$ et $(Y_t)_{t \in \mathbb{N}}=(\mathcal{T}_{V}(t, x))_{t \in \mathbb{N}}$.
 
-La problématique à laquelle nous cherchons de répondre est la suivante: connaissant $X_1,X_2,...,X_n$ et $Y_1,Y_2,...,Y_n$ les réalisations jusqu'au temps $n$ ainsi que $X_{i_1},X_{i_2},...,X_{i_m}$, on cherche une fonction $G: \mathbb{R} \to \mathbb{R}$ telle que les tirages $G(X_{i_1}),..., G(X_{i_m})$ et $Y_{i_1},...,Y_{i_m}$ soient proches du point de vu de leur loi (nous éclaircirons ce point par la suite dans la section \ref{analyse-pred}). 
+La problématique à laquelle nous cherchons de répondre est la suivante: connaissant $X_1,X_2,...,X_n$ et $Y_1,Y_2,...,Y_n$ les réalisations jusqu'au temps $n$ ainsi que $X_{i_1},X_{i_2},...,X_{i_m}$ (pour des temps futurs), on cherche une fonction $G: \mathbb{R} \to \mathbb{R}$ telle que les tirages $G(X_{i_1}),..., G(X_{i_m})$ et $Y_{i_1},...,Y_{i_m}$ soient proches du point de vu de leur loi (nous éclaircirons ce point par la suite dans la section \ref{analyse-pred}). 
 
 Autrement dit, en appelant $X$ et $Y$ les réalisations de $(X_t)_{t \in \mathbb{N}}$ et $(Y_t)_{t \in \mathbb{N}}$ sur $\{1,...,n\}$ et $X'$ et $Y'$ les réalisations de $(X_t)_{t \in \mathbb{N}}$ et de $(Y_t)_{t \in \mathbb{N}}$ sur $\{i_1,...,i_m\}$, on cherche à définir $G_{X,Y}$ à partir de $X$, $Y$ tel que $G_{X,Y}$ minimise 
 \[d(\mathcal{F}_{G_{X,Y}(X')}, \mathcal{F}_{Y'}),\]
@@ -184,7 +183,7 @@ Nous voulons aussi que $G_{X,Y}$ respecte certaines propriétés. Une des propri
 Dans la suite les transformations que nous considérerons satisferont toujours l'équation \eqref{cond-cons}.
 
 \subsection{Cumulative Distribution Function transform (CDFt)}
-Nous allons ici présenter l'algorithme principalement étudié et utilisé dans ce stage, l'algorithme CDF-t. Nous commencerons par présenter l'algorithme de quantile-quantile permettant de comprendre l'esprit des transformations $G$ affectées aux processus aléatoires. Puis nous décrirons l'algorithme de CDFt-t. 
+Nous allons ici présenter l'algorithme principalement étudié et utilisé dans ce stage, l'algorithme CDF-t \cite{vrac2012dynamical}. Nous commencerons par présenter l'algorithme de quantile-quantile (voir ) permettant de comprendre l'esprit des transformations $G$ affectées aux processus aléatoires. Puis nous décrirons l'algorithme de CDFt-t. 
  
 \subsubsection{Quantile-Quantile}
 \label{Q-Q}
@@ -215,18 +214,18 @@ L'algorithme de \textbf{Cumulative Distribution Function transfer} (CDFt) vise �
 
 \noindent \textbf{CDFt avec support égale}:
 
-On peut par exemple faire en sorte que la transformation sur les prédictions conserve le support de celles-ci en d'autres mots on veut
+On peut par exemple faire en sorte que la transformation sur les projections conserve le support de celles-ci en d'autres mots on veut
 \[ \min_{i \in I}(X'_i)=\min_{i \in I}(G_{X,Y}(X'_i)) \hspace{3mm} \textrm{et} \hspace{3mm}  \max_{i \in I}(X'_i)=\max_{i \in I}(G_{X,Y}(X'_i)).\]
 Il suffit de transformer la loi de $Y$ sur $[0,1]$, de réaliser un quantile-quantile puis d'effectuer la transformation inverse. Concrêtement, nous posons 
 \[\overset{\sim}{Y}= \frac{(Y-\min_{i\in I}Y_i)}{\max_{i\in I}Y_i- \min_{i\in I}Y_i}.\]
 Alors quelque soit $i$ dans $\mathcal{I}$ on a $\overset{\sim}{Y}_i \in [0,1]$. En appelant $G= \mathcal{F}_{X,\overset{\sim}{Y}}$ la transformation quantile-quantile de $X$ à $\overset{\sim}{Y}$ on a $G_{X,Y}(X'_i) \in [0,1]$, la transformation s'imposant naturellement est alors
 \[ G_{X,Y}= (\max_{i\in I}Y_i- \min_{i\in I}Y_i)G + \min_{i\in I}Y_i.\]
-C'est l'une des premières idées qui vienne-t-en tête lorsqu'on parle de transformations que l'on peut appliquer sur nos variables. Notons que l'on a aussi une grosse base de données et que l'on peut aussi essayer d'utiliser des méthodes de regression linéaire ou de machine learning pour prédire les max et les min de $Y'$ en fonction de $X$. Nous allons illustrer l'usage d'une de ces méthodes dans la prochaine partie \ref{CDFt reg l}.
+C'est l'une des premières idées qui vienne-t-en tête lorsqu'on parle de transformations que l'on peut appliquer sur nos variables. Notons que l'on a aussi une grosse base de données et que l'on peut aussi essayer d'utiliser des méthodes de regression linéaire ou de machine learning pour estimer les max et les min de $Y'$ en fonction de $X$. Nous allons illustrer l'usage d'une de ces méthodes dans la prochaine partie \ref{CDFt reg l}.
 
 \noindent \textbf{CDFt avec méthode de prédiction}
 \label{CDFt reg l}
 
-Supposons que l'on ait des fonctions estimant la variance et de la moyenne de $Y'$ à partir de $X'$, s'exprimant sous la forme $\overline{f(X')} = \overline{Y'}$ ainsi que $\overline{g(X')} = \overline{\sigma(Y')}$ (on suppose ici $X'$ et $Y'$ comme des suites de variables aléatoires) \footnote{On définit pas $\overline{X}$ la  moyenne $X$ et par $\sigma(X)$ son écart type}. Ces fonctions peuvent être obenues par des méthodes de régression linéaire sur des sous échantillons des données de $X$ et $Y$ soit après les avoir ordonnées si $X_i$ et $Y_i$ sont indépendant soit en fonction de leur indice.
+Supposons que l'on ait des fonctions estimant la variance et la moyenne de $Y'$ à partir de $X'$, s'exprimant sous la forme $\overline{f(X')} = \overline{Y'}$ ainsi que $\overline{g(X')} = \overline{\sigma(Y')}$ \footnote{On définit par $\overline{X}$ la  moyenne $X$ et par $\sigma(X)$ son écart type}. Ces fonctions peuvent être obenues par des méthodes de régression linéaire sur des sous échantillons des données de $X$ et $Y$ soit après les avoir ordonnées si les $X_i$ et les $Y_i$ sont indépendants soit en fonction de leur indice.
 
 On aimerait alors que $G_{X,Y}$ conserve la moyenne ainsi que la variance. Formellement, on voudrait définir $G_{X,Y}$ telle que quelque soient $\{i_1,...,i_m\}$ un ensemble d'entiers consécutifs et $X'$ et $Y'$ les vecteurs des variables aléatoires des $X_{i_j}$ et $Y_{i_j}$ sur cet ensembles, on ait :
 
@@ -251,9 +250,9 @@ On peut vérifier facilement que $G_{X,Y}$ ainsi défini respecte bien les propr
 
 \subsection{Transport optimal}
 
-Nous voulons à la fois prédire la précipitation et l'évapotranspiration, on peut alors considérer une seule variable aléatoire dans $\mathbb{R}^2$. On peut généraliser l'idée utilisée précédemment pour trouver une méthode permettant de corriger les biais statistiques introduits par les modèles de prédictions. Cette méthode a d'autant plus d'intérêt que la variable utile dans les modèles hydrologique est 
+Nous voulons à la fois projeter la précipitation et l'évapotranspiration, on peut alors considérer une seule variable aléatoire dans $\mathbb{R}^2$. On peut généraliser l'idée utilisée précédemment pour trouver une méthode permettant de corriger les biais statistiques introduits par les modèles de projection. Cette méthode a d'autant plus d'intérêt que la variable utile dans les modèles hydrologique est 
 \[\textit{pluie entrant dans le sol}=\textit{précipitation}-\textit{évapotranspiration}.\]
-Comme l'objectif final est de prédire des résultats hydrologiques sur le bassin du Little Washita, il semble particulièrement pertinent de considérer la loi conjointe (précipitation, évapotranspiration). La théorie généralisant cette idée est la théorie du \textbf{transport optimal}.
+Comme l'objectif final est de projeter des résultats hydrologiques sur le bassin du Little Washita, il semble particulièrement pertinent de considérer la loi conjointe (précipitation, évapotranspiration). La théorie généralisant cette idée est la théorie du \textbf{transport optimal}.
 
 La problématique du transport optimal a premièrement été introduite en par Gaspard Monge en 1781 puis a été développée par Kantorovitch en $1971$ et ses travaux pour l'allocution des ressources lui ont valu un prix nobel d'économie en $1975$.
 
@@ -280,7 +279,7 @@ Le papier utilise la norme euclidienne comme distance, l'obtention de cette solu
 
 \subsection{Analyse des résultats obtenus par downscaling}
 \label{analyse-pred}
-Concrètement nous allons faire de la validation croisée, nous allons apprendre sur $50\%$ de nos données et faire nos prédictions. La partie à laquelle nous allons nous intéresser ici est la distance que nous utilisons pour évaluer nos prédictions. Contrairement à la manière habituelle de faire, consistant à estimer une distance entre chaque point prédit (souvent RMSE), en climatologie nous cherchons à comprendre la tendance générale. En effet, le paradigme d'évaluation en prévisions climatiques sur plusieurs années n'a pas l'ambition de prédire ponctuellement chaque prévision, mais il a pour objectif de décrire une tendance générale. On s'intéresse alors à des informations plus générales, c'est à dire que l'on travaille sur les lois de répartitions. Il faut alors réfléchir à des normes ou des distance pour évaluer la qualité de nos prédictions.  
+Concrètement nous allons faire de la validation croisée, nous allons apprendre sur $50\%$ de nos données et faire nos projections. La partie à laquelle nous allons nous intéresser ici est la distance que nous utilisons pour évaluer nos projections. Contrairement à la manière habituelle de faire, consistant à estimer une distance entre chaque point projeté (souvent RMSE), en climatologie nous cherchons à comprendre la tendance générale. En effet, le paradigme d'évaluation en prévisions climatiques sur plusieurs années n'a pas l'ambition de prédire ponctuellement chaque prévision, mais il a pour objectif de décrire une tendance générale. On s'intéresse alors à des informations plus générales, c'est à dire que l'on travaille sur les lois de répartitions. Il faut alors réfléchir à des normes ou des distance pour évaluer la qualité de nos projections.  
 
 \vspace{0.7cm}
 
@@ -311,7 +310,7 @@ Les tests de Kolmogorov-Smirnov et Cramer-von Mises utilisent à-peu-près cette
 	\label{th-glivenko}
 Soient $\mathcal{F}_{X}$ et $\mathcal{F}_{n}$ respectivement la fonction de répartition et la fonction de répartition empirique. Alors 
 \begin{equation}
-	\|\mathcal{F}_{X}-\mathcal{F}_{n}\|_{\infty} \xrightarrow[n\to \infty]{prob} 0 
+	\|\mathcal{F}_{X}-\mathcal{F}_{n}\|_{\infty} \xrightarrow[n\to \infty]{prob} 0.
 \end{equation}
 \end{theorem}
 
@@ -324,18 +323,18 @@ Soient $\mathcal{F}_{X}$ et $\mathcal{F}_{n}$ respectivement la fonction de rép
 	\[	\|\mathcal{F}_{X}-\mathcal{F}_{n}\|_{\infty} \xrightarrow[n\to \infty]{prob} 0. \]
 \end{proof}
 Le cas où $\mathcal{F}_{X}$ n'est pas continue est géré par \cite{durrett2019probability} (ex 7.2 chap 1). On voit d'après le théorème \ref{th-glivenko} que la fonction de répartition empirique est le bon estimateur de la fonction de répartition. 
-\subsubsection{distance de Kolmogorov-Smirnov}
+\subsubsection{Distance de Kolmogorov-Smirnov}
 
-Le test d'ajustement  de  Kolmogorov-Smirnov est  l'un des plus  utilisé pour tester l'égalité de deux lois  de probabilités. Dans  le  contexte de  l'égalité de lois  de probabilité, la statistique  de  test  est 
+Le test d'ajustement  de  Kolmogorov-Smirnov \cite{buning2002robustness} est  l'un des plus  utilisé pour tester l'égalité de deux lois  de probabilités. Dans  le  contexte de  l'égalité de lois  de probabilité, la statistique  de  test  est 
 \[K_{n,m}= \sqrt{\frac{nm}{n+m}}\|\mathcal{F}-\mathcal{F}_n\|_{\infty}.\]
 La suite de variables aléatoires $K_{n,m}$ converge vers une variable aléatoire $K$ dont la fonction de survie est donnée par: 
 \begin{equation}
 	Q(x)=P(K>x)=\sum_{j=1}^{\infty}(-1)^{j-1}\exp(-2(jx)^2)
 \end{equation}
-On peut alors l'approximer avec les premiers termes de la série pour construire le test statistique. La démonstration de ce théorème peut être trouvée dans le livre \cite{walker1965probability}(chap 12.5). Nous voyons cependant que ce test est sensible aux données aberrantes, nous privilégierons alors le test de \textbf{Cramér-von Mises} (section \ref{ch:Cv-M}).
+On peut alors l'approximer avec les premiers termes de la série pour construire le test statistique. La démonstration de ce théorème peut être trouvée dans le livre \cite{walker1965probability}(chap 12.5). Nous voyons cependant que ce test est sensible aux données aberrantes, nous privilégierons alors le test de \textbf{Cramér-von Mises} \cite{buning2002robustness} (section \ref{ch:Cv-M}).
 
 
-\subsubsection{distance de Cramér-von Mises}
+\subsubsection{Distance de Cramér-von Mises}
 \label{ch:Cv-M}
 On considère ici les deux fonctions de répartitions $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ continues des variables aléatoires $X$ et $Y$. Nous voulons tester les hypothèses
 \begin{equation*}
@@ -376,7 +375,7 @@ Cette formulation a le bon goût de nous indiquer que la statistique ne dépend 
 \label{upscaling}
 Comme nous l'avons vu dans la précédente partie, il existe différentes échelles d'étude. L'enjeux du downscaling est de passer de la grande échelle à la petite échelle. L'ojectif de l'upscaling inverse. La différence entre ces deux méthodes est que le domaine d'application du downscaling est le traitement des données alors que celui de l'upscaling est la modélisation. 
 
-L'upscaling est une réflexion sur le changement d'échelle des modèles. L'objectif est d'avoir des modèles efficaces et applicable à grande échelle. On cherche alors à simplifier les modèles tout en gardant des propriétés intéressantes. Par exemple l'upscaling des équations de Navier-Stokes sont un enjeux majeur de l'hydrologie (voir \ref{darcy}), on cherche à les simplifier pour pouvoir les résoudre à grandes échelles. Le temps de calcul informatique pour résoudre les équations de Navier-Stokes sur de grand domaine par toutes les méthodes explose bien que le temps de résolution algorithmique est classiquement $O(n^3)$ où $n$ est le nombre de mailles de notre modèle. Pour résoudre ces problèmes, des modèles simplificateurs ont vu le jour comme les modèles de colonne, modèles qui ne repose à première vu sur aucune loi physique mais qui fonctionne empiriquement.   
+L'upscaling est une réflexion sur le changement d'échelle des modèles. L'objectif est d'avoir des modèles efficaces et applicables à grande échelle. On cherche alors à simplifier les modèles tout en gardant des propriétés intéressantes. Par exemple l'upscaling des équations de Navier-Stokes est un enjeux majeur de l'hydrologie (voir \ref{darcy}), on cherche à les simplifier pour pouvoir les résoudre à grandes échelles. Le temps de calcul informatique pour résoudre les équations de Navier-Stokes sur de grand domaine par toutes les méthodes explose bien que le temps de résolution algorithmique est classiquement $O(n^3)$ où $n$ est le nombre de mailles de notre modèle. Pour résoudre ces problèmes, des modèles simplificateurs ont vu le jour comme les modèles de colonne, modèles qui ne reposent à première vue sur aucune loi physique mais qui fonctionne empiriquement.   
 
 
 \subsection{Généralités sur les interactions atmosphère - surface continentale - sol}
@@ -561,18 +560,18 @@ Le modèle continentale Orchidée est un modèle dynamique, développé à l’�
 
 \subsubsection{Modèle à base physique: Hydrogéosphère}
 
-HydroGéoSphère (HGS) [Aquanty Inc, 2013] est un code de calcul hydrologique tri-dimensionnel, intégré
-et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de surbsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes.
+HydroGéoSphère (HGS) est un code de calcul hydrologique tri-dimensionnel, intégré et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de subsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes.
 
 
-\section{Prédictions climatiques et modélisation hydrologiques}
+
+\section{Projections climatiques et modélisation hydrologique}
 \label{ch-pred-cli}
 L'étude que nous avons menée a été réalisée sur le bassin du Little Washita. Nous avons eu accès aux données NARR (North American Real Reanalysis) de $1979$ à $2014$ qui se présentent sous la forme d'un maillage de largeur de maille de $32 km$ ainsi qu'aux données de l'IPSL qui se présentent elles sous la forme d'un maillage de largeur de maille $200 km$.
 
 Les données NARR (North American Regional Reanalysis) couvrent l'entièreté du continent nord américain. La méthode de projection pour passer de $\mathcal{S}(\mathbb{R}^3)$ à $\mathbb{R}^2$ est ce qu'on appelle la \textbf{projection Lambert}. Cette projection d'après le théorème de Gauss ne pas être une isométrie, cependant nous verrons que l'on pourra faire l'approximation que la géométrie pour le bassin du Washita et ses alentours peut être considérée comme euclidienne (voir \ref{proj-Lambert}). Dans notre étude nous ferons comme si nous étions dans $\mathbb{R}^2$ en considérant le maillage carré, la longueur de grille du maillage est d'une trentaines de kilomètres (voir figure 1).
 
 
-Afin de déterminer l'efficacité du downscaling dans le cas où l'on ajoute du bruit à la variable que l'on cherche à prédire nous avons dégradé spatialement nos données en moyennant sur différentes échelles de grille (voir \ref{deg-NARR}).
+Afin de déterminer l'efficacité du downscaling dans le cas où l'on ajoute du bruit à la variable que l'on cherche à projeter, nous avons dégradé spatialement nos données en moyennant sur différentes échelles de grille (voir \ref{deg-NARR}).
 Nous les avons ensuite downscalées et puis les avons injectées dans un modèle hydrologique (voir à citer) et nous avons finalement comparé les résultats à partir des méthodes expliquées dans la section \ref{analyse-pred}.
 
 
@@ -591,12 +590,15 @@ Nous avons considéré les coordonnées du Little Washita à $34.981^{\circ}N,-9
 On commence par regarder les résultats autour du bassin du little washita, on fait un moyennage des précipitations et de l'évaporation sur un carré autour du little washita, le point de coordonnée (0,0) est le point correspondant au Little Washita sur ces figures. La méthode de moyennage est expliquée dans la section 
 
 \begin{figure}[h]
+	\begin{center}
 	\begin{minipage}[b]{0.48\linewidth}
 		\centering \includegraphics[scale=0.5]{images/mean_precip.png}
 	\end{minipage}\hfill
 	\begin{minipage}[b]{0.48\linewidth}	
 		\centering \includegraphics[scale=0.5]{images/mean_evap.png}
 	\end{minipage}
+	\end{center}
+	\caption{Tracé des précipitations et de l'évapotranspiration moyenne de $1979$ à $2014$}
 \end{figure} 
 
 Comme nous faisons une dégradation spatiale, il est intéressant comprendre la structure spatiale des données. Nous avons une grille spatiale pour laquelle nous avons vu que la géométrie pouvait être considérée comme euclidienne (voir \ref{proj-Lambert}). Les données NARRs que nous manipulons se présentent sous la forme d'un tenseurs $\mathcal{T}$ de dimensions $T \times M\times N\times v$ où $T$ est le nombre de jours sur lesquels ont a ces observations, $(M+1)\times (N+1)$ la dimension de la grille d'observation et $v$ le nombre de variables observées. Nous faisons l'hypothèse la fonction $S_{V}$ possède un noyau de covariance spatial $K$ et nous chercherons à déterminer sa forme. 
@@ -646,9 +648,9 @@ Il semble intéressant de constater que même à plusieurs centaines de kilomèt
 	\includegraphics[scale=0.4]{images/kernel_evap_m10.png} & \includegraphics[scale=0.4]{images/kernel_evap_m11.png} & \includegraphics[scale=0.4]{images/kernel_evap_m12.png} \\
 \end{tabular} 
 
-Il semble beaucoup plus difficile d'interpréter le noyau de covariance de l'évapotranspiration à partir de la saisonnalité. On voit alors l'impact de la saisonnalité sur le noyau de covariance des précipitations.
+Nous voyons que la variance est aussi liée à la saisonnalité et que bien que la variance semble diminuer moins vite selon la distance pour l'évapotranspiration que pour la précipitation, elle semble tout de même diminuer ce qui semble contradictoire avec les résultats obtenus avec la dégradation de l'etp. On voit alors l'impact de la saisonnalité sur le noyau de covariance des précipitations.
 
-\subsection{Présentation des résultats de prédictions climatiques}
+\subsection{Présentation des résultats de projection climatiques}
 
 Nous avons travaillé avec plusieurs séries, la série de référence, des estimateurs de la série de référence et ces mêmes séries après transformation pour qu'elle réduisent leur distance de Cramer-Von Mises. 
 On commence par réintroduire le tenseur $\mathcal{T}$ de dimension $T \times M\times N$, nous pouvons représenter les données NARRs par le tenseur $\mathcal{T}$. 
@@ -664,22 +666,27 @@ Nous avons dégradé les valeurs par un moyennage spatial. Nous avons fait $4$ d
 	\label{eq-degradation}
 	\mathcal{T}^{d}{t,m,n}=\frac{1}{(2d+1)^2} \sum_{i=-d}^{d}\sum_{j=-d}^{d}\mathcal{T}_{t,m+i,n+j} \hspace{4mm} \forall (m,n) \in \{d+1,...,M-d\}\times\{d+1,...., N-d\}.
 \end{equation} 
-Nous avons alors étudié le point correspondant au bassin du Little Washita de coordonnées $(a,b)$ et l'on appellera, $(X^d_t)_{t\in \llbracket 1,T \rrbracket}$ les séries temporelles $\mathcal{T}^{d}{t,a,b}$. Nous avons cherché à prédire la série $(Y_t)_{t \in \llbracket 1,T \rrbracket}= \mathcal{T}^{0}{t,a,b}$ à partir des séries $(X^d_t)_{t\in \llbracket 1,T \rrbracket}$ et ainsi regarder l'impacte de la dégradation puis du downscaling sur les données.
+Nous avons alors étudié le point correspondant au bassin du Little Washita de coordonnées $(a,b)$ et l'on appellera, $(X^d_t)_{t\in \llbracket 1,T \rrbracket}$ les séries temporelles $\mathcal{T}^{d}{t,a,b}$. Nous avons cherché à projeter la série $(Y_t)_{t \in \llbracket 1,T \rrbracket}= \mathcal{T}^{0}{t,a,b}$ à partir des séries $(X^d_t)_{t\in \llbracket 1,T \rrbracket}$ et ainsi regarder l'impacte de la dégradation puis du downscaling sur les données.
 
 
 \subsection{Les résultats de la dégradation et du downscaling sur les données}
 \label{resultats}
-Pour évaluer nos prédictions nous avons utilisé des méthodes de validations croisées. Nous avons utilisé les données NARRs, NARRs dégradée ainsi que celles de l'IPSL pour tester les méthodes citées précédemment. On a définit la transformation sur les années $1979$ à $1996$, et la période de $1996$ à $2014$ pour prédire et vérifier la qualité de nos prédictions. Nous utiliserons les outils définis dans la section \ref{analyse-pred} pour analyser nos prédictions.
+Pour évaluer nos projections nous avons utilisé des méthodes de validations croisées. Nous avons utilisé les données NARRs, NARRs dégradée ainsi que celles de l'IPSL pour tester les méthodes citées précédemment. On a définit la transformation sur les années $1979$ à $1996$, et la période de $1996$ à $2014$ pour projeter et vérifier la qualité de nos projections. Nous utiliserons les outils définis dans la section \ref{analyse-pred} pour analyser nos projections.
 
-\subsubsection{tracé des boxplot}
+\subsubsection{Tracé des Boxplot}
 
 Pour avoir une première idée des données que nous avons récupérées, nous tracons les boxplots de chaque série temporelle.
 Nous avons ainsi les boxplot pour la précipitation et l'évapotranspiration pour juger de la répartition des points pour chaque série.
 
-\hspace{-1.2cm}
-\begin{tabular}{ccc}
-	\includegraphics[scale=0.4]{images/boxplot_precip.png} & \includegraphics[scale=0.4]{images/boxplot_evap.png} \\
-\end{tabular} 
+\begin{figure}[h]
+	\begin{minipage}[b]{0.48\linewidth}
+		\centering \includegraphics[scale=0.4]{images/boxplot_precip.png}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.48\linewidth}	
+		\centering \includegraphics[scale=0.4]{images/boxplot_evap.png}
+	\end{minipage}
+	\caption{Boxplot en fonction des séries pour la précipitation et l'évapotranspiration}
+\end{figure} 
 
 Les colonnes représentent pour chaque variable:
 \begin{itemize}
@@ -689,28 +696,47 @@ Les colonnes représentent pour chaque variable:
 	\item 7-8-9-10- Les séries des dégradations $d \in \{2,3,4,5\}$.
 	\item 11- La série de l'IPSL. 
 \end{itemize}
-On voit que la dégradation de l'évapotranspiration n'a quasiment aucune influence sur les séries temporelle, ce qui été à prévoir d'après le noyau de covariance que nous obtenu précédemment pour l'évapotranspiration. On peut aussi voir que le modèle de climat de l'IPSL prédit relativement mal l'évapotranspiration sur la région du Little Washita. On peut aussii voir la méthode de prédiction utilisée pour downscaler les série temporelles dégradées est la méthode  \textbf{CDF-t avec support égale} (cf section \ref{CDf-t-algo}). 
+On voit que la dégradation de l'évapotranspiration n'a quasiment aucune influence sur les séries temporelle, ce qui été à prévoir d'après le noyau de covariance que nous obtenu précédemment pour l'évapotranspiration. On peut aussi voir que le modèle de climat de l'IPSL projette relativement mal l'évapotranspiration sur la région du Little Washita. On peut aussi voir la méthode de projection utilisée pour downscaler les série temporelles dégradées est la méthode  \textbf{CDF-t avec support égale} (cf section \ref{CDf-t-algo}). 
 
-\subsubsection{Affichage des données prédites en fonction des données réelles}
+\subsubsection{Affichage des données projetées en fonction des données réelles}
 \label{ch:plot-dswnsc/deg}
-On commence par afficher les résultats sur un graphique en mettant les données de précipitation prédites (dégradée ou dégradées puis downscalées) en fonction des données de précipitation réelles. Cette méthode, permet de juger visuellement de l'efficacité du downscaling sur les données. Les figures qui sont affichées en dessous ont un titre indiquant le degré de déformation dans leur titre sous la forme $(2d-1)^2$ où $d$ est le degré de l'équation \eqref{eq-degradation}. Les figures de gauches sont les figure dégradées puis downscalées et celles de droites les figures dégradée, une ligne correspond à la même dégradation.	
+On commence par afficher les résultats sur un graphique en mettant les données de précipitation projetées (dégradée ou dégradées puis downscalées) en fonction des données de précipitation réelles. Cette méthode, permet de juger visuellement de l'efficacité du downscaling sur les données. Les figures qui sont affichées en dessous ont un titre indiquant le degré de déformation dans leur titre sous la forme $(2d-1)^2$ où $d$ est le degré de l'équation \eqref{eq-degradation}. Les figures de gauches sont les figure dégradées puis downscalées et celles de droites les figures dégradée, une ligne correspond à la même dégradation.	
 
 \vspace{0.7cm}
 
-\hspace{-1cm}
-\begin{tabular}{cc} 
-	\includegraphics[scale=0.4]{images/pr_1_ds.png} & \includegraphics[scale=0.4]{images/pr_1_dg.png}  \\ 
-	\includegraphics[scale=0.4]{images/pr_2_ds.png} & \includegraphics[scale=0.4]{images/pr_2_dg.png}  \\
-\end{tabular}
+\begin{figure}[!h]
+	\begin{minipage}[b]{0.48\linewidth}
+		\centering \includegraphics[scale=0.4]{images/pr_1_ds.png}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.48\linewidth}	
+		\centering \includegraphics[scale=0.4]{images/pr_1_dg.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\linewidth}
+		\centering \includegraphics[scale=0.4]{images/pr_2_ds.png}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.48\linewidth}	
+		\centering \includegraphics[scale=0.4]{images/pr_2_dg.png}
+	\end{minipage}
+	\caption{Tracé des débit en fonctions des précipitations pour différentes dégradations}
+\end{figure}
+\begin{figure}
+	\begin{minipage}[b]{0.48\linewidth}
+		\centering \includegraphics[scale=0.4]{images/pr_3_ds.png}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.48\linewidth}	
+		\centering \includegraphics[scale=0.4]{images/pr_3_dg.png}
+	\end{minipage}
+	\begin{minipage}[b]{0.48\linewidth}
+		\centering \includegraphics[scale=0.4]{images/pr_4_ds.png}
+	\end{minipage}\hfill
+	\begin{minipage}[b]{0.48\linewidth}	
+		\centering \includegraphics[scale=0.4]{images/pr_4_dg.png}
+	\end{minipage}
+	\caption{Tracé des débit en fonctions des précipitations pour différentes dégradations}
+\end{figure} 
 
-\hspace{-1cm}
-\begin{tabular}{cc}
-	\includegraphics[scale=0.4]{images/pr_3_ds.png} & \includegraphics[scale=0.4]{images/pr_3_dg.png}   \\
-	\includegraphics[scale=0.4]{images/pr_4_ds.png} & \includegraphics[scale=0.4]{images/pr_4_dg.png}  \\
-\end{tabular} 
 
-
-Visuellement il semble que le downscaling améliore les prédictions. Nous avons tracé pour chaque figure en noir la droite identité et en rouge les droites de régression linéaire de la forme $y=ax+b$, où $x$ est la précipitation de référence et $y$ la donnée prédite de $x$. Dans notre cas c'est soit la dégradation $\mathcal{T}_{d,a,b}$, soit son downscalé à partir de la méthode définie dans la section \ref{CDf-t-algo}. Remarquons que la dégradation de nos données ne crée pas de changement important de l'éparpillement des points dans les graphiques, c'est en accord avec les figures obtenues dans la section \ref{ch:spat-NARR} montrant une grande corrélation spatiale. Il semble cependant que la dégradation ait une tendance à sous-évaluer les précipitations élevées, ce qui ne semble pas aberrant si l'on considère les tailles des cumulonimbus\footnote{Les cumulonimbus sont des nuages responsables des gros orages en été et leur taille va de $2$ à $10$km de diamètre}, inférieur à la largeur de grille des données NARRs ($32$km). Alors on peut considérer une grosse précipitation comme un évènement localisé sur un seul point de grille NARR.
+Visuellement il semble que le downscaling améliore les projections. Nous avons tracé pour chaque figure en noir la droite identité et en rouge les droites de régression linéaire de la forme $y=ax+b$, où $x$ est la précipitation de référence et $y$ la donnée projetée de $x$. Dans notre cas c'est soit la dégradation $\mathcal{T}_{d,a,b}$, soit son downscalé à partir de la méthode définie dans la section \ref{CDf-t-algo}. Remarquons que la dégradation de nos données ne crée pas de changement important de l'éparpillement des points dans les graphiques, c'est en accord avec les figures obtenues dans la section \ref{ch:spat-NARR} montrant une grande corrélation spatiale. Il semble cependant que la dégradation ait une tendance à sous-évaluer les précipitations élevées, ce qui ne semble pas aberrant si l'on considère les tailles des cumulonimbus\footnote{Les cumulonimbus sont des nuages responsables des gros orages en été et leur taille va de $2$ à $10$km de diamètre}, inférieur à la largeur de grille des données NARRs ($32$km). Alors on peut considérer une grosse précipitation comme un évènement localisé sur un seul point de grille NARR.
 
  
 
@@ -721,29 +747,53 @@ Nous avons calculé la distance quadratique moyenne entre la série de référen
 
 \vspace{0.5cm}
 
-\hspace{-1cm}
-\begin{tabular}{ccc}
-	\includegraphics[scale=0.4]{images/RMSE_precip.png} & \includegraphics[scale=0.4]{images/RMSE_evap.png}  \\
-\end{tabular} 
 
+\begin{figure}[!h]
+	\label{fig: RMSE }
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[scale=0.4]{images/RMSE_precip.png}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[scale=0.4]{images/RMSE_evap.png}
+	\end{subfigure}
+	\caption{Tracé des résultats de Root Mean Square error}
+\end{figure}
 Nous voyons que les résultats sont plus mauvais pour les séries downscalées. C'était à prévoir d'après les figures de la section précédente \ref{ch:plot-dswnsc/deg} car la dispersion semblait plus grande pour les séries downscalées. Mais encore une fois, ce n'est pas cette distance que nous cherchons à minimiser avec le downsaling, mais une distance sur les fonctions de répartition. Regardons maintenant la distance de Cramér-Von Mises présentée en section \ref{ch:Cv-M}.
 
 \vspace{0.5cm}
 
-\hspace{-1cm}
-\begin{tabular}{ccc}
-	\includegraphics[scale=0.4]{images/Dist_CVM_precip.png} & \includegraphics[scale=0.4]{images/Dist_CVM_evap.png}  \\
-\end{tabular} 
+\begin{figure}[!h]
+	\label{fig: res - CVM }
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[scale=0.4]{images/Dist_CVM_precip.png}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[scale=0.4]{images/Dist_CVM_evap.png}
+	\end{subfigure}
+	\caption{Tracé de la distance de Cramér-von Mises les échantillons sans valeurs nulle}
+\end{figure}
 
 
-L'on voit qu'encore une fois la prédiction après downscaling est plus mauvaise que seulement la série dégradée, jusqu`à la dégradation $d=4$, et qu'à partir de la dégradation $5$ la série donwscalées est plus efficace ($d=6$ sont les données $IPSL$). L'algorithme effectue une grosse correction pour les données IPSL, il semble que la correction soit efficace à partir d'une certaine dégradation ce qui paraît tout de même étonnant. Cette erreur de prédiction soulève un point que nous n'avons pas encore abordé jusqu'à présent, c'est le fait que notre échantillon de précipitation possède de nombreuses valeurs à $0$, ce qui signifie que la densité n'est plus une fonction mais un distribution avec un poids non nul en $0$. C'est ce détail qui rend l'analyse CDF-t ``inconsistante'', si on enlève les précipitations nulle, nous obtenons:
+L'on voit qu'encore une fois la projection après downscaling est plus mauvaise que seulement la série dégradée, jusqu`à la dégradation $d=4$, et qu'à partir de la dégradation $5$ la série donwscalées est plus efficace ($d=6$ sont les données $IPSL$). L'algorithme effectue une grosse correction pour les données IPSL, il semble que la correction soit efficace à partir d'une certaine dégradation ce qui paraît tout de même étonnant. Cette erreur de projection soulève un point que nous n'avons pas encore abordé jusqu'à présent, c'est le fait que notre échantillon de précipitation possède de nombreuses valeurs à $0$, ce qui signifie que la densité n'est plus une fonction mais un distribution avec un poids non nul en $0$. C'est ce détail qui rend l'analyse CDF-t ``inconsistante'', si on enlève les précipitations nulle, nous obtenons:
 
 \vspace{0.5 cm}
 
-\hspace{-1cm}
-\begin{tabular}{ccc}
-	\includegraphics[scale=0.4]{images/Dist_CVM_precip.png} & \includegraphics[scale=0.4]{images/Dist_CVM_evap.png}  \\
-\end{tabular} 
+\begin{figure}[!h]
+	\label{fig:res-CVM-non-null  }
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[scale=0.4]{images/Dist_CVM_precip.png}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.45\textwidth}
+		\includegraphics[scale=0.4]{images/Dist_CVM_evap.png}
+	\end{subfigure}
+	\caption{Tracé de la distance de Cramér-von Mises en fonction des échantillons}
+\end{figure}
 
 Donc le downscaling diminue la distance de Cramer-von Mises, on peut considérer la méthode comme efficace
 
@@ -773,8 +823,8 @@ Une deuxième question vient alors naturellement doit-on utiliser la méthode de
 
 
 \subsection{L'influence de la pluie sur les débits}
-
-Nous allons regarder l'influence de la pluie sur les résultats de débits. Nous étudions les séries des différences des précipitations en fonction des séries des différences des débits. Soient $(R^{*}_t)_{t \in \llbracket 0, T\rrbracket}$ une série prédite de précipitation et $(R_t)_{t \in \llbracket 0, T\rrbracket}$ la série réelle des précipitations, ainsi que $(Q^{*}_t)_{t \in \llbracket 0, T\rrbracket}$ et $(Q_t)_{t \in \llbracket 0, T\rrbracket}$ les séries de débits prédites et réelles. On s'intéresse alors à voir l'influence de la différence entre les séries prédites et la série réelle de précipitation sur la différence entre les débits prédits et les débits réels. On appelles alors quand c'est définit les $\Delta R$ et $\Delta Q$. 
+\label{ch:classification delta deb delta pluie}
+Nous allons regarder l'influence de la pluie sur les résultats de débits. Nous étudions les séries des différences des précipitations en fonction des séries des différences des débits. Soient $(R^{*}_t)_{t \in \llbracket 0, T\rrbracket}$ une série projetée de précipitation et $(R_t)_{t \in \llbracket 0, T\rrbracket}$ la série réelle des précipitations, ainsi que $(Q^{*}_t)_{t \in \llbracket 0, T\rrbracket}$ et $(Q_t)_{t \in \llbracket 0, T\rrbracket}$ les séries de débits projetées et réelles. On s'intéresse alors à voir l'influence de la différence entre les séries projetées et la série réelle de précipitation sur la différence entre les débits projetés et les débits réels. On appelles alors quand c'est défini $\Delta R$ et $\Delta Q$ la différence à la série de référence 
 \[\Delta R_t=\frac{R^{*}_t-R_t}{R_t}, \hspace{4mm} \frac{Q^{*}_t-Q_t}{Q_t}.\]
 Voici les résultats obtenus pour la série downscalée correspondant à la dégradation  
     
@@ -807,9 +857,9 @@ Il semble que de nombreux points bleus ont été supprimés.
 
 \section{Indexes}
 
-\subsection{Indexe \ref{C-v} : La statistique de Cramér-von Mises}
+\subsection{Indexe \ref{C-v}: La statistique de Cramér-von Mises}
 \label{lemme Cramer-von Mise}
-Soient $(X_i)_{i\in \llbracket 1,n \rrbracket}$ et $(Y_i)_{i\in \llbracket 1,m \rrbracket }$ des réalisations indépendante issues des variables aléatoires réelles $X$ et $Y$. On appelle $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ les fonctions de répartitions empiriques définie à partir de ces réalisation et $\mathcal{H}_{m,n}$ la fonction de répartition empirique définie à partir des réalisations $(Z_i)_{i\in \llbracket 1,m+n \rrbracket }=X_1,...,X_n,Y_1,...,Y_m$. Par la suite on considéra que tous les éléments sont triés dans leur ensemble ($i\leq j \Rightarrow E_i\leq E_j$). Nous avons alors l'égalité suivante
+Soient $(X_i)_{i\in \llbracket 1,n \rrbracket}$ et $(Y_i)_{i\in \llbracket 1,m \rrbracket }$ des réalisations indépendante issues des variables aléatoires réelles $X$ et $Y$. On appelle $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ les fonctions de répartitions empiriques définies à partir de ces réalisation et $\mathcal{H}_{m,n}$ la fonction de répartition empirique définie à partir des réalisations $(Z_i)_{i\in \llbracket 1,m+n \rrbracket }=X_1,...,X_n,Y_1,...,Y_m$. Par la suite on considéra que tous les éléments sont triés dans leur ensemble (c.à.d. $i\leq j \Rightarrow E_i\leq E_j$). Nous avons alors l'égalité suivante
 \begin{equation}
 	C_{n,m}=\frac{nm}{n+m}\int_{\mathbb{R}}\big[ \mathcal{F}_{n}(x)-\mathcal{G}_{m}(x)\big]^{2} \mathrm{d} \mathcal{H}_{m,n}(x)=\frac{1}{nm(m+n)}\Big[ n\sum_{i=1}^{n}(R_{X_i}-i)^2+ m\sum_{i=1}^{m}(R_{Y_i}-i)^2\Big]-\frac{4nm-1}{6(m+n)}.
 \end{equation}
@@ -859,7 +909,7 @@ La plupart des fonctions de projection de $S(\mathbb{R}^3)$ dans $\mathbb{R}^2$ 
 
 \begin{center}
 	\captionsetup{type=figure}
-	\includegraphics[scale=0.4]{lambert.jpg}
+	\includegraphics[scale=0.6]{lambert.jpg}
 	\captionof{figure}{Projection conique conforme de Lambert}
 \end{center}
 
@@ -900,11 +950,10 @@ On commence par étudier les courbes $\gamma$ dans $\mathcal{C}_1$ injectives, o
 	\captionof{figure}{Figure explicative de la projection lambert conformale}
 \end{center}
 D'après ce schéma, on voit que pour tout point $F$ sur le cercle la longueur de la courbe $\gamma$ allant de $B$ à $F$  est majorée par la longueur du segment $BI$, de plus sur la figure  on a $\epsilon/2=\beta$. On obtient facilement l'inégalité
-\[\cos(\epsilon/2)\leq\frac{\|P(\gamma)\|_{\|\cdot\|_{\mathbb{R}^2}}}{\|\gamma\|_{\|\cdot\|_{S(\mathbb{R}^3)}}},\]
+\[\cos(\epsilon/2)\leq\frac{\|P(\gamma)\|_{\|\cdot\|_{\mathbb{R}^2}}}{\|\gamma\|_{\|\cdot\|_{S(\mathbb{R}^3)}}}.\]
 
-Étudions maintenant les courbes $\gamma$ dans $\mathcal{C}_2$ de latitude égale à $\theta+\epsilon$ et injectives. On sait que la courbe $\gamma$ ainsi que sa projection $P(\gamma)$ décrivent un arcs de cercle dans $\mathbb{R}^3$. Le rapport entre la longueur de l'arc de cercle définit par $P(\gamma)$ et $\gamma$ dans $\mathbb{R}^3$ est majoré grossièrement par $\cos(\theta+\epsilon)/\cos(\beta)$.
+Étudions maintenant les courbes $\gamma$ dans $\mathcal{C}_2$ de latitude égale à $\theta+\epsilon$ et injectives. On sait que la courbe $\gamma$ ainsi que sa projection $P(\gamma)$ décrivent un arcs de cercle dans $\mathbb{R}^3$. Le rapport entre la longueur de l'arc de cercle définit par $P(\gamma)$ et $\gamma$ dans $\mathbb{R}^3$ est majoré grossièrement par $\cos(\theta+\epsilon)/\cos(\beta)$. Alors, quelque soit $\gamma$ dans $\mathcal{C}_2$ on
 \[\frac{\cos(\theta+\epsilon)}{\cos(\beta)}\leq\frac{\|P(\gamma)\|_{\|\cdot\|_{\mathbb{R}^2}}}{\|\gamma\|_{\|\cdot\|_{S(\mathbb{R}^3)}}}\]
-
 Pour chaque courbe $\gamma$ dans $\mathcal{C}_m$ on a alors 
 \[\min\Big(\frac{2\sin(\epsilon/2)}{\epsilon},\frac{\cos(\theta+\epsilon)}{\cos(\theta)} \Big)\leq \frac{\|P(\gamma)\|_{\|\cdot\|_{\mathbb{R}^2}}}{\|\gamma\|_{\|\cdot\|_{S(\mathbb{R}^3)}}} \leq 1,\]
 la densité de $\mathcal{C}_m$ dans l'ensemble des courbes continues permet de conclure.
@@ -916,7 +965,7 @@ Finalement, on peut voir que dans notre cas où $\theta=\pi 33/180$ et $\epsilon
 \subsection{Indexe 3: Classification des populations de débit}
 \label{indexe3:cl_deb}
 
-On commence par rappeler ce que sont les données $\Delta Q$ et $\Delta R$, sont les différences entre les séries prédites et les séries de référence ($R$ correspond à la pluie et $Q$ au débit). Nous avons vu  que les schémas nous incitent à considérer deux classes de points (citer la partie correspondante).
+On commence par rappeler ce que sont les données $\Delta Q$ et $\Delta R$, sont les différences entre les séries projetées et les séries de référence ($R$ correspond à la pluie et $Q$ au débit). Nous avons vu  que les schémas nous incitent à considérer deux classes de points (citer la partie correspondante).
 
 \begin{center}
 	\captionsetup{type=figure}
@@ -984,12 +1033,13 @@ où \[\mathcal{I^{-}}_{x_i}((u_1,v_1),(u_2,v_2))=\mathds{1}_{]-\infty,0]}(f_{x_i
 
 On peut appliquer l'algorithme d'Uzawa (voir par exemple \cite{boyd2004convex}) pour trouver le minimum sur  $(\mathcal{U}_1(\mathbb{R}^2)\times\mathbb{R}^2)^2$ en considérant le plongement de $F$ dans  $(\mathbb{R}^2\times\mathbb{R}^2)^2$ avec les contraintes $|u_i|=1$. Nous avons chercher ces droites avec la fonction de minimize de ``scipy.optimize'' voir \cite{scipy}. Les deux droites trouvées sont alors 
 
-\begin{center}
+\begin{center}[!h]
 	\captionsetup{type=figure}
 	\includegraphics[scale=0.28]{images/deb_prec_dec1_droites.png}
 	\captionof{figure}{tracé des $\Delta Q(t)$ en fonction des $\Delta R(t-1)$ avec droites de classification}
 \end{center}
 
+Nous verrons qu'on peut alors classifier les points en deux groupes dont nous essayons de donner une interprétation physique dans la section \ref{ch:classification delta deb delta pluie}.  
 
 \newpage
 \bibliographystyle{apalike}
