@@ -1,0 +1,702 @@
+---
+title: "Analyse des données NARR"
+author: "Mathis Deronzier  LSCE"
+date: "5/20/2021"
+output: 
+    html_document: 
+      toc: true
+---
+  
+# Traitement des données 
+
+## Downscale des données
+
+### Quelques fonctions utiles dans l'analyse
+
+On importe les librairies nécessaires au traitement des données. 
+
+```{r}
+#library(ggplot2) #Pour plot les différents graphiques
+#On commence par se mettre dans le bon repertoire
+WDs<-c("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/stage/NARR datas/R_codes","/home/users/mderon/R_codes","/home/mathis/stage/py_codes","/home/mathis/stage/R_codes")
+wd<-WDs[4]
+setwd(wd)
+
+#On set la localisation
+localisations<- c(".","/home/hydrogeol2/mderon/NARR_1979_2014")#Les localisations possibles
+loc<-localisations[1]
+
+#Importation des fonctions de jours sec et de jours de pluie + RMSE
+source(paste(loc,"/codes_utiles/Analysis_functions.R", sep=""))
+source(paste(loc,"/codes_utiles/downscaling_application.R", sep=""))
+source(paste(loc,"/codes_utiles/downscaling_application2.R", sep=""))
+
+D_proj<-TRUE
+DATES <- read.csv(paste(loc,"/series/dates_1979_2014.csv", sep=""))[,(2:4)]
+#On fixe les dates de calibration et de projection
+if (D_proj){
+    proj <- which (DATES[,1]>=1996)
+}
+if(D_proj==FALSE){
+   proj <- which (DATES[,1]<1996)
+}
+
+```
+
+### Aplication des fonctions de downscaling
+
+```{r}
+programmes<- c("CDFt","SSR_CDFt", "CDFt_norm") #Liste des programmes permettant de downscaler
+prog<-programmes[1]
+D_proj<-TRUE
+downscal_appli(loc, prog, D_proj)
+```
+### Importation des données
+```{r}
+#PRECIPITATION
+pr_ds1 <- read.csv("./series/pr_ds1.csv")[,2]
+pr_ds2 <- read.csv("./series/pr_ds2.csv")[,2]
+pr_ds3 <- read.csv("./series/pr_ds3.csv")[,2]
+pr_ds4 <- read.csv("./series/pr_ds4.csv")[,2]
+pr_dsI <- read.csv("./series/pr_dsI.csv")[,2]
+
+pr_deg1 <- read.csv("./series/precp_deg1_1979_2014.csv")[proj,2]
+pr_deg2 <- read.csv("./series/precp_deg2_1979_2014.csv")[proj,2]
+pr_deg3 <- read.csv("./series/precp_deg3_1979_2014.csv")[proj,2]
+pr_deg4 <- read.csv("./series/precp_deg4_1979_2014.csv")[proj,2]
+
+pr_ref <- read.csv("./series/precp_ref_1979_2014.csv")[proj,2]
+
+pr_IPSL <- read.csv("./series/IPSL_pr_1979_2014.csv")[proj,]
+
+
+#ETP
+etp_ds1 <- read.csv("./series/etp_ds1.csv")[,2]
+etp_ds2 <- read.csv("./series/etp_ds2.csv")[,2]
+etp_ds3 <- read.csv("./series/etp_ds3.csv")[,2]
+etp_ds4 <- read.csv("./series/etp_ds4.csv")[,2]
+etp_dsI <- read.csv("./series/etp_dsI.csv")[,2]
+
+etp_deg1 <- read.csv(paste(loc,"/series/evap_deg1_1979_2014.csv",sep=""))[proj,2]
+etp_deg2 <- read.csv(paste(loc,"/series/evap_deg2_1979_2014.csv",sep=""))[proj,2]
+etp_deg3 <- read.csv(paste(loc,"/series/evap_deg3_1979_2014.csv",sep=""))[proj,2]
+etp_deg4 <- read.csv(paste(loc,"/series/evap_deg4_1979_2014.csv",sep=""))[proj,2]
+
+etp_ref <- read.csv("./series/evap_ref_1979_2014.csv")[proj,2]
+
+etp_IPSL <- read.csv("./series/IPSL_etp_1979_2014.csv")[proj,]
+
+#On cree la liste de chaque de toutes les series etudiees
+
+#Precipitation
+pr_series<-matrix(0, length(pr_ref),11)
+pr_series[,1]<-pr_ref 
+pr_series[,2]<-pr_ds1
+pr_series[,3]<-pr_ds2
+pr_series[,4]<-pr_ds3
+pr_series[,5]<-pr_ds4
+pr_series[,6]<-pr_dsI
+pr_series[,7]<-pr_deg1
+pr_series[,8]<-pr_deg2
+pr_series[,9]<-pr_deg3
+pr_series[,10]<-pr_deg4
+pr_series[,11]<-1e5*pr_IPSL
+
+colnames(pr_series)<-c("ref", "ds(x9)", "ds(x25)", "ds(x49)", "ds(x81)", "ds IPSL",  "deg(x9)", "deg(x25)", "deg(x49)", "deg(x81)", "IPSL")
+
+#ETP
+etp_series<-matrix(0, length(pr_ref),11)
+etp_series[,1]<-etp_ref
+etp_series[,2]<-etp_ds1
+etp_series[,3]<-etp_ds2
+etp_series[,4]<-etp_ds3
+etp_series[,5]<-etp_ds4
+etp_series[,6]<-etp_dsI
+etp_series[,7]<-etp_deg1
+etp_series[,8]<-etp_deg2
+etp_series[,9]<-etp_deg3
+etp_series[,10]<-etp_deg4
+etp_series[,11]<-1e5*etp_IPSL
+colnames(etp_series)<-c("ref", "ds(x9)", "ds(x25)", "ds(x49)", "ds(x81)", "ds IPSL", "deg(x9)", "deg(x25)", "deg(x49)", "deg(x81)", "IPSL")
+```
+
+#### Etude classique des séries temporelle
+
+```{r}
+summary(pr_series)
+```
+
+```{r}
+summary(etp_series)
+```
+
+```{r}
+#Tracé des précipitations
+nb_j<-c(31,28,31,30,31,30,31,31,30,31,30,31)
+time<-(365+180:365+230)
+#bounds<-100
+#points <- which(pr_series[,1]<bounds)
+for (i in 2:5){
+  plot(pr_series[,1],pr_series[,i], ylab=paste("serie dwnsc(x",(2*i-1)^2,")",sep=""), xlab=" serie ref", main= paste("tracé précip dwnsc/ précip ref (x",(2*i-1)^2,")", sep=""), xlim=c(0,80), ylim=c(0,80))
+  abline(0,1)
+  mod<-lm(pr_series[,i]~pr_series[,1])
+  abline(mod$coeff[1], mod$coeff[2], col="red")
+  #dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/pr_",i-1,"_ds.png"), width = 600)
+}
+ for (i in 2:5){ 
+   plot(pr_series[,1],pr_series[,i+5], ylab=paste("serie deg(x",(2*i-1)^2,")",sep=""), xlab=" serie ref", main= paste("tracé précip deg/ précip ref (x",(2*i-1)^2,")",sep=""), xlim=c(0,80), ylim=c(0,80))
+  abline(0,1)
+  mod<-lm(pr_series[,i+5]~pr_series[,1])
+  abline(mod$coeff[1], mod$coeff[2], col="red")
+  #dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/pr_",i-1,"_dg.png"), width = 600)
+}
+```
+
+```{r}
+for (i in 2:5){
+  plot(pr_series[time,i], type = "l", col= "blue", main= paste("serie precip dwnsc/serie deg (x",(2*i-1)^2,")",sep=""), ylab="kg/m^2")
+  lines(pr_series[time,i+5], col="red")
+  lines(pr_series[time,1],col="black")
+}
+#plot(pr_series[time,6], type = "l", col= "blue", main= paste("serie dwnsc/serie deg IPSL"), ylab="kg/m^2")
+#lines(pr_series[time,11], col="red")
+#lines(pr_series[time,1],col="black")
+```
+
+```{r}
+#Tracé des evapotranspirations
+nb_j<-c(31,28,31,30,31,30,31,31,30,31,30,31)
+time<-(365+180:365+210)
+for (i in 2:5){
+  plot(etp_series[which(pr_series[,1]<12),1],etp_series[which(pr_series[,1]<12),i+5], ylab=paste("serie dwnsc(x",(2*i-1)^2,")",sep=""), xlab=" serie ref")
+  abline(0,1)
+  mod<-lm(etp_series[,1]~etp_series[,i+5])
+  abline(mod$coeff[1], mod$coeff[2], col="red")
+}
+
+for (i in 2:5){
+  plot(etp_series[time,i], type = "l", col= "blue", main= paste("serie etp dwnsc/serie deg (x",(2*i-1)^2,")",sep=""), ylab="kg/m^2")
+  lines(etp_series[time,i+5], col="red")
+  lines(etp_series[time,1],col="black")
+}
+```
+
+```{r}
+cdf_pr_series_ref<-ecdf(pr_series[,1])
+
+for (i in 2:6){
+  if (i<6){
+  maxi<-max(pr_series[,1],pr_series[,i], pr_series[,i+5], na.rm = TRUE)
+  x<-seq(0,maxi,,400)
+  plot(cdf_pr_series_ref(x), main= paste("CDF pr serie dwnsc(blue) / deg(red) (x",(2*i-1)^2,")",sep=""), col="black",type="l")
+  cdf_pr_series_dwnsc<-ecdf(pr_series[,i])
+  lines(cdf_pr_series_dwnsc(x),col="blue")
+  cdf_pr_series_deg<-ecdf(pr_series[,i+4])
+  lines(cdf_pr_series_deg(x), col = "red")
+  }
+  else{
+    maxi<-max(pr_series[,1],pr_series[,i], pr_series[,i+5], na.rm = TRUE)
+  x<-seq(0,maxi,,400)
+  plot(cdf_pr_series_ref(x), main= "CDF pr serie dwnsc(blue) / deg(red) IPSL", col="black",type="l")
+  cdf_pr_series_dwnsc<-ecdf(pr_series[,i])
+  lines(cdf_pr_series_dwnsc(x),col="blue")
+  cdf_pr_series_deg<-ecdf(pr_series[,i+4])
+  lines(cdf_pr_series_deg(x), col = "red")
+  }
+}
+
+```
+
+```{r}
+cdf_etp_series_ref<-ecdf(etp_series[,1])
+for (i in 2:6){
+  if (i<6){
+  maxi<-max(etp_series[,1],etp_series[,i], etp_series[,i+5], na.rm = TRUE)
+  x<-seq(0,maxi,,400)
+  plot(cdf_etp_series_ref(x), main= paste("CDF etp serie dwnsc(blue) / deg(red) (x",(2*i-1)^2,")",sep=""), col="black",type="l")
+  cdf_etp_series_dwnsc<-ecdf(etp_series[,i])
+  lines(cdf_etp_series_dwnsc(x),col="blue")
+  cdf_etp_series_deg<-ecdf(etp_series[,i+5])
+  lines(cdf_etp_series_deg(x), col = "red")
+  }
+  else{
+  maxi<-max(etp_series[,1],etp_series[,i], etp_series[,i+5], na.rm = TRUE)
+  x<-seq(0,maxi,,400)
+  plot(cdf_etp_series_ref(x), main= "CDF etp serie dwnsc(blue) / deg(red) IPSL", col="black",type="l")
+  cdf_etp_series_dwnsc<-ecdf(etp_series[,i])
+  lines(cdf_etp_series_dwnsc(x),col="blue")
+  cdf_etp_series_deg<-ecdf(etp_series[,i+5])
+  lines(cdf_etp_series_deg(x), col = "red")
+  }
+}
+```
+
+### RMSE
+
+```{r}
+#On va regarder la norme (RMSE)
+fun_pr<-function(serie) sqrt(mean((serie-pr_series[,1])^2))
+fun_etp<-function(serie) sqrt(mean((serie-etp_series[,1])^2))
+
+pr_RMSE_dwnsc <- apply(pr_series[,(1:5)] ,2,fun_pr)
+pr_RMSE_deg <- apply(pr_series[,c(1,7,8,9,10)] ,2,fun_pr)
+
+etp_RMSE_dwnsc <- apply(etp_series[,(1:5)] ,2,fun_etp)
+etp_RMSE_deg <- apply(etp_series[,c(1,7,8,9,10)] ,2,fun_etp)
+
+plot(c(1,9,25,49,81),pr_RMSE_dwnsc, type="o", main="RMSE prec dwnsc(blue)/deg(red)", ylab = "RMSE", xlab= "degradation", col="blue")
+lines(c(1,9,25,49,81),pr_RMSE_deg, type="o", col= "red")
+dev.print(device = png, file = paste("/home/mathis/stage/latex/images/RMSE_precip.png"), width = 600)
+
+
+plot(c(1,9,25,49,81),etp_RMSE_dwnsc, type="o", main="RMSE evap dwnsc(blue)/deg(red)", ylab = "RMSE", xlab= "degradation", col="blue")
+lines(c(1,9,25,49,81),etp_RMSE_deg, type="o", col= "red")
+
+#dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/RMSE_evap.png"), width = 600)
+
+```
+
+### Tracé de boxplot
+
+```{r}
+#On va faire un boxplot()
+boxplot(pr_series, main = "boxplot precipitations", xlab="degradation")
+dev.print(device = png, file = paste("/home/mathis/stage/latex/images/boxplot_precip.png"), width = 600)
+
+boxplot(etp_series, main = "boxplot etp",xlab="degradation")
+dev.print(device = png, file = paste("/home/mathis/stage/latex/images/boxplot_evap.png"), width = 600)
+```
+
+```{r}
+#On veut aussi comparer les quantiles 
+N=500
+Quant<-function(serie){return(quantile(serie,probs=seq(0,1,length.out=N)))}
+Quantile_pr_series<-apply(pr_series,2,Quant)
+Quantile_etp_series<-apply(etp_series,2,Quant)
+
+for (i in (2:6)){
+  if (i<6){
+  plot(Quantile_pr_series[,1], Quantile_pr_series[,i], main = paste("tracé Q-Q precip dwnsc/deg (x",(2*(i-1)+1)^2,")",sep=""), xlab = "quantiles série ref", ylab="quantiles série dwnsc", type="l", col="blue")
+  lines(Quantile_pr_series[,1], Quantile_pr_series[,i+5], col="red")
+  abline(0,1)
+  }
+  else{
+    plot(Quantile_pr_series[,1], Quantile_pr_series[,i],main= "tracé Q-Q precip dwnsc IPSL", xlab = "quantiles série ref", ylab="quantiles série dwnsc", type="l", col="blue")
+    lines(Quantile_pr_series[,1], Quantile_pr_series[,i+5], col="red")
+    abline(0,1)
+  }
+}
+```
+
+Cela pose un réel pour CDFt.
+
+
+### La correlation temporelle: ACF
+
+```{r}
+# on va regarder l'autocorrelation sur 10 jours
+T=10
+delta_t<-(1:(T+1))
+ACF_series<-function(serie){return(acf(serie,type="correlation",lag.max=T,plot=FALSE)$acf)}
+#Cacul de l'ACF pour les differentes series
+ACF_pr_series<- apply(pr_series,2,ACF_series)
+ACF_etp_series<-apply(etp_series,2,ACF_series)
+#Données des ordonnées
+layout(matrix(1:4,2,2))
+for (i in 2:6){
+  plot(x=delta_t, y=(ACF_pr_series[,i]-ACF_pr_series[,1])/ACF_pr_series[,1], xlab="delta_t", ylab="diff correlation", type="h",col="black", main=paste("ACF serie  dwnsc(x",(2*(i-1)+1)^2,")",sep=""))
+}
+
+for (i in 6:9){
+  plot(x=delta_t, y=(ACF_pr_series[,i]-ACF_pr_series[,1])/ACF_pr_series[,1], xlab="delta_t", ylab="diff correlation", type="h",col="black", main=paste("ACF serie  deg(x",(2*(i-5)+1)^2,")",sep=""))
+}
+```
+
+```{r}
+layout(matrix(1:4,2,2))
+for (i in 2:5){
+  plot(x=delta_t, y=(ACF_etp_series[,i]-ACF_etp_series[,1])/ACF_etp_series[,1], xlab="delta_t", ylab="diff correlation", type="h",col="black", main=paste("ACF serie  deg (x",(2*(i-1)+1)^2,")",sep=""))
+}
+
+layout(matrix(1:4,2,2))
+for (i in 6:9){
+  plot(x=delta_t, y=(ACF_etp_series[,i]-ACF_etp_series[,1])/ACF_etp_series[,1], xlab="delta_t", ylab="diff correlation", type="h",col="black", main=paste("ACF serie  deg (x",(2*(i-5)+1)^2,")",sep=""))
+}
+```
+
+### Conclusion:
+
+On voit que le comportements des series de précipitation downscalées ont une correlation temporelle très similaires à la série de référence, il faudrait créer un test statistique permettant de l'assurer rigoureusement. Étonnament la correlation temporelle $C(X_t,X_{t+1})$ est plus grande pour la série non dégradée.
+
+#### Analyse des fonctions de distribution
+
+```{r}
+#On commence par afficher les fonctions de répartition empiriques
+range_pr <- range(pr_series[,2])
+range_etp <- range(etp_series[,2])
+CDF_pr_series <- apply(pr_series, 2, ecdf)
+CDF_etp_series <- apply(etp_series, 2, ecdf)
+
+x<-seq(range_pr[1],range_pr[2],length.out=200)
+colors<-rainbow(10)
+
+#On va afficher toutes les fonctions de répartition sur un même graphique.
+
+
+
+plot(x,CDF_pr_series$ref(x),xlab="x = Qtte precip", ylab="y = F_X", type="l",col="blue", main= "Fonctions de distributions")
+for (i in 2:6){
+  eval(parse(text=paste("y <- CDF_pr_series[[",i,"]]","(x)",sep="")))
+  lines(x,y, col = colors[i-1])
+}
+
+plot(x,CDF_pr_series$ref(x),xlab="x = Qtte precip", ylab="y = F_X", type="l",col="blue", main= "Fonctions de distributions")
+for (i in 7:11){
+  eval(parse(text=paste("y <- CDF_pr_series[[",i,"]]","(x)",sep="")))
+  lines(x,y, col = colors[i-5])
+}
+```
+
+```{r}
+layout(matrix(1:2,1,2))
+
+plot(x,CDF_etp_series$ref(x),xlab="x = Qtte precip", ylab="y = F_X", type="l",col="blue", main= "Fonctions de distributions")
+for (i in 2:5){
+  eval(parse(text=paste("y <- CDF_etp_series[[",i,"]]","(x)",sep="")))
+  lines(x,y, col = colors[i-1])
+}
+
+plot(x,CDF_etp_series$ref(x),xlab="x = Qtte precip", ylab="y = F_X", type="l",col="blue", main= "Fonctions de distributions")
+for (i in 6:9){
+  eval(parse(text=paste("y <- CDF_etp_series[[",i,"]]","(x)",sep="")))
+  lines(x,y, col = colors[i-5])
+}
+```
+
+On n'y voit pas grand chose, peut être que ce n'est pas pertinent.
+
+### Test de Cramer-von Mises
+
+## Test 1
+
+```{r}
+source(paste(loc,"/codes_utiles/test_stat_Cramer_von_Mises.R",sep=""))
+
+#On applique l'algorithme de Cramer-von Mises
+CVM_pr_series<-function(serie){return(cvm(serie,pr_series[,1],TRUE))}
+CVM_etp_series<-function(serie){return(cvm(serie,etp_series[,1],TRUE))}
+
+pr_CVM<-apply(pr_series[points,], 2, CVM_pr_series)
+etp_CVM<-apply(etp_series, 2, CVM_etp_series)
+#CVM$T # donne la valeur de la "distance" entre les cdfs
+#CVM$pval # p-value du test CvM 
+pr_CVM_stat<-matrix(0,1,11)
+etp_CVM_stat<-matrix(0,1,11)
+for (i in (1:11)){
+  pr_CVM_stat[i]<-pr_CVM[[i]]$T
+  pr_CVM_stat[i]<-pr_CVM[[i]]$T
+}
+colnames(pr_CVM_stat)<-c("ref", "dwnsc(x9)", "dwnsc(x25)", "dwnsc(x49)", "dwnsc(x81)", "dwnsc IPSL",  "deg(x9)", "deg(x25)", "deg(x49)", "deg(x81)", "IPSL")
+colnames(etp_CVM_stat)<-c("ref", "dwnsc(x9)", "dwnsc(x25)", "dwnsc(x49)", "dwnsc(x81)", "dwnsc IPSL",  "deg(x9)", "deg(x25)", "deg(x49)", "deg(x81)", "IPSL")
+
+plot(pr_CVM_stat[,(1:6)], main= "distance Cv-M precip dwnsc(blue)/deg(red)", xlab="degradations" , ylab="CvM", type="l", col="blue")
+lines(pr_CVM_stat[,c(1,7,8,9,10,11)], col="red")
+dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/Dist_CVM_precip.png"), width = 600)
+
+
+plot(etp_CVM_stat[,(1:6)], main= "distance Cv-M precip dwnsc(blue)/deg(red)", xlab="degradations" , ylab="Cv-M", type="l")
+lines(etp_CVM_stat[,c(1,7,8,9,10,11)], col="red")
+dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/Dist_CVM_evap.png"), width = 600)
+```
+## Test 2 : sans les valeurs nulles (fonction de densité continues)
+
+```{r}
+source(paste(loc,"/codes_utiles/test_stat_Cramer_von_Mises.R",sep=""))
+points<-which(pr_series[,1]>0)
+#On applique l'algorithme de Cramer-von Mises
+CVM_pr_series<-function(serie){return(cvm(serie,pr_series[points,1],TRUE))}
+CVM_etp_series<-function(serie){return(cvm(serie,etp_series[,1],TRUE))}
+
+pr_CVM<-apply(pr_series[points,], 2, CVM_pr_series)
+etp_CVM<-apply(etp_series, 2, CVM_etp_series)
+#CVM$T # donne la valeur de la "distance" entre les cdfs
+#CVM$pval # p-value du test CvM 
+pr_CVM_stat<-matrix(0,1,11)
+etp_CVM_stat<-matrix(0,1,11)
+for (i in (1:11)){
+  pr_CVM_stat[i]<-pr_CVM[[i]]$T
+  pr_CVM_stat[i]<-pr_CVM[[i]]$T
+}
+colnames(pr_CVM_stat)<-c("ref", "dwnsc(x9)", "dwnsc(x25)", "dwnsc(x49)", "dwnsc(x81)", "dwnsc IPSL",  "deg(x9)", "deg(x25)", "deg(x49)", "deg(x81)", "IPSL")
+colnames(etp_CVM_stat)<-c("ref", "dwnsc(x9)", "dwnsc(x25)", "dwnsc(x49)", "dwnsc(x81)", "dwnsc IPSL",  "deg(x9)", "deg(x25)", "deg(x49)", "deg(x81)", "IPSL")
+
+plot(pr_CVM_stat[,(1:5)], main= "distance Cv-M precip dwnsc(blue)/deg(red)", xlab="degradations" , ylab="CvM", type="l", col="blue")
+lines(pr_CVM_stat[,c(1,7,8,9,10)], col="red")
+dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/Dist_CVM_precip_pos.png"), width = 600)
+
+
+plot(etp_CVM_stat[,(1:6)], main= "distance Cv-M precip dwnsc(blue)/deg(red)", xlab="degradations" , ylab="Cv-M", type="l")
+lines(etp_CVM_stat[,c(1,7,8,9,10,11)], col="red")
+dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/Dist_CVM_evap.png"), width = 600)
+```
+
+La p-value n'est pas representative dans ce cas là. Cela est dû au fait que la précipitation possède une fonction de distribution avec une masse de Dirac en 0. Bof, il faut faire quelque chose.
+
+
+
+###Etude des jours de sécheresse
+
+On va regarder pour chaque série les jours de sécheresse consécutifs
+
+```{r}
+drought_sum<-function(serie){return(sum(freq_without_rain(serie)))}
+drought_serie_sum <- apply(pr_series, 2, drought_sum)
+
+barplot(drought_serie_sum, main="nombre de jours sans précipitation en fonction des séries")
+dev.print(device = png, file = paste("C:/Users/mathisDeronzier/Mathématiques/Stage LSCE downscaling upscaling/latex/images/nb_jours_sec.png"), width = 600)
+
+```
+
+```{r}
+x<-c(1,9,25,49,81)
+plot(x,drought_serie_sum[c(1,7,8,9,10)], type = "h", main = "Jours de sécheresse en fonction de la dégradation", x_lab= "dégradation") 
+```
+
+### Analyse des fréquence de jours secs d'affilés
+
+
+```{r}
+
+freq<-function(serie,rg){
+  frequences <-matrix(0,rg[2]-rg[1]+1,1)
+  for (i in rg[1]:rg[2]){
+    frequences[i-rg[1]+1,1]<-length(which(serie==i))
+  } 
+  return (frequences/length(serie))
+}
+
+
+for (i in 1:5){
+  serie<-freq_without_rain(pr_series[,i])
+  ranges<-range(serie)
+  plot((ranges[1]:ranges[2]),freq(serie,ranges), main= paste("CDF périodes sèches dwnsc(x", (2*(i-1)+1)^2, ")", sep=""), ylab="freq", type="h")
+}
+serie<-freq_without_rain(pr_series[,6])
+ranges<-range(serie)
+plot((ranges[1]:ranges[2]),freq(serie,ranges), main= paste("CDF périodes sèches dwnsc IPSL"), ylab="freq", type="h")
+```
+
+
+```{r}
+for (i in c(7,8,9,10)){
+  serie<-freq_without_rain(pr_series[,i])
+  ranges<-range(serie)
+  plot((ranges[1]:ranges[2]),freq(serie,ranges), main= paste("CDF périodes sèches deg(x", (2*(i-6)+1)^2, ")", sep=""), ylab="freq", type="h")
+}
+serie<-freq_without_rain(pr_series[,11])
+ranges<-range(serie)
+plot((ranges[1]:ranges[2]),freq(serie,ranges), main= paste("CDF périodes sèches dwnsc IPSL"), ylab="freq", type="h")
+```
+
+Nous pouvons voir que l'on a tendance à sous estimer les périodes de pluie de 1 jour avec le downscaling.
+
+
+## Autre méthode de downscaling CDFt_norm pour la série de précipitation
+
+Nous allons essayer ici une nouvelle méthode de downscaling
+
+### Regression linéaire pour définir nos fonctions f et g
+
+```{r}
+n<-2000
+
+Mu<-matrix(0,n,11)
+Sigma<-matrix(0,n,11)
+mu_series<-function(pr_serie){
+  return (apply(sous_part(pr_series),2,mean))
+}
+sigma_series<-function(pr_serie){
+  return (apply(sous_part(pr_series),2,var))
+}
+
+##############################  Attention #####################################################
+# On ne veut pas l'appliquer sur les séries downscalées mais sur les séries réelles dégradées.#
+###############################################################################################
+for (i in 1:n){
+  Mu[i,]<-mu_series(pr_series)
+  Sigma[i,]<-sigma_series(pr_serie)
+}
+
+layout(matrix(1:4,2,2))
+ord<-order(Mu[,1])
+for (i in 2:6){
+  plot(Mu[ord,1],col="red",type="l", main=paste("mean according to the degradation (x",(2*(i-1)+1)^2,")", sep=""), ylim = range(rbind(range(Mu[,1]),range(Mu[,i]))), ylab = "mean")
+  lines(Mu[ord,i],col="blue")
+}
+
+#On voit ici qu'il faut prévoire à partir des quantiles
+
+```
+
+### Construction des modèles
+
+On commence par importer les modèles d'apprentissage
+
+```{r}
+serie_prec_ref <- read.csv(paste(loc,"/series/precp_ref_1979_2014.csv",sep=""))[,2]
+degraded_prec1 <- read.csv(paste(loc,"/series/precp_deg1_1979_2014.csv",sep=""))[,2]
+degraded_prec2 <- read.csv(paste(loc,"/series/precp_deg2_1979_2014.csv",sep=""))[,2]
+degraded_prec3 <- read.csv(paste(loc,"/series/precp_deg3_1979_2014.csv",sep=""))[,2]
+degraded_prec4 <- read.csv(paste(loc,"/series/precp_deg4_1979_2014.csv",sep=""))[,2]
+
+
+pr_series2<-matrix(0, length(serie_prec_ref),5)
+pr_series2[,1]<-serie_prec_ref 
+pr_series2[,2]<-degraded_prec1
+pr_series2[,3]<-degraded_prec2
+pr_series2[,4]<-degraded_prec3
+pr_series2[,5]<-degraded_prec4
+colnames(pr_series2)<-c("ref", "deg (x9)", "deg (x25)", "deg (x49)", "deg (x81)")
+```
+
+#On les sous echantillons pour évaluer la moyenne
+```{r}
+n<-2000
+
+Mu<-matrix(0,n,11)
+Sigma<-matrix(0,n,11)
+mu_series<-function(pr_serie){
+  return (apply(sous_part(pr_serie),2,mean))
+}
+sigma_series<-function(pr_serie){
+  return (apply(sous_part(pr_serie),2,var))
+}
+
+for (i in 1:n){
+  Mu[i,]<-mu_series(pr_series)
+  Sigma[i,]<-sigma_series(pr_series)
+}
+
+layout(matrix(1:4,2,2))
+ord<-order(Mu[,1])
+for (i in 2:5){
+  plot(Mu[ord,1],col="red",type="l", main=paste("mean according to the degradation (x",(2*i-1)^2,")", sep=""), ylim = range(rbind(range(Mu[,1]),range(Mu[,i]))), ylab = "mean")
+  lines(Mu[ord,i],col="blue")
+}
+```
+
+```{r}
+model.mu<-function(Mu1){
+  Mu2<-Mu1^2
+  return(lm(Mu[,1] ~ Mu1 + Mu2))}
+
+model.sigma<-function(sigma1){
+  sigma2<-sigma1^2
+  return(lm(Sigma[,1] ~ sigma1 +sigma2))}
+models.mean<-list()
+models.sigma<-list()
+for (i in 2:5){
+  Mu1<-Mu[,i]
+  Mu2<-Mu1^2
+  Sigma1<-Sigma[,i]
+  Sigma2<-Sigma1^2
+  models.mean[[i-1]]<- lm(Mu[,1]~Mu1+Mu2)
+  models.sigma[[i-1]]<- lm(Sigma[,1]~Sigma1+Sigma2)
+}
+#On définit nos modèles
+
+layout(matrix(1:4,2,2))
+for (i in 1:4){
+  Mu1<-Mu[,i+1]
+  Mu2<-Mu1^2
+  ord<-order(Mu[,1])
+  plot(Mu[ord,1],type="l", col= "red")
+  lines(models.mean[[i]]$coefficients[1]+models.mean[[i]]$coefficients[2]*Mu1[ord]+models.mean[[i]]$coefficients[3]*Mu2[ord], type= "l", col= "blue")
+}
+```
+
+
+### On va maintenant définir les fonctions f et g pour chaque dégradation
+
+```{r}
+liste.f.g<-list()
+for(i in 1:4){
+  f<-function(x){
+    return(models.mean[[i]]$coefficients[1]+models.mean[[i]]$coefficients[2]*x+ models.mean[[i]]$coefficients[3]*x^2)
+  }
+  g<-function(x){
+    return(models.sigma[[i]]$coefficients[1]+models.sigma[[i]]$coefficients[2]*x+ models.sigma[[i]]$coefficients[3]*x^2)
+  }
+  liste.f.g[[i]]<-f
+  liste.f.g[[i+4]]<-g
+}
+```
+
+### L'objectif est maintenant d'appliquer CDFt_norm pour observer ses résultats
+
+```{r}
+# ### Regardons si c'est pertinent d'ajuster la variance et la moyenne de nos séries
+# 
+# #On va créer une fonction qui ajuste la moyenne et la variance
+# ajust<-function(serie_ds,f,g){
+#   return(serie_ds*g(var(serie_ds))/var(serie_ds))
+# }
+# 
+# pr_series_ajust<-matrix(0, length(pr_ref),5)
+# pr_series_ajust[,1]<-pr_series[,1]
+# for (i in 1:4){
+#   pr_series_ajust[,i+1]<-ajust(pr_series[,i+1],liste.f.g[[i]],liste.f.g[[i+4]])
+# }
+# 
+# Mu_ajust<-matrix(0,n,5)
+# Sigma_ajust<-matrix(0,n,5)
+# for (i in 1:n){
+#   Mu_ajust[i,]<-mu_series(pr_series_ajust)
+#   Sigma_ajust[i,]<-sigma_series(pr_series_ajust)
+# }
+# 
+# ala<-mu_series(pr_series_ajust)
+# layout(matrix(1:4,2,2))
+# for (i in 2:5){
+#   ord<-order(Mu_ajust[,1])
+#   plot(Mu_ajust[ord,1],col="red",type="l", main=paste("mean according to the degradation (x",(2*(i-1)+1)^2,")", sep=""), ylim = range(rbind(range(Mu[,1]),range(Mu[,i]))))
+#   lines(Mu_ajust[ord,i],col="blue")
+# }
+```
+
+
+
+## Algorithme CDFt_norm
+
+Il faut encore travailler cet algorithme qui ne compile pas encore.
+
+```{r}
+# #on commence par réappliquer le résulats
+# downscal_appli(loc, "CDFt_norm" , D_proj, liste.f.g)
+# 
+# 
+# pr_ds1 <- read.csv("./series/pr_ds1.csv")[,2]
+# pr_ds2 <- read.csv("./series/pr_ds2.csv")[,2]
+# pr_ds3 <- read.csv("./series/pr_ds3.csv")[,2]
+# pr_ds4 <- read.csv("./series/pr_ds4.csv")[,2]
+# 
+# #Precipitation
+# pr_series_n<-matrix(0, length(pr_ref),5)
+# pr_series_n[,1]<-pr_ref 
+# pr_series_n[,2]<-pr_ds1
+# pr_series_n[,3]<-pr_ds2
+# pr_series_n[,4]<-pr_ds3
+# pr_series_n[,5]<-pr_ds4
+# colnames(pr_series_n)<-c("ref", "deg (x9)", "deg (x25)", "deg (x49)", "deg (x81)")
+# 
+# summary(pr_series_n)
+```
+
+```{r}
+# #Comparaison des RMSE
+# 
+# pr_RMSE_n <- apply(pr_series_n,2,fun_pr)
+# 
+# plot(c(1,9,25,49,81),pr_RMSE, type="o", main="RMSE precipitation", ylab = "RMSE", xlab= "degradation", col = "blue")
+# lines(c(1,9,25,49,81), pr_RMSE_n,  col = "blue")
+```

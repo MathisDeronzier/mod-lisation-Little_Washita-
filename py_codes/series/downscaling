@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug  7 15:07:14 2021
+
+@author: mathis
+"""
+
+import os 
+import pandas as pd 
+#from CDF-t import *
+
+localisations= [".","/home/hydrogeol2/mderon/NARR_1979_2014"]#Les localisations possibles
+loc=localisations[1]
+
+def apply_downscaling(loc,prog, D_proj,liste_f_g=0):
+    os.chdir(loc+"/codes_utiles/CDFt.R")
+    
+    dates=pd.read_csv(loc+"/series/dates_1979_2014.csv").to_numpy()[:,1:5]
+    cal=np.where(dates[:,0]<1996)
+    dates_cal=dates[cal,:]
+    if D_proj:
+        proj=np.where(dates[:,0]>=1996)
+    else:
+        proj=np.where(dates[:,0]<1996)
+    dates_proj=dates[proj,:]
+    etp_serie=np.zeros((n,11))
+    all_pr_serie=pd.read_csv(loc+"/series/precp_ref_1979_2014.csv").to_numpy()[:,1]
+    all_etp_serie=pd.read_csv(loc+"/series/etp_ref_1979_2014.csv").to_numpy()[:,1]
+    pr_serie[:,0]=pd.read_csv(loc+"/series/precp_ref_1979_2014.csv").to_numpy()[proj,1]
+    etp_serie[:,0]=pd.read_csv(loc+"/series/etp_ref_1979_2014.csv").to_numpy()[proj,1]
+    n=len(proj)
+    pr_serie=np.zeros((n,11))
+    for i in range(1,5):
+        pr_serie[:,i]=pd.read_csv(loc+"/series/precp_deg"+str(i)+"_1979_2014.csv").to_numpy()[proj,1]
+        etp_serie[:,i]=pd.read_csv(loc+"/series/evap_deg"+str(i)+"_1979_2014.csv").to_numpy()[proj,1]
+    pr_serie[:,5]=pd.read_csv(loc+"/series/etp_IPSL.csv").to_numpy()[proj,1]
+    etp_serie[:,5]=pd.read_csv(loc+"/series/pr_IPSL.csv").to_numpy()[proj,1]
+    for i in range(1:13):#On fait un cdf par mois
+        month_cal=np.where(dates_cal[:,1]==i)
+        month_proj=np.where(dates_proj[:,1]==i)
+        for i in range(1,6):
+            pr_serie[:,5+i]=CDFt_classic(pr_serie[month_cal,i],pr_serie[month_cal,1],all_pr_serie[cal,i][month_cal])
+            etp_serie[:,5+i]=CDFt_classic(etp_serie[month_cal,i],etp_serie[month_cal,1],all_etp_serie[cal,i][month_cal])
+    #écrire ensuite en csv
+    return 0
+        

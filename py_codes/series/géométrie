@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 18 15:42:30 2021
+
+@author: mathis
+"""
+
+
+"""Création d u schéma explicatif """
+
+import pyplot as plt
+

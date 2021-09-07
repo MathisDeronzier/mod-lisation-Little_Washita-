@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Aug  7 15:07:14 2021
+
+@author: mathis
+"""
+
+import os 
+import pandas as pd 
+import numpy as np
+import matplotlib.pyplot as plt
+#from CDF-t import *
+
+
+################## Ici les programmes utiles au downscaling ###################
+    
+def Cum_Dist_Fun(X):
+#On suppose X un vecteur de tirages aléatoires la fonction renvoie un tableau 
+    n=len(X)
+    Y=X
+    Y.sort()
+    m=Y[0]
+    s=0
+    Z=[]
+    for i in range(n):
+        if Y[i]>m:
+            Z.append([m,s/n])
+            m=Y[i]
+        s+=1
+        if i==n-1:
+            Z.append([m,s/n])
+    return np.array(Z)
+            
+def find(x,X):
+#On suppose que la liste X est triée et l'on cherche la position dans la liste 
+#telle que l'élément soit dedans
+    a=0
+    b=len(X)
+    while b-a>1:
+        m=(a+b)//2
+        if x<X[m]:
+            b=m
+        else:
+            a=m
+    return a
+
+def find_t(x,a,b):
+    #On a a<=x<b on renvoie t vérifiant x=ta+(1-t)b
+    return (b-x)/(b-a)
+    
+
+def QQ(X,Y,Xf):
+#Cette fonction prend en entrée Les listes X, Y et la liste Xf à downscaler
+    F_X=Cum_Dist_Fun(X)
+    F_Y=Cum_Dist_Fun(Y)
+    Y_pred=[]
+    nx=F_X.shape[0]
+    ny=F_Y.shape[0]
+    for x in Xf:
+        rx=find(x,F_X[:,0])
+        if rx<(nx-1):
+            tx=find_t(x, F_X[rx,0],F_X[rx+1,0])
+            px=tx*F_X[rx,1]+(1-tx)*F_X[rx+1,1]
+            ry=find(px,F_Y[:,1])
+            ty=find_t(px, F_Y[ry,1],F_Y[ry+1,1])
+            py=ty*F_Y[ry,0]+(1-ty)*F_Y[ry+1,0]
+        else:
+            py=F_Y[ny-1,0]
+        Y_pred.append(py)
+    return np.array(Y_pred)
+    
+def plot_cdf(X):
+#Fonction affichant la CDF de l'échantillon X
+    S=Cum_Dist_Fun(X)
+    #fig=plt.figure()
+    plt.plot(S[:,0],S[:,1])
+    plt.xlabel("X")
+    plt.ylabel("F_X")
+    plt.title("Fonction de répartition empirique de X")
+    #fig.savefig("/home/mathis/stage/latex/images/classification_deb_prr")
+    plt.show()
+    
+
+def CDFt_classic(X,Y,Xf):
+#On choisit la fonction CDF-t classique
+    return QQ(X,Y,Xf)*(Xf.argmax())/(Y.argmax())
+
+
+###############################################################################
+#Application des codes    
+
+localisations= [".","/home/hydrogeol2/mderon/NARR_1979_2014","/home/mathis/stage/py_codes"]#Les localisations possibles
+loc=localisations[2]
+D_proj=True
+
+dates=pd.read_csv(loc+"/series/dates_1979_2014.csv").to_numpy()[:,1:5]
+cal=np.where(dates[:,0]<1996)[0]
+d_cal=dates[cal,:]
+if D_proj:
+    proj=np.where(dates[:,0]>=1996)[0]
+else:
+    proj=np.where(dates[:,0]<1996)[0]
+d_proj=dates[proj,:]
+n_p=len(proj)
+nc=len(cal)
+# On définit les différentes séries
+pr_serie_proj=np.zeros((n_p,11))
+etp_serie_proj=np.zeros((n_p,11))
+pr_serie_cal=np.zeros((nc,6))
+etp_serie_cal=np.zeros((nc,6))
+pr_serie_cal[:,0]=pd.read_csv(loc+"/series/precp_ref_1979_2014.csv").to_numpy()[cal,1]
+etp_serie_cal[:,0]=pd.read_csv(loc+"/series/evap_ref_1979_2014.csv").to_numpy()[cal,1]
+pr_serie_proj[:,0]=pd.read_csv(loc+"/series/precp_ref_1979_2014.csv").to_numpy()[proj,1]
+etp_serie_proj[:,0]=pd.read_csv(loc+"/series/evap_ref_1979_2014.csv").to_numpy()[proj,1]
+for i in range(1,5):
+    pr_serie_proj[:,i+5]=pd.read_csv(loc+"/series/precp_deg"+str(i)+"_1979_2014.csv").to_numpy()[proj,1]
+    etp_serie_proj[:,i+5]=pd.read_csv(loc+"/series/evap_deg"+str(i)+"_1979_2014.csv").to_numpy()[proj,1]
+    pr_serie_cal[:,i]=pd.read_csv(loc+"/series/precp_deg"+str(i)+"_1979_2014.csv").to_numpy()[cal,1]
+    etp_serie_cal[:,i]=pd.read_csv(loc+"/series/evap_deg"+str(i)+"_1979_2014.csv").to_numpy()[cal,1]
+pr_serie_proj[:,10]=pd.read_csv(loc+"/series/IPSL_pr_1979_2014.csv").to_numpy()[proj,0]
+etp_serie_proj[:,10]=pd.read_csv(loc+"/series/IPSL_etp_1979_2014.csv").to_numpy()[proj,0]
+pr_serie_cal[:,5]=pd.read_csv(loc+"/series/IPSL_pr_1979_2014.csv").to_numpy()[cal,0]
+etp_serie_cal[:,5]=pd.read_csv(loc+"/series/IPSL_etp_1979_2014.csv").to_numpy()[cal,0]
+for m in range(1,13):#On fait un cdf par mois
+    m_cal=np.where(d_cal[:,1]==m)[0]
+    m_proj=np.where(d_proj[:,1]==m)[0]
+    for i in range(1,6):
+        pr_serie_proj[m_proj,i]=QQ(pr_serie_cal[m_cal,i],pr_serie_cal[m_cal,0],pr_serie_proj[m_proj,i+5])
+        etp_serie_proj[m_proj,i]=QQ(etp_serie_cal[m_cal,i],etp_serie_cal[m_cal,0],etp_serie_proj[m_proj,i+5])
+for i in range(1,6):
+    zer=np.where(pr_serie_proj[:,i]<0)[0]
+    pr_serie_proj[zer,i]=np.array([0 for k in range(len(zer))])
+    
+#écrire ensuite en csv
+
+
+pd.DataFrame(pr_serie_proj).to_csv(loc+"/series/pr_ds_py.csv", header=False, index=False)        
+pd.DataFrame(etp_serie_proj).to_csv(loc+"/series/etp_ds_py.csv", header=False, index=False) 
+
+
+
+
