@@ -6,6 +6,12 @@ Allaire, G. (2005).
   mod{\'e}lisation math{\'e}matique et {\`a} la simulation num{\'e}rique}.
 \newblock Editions Ecole Polytechnique.
 
+\bibitem[Allen, 1991]{allen1991hydrology}
+Allen, P.~B. (1991).
+\newblock Hydrology of the little washita river watershed, oklahoma: Data and
+  analysis.
+\newblock {\em Tech. Rep. ARS-90, US Dept. of Agri., Agri. Res. Serv.}
+
 \bibitem[Ayar et~al., 2016]{ayar2016intercomparison}
 Ayar, P.~V., Vrac, M., Bastin, S., Carreau, J., D{\'e}qu{\'e}, M., and
   Gallardo, C. (2016).
@@ -111,6 +117,14 @@ Nahar, J., Johnson, F., and Sharma, A. (2017).
 Robin, Y., Vrac, M., Naveau, P., and Yiou, P. (2019).
 \newblock Multivariate stochastic bias corrections with optimal transport.
 \newblock {\em Hydrology and Earth System Sciences}, 23(2):773--786.
+
+\bibitem[Rosero et~al., 2011]{rosero2011ensemble}
+Rosero, E., Gulden, L.~E., Yang, Z.-L., De~Goncalves, L.~G., Niu, G.-Y., and
+  Kaheil, Y.~H. (2011).
+\newblock Ensemble evaluation of hydrologically enhanced noah-lsm: Partitioning
+  of the water balance in high-resolution simulations over the little washita
+  river experimental watershed.
+\newblock {\em Journal of Hydrometeorology}, 12(1):45--64.
 
 \bibitem[Villani, 2003]{villani2003topics}
 Villani, C. (2003).

@@ -3,44 +3,58 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: rapport_final.aux
 The style file: apalike.bst
 Database file #1: mabib.bib
-You've used 3 entries,
+Repeated entry---line 17 of file mabib.bib
+ : @phdthesis{ethier2011propos
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 218 of file mabib.bib
+ : @article{rosero2011ensemble
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 242 of file mabib.bib
+ : @article{ayar2016intercomparison
+ :                                 ,
+I'm skipping whatever remains of this entry
+Warning--there's a number but no series in villani2003topics
+You've used 21 entries,
             1935 wiz_defined-function locations,
-            491 strings with 4568 characters,
-and the built_in function-call counts, 1235 in all, are:
-= -- 119
-> -- 58
-< -- 1
-+ -- 22
-- -- 20
-* -- 112
-:= -- 226
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 24
-chr.to.int$ -- 3
-cite$ -- 3
-duplicate$ -- 40
-empty$ -- 78
-format.name$ -- 23
-if$ -- 228
+            601 strings with 7788 characters,
+and the built_in function-call counts, 7818 in all, are:
+= -- 769
+> -- 301
+< -- 16
++ -- 106
+- -- 100
+* -- 659
+:= -- 1395
+add.period$ -- 63
+call.type$ -- 21
+change.case$ -- 150
+chr.to.int$ -- 21
+cite$ -- 22
+duplicate$ -- 290
+empty$ -- 542
+format.name$ -- 123
+if$ -- 1496
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 2
-newline$ -- 18
-num.names$ -- 9
-pop$ -- 19
+missing$ -- 21
+newline$ -- 107
+num.names$ -- 63
+pop$ -- 123
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 155
 quote$ -- 0
-skip$ -- 31
+skip$ -- 228
 stack$ -- 0
-substring$ -- 88
-swap$ -- 3
-text.length$ -- 0
+substring$ -- 558
+swap$ -- 30
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
-warning$ -- 0
-while$ -- 10
+type$ -- 118
+warning$ -- 1
+while$ -- 65
 width$ -- 0
-write$ -- 41
+write$ -- 270
+(There were 3 error messages)
