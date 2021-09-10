@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2020.12.1)  8 SEP 2021 21:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2020.12.1)  10 SEP 2021 20:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1073,55 +1073,40 @@ sus al^^Seatoires.
  []
 
 [4] [5] [6]
-Overfull \hbox (16.88403pt too wide) in paragraph at lines 254--256
+Overfull \hbox (16.88403pt too wide) in paragraph at lines 258--260
 \OT1/cmr/m/n/10.95 il sem-ble par-ti-c-uli^^Rerement per-ti-nent de con-sid^^Se
 rer la loi con-jointe (pr^^Secipitation, ^^Sevapotranspiration).
  []
 
 [7] [8] [9] [10]
-Overfull \hbox (20.80774pt too wide) in paragraph at lines 382--383
+Overfull \hbox (20.80774pt too wide) in paragraph at lines 388--389
 \OT1/cmr/m/n/10.95 Cette sec-tion reprend bri^^Revement les prin-ci-paux m^^Sec
 anismes en-trant en compte dans les mod^^Selisations
  []
 
-[11] <./images/bassin_versant.png, id=371, 1412.27625pt x 810.02625pt>
+[11] <./images/bassin_versant.png, id=372, 1412.27625pt x 810.02625pt>
 File: ./images/bassin_versant.png Graphic file (type png)
 
 <use ./images/bassin_versant.png>
-Package pdftex.def Info: ./images/bassin_versant.png used on input line 392.
+Package pdftex.def Info: ./images/bassin_versant.png used on input line 398.
 (pdftex.def)             Requested size: 211.83229pt x 121.49869pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--399
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
-<./images/ruissellement.png, id=381, 1366.10374pt x 831.105pt>
+<./images/ruissellement.png, id=382, 1366.10374pt x 831.105pt>
 File: ./images/ruissellement.png Graphic file (type png)
 
 <use ./images/ruissellement.png>
-Package pdftex.def Info: ./images/ruissellement.png used on input line 408.
+Package pdftex.def Info: ./images/ruissellement.png used on input line 414.
 (pdftex.def)             Requested size: 273.21591pt x 166.21805pt.
  [12 <./images/bassin_versant.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 417--418
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 419--420
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
@@ -1141,47 +1126,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 427--428
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--432
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
+
+ []
+
 [13 <./images/ruissellement.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 430--431
+Underfull \hbox (badness 10000) in paragraph at lines 436--437
 
  []
 
 [14] [15]
-Overfull \hbox (0.70236pt too wide) in paragraph at lines 518--519
+Overfull \hbox (0.70236pt too wide) in paragraph at lines 524--525
 \OT1/cmr/m/n/10.95 Henry Darcy alors qu'il ^^Setudiait les fontaines de la vill
 e de Di-jon (1856) ^^Setablit exp^^Serimentalement
  []
 
-[16] [17] <./images/grid_prop.png, id=447, 1208.515pt x 676.5275pt>
+[16] [17] <./images/grid_prop.png, id=448, 1208.515pt x 676.5275pt>
 File: ./images/grid_prop.png Graphic file (type png)
 
 <use ./images/grid_prop.png>
-Package pdftex.def Info: ./images/grid_prop.png used on input line 581.
+Package pdftex.def Info: ./images/grid_prop.png used on input line 587.
 (pdftex.def)             Requested size: 483.39743pt x 270.6062pt.
 
-Overfull \hbox (28.15335pt too wide) in paragraph at lines 581--582
+Overfull \hbox (28.15335pt too wide) in paragraph at lines 587--588
  [] 
  []
 
-<images/mean_precip.png, id=449, 462.528pt x 346.896pt>
+<images/mean_precip.png, id=450, 462.528pt x 346.896pt>
 File: images/mean_precip.png Graphic file (type png)
 
 <use images/mean_precip.png>
-Package pdftex.def Info: images/mean_precip.png used on input line 595.
+Package pdftex.def Info: images/mean_precip.png used on input line 601.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (12.74821pt too wide) in paragraph at lines 595--596
+Overfull \hbox (12.74821pt too wide) in paragraph at lines 601--602
  [][] 
  []
 
-<images/mean_evap.png, id=450, 462.528pt x 346.896pt>
+<images/mean_evap.png, id=451, 462.528pt x 346.896pt>
 File: images/mean_evap.png Graphic file (type png)
 
 <use images/mean_evap.png>
-Package pdftex.def Info: images/mean_evap.png used on input line 598.
+Package pdftex.def Info: images/mean_evap.png used on input line 604.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
 
-Overfull \hbox (12.74821pt too wide) in paragraph at lines 598--599
+Overfull \hbox (12.74821pt too wide) in paragraph at lines 604--605
  [][] 
  []
 
@@ -1189,96 +1189,96 @@ Overfull \hbox (12.74821pt too wide) in paragraph at lines 598--599
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18 <./images/grid_prop.png>]
-<images/kernel_precip_m1.png, id=458, 462.528pt x 346.896pt>
+<images/kernel_precip_m1.png, id=459, 462.528pt x 346.896pt>
 File: images/kernel_precip_m1.png Graphic file (type png)
 
 <use images/kernel_precip_m1.png>
-Package pdftex.def Info: images/kernel_precip_m1.png used on input line 626.
+Package pdftex.def Info: images/kernel_precip_m1.png used on input line 632.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m2.png, id=459, 462.528pt x 346.896pt>
+<images/kernel_precip_m2.png, id=460, 462.528pt x 346.896pt>
 File: images/kernel_precip_m2.png Graphic file (type png)
 
 <use images/kernel_precip_m2.png>
-Package pdftex.def Info: images/kernel_precip_m2.png used on input line 626.
+Package pdftex.def Info: images/kernel_precip_m2.png used on input line 632.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m3.png, id=460, 462.528pt x 346.896pt>
+<images/kernel_precip_m3.png, id=461, 462.528pt x 346.896pt>
 File: images/kernel_precip_m3.png Graphic file (type png)
 
 <use images/kernel_precip_m3.png>
-Package pdftex.def Info: images/kernel_precip_m3.png used on input line 626.
+Package pdftex.def Info: images/kernel_precip_m3.png used on input line 632.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m4.png, id=461, 462.528pt x 346.896pt>
+<images/kernel_precip_m4.png, id=462, 462.528pt x 346.896pt>
 File: images/kernel_precip_m4.png Graphic file (type png)
 
 <use images/kernel_precip_m4.png>
-Package pdftex.def Info: images/kernel_precip_m4.png used on input line 627.
+Package pdftex.def Info: images/kernel_precip_m4.png used on input line 633.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m5.png, id=462, 462.528pt x 346.896pt>
+<images/kernel_precip_m5.png, id=463, 462.528pt x 346.896pt>
 File: images/kernel_precip_m5.png Graphic file (type png)
 
 <use images/kernel_precip_m5.png>
-Package pdftex.def Info: images/kernel_precip_m5.png used on input line 627.
+Package pdftex.def Info: images/kernel_precip_m5.png used on input line 633.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m6.png, id=463, 462.528pt x 346.896pt>
+<images/kernel_precip_m6.png, id=464, 462.528pt x 346.896pt>
 File: images/kernel_precip_m6.png Graphic file (type png)
 
 <use images/kernel_precip_m6.png>
-Package pdftex.def Info: images/kernel_precip_m6.png used on input line 627.
+Package pdftex.def Info: images/kernel_precip_m6.png used on input line 633.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (69.8547pt too wide) in paragraph at lines 624--629
+Overfull \hbox (69.8547pt too wide) in paragraph at lines 630--635
 []  [] 
  []
 
 [19 <./images/mean_precip.png> <./images/mean_evap.png>]
-<images/kernel_precip_m7.png, id=473, 462.528pt x 346.896pt>
+<images/kernel_precip_m7.png, id=474, 462.528pt x 346.896pt>
 File: images/kernel_precip_m7.png Graphic file (type png)
 
 <use images/kernel_precip_m7.png>
-Package pdftex.def Info: images/kernel_precip_m7.png used on input line 632.
+Package pdftex.def Info: images/kernel_precip_m7.png used on input line 638.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m8.png, id=474, 462.528pt x 346.896pt>
+<images/kernel_precip_m8.png, id=475, 462.528pt x 346.896pt>
 File: images/kernel_precip_m8.png Graphic file (type png)
 
 <use images/kernel_precip_m8.png>
-Package pdftex.def Info: images/kernel_precip_m8.png used on input line 632.
+Package pdftex.def Info: images/kernel_precip_m8.png used on input line 638.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m9.png, id=475, 462.528pt x 346.896pt>
+<images/kernel_precip_m9.png, id=476, 462.528pt x 346.896pt>
 File: images/kernel_precip_m9.png Graphic file (type png)
 
 <use images/kernel_precip_m9.png>
-Package pdftex.def Info: images/kernel_precip_m9.png used on input line 632.
+Package pdftex.def Info: images/kernel_precip_m9.png used on input line 638.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m10.png, id=476, 462.528pt x 346.896pt>
+<images/kernel_precip_m10.png, id=477, 462.528pt x 346.896pt>
 File: images/kernel_precip_m10.png Graphic file (type png)
 
 <use images/kernel_precip_m10.png>
-Package pdftex.def Info: images/kernel_precip_m10.png used on input line 633.
+Package pdftex.def Info: images/kernel_precip_m10.png used on input line 639.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m11.png, id=477, 462.528pt x 346.896pt>
+<images/kernel_precip_m11.png, id=478, 462.528pt x 346.896pt>
 File: images/kernel_precip_m11.png Graphic file (type png)
 
 <use images/kernel_precip_m11.png>
-Package pdftex.def Info: images/kernel_precip_m11.png used on input line 633.
+Package pdftex.def Info: images/kernel_precip_m11.png used on input line 639.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_precip_m12.png, id=478, 462.528pt x 346.896pt>
+<images/kernel_precip_m12.png, id=479, 462.528pt x 346.896pt>
 File: images/kernel_precip_m12.png Graphic file (type png)
 
 <use images/kernel_precip_m12.png>
-Package pdftex.def Info: images/kernel_precip_m12.png used on input line 633.
+Package pdftex.def Info: images/kernel_precip_m12.png used on input line 639.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-Overfull \hbox (69.8547pt too wide) in paragraph at lines 630--635
+Overfull \hbox (69.8547pt too wide) in paragraph at lines 636--641
 []  [] 
  []
 
@@ -1287,342 +1287,327 @@ ernel_precip_m3.png> <./images/kernel_precip_m4.png> <./images/kernel_precip_m5
 .png> <./images/kernel_precip_m6.png> <./images/kernel_precip_m7.png> <./images
 /kernel_precip_m8.png> <./images/kernel_precip_m9.png> <./images/kernel_precip_
 m10.png> <./images/kernel_precip_m11.png> <./images/kernel_precip_m12.png>]
-<images/kernel_evap_m1.png, id=495, 462.528pt x 346.896pt>
+<images/kernel_evap_m1.png, id=496, 462.528pt x 346.896pt>
 File: images/kernel_evap_m1.png Graphic file (type png)
 
 <use images/kernel_evap_m1.png>
-Package pdftex.def Info: images/kernel_evap_m1.png used on input line 641.
+Package pdftex.def Info: images/kernel_evap_m1.png used on input line 647.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_evap_m2.png, id=496, 462.528pt x 346.896pt>
+<images/kernel_evap_m2.png, id=497, 462.528pt x 346.896pt>
 File: images/kernel_evap_m2.png Graphic file (type png)
 
 <use images/kernel_evap_m2.png>
-Package pdftex.def Info: images/kernel_evap_m2.png used on input line 641.
+Package pdftex.def Info: images/kernel_evap_m2.png used on input line 647.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_evap_m3.png, id=497, 462.528pt x 346.896pt>
+<images/kernel_evap_m3.png, id=498, 462.528pt x 346.896pt>
 File: images/kernel_evap_m3.png Graphic file (type png)
 
 <use images/kernel_evap_m3.png>
-Package pdftex.def Info: images/kernel_evap_m3.png used on input line 641.
+Package pdftex.def Info: images/kernel_evap_m3.png used on input line 647.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_evap_m4.png, id=498, 462.528pt x 346.896pt>
+<images/kernel_evap_m4.png, id=499, 462.528pt x 346.896pt>
 File: images/kernel_evap_m4.png Graphic file (type png)
 
 <use images/kernel_evap_m4.png>
-Package pdftex.def Info: images/kernel_evap_m4.png used on input line 642.
+Package pdftex.def Info: images/kernel_evap_m4.png used on input line 648.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_evap_m5.png, id=499, 462.528pt x 346.896pt>
+<images/kernel_evap_m5.png, id=500, 462.528pt x 346.896pt>
 File: images/kernel_evap_m5.png Graphic file (type png)
 
 <use images/kernel_evap_m5.png>
-Package pdftex.def Info: images/kernel_evap_m5.png used on input line 642.
+Package pdftex.def Info: images/kernel_evap_m5.png used on input line 648.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
-<images/kernel_evap_m6.png, id=500, 462.528pt x 346.896pt>
+<images/kernel_evap_m6.png, id=501, 462.528pt x 346.896pt>
 File: images/kernel_evap_m6.png Graphic file (type png)
 
 <use images/kernel_evap_m6.png>
-Package pdftex.def Info: images/kernel_evap_m6.png used on input line 642.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-Overfull \hbox (69.8547pt too wide) in paragraph at lines 639--644
-[]  [] 
- []
-
-<images/kernel_evap_m7.png, id=501, 462.528pt x 346.896pt>
-File: images/kernel_evap_m7.png Graphic file (type png)
-
-<use images/kernel_evap_m7.png>
-Package pdftex.def Info: images/kernel_evap_m7.png used on input line 647.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m8.png, id=502, 462.528pt x 346.896pt>
-File: images/kernel_evap_m8.png Graphic file (type png)
-
-<use images/kernel_evap_m8.png>
-Package pdftex.def Info: images/kernel_evap_m8.png used on input line 647.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m9.png, id=503, 462.528pt x 346.896pt>
-File: images/kernel_evap_m9.png Graphic file (type png)
-
-<use images/kernel_evap_m9.png>
-Package pdftex.def Info: images/kernel_evap_m9.png used on input line 647.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m10.png, id=504, 462.528pt x 346.896pt>
-File: images/kernel_evap_m10.png Graphic file (type png)
-
-<use images/kernel_evap_m10.png>
-Package pdftex.def Info: images/kernel_evap_m10.png used on input line 648.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m11.png, id=505, 462.528pt x 346.896pt>
-File: images/kernel_evap_m11.png Graphic file (type png)
-
-<use images/kernel_evap_m11.png>
-Package pdftex.def Info: images/kernel_evap_m11.png used on input line 648.
-(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
-
-<images/kernel_evap_m12.png, id=506, 462.528pt x 346.896pt>
-File: images/kernel_evap_m12.png Graphic file (type png)
-
-<use images/kernel_evap_m12.png>
-Package pdftex.def Info: images/kernel_evap_m12.png used on input line 648.
+Package pdftex.def Info: images/kernel_evap_m6.png used on input line 648.
 (pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
 
 Overfull \hbox (69.8547pt too wide) in paragraph at lines 645--650
 []  [] 
  []
 
+<images/kernel_evap_m7.png, id=502, 462.528pt x 346.896pt>
+File: images/kernel_evap_m7.png Graphic file (type png)
+
+<use images/kernel_evap_m7.png>
+Package pdftex.def Info: images/kernel_evap_m7.png used on input line 653.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m8.png, id=503, 462.528pt x 346.896pt>
+File: images/kernel_evap_m8.png Graphic file (type png)
+
+<use images/kernel_evap_m8.png>
+Package pdftex.def Info: images/kernel_evap_m8.png used on input line 653.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m9.png, id=504, 462.528pt x 346.896pt>
+File: images/kernel_evap_m9.png Graphic file (type png)
+
+<use images/kernel_evap_m9.png>
+Package pdftex.def Info: images/kernel_evap_m9.png used on input line 653.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m10.png, id=505, 462.528pt x 346.896pt>
+File: images/kernel_evap_m10.png Graphic file (type png)
+
+<use images/kernel_evap_m10.png>
+Package pdftex.def Info: images/kernel_evap_m10.png used on input line 654.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m11.png, id=506, 462.528pt x 346.896pt>
+File: images/kernel_evap_m11.png Graphic file (type png)
+
+<use images/kernel_evap_m11.png>
+Package pdftex.def Info: images/kernel_evap_m11.png used on input line 654.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+<images/kernel_evap_m12.png, id=507, 462.528pt x 346.896pt>
+File: images/kernel_evap_m12.png Graphic file (type png)
+
+<use images/kernel_evap_m12.png>
+Package pdftex.def Info: images/kernel_evap_m12.png used on input line 654.
+(pdftex.def)             Requested size: 185.0079pt x 138.75594pt.
+
+Overfull \hbox (69.8547pt too wide) in paragraph at lines 651--656
+[]  [] 
+ []
+
 [21 <./images/kernel_evap_m1.png> <./images/kernel_evap_m2.png> <./images/kerne
 l_evap_m3.png> <./images/kernel_evap_m4.png> <./images/kernel_evap_m5.png> <./i
-mages/kernel_evap_m6.png> <./images/kernel_evap_m7.png> <./images/kernel_evap_m
-8.png> <./images/kernel_evap_m9.png> <./images/kernel_evap_m10.png> <./images/k
-ernel_evap_m11.png> <./images/kernel_evap_m12.png>]
-Overfull \hbox (0.84425pt too wide) in paragraph at lines 678--680
+mages/kernel_evap_m6.png>] [22 <./images/kernel_evap_m7.png> <./images/kernel_e
+vap_m8.png> <./images/kernel_evap_m9.png> <./images/kernel_evap_m10.png> <./ima
+ges/kernel_evap_m11.png> <./images/kernel_evap_m12.png>]
+Overfull \hbox (0.84425pt too wide) in paragraph at lines 684--686
 \OT1/cmr/m/n/10.95 chaque s^^Serie tem-porelle. Nous avons ainsi les box-plot p
 our la pr^^Secipitation et l'^^Sevapotranspiration
  []
 
-<images/boxplot_precip.png, id=525, 602.25pt x 371.3875pt>
+<images/boxplot_precip.png, id=531, 602.25pt x 371.3875pt>
 File: images/boxplot_precip.png Graphic file (type png)
 
 <use images/boxplot_precip.png>
-Package pdftex.def Info: images/boxplot_precip.png used on input line 683.
+Package pdftex.def Info: images/boxplot_precip.png used on input line 689.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (22.38051pt too wide) in paragraph at lines 683--684
+Overfull \hbox (22.38051pt too wide) in paragraph at lines 689--690
  [][] 
  []
 
-<images/boxplot_evap.png, id=526, 602.25pt x 371.3875pt>
+<images/boxplot_evap.png, id=532, 602.25pt x 371.3875pt>
 File: images/boxplot_evap.png Graphic file (type png)
 
 <use images/boxplot_evap.png>
-Package pdftex.def Info: images/boxplot_evap.png used on input line 686.
+Package pdftex.def Info: images/boxplot_evap.png used on input line 692.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (22.38051pt too wide) in paragraph at lines 686--687
+Overfull \hbox (22.38051pt too wide) in paragraph at lines 692--693
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 693.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 699.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 693.
- [22]
-<images/pr_1_ds.png, id=535, 602.25pt x 371.3875pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 699.
+ [23 <./images/boxplot_precip.png> <./images/boxplot_evap.png>]
+<images/pr_1_ds.png, id=543, 602.25pt x 371.3875pt>
 File: images/pr_1_ds.png Graphic file (type png)
  <use images/pr_1_ds.png>
-Package pdftex.def Info: images/pr_1_ds.png used on input line 709.
-(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
-
-Overfull \hbox (22.38051pt too wide) in paragraph at lines 709--710
- [][] 
- []
-
-<images/pr_1_dg.png, id=536, 602.25pt x 371.3875pt>
-File: images/pr_1_dg.png Graphic file (type png)
- <use images/pr_1_dg.png>
-Package pdftex.def Info: images/pr_1_dg.png used on input line 712.
-(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
-
-Overfull \hbox (22.38051pt too wide) in paragraph at lines 712--713
- [][] 
- []
-
-<images/pr_2_ds.png, id=537, 602.25pt x 371.3875pt>
-File: images/pr_2_ds.png Graphic file (type png)
- <use images/pr_2_ds.png>
-Package pdftex.def Info: images/pr_2_ds.png used on input line 715.
+Package pdftex.def Info: images/pr_1_ds.png used on input line 715.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
 Overfull \hbox (22.38051pt too wide) in paragraph at lines 715--716
  [][] 
  []
 
-<images/pr_2_dg.png, id=538, 602.25pt x 371.3875pt>
-File: images/pr_2_dg.png Graphic file (type png)
- <use images/pr_2_dg.png>
-Package pdftex.def Info: images/pr_2_dg.png used on input line 718.
+<images/pr_1_dg.png, id=544, 602.25pt x 371.3875pt>
+File: images/pr_1_dg.png Graphic file (type png)
+ <use images/pr_1_dg.png>
+Package pdftex.def Info: images/pr_1_dg.png used on input line 718.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
 Overfull \hbox (22.38051pt too wide) in paragraph at lines 718--719
  [][] 
  []
 
+<images/pr_2_ds.png, id=545, 602.25pt x 371.3875pt>
+File: images/pr_2_ds.png Graphic file (type png)
+ <use images/pr_2_ds.png>
+Package pdftex.def Info: images/pr_2_ds.png used on input line 721.
+(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (22.38051pt too wide) in paragraph at lines 721--722
+ [][] 
+ []
 
-<images/pr_3_ds.png, id=539, 602.25pt x 371.3875pt>
-File: images/pr_3_ds.png Graphic file (type png)
- <use images/pr_3_ds.png>
-Package pdftex.def Info: images/pr_3_ds.png used on input line 724.
+<images/pr_2_dg.png, id=546, 602.25pt x 371.3875pt>
+File: images/pr_2_dg.png Graphic file (type png)
+ <use images/pr_2_dg.png>
+Package pdftex.def Info: images/pr_2_dg.png used on input line 724.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
 Overfull \hbox (22.38051pt too wide) in paragraph at lines 724--725
  [][] 
  []
 
-<images/pr_3_dg.png, id=540, 602.25pt x 371.3875pt>
-File: images/pr_3_dg.png Graphic file (type png)
- <use images/pr_3_dg.png>
-Package pdftex.def Info: images/pr_3_dg.png used on input line 727.
-(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
-
-Overfull \hbox (22.38051pt too wide) in paragraph at lines 727--728
- [][] 
- []
-
-<images/pr_4_ds.png, id=541, 602.25pt x 371.3875pt>
-File: images/pr_4_ds.png Graphic file (type png)
- <use images/pr_4_ds.png>
-Package pdftex.def Info: images/pr_4_ds.png used on input line 730.
+<images/pr_3_ds.png, id=547, 602.25pt x 371.3875pt>
+File: images/pr_3_ds.png Graphic file (type png)
+ <use images/pr_3_ds.png>
+Package pdftex.def Info: images/pr_3_ds.png used on input line 730.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
 Overfull \hbox (22.38051pt too wide) in paragraph at lines 730--731
  [][] 
  []
 
-<images/pr_4_dg.png, id=542, 602.25pt x 371.3875pt>
-File: images/pr_4_dg.png Graphic file (type png)
- <use images/pr_4_dg.png>
-Package pdftex.def Info: images/pr_4_dg.png used on input line 733.
+<images/pr_3_dg.png, id=548, 602.25pt x 371.3875pt>
+File: images/pr_3_dg.png Graphic file (type png)
+ <use images/pr_3_dg.png>
+Package pdftex.def Info: images/pr_3_dg.png used on input line 733.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
 Overfull \hbox (22.38051pt too wide) in paragraph at lines 733--734
  [][] 
  []
 
-[23 <./images/boxplot_precip.png> <./images/boxplot_evap.png>]
-<images/RMSE_precip.png, id=553, 602.25pt x 371.3875pt>
-File: images/RMSE_precip.png Graphic file (type png)
-
-<use images/RMSE_precip.png>
-Package pdftex.def Info: images/RMSE_precip.png used on input line 755.
+<images/pr_4_ds.png, id=549, 602.25pt x 371.3875pt>
+File: images/pr_4_ds.png Graphic file (type png)
+ <use images/pr_4_ds.png>
+Package pdftex.def Info: images/pr_4_ds.png used on input line 736.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (36.03728pt too wide) in paragraph at lines 755--756
-[][] 
+Overfull \hbox (22.38051pt too wide) in paragraph at lines 736--737
+ [][] 
  []
 
-<images/RMSE_evap.png, id=554, 602.25pt x 371.3875pt>
-File: images/RMSE_evap.png Graphic file (type png)
-
-<use images/RMSE_evap.png>
-Package pdftex.def Info: images/RMSE_evap.png used on input line 759.
+<images/pr_4_dg.png, id=550, 602.25pt x 371.3875pt>
+File: images/pr_4_dg.png Graphic file (type png)
+ <use images/pr_4_dg.png>
+Package pdftex.def Info: images/pr_4_dg.png used on input line 739.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (36.03728pt too wide) in paragraph at lines 759--760
-[][] 
+Overfull \hbox (22.38051pt too wide) in paragraph at lines 739--740
+ [][] 
  []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/Dist_CVM_precip.png, id=557, 602.25pt x 371.3875pt>
-File: images/Dist_CVM_precip.png Graphic file (type png)
-
-<use images/Dist_CVM_precip.png>
-Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 771.
-(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
-
-Overfull \hbox (36.03728pt too wide) in paragraph at lines 771--772
-[][] 
- []
-
-<images/Dist_CVM_evap.png, id=558, 602.25pt x 371.3875pt>
-File: images/Dist_CVM_evap.png Graphic file (type png)
-
-<use images/Dist_CVM_evap.png>
-Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 775.
-(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
-
-Overfull \hbox (36.03728pt too wide) in paragraph at lines 775--776
-[][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24 <./images/pr_1_ds.png> <./images/pr_1_dg.png> <./images/pr_2_ds.png> <./ima
 ges/pr_2_dg.png>] [25 <./images/pr_3_ds.png> <./images/pr_3_dg.png> <./images/p
 r_4_ds.png> <./images/pr_4_dg.png>]
-File: images/Dist_CVM_precip.png Graphic file (type png)
- <use images/Dist_CVM_precip.png>
-Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 789.
+<images/RMSE_precip.png, id=573, 602.25pt x 371.3875pt>
+File: images/RMSE_precip.png Graphic file (type png)
+
+<use images/RMSE_precip.png>
+Package pdftex.def Info: images/RMSE_precip.png used on input line 761.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (36.03728pt too wide) in paragraph at lines 789--790
+Overfull \hbox (36.03728pt too wide) in paragraph at lines 761--762
+[][] 
+ []
+
+<images/RMSE_evap.png, id=574, 602.25pt x 371.3875pt>
+File: images/RMSE_evap.png Graphic file (type png)
+
+<use images/RMSE_evap.png>
+Package pdftex.def Info: images/RMSE_evap.png used on input line 765.
+(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
+
+Overfull \hbox (36.03728pt too wide) in paragraph at lines 765--766
+[][] 
+ []
+
+<images/Dist_CVM_precip.png, id=577, 602.25pt x 371.3875pt>
+File: images/Dist_CVM_precip.png Graphic file (type png)
+
+<use images/Dist_CVM_precip.png>
+Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 777.
+(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
+
+Overfull \hbox (36.03728pt too wide) in paragraph at lines 777--778
+[][] 
+ []
+
+<images/Dist_CVM_evap.png, id=578, 602.25pt x 371.3875pt>
+File: images/Dist_CVM_evap.png Graphic file (type png)
+
+<use images/Dist_CVM_evap.png>
+Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 781.
+(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
+
+Overfull \hbox (36.03728pt too wide) in paragraph at lines 781--782
+[][] 
+ []
+
+[26 <./images/RMSE_precip.png (PNG copy)> <./images/RMSE_evap.png> <./images/Di
+st_CVM_precip.png> <./images/Dist_CVM_evap.png>]
+File: images/Dist_CVM_precip.png Graphic file (type png)
+
+<use images/Dist_CVM_precip.png>
+Package pdftex.def Info: images/Dist_CVM_precip.png used on input line 795.
+(pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
+
+Overfull \hbox (36.03728pt too wide) in paragraph at lines 795--796
 [][] 
  []
 
 File: images/Dist_CVM_evap.png Graphic file (type png)
 <use images/Dist_CVM_evap.png>
-Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 793.
+Package pdftex.def Info: images/Dist_CVM_evap.png used on input line 799.
 (pdftex.def)             Requested size: 240.89572pt x 148.55235pt.
 
-Overfull \hbox (36.03728pt too wide) in paragraph at lines 793--794
+Overfull \hbox (36.03728pt too wide) in paragraph at lines 799--800
 [][] 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[26 <./images/RMSE_precip.png (PNG copy)> <./images/RMSE_evap.png> <./images/Di
-st_CVM_precip.png> <./images/Dist_CVM_evap.png>]
-<images/little_washita3D.png, id=588, 1752.5475pt x 928.46875pt>
+<images/little_washita3D.png, id=589, 1752.5475pt x 928.46875pt>
 File: images/little_washita3D.png Graphic file (type png)
 
 <use images/little_washita3D.png>
-Package pdftex.def Info: images/little_washita3D.png used on input line 809.
+Package pdftex.def Info: images/little_washita3D.png used on input line 815.
 (pdftex.def)             Requested size: 350.5033pt x 185.69046pt.
- [27 <./images/little_washita3D.png>]
-<./images/deb_prec_dec1.png, id=608, 1633.10126pt x 856.19875pt>
+ [27] [28 <./images/little_washita3D.png>]
+<./images/deb_prec_dec1.png, id=613, 1633.10126pt x 856.19875pt>
 File: ./images/deb_prec_dec1.png Graphic file (type png)
 
 <use ./images/deb_prec_dec1.png>
-Package pdftex.def Info: ./images/deb_prec_dec1.png used on input line 835.
+Package pdftex.def Info: ./images/deb_prec_dec1.png used on input line 841.
 (pdftex.def)             Requested size: 408.27432pt x 214.04916pt.
- [28]
-<./images/classification_deb_pr.png, id=614, 1387.584pt x 677.8926pt>
+ [29 <./images/deb_prec_dec1.png>]
+<./images/classification_deb_pr.png, id=624, 1387.584pt x 677.8926pt>
 File: ./images/classification_deb_pr.png Graphic file (type png)
 
 <use ./images/classification_deb_pr.png>
 Package pdftex.def Info: ./images/classification_deb_pr.png used on input line 
-843.
+849.
 (pdftex.def)             Requested size: 457.90413pt x 223.70525pt.
 
-Overfull \hbox (2.66005pt too wide) in paragraph at lines 843--844
+Overfull \hbox (2.66005pt too wide) in paragraph at lines 849--850
  [] 
  []
 
-[29 <./images/deb_prec_dec1.png> <./images/classification_deb_pr.png>]
-<./images/classification_deb_prr.png, id=626, 1387.584pt x 677.8926pt>
+<./images/classification_deb_prr.png, id=625, 1387.584pt x 677.8926pt>
 File: ./images/classification_deb_prr.png Graphic file (type png)
 
 <use ./images/classification_deb_prr.png>
 Package pdftex.def Info: ./images/classification_deb_prr.png used on input line
- 853.
+ 859.
 (pdftex.def)             Requested size: 457.90413pt x 223.70525pt.
 
-Overfull \hbox (2.66005pt too wide) in paragraph at lines 853--854
+Overfull \hbox (2.66005pt too wide) in paragraph at lines 859--860
  [] 
  []
 
-[30 <./images/classification_deb_prr.png>]
-Overfull \hbox (37.6951pt too wide) detected at line 867
+[30 <./images/classification_deb_pr.png>] [31 <./images/classification_deb_prr.
+png>]
+Overfull \hbox (37.6951pt too wide) detected at line 873
 []\OML/cmm/m/it/10.95 C[] \U/matha/m/n/10.95 ^^P [] [][] []\OMS/cmsy/m/n/10.95 
 F[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 x\U/matha/m/n/10.95 q ^^A \OMS/cmsy/
 m/n/10.95 G[]\U/matha/m/n/10.95 p\OML/cmm/m/it/10.95 x\U/matha/m/n/10.95 q[][]\
@@ -1634,60 +1619,60 @@ ML/cmm/m/it/10.95 R[] \U/matha/m/n/10.95 ^^A \OML/cmm/m/it/10.95 i\U/matha/m/n/
 OML/cmm/m/it/10.95 :
  []
 
-[31] <./images/lambert.jpg, id=644, 361.35pt x 301.8778pt>
+[32] <./images/lambert.jpg, id=649, 361.35pt x 301.8778pt>
 File: ./images/lambert.jpg Graphic file (type jpg)
 
 <use ./images/lambert.jpg>
-Package pdftex.def Info: ./images/lambert.jpg used on input line 914.
+Package pdftex.def Info: ./images/lambert.jpg used on input line 920.
 (pdftex.def)             Requested size: 216.81168pt x 181.12807pt.
- [32] [33 <./images/lambert.jpg>]
-<images/geogebra_lambert.png, id=659, 888.31876pt x 852.18375pt>
+ [33] [34 <./images/lambert.jpg>]
+<images/geogebra_lambert.png, id=664, 888.31876pt x 852.18375pt>
 File: images/geogebra_lambert.png Graphic file (type png)
 
 <use images/geogebra_lambert.png>
-Package pdftex.def Info: images/geogebra_lambert.png used on input line 951.
+Package pdftex.def Info: images/geogebra_lambert.png used on input line 957.
 (pdftex.def)             Requested size: 222.07915pt x 213.04541pt.
- [34 <./images/geogebra_lambert.png>]
-<images/deb_prec_dec1.png, id=665, 1633.10126pt x 856.19875pt>
+ [35 <./images/geogebra_lambert.png>]
+<images/deb_prec_dec1.png, id=670, 1633.10126pt x 856.19875pt>
 File: images/deb_prec_dec1.png Graphic file (type png)
 
 <use images/deb_prec_dec1.png>
-Package pdftex.def Info: images/deb_prec_dec1.png used on input line 974.
+Package pdftex.def Info: images/deb_prec_dec1.png used on input line 980.
 (pdftex.def)             Requested size: 457.26524pt x 239.73401pt.
 
-Overfull \hbox (2.02116pt too wide) in paragraph at lines 974--975
+Overfull \hbox (2.02116pt too wide) in paragraph at lines 980--981
  [] 
  []
 
-[35 <./images/deb_prec_dec1.png>]
-<images/deb_prec_dec1_droites.png, id=676, 1627.07875pt x 847.165pt>
+[36 <./images/deb_prec_dec1.png>]
+<images/deb_prec_dec1_droites.png, id=681, 1627.07875pt x 847.165pt>
 File: images/deb_prec_dec1_droites.png Graphic file (type png)
 
 <use images/deb_prec_dec1_droites.png>
 Package pdftex.def Info: images/deb_prec_dec1_droites.png used on input line 10
-40.
+46.
 (pdftex.def)             Requested size: 455.57895pt x 237.20457pt.
- [36] [37 <./images/deb_prec_dec1_droites.png>] (./document.bbl
+ [37] [38 <./images/deb_prec_dec1_droites.png>] (./document.bbl
 Underfull \hbox (badness 1205) in paragraph at lines 99--104
 []\OT1/cmr/m/n/10.95 Maquin, M. (2016).  \OT1/cmr/m/it/10.95 D^^Seveloppement d
 'un mod^^Rele hy-drologique de colonne repr^^Sesentant
  []
 
-[38])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1050.
- [39]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1050.
+[39])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1056.
+ [40]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1056.
  (./document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1050.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1050.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1056.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1056.
 
 Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: 2C5BD2985FDFDB1B084DBDC50DBF48DA;3787.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1050.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1056.
  ) 
 Here is how much of TeX's memory you used:
- 10510 strings out of 493029
- 153558 string characters out of 6136234
+ 10511 strings out of 493029
+ 153565 string characters out of 6136234
  241035 words of memory out of 5000000
  13652 multiletter control sequences out of 15000+600000
  26345 words of font info for 98 fonts, out of 8000000 for 9000
@@ -1722,10 +1707,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary8.pfb>
-Output written on document.pdf (39 pages, 3912192 bytes).
+Output written on document.pdf (40 pages, 3912916 bytes).
 PDF statistics:
- 843 PDF objects out of 1000 (max. 8388607)
- 669 compressed objects within 7 object streams
- 178 named destinations out of 1000 (max. 500000)
+ 848 PDF objects out of 1000 (max. 8388607)
+ 673 compressed objects within 7 object streams
+ 179 named destinations out of 1000 (max. 500000)
  568 words of extra memory for PDF output out of 10000 (max. 10000000)
 

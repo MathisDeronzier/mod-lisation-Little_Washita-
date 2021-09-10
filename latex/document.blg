@@ -3,15 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: apalike.bst
 Database file #1: mabib.bib
-Repeated entry---line 17 of file mabib.bib
- : @phdthesis{ethier2011propos
- :                            ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 218 of file mabib.bib
+Repeated entry---line 208 of file mabib.bib
  : @article{rosero2011ensemble
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 242 of file mabib.bib
+Repeated entry---line 232 of file mabib.bib
  : @article{ayar2016intercomparison
  :                                 ,
 I'm skipping whatever remains of this entry
@@ -57,4 +53,4 @@ warning$ -- 1
 while$ -- 69
 width$ -- 0
 write$ -- 303
-(There were 3 error messages)
+(There were 2 error messages)

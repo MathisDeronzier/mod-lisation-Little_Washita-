@@ -25,15 +25,15 @@
 \contentsline {subsection}{\numberline {3.1}Analyse de la structure spatiale des donn\IeC {\'e}es NARRs}{18}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Pr\IeC {\'e}sentation des r\IeC {\'e}sultats de projection climatiques}{22}{subsection.3.2}
 \contentsline {subsubsection}{\numberline {3.2.1}La d\IeC {\'e}gradation des donn\IeC {\'e}es}{22}{subsubsection.3.2.1}
-\contentsline {subsection}{\numberline {3.3}Les r\IeC {\'e}sultats de la d\IeC {\'e}gradation et du downscaling sur les donn\IeC {\'e}es}{22}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Trac\IeC {\'e} des Boxplot}{22}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Affichage des donn\IeC {\'e}es projet\IeC {\'e}es en fonction des donn\IeC {\'e}es r\IeC {\'e}elles}{23}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Diff\IeC {\'e}rence analyse Root Mean Square error et distance de Cram\IeC {\'e}r-von Mises}{24}{subsubsection.3.3.3}
-\contentsline {subsection}{\numberline {3.4}Les r\IeC {\'e}sultats hydrologiques}{26}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Mod\IeC {\`e}le de pente simple pour la mod\IeC {\'e}lisation hydrologique du mod\IeC {\`e}le du Little Washita}{27}{subsubsection.3.4.1}
+\contentsline {subsection}{\numberline {3.3}Les r\IeC {\'e}sultats de la d\IeC {\'e}gradation et du downscaling sur les donn\IeC {\'e}es}{23}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Trac\IeC {\'e} des Boxplot}{23}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Affichage des donn\IeC {\'e}es projet\IeC {\'e}es en fonction des donn\IeC {\'e}es r\IeC {\'e}elles}{24}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Diff\IeC {\'e}rence analyse Root Mean Square error et distance de Cram\IeC {\'e}r-von Mises}{26}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Les r\IeC {\'e}sultats hydrologiques}{27}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Mod\IeC {\`e}le de pente simple pour la mod\IeC {\'e}lisation hydrologique du mod\IeC {\`e}le du Little Washita}{28}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}Les donn\IeC {\'e}es d'entr\IeC {\'e}es dans HydroG\IeC {\'e}oSph\IeC {\`e}re et l'initialisation}{28}{subsubsection.3.4.2}
-\contentsline {subsection}{\numberline {3.5}L'influence de la pluie sur les d\IeC {\'e}bits}{28}{subsection.3.5}
-\contentsline {section}{\numberline {4}Indexes}{31}{section.4}
-\contentsline {subsection}{\numberline {4.1}Indexe \ref {C-v}: La statistique de Cram\IeC {\'e}r-von Mises}{31}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Indexe 2: Projection conique conforme de Lambert}{32}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Indexe 3: Classification des populations de d\IeC {\'e}bit}{35}{subsection.4.3}
+\contentsline {subsection}{\numberline {3.5}L'influence de la pluie sur les d\IeC {\'e}bits}{29}{subsection.3.5}
+\contentsline {section}{\numberline {4}Indexes}{32}{section.4}
+\contentsline {subsection}{\numberline {4.1}Indexe \ref {C-v}: La statistique de Cram\IeC {\'e}r-von Mises}{32}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Indexe 2: Projection conique conforme de Lambert}{33}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Indexe 3: Classification des populations de d\IeC {\'e}bit}{36}{subsection.4.3}

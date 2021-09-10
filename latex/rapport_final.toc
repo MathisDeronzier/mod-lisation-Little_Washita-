@@ -17,6 +17,16 @@
 \contentsline {subsection}{\numberline {3.2}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur les interactions atmosph\IeC {\`e}re - surface continentale - sol}{14}{subsection.3.2}
 \contentsline {subsubsection}{\numberline {3.2.1}Les \IeC {\'e}coulements}{14}{subsubsection.3.2.1}
 \contentsline {subsubsection}{\numberline {3.2.2}Transferts d'eau entre le sol et l'atmosph\IeC {\`e}re}{16}{subsubsection.3.2.2}
-\contentsline {section}{\numberline {4}Annexes}{17}{section.4}
-\contentsline {subsection}{\numberline {4.1}Annexe: Preuves et l\IeC {\'e}gitimit\IeC {\'e} des outils utilis\IeC {\'e}s dans le downscaling}{17}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Annexe: La statistique de Cram\IeC {\'e}r-von Mises}{18}{subsection.4.2}
+\contentsline {subsection}{\numberline {3.3}Les concepts hydrologiques: mod\IeC {\'e}lisation de l'\IeC {\'e}coulement dans le sol}{17}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Quelques d\IeC {\'e}finitions pour l'\IeC {\'e}tude en milieu poreux}{18}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Les \IeC {\'e}quations pour mod\IeC {\'e}liser l'\IeC {\'e}coulement}{18}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}La loi de Darcy et l'\IeC {\'e}quation de diffusivit\IeC {\'e} en milieu poreux}{20}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Les mod\IeC {\`e}les hydrologiques et la probl\IeC {\'e}matique de l'upscaling}{21}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Le mod\IeC {\`e}le d'hydrog\IeC {\'e}osph\IeC {\`e}re}{21}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Le mod\IeC {\`e}le d'Orchid\IeC {\'e}e}{23}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Conclusion et \IeC {\'e}tude des mod\IeC {\`e}les}{24}{subsubsection.3.4.3}
+\contentsline {section}{\numberline {4}Projections Climatiques et mod\IeC {\'e}lisation hydrologique}{25}{section.4}
+\contentsline {subsection}{\numberline {4.1}Analyse des donn\IeC {\'e}es NARR}{26}{subsection.4.1}
+\contentsline {section}{\numberline {5}Annexes}{27}{section.5}
+\contentsline {subsection}{\numberline {5.1}Annexe: Preuves et outils utilis\IeC {\'e}s dans le downscaling}{27}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Annexe: La statistique de Cram\IeC {\'e}r-von Mises}{28}{subsection.5.2}

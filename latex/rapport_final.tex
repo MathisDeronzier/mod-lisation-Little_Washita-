@@ -7,7 +7,7 @@
 \usepackage{mathabx}
 \usepackage{dsfont} %Fonction caractéristique
 \usepackage{stmaryrd}
-
+\numberwithin{equation}{section}
 
 \usepackage{listings}
 \usepackage[authoryear]{natbib}
@@ -35,6 +35,7 @@
 \textheight21.5cm
 \topmargin-1cm
 \pagestyle{plain}
+\setlength{\skip\footins}{1.2cm}
 
 
 \renewcommand {\algorithmicrequire } {\textbf{\textsc{Entrée(s):} } }
@@ -74,7 +75,6 @@
 		{\huge \bfseries Changement d’échelles dans les projections climatiques et leurs impacts hydrologiques: Cas des grandes plaines américaines}\\[0.4cm] 
 		\HRule \\[1.5cm]
 	\end{center}
-	
 	\begin{minipage}{0.4\textwidth}
 		\begin{flushleft} \Large
 			\emph{Auteur}\\
@@ -108,6 +108,7 @@
 
 \newpage
 \tableofcontents
+
 \newpage
 \section{Introduction}
 \label{ch:introduction}
@@ -119,11 +120,12 @@ Alors que le rapport du GIEC 2021 sorti cet été projette une augmentation de l
 
 Les projections climatiques sont données par des modèles de climat travaillant à l'échelle de l'ordre d'une centaine de kilomètres, on cherche alors à prévoir des résultat sur des zones plus localisées. Le domaine du climat étudiant les questions de changement d'échelle du global au local est le \textit{downscaling}. La question inverse du changement d'échelle du local au global est non moins intéressante pour les climatologues. En effet, comment savoir si les modèles à grande échelle sont vraiment représentatifs de la réalité? Alors que les modèles climatiques et hydrologiques travaillent sur des échelles globales, les lois de la physique sont elles, locales. On cherche alors à comprendre à partir des équations de la physique les interactions ou équations qu'elles engendrent à grande échelle, ce domaine de recherche s'appelle l'\textit{upscaling}. 
 
-C'est dans ces problématiques de changement d'échelles que s'ancre ce stage. Pour concentrer et enrichir nos réflexions, nous nous intéresserons plus précisément à la question de l'impact du changement d'échelle sur les modélisations hydrologiques. Le domaine d'étude ayant été choisi pour modéliser et concrétiser ces problématiques a été le bassin du Little Washita. Ce bassin situé aux États-Unis dans l’état d’Oklahoma, possède de nombreuses caractéristiques qui le rendent intéressant. Sa superficie de $611km^2$ est de l'ordre de grandeur d'une maille de modèle continentale. Il a déjà fait l'objet de nombreuses études (voir par exemple \cite{maxwell2007groundwater}, \cite{rosero2011ensemble}, \cite{maquin2016developpement}). 
+C'est dans ces problématiques de changement d'échelles que s'ancre ce stage. Pour concentrer et enrichir nos réflexions, nous nous intéresserons plus précisément à la question de l'impact du changement d'échelle sur les modélisations hydrologiques. Afin de concrétiser ces problématiques, nous avons modélisé le fonctionnement hydrologique du bassin du Little Washita. 
+Le domaine d'étude ayant été choisi pour modéliser et concrétiser ces problématiques a été le bassin du Little Washita. Ce bassin situé aux États-Unis dans l’état d’Oklahoma, possède de nombreuses caractéristiques qui le rendent intéressant. Sa superficie de $611km^2$ est de l'ordre de grandeur d'une maille de modèle continentale et il a déjà fait l'objet de nombreuses études (voir par exemple \cite{maxwell2007groundwater}, \cite{rosero2011ensemble}, \cite{maquin2016developpement}). 
 
 \vspace{0.7cm}
 
-Pour s'intéresser à la question du changement d'échelle il fallait pouvoir comparer des données à grande échelle et à petite échelle. Les données NARR (North American Regional Reanalysis) allant de l'année $1979$ à $2014$ semblaient constituer un jeux de donnée pertinent pour l'étude du Little Washita. En effet, sa longueur de maille de $32km$ permettait à la fois de considérer l'upscaling hydrologique sur de ce bassin ainsi que le downscaling pour des jeux de données sur des échelles plus larges. Pour obtenir ces données à grande échelle nous avons opté pour deux types de données: les données l'IPSL qui possède une longueur de maille de $200km$ ainsi que des données obtenues en faisant des dégradations spatiales sur les données NARR. Ainsi, si les données IPSL et NARR sont peut-être décorrélées on est absolument certain que les données NARR et leurs dégradées le sont. L'objectif aura été dans un premier temps de regarder différentes méthodes de downscaling pour améliorer les projections des données NARR à partir des séries à plus grande échelle. Une fois effectuée cette étape il s'agissait de réaliser une simulation hydraulique sur les années prédites et de comparer l'impact du downscaling sur les résultats des simulations hydrologiques. La problématique de l'upscaling sera en fait cachée dans la modélisation hydrologique du bassin du Little Washita, bien qu'elle n'ait pas été concrètement traitée dans les faits, elle a été centrale dans notre réflexion. Finalement nous avons donné les conclusions que nous avons tirées dans.
+Pour s'intéresser à la question du changement d'échelle il fallait pouvoir comparer des données à grande échelle et à petite échelle. Les données NARR (North American Regional Reanalysis\footnote{Les reanalysis sont des modèles de climats simulés que l'on force à prendre certaine valeurs mesurées pour certains points et certains temps, nous considérerons les données NARR comme les données climatiques réelles.}) allant de l'année $1979$ à $2014$ semblaient constituer un jeux de données pertinent pour l'étude du Little Washita. En effet, sa longueur de maille de $32km$ permettait à la fois de considérer l'upscaling hydrologique sur de ce bassin et le downscaling pour des jeux de données sur des échelles plus larges. Pour obtenir ces données à grande échelle nous avons opté pour deux types de données: les données l'IPSL qui possède une longueur de maille de $200km$ ainsi que des données obtenues en faisant des dégradations spatiales sur les données NARR. Ainsi, si les données IPSL et NARR sont peut-être décorrélées on est absolument certain que les données NARR et leurs dégradées le sont. L'objectif aura été dans un premier temps de regarder différentes méthodes de downscaling pour améliorer les projections des données NARR à partir des séries à plus grande échelle. Une fois effectuée cette étape il s'agissait de réaliser une simulation hydraulique sur les années prédites et de comparer l'impact du downscaling sur les résultats des simulations hydrologiques. La problématique de l'upscaling sera en fait cachée dans la modélisation hydrologique du bassin du Little Washita, bien qu'elle n'ait pas été concrètement traitée dans les faits, elle a été centrale dans notre réflexion. Finalement nous avons donné les conclusions que nous avons tirées dans.
 
 \subsection{Présentation du plan}
 \label{ch:presentation plan}
@@ -148,7 +150,7 @@ Nous commencerons par formaliser rigoureusement le downscaling statistique, puis
 \vspace{0.7cm}
 
 Le downscaling statistique (voir par exemple \cite{vrac2012dynamical} et \cite{ayar2016intercomparison}) est une méthode utilisée dans les sciences du climat permettant d'améliorer les projections des modèles climatiques. À partir des données obtenues par un modèle climatique (modèle de circulation général, modèle climatique régional) et des données observées, on cherche à observer et corriger les biais systématiques introduits par les modèles. Le nom ``downscaling'' vient du domaine d'application de cette méthode. On passe d'un modèle à grande échelle à des données observées à petite échelle. Cette méthode est très utile dans la pratique où l'on a des modèles de climat donnant des résultats sur des maillages de grande échelle ($\sim 200km\times 200km$). Dans notre cas, nous utilisons le downscaling pour projeter les variables climatiques de \textit{précipitation} et d'\textit{évapotranspiration} sur le bassin du Little Washita. Nous n'expliquerons que deux méthodes de downscaling mais d'autres méthodes existent, l'article de \cite{ayar2016intercomparison} donne un aperçu des différentes méthodes.
-Nous n'avons testé qu'une méthode de downscaling mais d'autre existent. Nous l'avons testée à partir du jeux de données: les données NARRs (de taille de grille de $30km\times 30 km$) ainsi que celles de l'IPSL (de taille de grille de $200km\times200 km$), nous décrivons ce travail dans la section \ref{ch-pred-cli}.
+Nous n'avons testé qu'une méthode de downscaling mais d'autre existent. Nous l'avons testée à partir du jeux de données: les données NARRs (de taille de grille de $30km\times 30 km$) ainsi que celles de l'IPSL (de taille de grille de $200km\times200 km$), nous détaillerons ce travail dans la section \ref{ch: pred-cli}.
 
 \vspace{0.7cm}
 
@@ -255,7 +257,7 @@ C'est l'une des premières idées qui vienne-t-en tête lorsqu'on parle de trans
 \noindent \textbf{CDFt avec méthode de prédiction}
 \label{CDFt reg l}
 
-Supposons que l'on ait des fonctions estimant la variance et la moyenne de $Y'$ à partir de $X'$, s'exprimant sous la forme $\overline{f(X')} = \overline{Y'}$ ainsi que $\overline{g(X')} = \overline{\sigma(Y')}$ \footnote{On définit par $\overline{X}$ la  moyenne $X$ et par $\sigma(X)$ son écart type}. Ces fonctions peuvent être obenues par des méthodes de régression linéaire sur des sous échantillons des données de $X$ et $Y$ soit après les avoir ordonnées si les $X_i$ et les $Y_i$ sont indépendants soit en fonction de leur indice.
+Supposons que l'on ait des fonctions estimant la variance et la moyenne de $Y'$ à partir de $X'$, s'exprimant sous la forme $\overline{f(X')} = \overline{Y'}$ ainsi que $\overline{g(X')} = \overline{\sigma(Y')}$ \footnote{On définit par $\overline{X}$ la  moyenne $X$ et par $\sigma(X)$ son écart type.}. Ces fonctions peuvent être obenues par des méthodes de régression linéaire sur des sous échantillons des données de $X$ et $Y$ soit après les avoir ordonnées si les $X_i$ et les $Y_i$ sont indépendants soit en fonction de leur indice.
 
 On aimerait alors que $G_{X,Y}$ conserve la moyenne ainsi que la variance. Formellement, on voudrait définir $G_{X,Y}$ telle que quelque soient $\{i_1,...,i_m\}$ un ensemble d'entiers consécutifs et $X'$ et $Y'$ les vecteurs des variables aléatoires des $X_{i_j}$ et $Y_{i_j}$ sur cet ensembles, on ait :
 
@@ -292,15 +294,18 @@ C'est en partie à ce problème que répond le transport optimal.
 \label{ch:transport-optimal}
 
 Nous voulons à la fois projeter la précipitation et l'évapotranspiration, on peut alors considérer une seule variable aléatoire dans $\mathbb{R}^2$. On peut généraliser l'idée utilisée précédemment pour trouver une méthode permettant de corriger les biais statistiques introduits par les modèles de projection. Cette méthode a d'autant plus d'intérêt que la variable utile dans les modèles hydrologique est 
-\[\textit{pluie entrant dans le sol}=\textit{précipitation}-\textit{évapotranspiration}.\]
-Comme l'objectif final est de projeter des résultats hydrologiques sur le bassin du Little Washita, il semble particulièrement pertinent de considérer la loi conjointe (précipitation, évapotranspiration). La théorie généralisant cette idée est la théorie du \textbf{transport optimal}.
+\begin{equation}
+	\label{eq:Qin-pr-etp}
+	\textit{quantité d'eau entrant dans le sol}=\textit{précipitation}-\textit{évapotranspiration}.
+\end{equation}
+Comme l'objectif final est de projeter des résultats hydrologiques sur le bassin du Little Washita, il semble particulièrement pertinent de considérer la loi conjointe (précipitation, évapotranspiration\footnote{Nous utiliserons en réalité l'évaporation potentielle et nous verrons dans la section \ref{ch:generalite interaction atmosphere-surface continentale-sol} qu'il faut encore travailler pour obtenir l'évaporation finale.}). La théorie généralisant cette idée est la théorie du \textbf{transport optimal}.
 
 La problématique du transport optimal a premièrement été introduite en par Gaspard Monge en 1781 puis a été développée par Kantorovitch en $1971$ et ses travaux pour l'allocution des ressources lui ont valu un prix nobel d'économie en $1975$.
 
 \subsubsection{Problématique}
 \label{ch:s-Problematique}
 
-Précédemment nous avons cherché à définir une transformation $G$ de la variable aléatoire $X$ telle $G(X)$ suive la même loi que $Y$. En considérant les fonctions de densité de $X$ et de $Y$ on a cherché à ce que la fonction de densité de $G(X)$ soit la même que celle de $Y$. On peut considérer une fonction de densité comme une mesure sur l'espace sur lequel on travail on a alors transformé une mesure $f_X$ en une autre mesure $f_Y$. Comme ces deux mesures sont de mesure totale égale à $1$, on peut dire que d'une certaine manière chaque ``poids'' de la mesure $f_X$ a été déplacé vers un poids de la mesure $f_Y$. L'idée du transport optimal est de trouver les déplacements naturels des poids d'une fonction de densité à une autre.  
+Précédemment nous avons cherché à définir une transformation $G$ de la variable aléatoire $X$ telle $G(X)$ suive la même loi que $Y$. En considérant les fonctions de densité de $X$ et de $Y$ on a cherché à ce que la fonction de densité de $G(X)$ soit la même que celle de $Y$. On peut considérer une fonction de densité comme une mesure sur l'espace sur lequel on travail on a alors transformé une mesure $f_X$ en une autre mesure $f_Y$. Comme ces deux mesures sont de mesure totale égale à $1$, on peut dire que d'une certaine manière chaque ``poids'' de la mesure $f_X$ a été déplacé vers un ``poids'' de la mesure $f_Y$. L'idée du transport optimal est de trouver les déplacements naturels des poids d'une fonction de densité à une autre.  
 
 Nous présenterons ici la formulation établie par Kantorovitch dans les années $70$ qui a l'avantage d'inclure celle de Monge. Le livre \cite{villani2003topics} donne un cours de référence internationale sur les problématiques de transport optimal. 
 
@@ -345,7 +350,7 @@ La suite de variables aléatoires $K_{n,m}$ converge vers une variable aléatoir
 \begin{equation}
 	Q(x)=P(K>x)=\sum_{j=1}^{\infty}(-1)^{j-1}\exp(-2(jx)^2)
 \end{equation}
-On peut alors l'approximer avec les premiers termes de la série pour construire le test statistique. La démonstration de ce théorème peut être trouvée dans le livre \cite{walker1965probability}(chap 12.5). Nous voyons cependant que ce test est sensible aux données aberrantes, nous privilégierons alors le test de \textbf{Cramér-von Mises} \cite{buning2002robustness} (section \ref{ch:Cv-M}).
+On peut alors l'approximer avec les premiers termes de la série pour construire le test statistique. La démonstration de ce théorème peut être trouvée dans le livre \cite{walker1965probability}(chap 12.5). Nous voyons cependant que ce test est sensible aux données aberrantes, nous privilégierons alors le test de \textbf{Cramér-von Mises} \cite{buning2002robustness} (section \ref{ch:Cv-M distance}).
 
 
 \subsubsection{Distance de Cramér-von Mises}
@@ -379,11 +384,11 @@ $\mathcal{H}_{n,m}$ est alors la fonctions de répartitions empirique d'une vari
 	où $R_{X_i}$ est le rang de $X_i$ dans $X_1,...,X_n,Y_1,...,Y_n$ autrement dit 
 	\[R_{Z_i}=Card(\{z\in Z, z\leq Z_i\}).\] 
 \end{lemma}
-
+Ce lemme permet de simplifier algorithmiquement le calcul de cette intégrale.
 \begin{note}
 	La démonstration de cette formule se trouve dans l'indexe \ref{C-v} et la formulation de cette égalité diffère de celle contenue dans le mémoire \cite{ethier2011propos}(sec 2.3.2) qui contient une erreur.
 \end{note}
-Cette formulation a le bon goût de nous indiquer que la statistique ne dépend pas de la loi. On peut alors calculer simplement sa statistique sous l'hypothèse $\mathcal{H}_0$ pour la loi uniforme sur $[0,1]$ et ainsi retrouver les quantiles présentés dans l'article de \cite{buning2002robustness}. Nous voyons que l'idée du test est aussi de pondérer la différence des fonctions de répartition empiriques par les observations (l'intégration selon $\mathcal{H}_{m,n}$). Ainsi, si le test de Kolmogorov-Smirnov est sensible aux outliers, celui-ci l’est beaucoup moins lorsque les échantillons sont suffisamment grands.
+Cette formulation a le bon goût de nous indiquer que la statistique ne dépend pas de la loi. On peut alors calculer simplement sa statistique sous l'hypothèse $\mathcal{H}_0$ pour la loi uniforme sur $[0,1]$ et ainsi retrouver les quantiles présentés dans l'article de \cite{buning2002robustness}. Nous voyons que l'idée du test est aussi de pondérer la différence des fonctions de répartition empiriques par les observations (l'intégration selon $\mathcal{H}_{m,n}$). Ainsi, si le test de Kolmogorov-Smirnov est sensible aux outliers, celui-ci l’est beaucoup moins lorsque les échantillons sont suffisamment grands. Malheureusement, dans la pratique les résultats renvoient quasiment toujours que les lois ne sont pas les mêmes, nous allons tout de même considérer cette distance qui nous l'avons vu possède une interprétation statistique.  
 
 \newpage
 \section{Présentation des modèles de climat }
@@ -398,7 +403,7 @@ Nous commencerons par contextualiser l'étude hydrologique dans les modèles de 
 \subsection{Présentation d'un modèle de climat}
 \label{modeles de climat/ concepts hydro}
 
-``\textit{Un modèle climatique simule les interactions entre l'atmosphère, l'océan et les surfaces continentales. Grâce au modèle, les scientifiques ont des représentations numériques de la répartition géographique de différents paramètres, tels que la répartition des vents, des nuages, des masses d'eau...}'' Jean Louis Dufresne. Les modèles interagissent entre eux selon un grand nombre d'équations mathématiquesw, et le maillage de simulation est alors un maillage multidimensionnel (voir la figure \ref{fig:maillage multidimentionnel terre}). 
+``\textit{Un modèle climatique simule les interactions entre l'atmosphère, l'océan et les surfaces continentales. Grâce au modèle, les scientifiques ont des représentations numériques de la répartition géographique de différents paramètres, tels que la répartition des vents, des nuages, des masses d'eau...}'' Jean Louis Dufresne. Les modèles interagissent entre eux selon un grand nombre d'équations mathématiques, et le maillage de simulation est alors un maillage multidimensionnel (voir la figure \ref{fig:maillage multidimentionnel terre}). 
 
 \begin{figure}[h]
 	\begin{center}
@@ -408,7 +413,7 @@ Nous commencerons par contextualiser l'étude hydrologique dans les modèles de 
 	\label{fig:maillage multidimentionnel terre}
 \end{figure}
 
-La complexité des interactions entre les différents noeuds peuvent rendre les calculs vraiment laborieux pour des mailles petites. D'où l'intérêt de considérer des mailles à grande échelle puis de downscaler les résultats obtenus. Nous présenterons dans la figure \ref{fig:modele de climat} les différentes interactions prises en compte dans l'élaboration du modèle de climat de l'IPSL.
+La complexité des interactions entre les différents noeuds peuvent rendre les calculs vraiment laborieux. D'où l'intérêt de diminuer le nombre de mailles en en passant à grande échelle puis de downscaler les résultats obtenus. Nous présenterons dans la figure \ref{fig:modele de climat} les différentes interactions prises en compte dans l'élaboration du modèle de climat de l'IPSL.
 
 \begin{figure}[h]
 	\begin{center}
@@ -418,16 +423,16 @@ La complexité des interactions entre les différents noeuds peuvent rendre les 
 	\label{fig:modele de climat}
 \end{figure}
 	
-Dans notre stage, nous nous sommes concentrés sur les modélisations continentales, à savoir, sur les interactions entre les modèles d'atmosphères ainsi que les mécanismes d'écoulement de l'eau dans les sols et les rivières. c'est ce que nous verrons dans la prochaine partie.
+Dans notre stage, nous nous sommes concentrés sur les modélisations continentales, à savoir, sur les interactions entre les modèles d'atmosphères ainsi que les mécanismes d'écoulement de l'eau dans les sols et les rivières. c'est ce que nous allons voir.
 
 \subsection{Généralités sur les interactions atmosphère - surface continentale - sol}
 \label{ch:generalite interaction atmosphere-surface continentale-sol}
-Nous allons présenter ici les principales interactions entre la surface continentale et l'atmosphère, cette étude a seulement pour objectif de donner un apercu des différentes problématiques rencontrées dans l'élaboration des modèles climatiques. En effet, nous n'avons pas eu à nous soucier de toutes ces interactions puisque les résultats renvoyés par les données NARR était l'évapotranspiration, une variable regroupant l'information de l'ensemble des interactions décrites ci-dessous. Cette section, de plus s'inspire très largement de la thèse \cite{maquin2016developpement}[chap 1] qui fournit d'avantage de détails et traite de la modélisation de l'ensemble des interactions dont nous allons parler. 
+Nous allons présenter ici les principales interactions entre la surface continentale et l'atmosphère, cette étude a seulement pour objectif de donner un aperçu des différentes problématiques rencontrées dans l'élaboration des modèles continentaux. En effet, nous n'avons pas eu à nous soucier de toutes ces interactions puisque les deux variables que nous avon utilisé étaient la précipitation et l'évapotranspiration potentielle, la première indiquant la quantité d'eau entrant dans le sol et la seconde la quantité d'eau sortante. Le plan de cette sous-section s'inspire très largement de la thèse \cite{maquin2016developpement}[chap 1] qui fournit d'avantage de détails et traite de la modélisation de l'ensemble des interactions dont nous allons parler. 
 
 \subsubsection{Les écoulements}
 \label{ch:ecoulement}
 
-Les processus hydrologiques sont classiquement étudiés à l’échelle du bassin versant\footnote{Un bassin versant comme il est défini en hydrologie possède son équivalent en mathématiques, soit $(E,d)$ un espace métrique et $S:E\to E$ un endomorphisme sur $E$. On définit le bassin d'attraction d'un point $a$ qu'on appelle $B(a)$ l'ensemble des points $x$ dans $E$ tels que la suite $(x_n)_{n \in \mathbb{N}}=(S^n(x))_{n \in \mathbb{N}}$ converge vers $a$. En considérant qu'il existe une fonction $S$ définissant la trajectoire d'une goutte d'eau déposée au point $x$ les deux définitions ont la même signification en considérant le plus grand bassin d'attraction contenant un point $x$ choisi.}. En hydrologie, le bassin versant est une unité géographique définie par les limites topographiques que sont les lignes de crête. L’ensemble des écoulements converge vers les dépressions, formant ainsi un réseau hydrographique qui se dirige vers le point bas du bassin versant, l’exutoire. la figure \ref{fig:Bassin versant} définie un bassin versant.
+Les processus hydrologiques sont classiquement étudiés à l’échelle du bassin versant\footnote{Un bassin versant comme il est défini en hydrologie possède son équivalent en mathématiques, soit $(E,d)$ un espace métrique et $S:E\to E$ un endomorphisme sur $E$. On définit le bassin d'attraction d'un point $a$ qu'on appelle $B(a)$ l'ensemble des points $x$ dans $E$ tels que la suite $(x_n)_{n \in \mathbb{N}}=(S^n(x))_{n \in \mathbb{N}}$ converge vers $a$. En considérant qu'il existe une fonction $S$ définissant la trajectoire d'une goutte d'eau déposée au point $x$ les deux définitions ont la même signification en considérant le plus grand bassin d'attraction contenant un point $x$ choisi.}. En hydrologie, le bassin versant est une unité géographique définie par les limites topographiques que sont les lignes de crête. L’ensemble des écoulements converge vers les dépressions, formant ainsi un réseau hydrographique qui se dirige vers le point bas du bassin versant, l’exutoire. la figure \ref{fig:Bassin versant} définie un bassin versant. 
 
 \begin{figure}
 	\begin{center}
@@ -444,7 +449,7 @@ Les processus hydrologiques sont classiquement étudiés à l’échelle du bass
 
 \noindent\textbf{Les écoulements de subsurface}:
 
-La notion d'écoulement de subsurface se rapporte à l'écoulement de l'eau dans les pores du sol. L'écoulement de subsurface dépend de plusieurs paramètres comme les caractéristiques du sol (sa porosité, sa perméabilité) c'est à dire la capacité qu'a l'eau à s'infiltrer dans le sol ainsi que la saturation en eau du sol, la topographie et le climat (précipitation, évaporation, transpiration). Ces écoulements sont traités par les équations de la mécanique des fluides (voir section  \ref{eq-Richards}), pour plus de détails se référer à \cite{maquin2016developpement} et \cite{marsily_de1986quantitative}. 
+La notion d'écoulement de subsurface se rapporte à l'écoulement de l'eau dans les pores du sol. Il dépend de plusieurs paramètres comme les caractéristiques du sol (sa porosité, sa perméabilité) c'est à dire la capacité qu'a l'eau à s'infiltrer dans le sol ainsi que la saturation en eau du sol, la topographie et le climat (précipitation, évaporation, transpiration). Ces écoulements sont traités par les équations de la mécanique des fluides (voir section  \ref{eq-Richards}), pour plus de détails se référer à \cite{maquin2016developpement} et \cite{marsily_de1986quantitative}. 
 
 \vspace{0.7cm}
 
@@ -455,19 +460,35 @@ Les écoulements de surface, aussi qualifiés de ruissellement apparaissent lors
 \begin{center}
 	\captionsetup{type=figure}
 	\includegraphics[scale=0.2]{ruissellement.png}
-	\captionof{figure}{Estimation du ruissellement en fonction du temps, modèle de Horton}
+	\captionof{figure}{Estimation du ruissellement en fonction du temps, modèle de Horton(\cite{maquin2016developpement})}
 \end{center} 
+
+\vspace{0.7cm}
+
+\noindent\textbf{Les interactions nappe rivière:}
+
+Selon la position de la rivière par rapport à la nappe soit la nappe nourrit la rivière, soit c'est l'inverse, la figure \ref{fig:nappe_riviere} présente ce mécanisme.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.28]{nappe_riviere.png}
+	\end{center}
+	\captionof{figure}{Différente interactions entre la nappe et la rivière}
+	\label{fig:nappe_riviere}
+\end{figure}
 
 \subsubsection{Transferts d'eau entre le sol et l'atmosphère}
 \label{ch:mecanismes}
 
-La végétation constitue le lien entre l'atmosphère et le sol. Les végétaux transfèrent de l'eau dans les deux sens, via les racines et la canopée. Il y a aussi des interactions directes entre le sol et l'atmosphère. Les trois principaux processus décrits sont l'évaporation du sol, la transpiration des végétaux ainsi que l'évaporation de l'eau interceptée par la canopée (mécanisme visant à conserver l'eau).
+La végétation constitue le lien entre l'atmosphère et le sol. Les végétaux sont les principales voies de transfère entre le sol et l'atmosphère, via les racines et la canopée. Il y a aussi des interactions directes entre la couche de surface du sol et l'atmosphère. Les trois principaux processus décrits sont l'évaporation du sol, la transpiration des végétaux ainsi que l'évaporation de l'eau interceptée par la canopée. L'influence de la végétation a un très gros impact sur les modélisations hydrologiques, puisqu'elle influent directement sur la quantité d'eau entrant et sortant du sol. 
 
 \vspace{0.7cm}
 
 \noindent\textbf{la transpiration:}
 
-La ``transpiration'' des plantes consiste en une libération de vapeur d’eau par les plantes dans l’atmosphère. Ce phénomène constitue une réponse passive à l’environnement atmosphérique dû à l’existence d’un gradient de pression positif de l’atmosphère à la canopée, on parle alors de demande atmosphérique. La description des processus d'évaporations ont été traités dans la thèse \cite{maquin2016developpement}.
+La ``transpiration'' des plantes consiste en une libération de vapeur d’eau par les plantes dans l’atmosphère. Ce phénomène constitue une réponse passive à l’environnement atmosphérique dû à l’existence d’un gradient de pression positif de l’atmosphère à la canopée, on parle aussi de demande atmosphérique. L’évaporation de l’eau par les plantes se produit dans les stomates des feuilles, de petites ouvertures où s’effectuent les échanges gazeux entre l’intérieur et l’extérieur de la plante. L’ouverture des stomates peut varier, régulant ainsi le flux de transpiration. Cette variation dans l’ouverture et la fermeture des stomates dépend de différents paramètres comme l’état hydrique du végétal ou les conditions climatiques.
+
+La transpiration amène l'eau du sol par les racines puis les stomates vers l'atmosphère, la quantité d'eau transpirée dépend aussi du volume du sol couvert par les racine ainsi que de la teneur en eau du sol. Il arrive souvent en été dans les régions arides que la densité d'eau dans le sol ne soit pas suffisante pour qu'il y ait transpiration.
 
 \vspace{0.7cm}
 
@@ -485,7 +506,239 @@ Lors d’un épisode pluvieux, une partie de l’eau incidente est interceptée 
 
 \noindent\textbf{l'évapotranspiration potentielle:}
 
-On désigne par  ``évapotranspiration potentielle'' la quantité d’eau maximale que l’atmosphère peut extraire via les trois processus décrits précédemment. Elle correspond ainsi à la demande atmosphérique évoquée auparavant. L’évapotranspiration potentielle correspond à l’évaporation d’une surface saturée en eau. Elle dépend de paramètres atmosphériques comme l’humidité de l’air, le vent et la température. Ce taux potentiel a la propriété de majorer la somme des flux de transpiration, d’évaporation et des pertes par interception. Attention l'évapotranspiration potentielle ne dépend pas de la couverture végétale (on la pondère généralement par la densité de la végétation présente sur le sol).
+On désigne par  ``évapotranspiration potentielle'' la quantité d’eau maximale que l’atmosphère peut extraire via les trois processus décrits précédemment. Elle correspond ainsi à la demande atmosphérique évoquée auparavant. Elle correspond à la quantité d'eau fournie par un sol saturé en eau. Les articles \cite{kristensen1975model}, \cite{zhifang2010estimation} donnent des méthodes pour passer de l'évapotranspiration potentielle à l'évapotranspiration réelle, cependant il semble que ce sujet soit encore controversé dans la communauté des hydrologues.  
+
+\subsection{Les concepts hydrologiques: modélisation de l'écoulement dans le sol}
+\label{hydro}
+
+Nous allons ici introduire les principales notions propres à l'étude hydrologique des sols. Plusieurs caractéristiques définissent un sol, mais avant d'étudier  plus en détail ce qui définit un sol, il est important de comprendre que l'étude hydrologique d'un sol est simplement un bilan d'eau dans celui-ci. De facon plus générale, la grandeure qui va nous intéresser dans notre étude ne sera pas la hauteur de nappe, mais les débit de l'eau sortante.
+Il faut alors commencer par déterminer ce qui rentre et ce qui sort. L'estimation de ces quantités est l'objet d'étude du downscaling qui cherche à prévoir la précipitation et l'évapotranspiration potentielle.
+
+\subsubsection{Quelques définitions pour l'étude en milieu poreux}
+\label{ch: definition milieu poreux}
+On comprends intuitivement que la nature du sol aura un impacte dans l'écoulement de l'eau. par exemple un sol très sableux permet un écoulement beaucoup plus rapide qu'un sol argileux. Ceci est lié au volume de vides relatifs. Nous introduirons ici les concepts principaux de l'étude hydrologique en milieu poreux.
+
+\begin{definition}
+	On appelle \textbf{porosité totale $\omega$} la valeur définie par
+	\begin{equation}
+		\omega =\frac{\textrm{Volume des vides}}{\textrm{Volume total de la roche}}.
+	\end{equation}
+	On appelle aussi \textbf{indice des vides $e$} la valeur définie par 
+	\begin{equation}
+		e=\frac{\textrm{Volume des vides}}{\textrm{Volume du solide plein}}.
+	\end{equation}
+	On peut passe d'une formule à l'autre par la relation 
+	\[e\omega=e-\omega.\]
+\end{definition}
+L'on peut trouver des méthodes de mesure de la porosité d'un sol dans l'ouvrage (\cite{marsily_de1986quantitative}). On dit aussi que le sol n'est pas saturé lorsque l'eau n'a pas pris tout l'espace disponible, on parle alors de saturation volumique. Ce concept est fondamental pour comprendre la dynamique de l'écoulement, par exemple en dessous d'une certaine saturation les forces de capillarités seront plus fortes que celles de gravité et il n'y aura aucun écoulement.
+ 
+\begin{definition}
+	On parle de \textbf{saturation volumique $\theta$}, la saturation définie par le rapport
+	\begin{equation}
+		\theta= \frac{\textrm{Volume d'eau contenu}}{\textrm{Volume total}},
+	\end{equation}
+	on a $0\leq<\theta\leq \omega$. Et la \textbf{saturation volumique $s$}
+	\begin{equation}
+		s=\frac{\textrm{Volume d'eau contenu}}{\textrm{Volume total des pores}}.
+	\end{equation}
+\end{definition}
+
+En fonction de la saturation volumique les échelles de temps et les forces misent en action ne sont pas les mêmes.
+
+
+\subsubsection{Les équations pour modéliser l'écoulement}
+\label{ch: eq meca-flu}
+L'objet de cette section sera de montrer quelques équations fondamentales que manipulent les hydrologues pour modéliser les écoulements en milieu poreux. Nous allons par la suite montrer la démarche physique permettant d'obtenir ces équations. On commence par rappeler les équations de la dynamiques des fluides. L'équation de de conservation de la matière:
+\begin{equation}
+	\label{cons-mat}
+	div(\rho \overrightarrow{u})+\frac{\partial \rho}{\partial t}=0.
+\end{equation}
+Où $\rho$ est la masse volumique et $\overrightarrow{u}$ le vecteur vitesse du fluide. On écrit maintenant l'équation de Navier-Stokes
+\begin{equation}
+	\frac{\partial p}{\partial x^i}-(\zeta+\frac{\mu}{3})\frac{\partial}{\partial x^i}(div\overrightarrow{u}) - \mu \nabla^2u^i=\rho(F^i -\frac{du^i}{dt}).
+\end{equation}
+$\zeta$ coefficient de viscosité du volume, (très souvent négligeable devant $\mu$) $[ML^{-1}T^{-1}]$,\\
+$\mu$ coefficient de viscosité dynamique, $[ML^{-1}T^{-1}]$\\
+$\nabla^2$ le laplacien,\\
+$F^i$ composante des forces à distance par unité de masse,\\
+$i$ un vecteur unitaire de l'espace $3D$.
+
+En milieu poreux les équations de Navier-Stokes deviennent difficilement applicables car le milieu dans lequel s'écoule le fluide dépend lui-même de l'écoulement du fluide. On peut en effet imaginer que la porosité augmente avec la vitesse d'écoulement (si on considère la géométrie uniforme et la porosité). On va alors simplifier l'équation de Navier-Stokes en posant certaines hypothèses propres au milieu dans lequel on les étudie. 
+
+\vspace{0.7cm}
+
+\noindent \textbf{Hypothèses simplificatrices:}\\
+En milieu poreux on peut émettre de nombreuses hypothèses simplificatrices qui permettent de simplifier l'équation de Navier Stokes, on peut supposer les écoulement permanents
+\[\frac{\partial u^i}{\partial t}=0,\]
+on suppose aussi que le fluide est incompressible ($\rho$ constant) alors
+\[div(\rho \overrightarrow{u})=-\frac{\partial \rho}{\partial t}=0,\]
+et finalement,
+\[div \overrightarrow{u}=0.\]
+Dans ces hypothèses l'équation de Navier-Stokes devient
+\begin{equation}
+	\label{eq-cons-m-simp}
+	\frac{\partial p}{\partial x^i}-\mu \nabla^2u^i-\rho F^i=0. 
+\end{equation}
+
+Plusieurs méthodes numériques permettent de trouver des solutions à ce problèmes notamment la méthode de Galerkine ou des méthodes de différences finies voir \cite{allaire2005analyse} (chap 2, chap 6). 
+
+\vspace{7mm}
+
+Remarquons que ces équations ne prennent pas en compte la porosité du milieu, l'équation \eqref{cons-mat} peut être modifié en prenant en compte $\omega$ le coefficient de porosité et un terme source $q$ lié à la matière créant des interstices sans fluide (le coefficient est compté négativement). Alors l'équation de conservation devient en milieu poreux.
+\begin{equation}
+	\label{eq:mass-por}
+	div(\overrightarrow{U})+\frac{\partial}{\partial t}(\theta)+ q=0.
+\end{equation}
+Remarquons que l'on considère la porosité $w$ comme continue nous étudions des éléments de longueures $dx$ suffisamment petite pour que les équations de continuité \eqref{eq-cons-m-simp} et \eqref{eq:mass-por} soient considérée vrais et suffisamment grandes pour que l'on puisse considérer une porosité moyenne dans un élément de volume.
+
+\subsubsection{La loi de Darcy et l'équation de diffusivité en milieu poreux}
+\label{Darcy}
+Henry Darcy, alors qu'il étudiait les fontaines de la ville de Dijon (1856) établit expérimentalement que le débit d'eau s'écoulant à travers un massif de sable peut se calculer.
+
+\begin{figure}[!h]
+	\begin{center}
+		\includegraphics[scale=0.4]{darcy.png}
+		\captionof{figure}{Schéma de l'équipement utilisé par Darcy pour obtenir l'équation \eqref{eq-Darcy}}
+	\end{center}
+	\label{fig:Darcy}
+\end{figure}
+
+Il en déduisit une formule expérimentale
+\begin{equation}
+	\label{eq:Darcy}
+	Q=KA\frac{\Delta h}{L}.
+\end{equation}
+$Q$ est le débit volumique s'écoulant à travers  
+$A$ est la section du massif sableux\\
+$\Delta h$ la perte de charge\footnote{En hydraulique la charge est une grandeur homogène à une longueur, on l'exprime parfois sous la forme d'une pression: $cste\times\rho g$. Sinon on pose souvent \[h=\]} de l'eau entre le sommet et la base du massif sableux\\
+$K$ est une constante dépendant du milieu poreux, baptisée coefficient de perméabilité\\
+$L$ est l'épaisseur du massif sableux.
+
+
+
+\vspace{0.7cm}
+
+On appelle $U=Q/A$ \textbf{la vitesse de filtration} d'un sol. À partir des équations de Navier-Stokes on sait que les causes du déplacement du fluide sont dûs au gradient de pression ainsi qu'aux forces extérieures. La loi de Darcy peut alors s'exprimer sous la forme générale
+\begin{equation}
+	\label{eq-Darcy}
+	\overrightarrow{U}=\frac{k}{\mu }(\overrightarrow{\nabla}\, p+\rho g \,\overrightarrow{\nabla}\, z).
+\end{equation} 
+
+On peut réécrire cette équation
+\[\overrightarrow{U}=-K(\overrightarrow{\nabla}\, h + \,\overrightarrow{\nabla}\, z),\]
+avec $K=k(\mu \rho g)^{-1}$ $[LT^{-1}]$ et $h=p(\rho g)^{-1}$ $[L]$. En posant 
+\[H=h+z,\]
+on peut alors injecter l'équation de Darcy \eqref{eq-Darcy} dans l'équation de conservation de la masse \eqref{eq:mass-por} pour finalement obtenir
+\begin{equation}
+	\label{eq-Richards}
+ 	-\overrightarrow{\nabla} \cdot (K\overrightarrow{\nabla}H)+\frac{\partial\theta}{\partial t}+ q=0.
+\end{equation}  
+On définit parfois des lois de porosité liées à la grandeur $f(H)=\theta$ la quantité d'eau est liée à la cote piézométrique \footnote{Le niveau, la cote ou la surface piézométrique est l'altitude ou la profondeur (par rapport à la surface du sol) de la limite entre la nappe phréatique et la zone vadose dans une formation aquifère. Ce niveau est mesuré à l'aide d'un piézomètre.} et l'on pose 
+\[S_s(H)\frac{\partial H}{\partial t}=\frac{\partial\theta}{\partial t},\]
+$S_s$ est appelé le coefficient d'emmagasinement. On appelle l'équation ainsi obtenu en injectant la formule sur la porosité, \textbf{l'équation de Richard généralisée}
+\begin{equation}
+	\label{eq-ge-richard}
+	S_s(H)\frac{\partial H}{\partial t}-\overrightarrow{\nabla} \cdot (K(\theta)\overrightarrow{\nabla}H)+q=0.
+\end{equation}
+
+Ceux sont avec ces équations que les hydrologues travaillent. Nous pouvons remarquer que cette simplification des équations peut être considérée comme le début d'un processus d'upscaling. On cherche à simplifier le modèle pour qu'il soit encore vrai à grand échelle. Notons que les équations de Darcy ont été justifiées dans les travaux de Matheron et Marle à partir de l'intégration dans un milieu réel des équations de Navier. 
+
+\subsection{Les modèles hydrologiques et la problématique de l'upscaling}
+\label{ch:modeles-hydro-upscaling}
+Nous allons présenter dans cette partie deux modèles hydrologiques, le premier HydroGéoSphère est celui que nous avons utilisé pour réaliser les modélisations hydrologiques sur le bassin du Little Washita, le second Orchidée est le modèle de surface continentale utilisé par l'IPSL. 
+
+\subsubsection{Le modèle d'hydrogéosphère}
+
+HydroGéoSphère (HGS) est un code de calcul hydrologique tri-dimensionnel, intégré et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de subsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes.
+
+À chaque pas de temps le modèle résout les équations de transport d'eau de surface et de subsurface ainsi que celles conservation de la masse en même temps. En regardant la figure \ref{fig:HGS_water_balance} on a la conservation des quantités d'eau en surface s'écrit
+\begin{equation}
+	\label{eq:HGS-surface}
+	P = (Q_{S2}-Q_{S1})-Q_{GS}+I+ET_S+Q^W_S+\Delta S_S /\Delta t,
+\end{equation}
+et les équations de subsurface s'écrivent
+\begin{equation}
+	\label{eq:HGS-subsurface}
+	I = (Q_{G2}-Q_{G1})+Q_{GS}+ET_G + Q^W_G+\Delta S_G/\Delta t.
+\end{equation}
+On a finalement,
+\begin{equation}
+	\label{eq:HGS-bilan-tot}
+	P=(Q_{S2}-Q_{S1})+(Q_{G2}-Q_G1)+(ET_S+ET_G)+(Q^W_S+Q_G)+(\Delta S+S+\Delta S_G)/\Delta t
+\end{equation}
+Avec $Q_{S1}$ et $Q_{S2}$ les flux entrant et sortant, $Q_{GS}$ le flot d'interaction entre la surface et la subsurface, $ET_S$ l'évapotranspiration de surface. $Q^W_S$ et $Q^W_G$ les termes puits définis précédemment \eqref{eq:mass-por}. $\Delta S_S$ et $\Delta S_G$ les différences de stockage d'eau en surface et en subsurface sur le temps $\Delta t$.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.35]{HGS_modele.png}
+	\end{center}
+	\captionof{figure}{Schéma des cycles hydrologiques pris en compte par hydrogéosphère}
+	\label{fig:HGS_water_balance}
+\end{figure}
+
+Hydrogésphère résout rigoureusement les équations de la physiques cités dans la partie \ref{ch: eq meca-flu} et donne des résultats très précis. Cependant la capacité informatique actuelle ne permet pas d'implémenter HydroGéoSphère dans un modèle de climat. Il fallait créer des modèles plus simples et plus grossiers pour résoudre le problème à plus grande échelle. C'est le principe du modèle continentale Orchidée. 
+
+\subsubsection{Le modèle d'Orchidée}
+
+Orchidée est un modèle continentale dans le continuum sol-végétation-atmosphère. Ses résultats sont intégrés comme condition à la limite basse du modèle générale de circulation atmosphérique du Laboratoire de Météorologie Dynamique. Orchidée simule en particulier les flux d’énergie, d’eau et de carbone entre les surfaces continentales et l’atmosphère. Il est composé de trois modules qui représentent des processus différents et agissant à des échelles de temps différentes: SECHIBA (Schématisation des Échanges Hydriques à l’Interface entre la Biosphère et Atmosphère), STOMATE, qui modélise principalement la phénologie végétale (les phases de développement saisonnier des plantes liées au cycle climatique annuel et les échanges de carbone dans la biosphère, et LPJ qui simule l’évolution dynamique de la végétation. Dans le cadre de ce stage, seul le module SECHIBA a été étudié.
+
+La description que nous allons en donner ici est très sommaire et rassemble ce que nous en avons compris de la discussion que nous avons eu avec Emmanuel Mouche et de la lecture de la présentation \cite{gumiberteau2016}. Le modèle d'Orchidée est un modèle de réservoir, c'est à dire qu'on discrétise l'espace en plusieurs zones qui peuvent contenir de l'eau. Nous avons vu qu'il y avait plusieurs types d'écoulements qui intervenaient à différentes échelles de temps et à différents endroits dans le sol. Orchidée considère alors trois types de transfère d'eau dans trois types de réservoirs. Les écoulements considérés sont: les écoulements de surface, de subsurface et finalement les échanges entre la rivière et la nappe. 
+
+\begin{figure}[h]
+	\label{fig:HGS}
+	\begin{center}
+		\includegraphics[scale=0.3]{different_flows.png}
+	\end{center}
+	\captionof{figure}{Schéma des cycles hydrologiques pris en compte par Orchidée}
+\end{figure}
+
+Alors dans chaque block considérer il y a trois réservoirs d'eau. Un réservoir pour les écoulements écoulements de surface, un pour les écoulements de subsurface et un pour les interaction nappe-rivière. La figure \ref{fig:Orchidee-interact} présente les différente intéractions entre deux blocks.
+
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.3]{Orchidee_interaction.png}
+		
+	\end{center}
+	\captionof{figure}{Modèle de réservoir utilisé par Orchidée, image issue de \cite{gumiberteau2017}}
+	\label{fig:Orchidee-interact}
+\end{figure}
+
+Remarquons que la couche du haut, dont nous n'avons pas parlé est le sol sur lequel on considère les précipitations ($P_X$, $P_Y$) et l'évapotranspiration ($ET_X$,$ET_Y$). Le \textit{stream reservoir} est le réservoir des écoulements de surface, le \textit{fast reservoir} correspond au réservoir des écoulements de subsurfaces et le \textit{slow reservoir} correspond à la nappe. Les écoulements verticaux $(Rs_X,Rs_Y)$ et $(D_X,D_Y$) simulent les proportions des précipitations stocké dans chaque sous-block, et le calcule de $Rs$ et $D$ en fonction des précipitations est détaillé dans la présentation \cite{gumiberteau2017}. On peut remarquer que d'après ce schéma il n'y a pas d'écoulement de surface.
+On peut remarquer ensuite que les écoulement vont seulement d'un réservoir à l'autre, ce paradigme semble raisonnable puisque les écoulements vont eux toujours dans le sens de la pente. Un autre partie pris est qu'un block ne se déverse que dans un seul et unique block, ce comportement semble légitime si l'on considère qu'il n'arrive que très rarement qu'une rivière se divise dans le sens de l'aval. Néanmoins, considérant la surface des blocks ($>0.5^{\circ}$), il est fréquent que plusieurs bassins soient contenus dans le même block et alors ce choix devient discutable.
+
+\subsubsection{Conclusion et étude des modèles}
+
+Ayant vu deux modélisations d'une surface continentale, leur comparaison peut enrichir la réflexion de l'upscaling. 
+
+-Propriétés intéressantes: Convergence d'un modèle à l'autre en faisant tendre la longeure de maille vers 0?
+
+-Comment mesurer la distance? Segmenter le modèle d'HydroGéoSphère en trois réservoire et regarder les bilans sur les différents réservoirs.
+
+-Commencer par résoudre les équations de la physique dans chaque réservoir?
+
+-Quantifier la différence au modèle réel.
+
+Cette étude pourrait faire l'objet d'un stage ou d'une thèse entière. 
+
+
+\newpage
+\section{Projections Climatiques et modélisation hydrologique}
+\label{ch:Proj-climatique-mod-hydro}
+
+Dans cette section nous présentons les résultats que nous avons obtenus par l'analyse des données NARR sur le bassin du Little Washita. L'organisation de notre travail est résumé dans la figure \ref{fig:methodo}.
+
+Commençons par rappeler les enjeux de ce stage. Nous cherchons à étudier l'impact du changement d'échelle sur les prédictions climatiques et les modélisations Hydrologiques. Avant de commencer notre travail, nous avons commencé par faire une étude de la région du Little Washita ainsi que des données NARR. Pour étudier la problématique du changement d'échelle nous avons voulu étudier l'impact de différents changements d'échelles. Nous avons donc considéré des dégradations des données NARR sur plusieurs échelles (le processus de dégradations est expliqué dans la section \ref{ch:degradation}). On commence par considérer les variables de précipitation et d'évapotranspiration sur un point de maille NARR (le point couvrant la majeur partie du bassin du Little Washita) donc de $32km\times 32km$ puis nous avons considéré la moyenne des précipitations sur des ensembles de mailles entourant le point correspondant au Little Washita sur des surfaces de plus en plus grandes (voir section \ref{ch:degradation}). Finalement nous avons considéré le jeux de données du modèle de climat de l'IPSL qui possède une largeur de maille supérieur ($200km\times 200km$). Une fois récupérer les séries des réalisations des variables à ces différentes échelles nous avons appliqué la méthode CDF-t pour downscaler ces séries et donc transformé les données à grande échelle pour améliorer les projections sur la maille du Little Washita. Nous avons ensuite simulé la modélisation hydrologique pour toutes nos séries de précipitation et d'évapotranspiration. Finalement, nous avons étudiés et comparer les résultats des débits renvoyés par les différentes simulations. Mais comme un schéma vaut mieux qu'un long discours voici un schéma résumant notre travail sur les données NARR.
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.6]{Diagrame_methodo.png}
+	\end{center}
+	\captionof{figure}{Plan d'étude du stage}
+	\label{fig:methodo}
+\end{figure}
+
+\subsection{Analyse des données NARR}
 
 
 
@@ -504,14 +757,10 @@ On désigne par  ``évapotranspiration potentielle'' la quantité d’eau maxima
 
 
 
-
-
-
-
-
+\newpage
 \section{Annexes}
 
-\subsection{Annexe: Preuves et légitimité des outils utilisés dans le downscaling}
+\subsection{Annexe: Preuves et outils utilisés dans le downscaling}
 \label{ch:outils-mathematiques}
 \begin{proposition}
 	Soit $X$ et $Y$ deux variables aléatoires réelles ayant des fonctions de répartition $\mathcal{F}_{X}$ et $\mathcal{F}_{Y}$ continues, alors 
@@ -539,7 +788,7 @@ On désigne par  ``évapotranspiration potentielle'' la quantité d’eau maxima
 
 
 \begin{theorem}(Glivenko-Cantelli)
-	\label{th-glivenko}
+	\label{th:glivenko}
 	Soient $\mathcal{F}_{X}$ et $\mathcal{F}_{n}$ respectivement la fonction de répartition et la fonction de répartition empirique. Alors 
 	\begin{equation}
 		\|\mathcal{F}_{X}-\mathcal{F}_{n}\|_{\infty} \xrightarrow[n\to \infty]{prob} 0.
@@ -554,7 +803,7 @@ On désigne par  ``évapotranspiration potentielle'' la quantité d’eau maxima
 	Alors, comme $\mathbb{Q}$ est dense dans $\mathbb{R}$ et que $\mathcal{F}_{X}$ et les $(\mathcal{F}_n)_{n \in \mathbb{N}}$ sont continues on peut assurer que   
 	\[	\|\mathcal{F}_{X}-\mathcal{F}_{n}\|_{\infty} \xrightarrow[n\to \infty]{prob} 0. \]
 \end{proof}
-Le cas où $\mathcal{F}_{X}$ n'est pas continue est géré par \cite{durrett2019probability} (ex 7.2 chap 1). On voit d'après le théorème \ref{th-glivenko} que la fonction de répartition empirique est le bon estimateur de la fonction de répartition. 
+Le cas où $\mathcal{F}_{X}$ n'est pas continue est géré par \cite{durrett2019probability} (ex 7.2 chap 1). On voit d'après le théorème \ref{th:glivenko} que la fonction de répartition empirique est le bon estimateur de la fonction de répartition. 
 
 
 \subsection{Annexe: La statistique de Cramér-von Mises}

@@ -1,5 +1,11 @@
 \begin{thebibliography}{}
 
+\bibitem[Allaire, 2005]{allaire2005analyse}
+Allaire, G. (2005).
+\newblock {\em Analyse num{\'e}rique et optimisation: une introduction {\`a} la
+  mod{\'e}lisation math{\'e}matique et {\`a} la simulation num{\'e}rique}.
+\newblock Editions Ecole Polytechnique.
+
 \bibitem[Ayar et~al., 2016]{ayar2016intercomparison}
 Ayar, P.~V., Vrac, M., Bastin, S., Carreau, J., D{\'e}qu{\'e}, M., and
   Gallardo, C. (2016).
@@ -52,6 +58,16 @@ Golse, F. (2020).
   d{\'e}riv{\'e}es partielles}.
 \newblock Les {\'e}ditions de l'{\'e}cole polytechnique.
 
+\bibitem[Guimberteau, 2016]{gumiberteau2016}
+Guimberteau, M. (2016).
+\newblock Introduction to the current routing schemeand its ongoing evolutions
+  in the land-surface model orchidee.
+
+\bibitem[Guimberteau, 2017]{gumiberteau2017}
+Guimberteau, M. (2017).
+\newblock Introduction to the multilayer soil diffusion scheme and the routing
+  scheme in orchidee.
+
 \bibitem[Hillel, 2003]{hillel2003introduction}
 Hillel, D. (2003).
 \newblock {\em Introduction to environmental soil physics}.
@@ -67,6 +83,12 @@ Huang, W.-L. and Chen, S.-P. (2012).
 \newblock Optimal aggregate production planning with fuzzy data.
 \newblock {\em International Journal of Industrial and Manufacturing
   Engineering}, 6(8):1633--1638.
+
+\bibitem[Kristensen and Jensen, 1975]{kristensen1975model}
+Kristensen, K. and Jensen, S. (1975).
+\newblock A model for estimating actual evapotranspiration from potential
+  evapotranspiration.
+\newblock {\em Hydrology Research}, 6(3):170--188.
 
 \bibitem[Lindgren et~al., 2011]{lindgren2011explicit}
 Lindgren, F., Rue, H., and Lindstr{\"o}m, J. (2011).
@@ -123,5 +145,11 @@ Vrac, M., Drobinski, P., Merlo, A., Herrmann, M., Lavaysse, C., Li, L., and
 \newblock Dynamical and statistical downscaling of the french mediterranean
   climate: uncertainty assessment.
 \newblock {\em Natural Hazards and Earth System Sciences}, 12(9):2769--2784.
+
+\bibitem[Zhifang et~al., 2010]{zhifang2010estimation}
+Zhifang, Y., Hua, O., Xingliang, X., Caiping, Z., Feng, Z., and Bin, S. (2010).
+\newblock Estimation of evapotranspiration from faber fir forest ecosystem in
+  the eastern tibetan plateau of china using shaw model.
+\newblock {\em Journal of Water Resource and Protection}, 2010.
 
 \end{thebibliography}

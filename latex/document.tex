@@ -212,6 +212,8 @@ _{X,Y}(X')$ seront incluses dans le support de $f_Y$. Nous aimerions que $X'$ ai
 
 L'algorithme de \textbf{Cumulative Distribution Function transfer} (CDFt) vise à remédier au problème des bornes en appliquant des transformations sur les lois $X$ et $Y$. On considère les réalisations $X_1,..,X_n$ et $Y_1,...,Y_n$ ainsi que $X'_{1},...,X'{m}$.
 
+\vspace{0.7cm}
+
 \noindent \textbf{CDFt avec support égale}:
 
 On peut par exemple faire en sorte que la transformation sur les projections conserve le support de celles-ci en d'autres mots on veut
@@ -221,6 +223,8 @@ Il suffit de transformer la loi de $Y$ sur $[0,1]$, de réaliser un quantile-qua
 Alors quelque soit $i$ dans $\mathcal{I}$ on a $\overset{\sim}{Y}_i \in [0,1]$. En appelant $G= \mathcal{F}_{X,\overset{\sim}{Y}}$ la transformation quantile-quantile de $X$ à $\overset{\sim}{Y}$ on a $G_{X,Y}(X'_i) \in [0,1]$, la transformation s'imposant naturellement est alors
 \[ G_{X,Y}= (\max_{i\in I}Y_i- \min_{i\in I}Y_i)G + \min_{i\in I}Y_i.\]
 C'est l'une des premières idées qui vienne-t-en tête lorsqu'on parle de transformations que l'on peut appliquer sur nos variables. Notons que l'on a aussi une grosse base de données et que l'on peut aussi essayer d'utiliser des méthodes de regression linéaire ou de machine learning pour estimer les max et les min de $Y'$ en fonction de $X$. Nous allons illustrer l'usage d'une de ces méthodes dans la prochaine partie \ref{CDFt reg l}.
+
+\vspace{0.7cm}
 
 \noindent \textbf{CDFt avec méthode de prédiction}
 \label{CDFt reg l}
@@ -260,7 +264,9 @@ La problématique du transport optimal a premièrement été introduite en par G
 
 Précédemment nous avons cherché à définir une transformation $G$ de la variable aléatoire $X$ telle $G(X)$ suive la même loi que $Y$. En considérant les fonctions de densité de $X$ et de $Y$ on a cherché à ce que la fonction de densité de $G(X)$ soit la même que celle de $Y$. On peut considérer une fonction de densité comme une mesure sur l'espace sur lequel on travail on a alors transformé une mesure $f_X$ en une autre mesure $f_Y$. Comme ces deux mesures sont de mesure totale égale à $1$, on peut dire que d'une certaine manière chaque ``poids'' de la mesure $f_X$ a été déplacé vers un poids de la mesure $f_Y$. L'idée du transport optimal est de trouver les déplacements naturels des poids d'une fonction de densité à une autre.  
 
-Nous présenterons ici la formulation établie par Kantorovitch dans les années $70$ qui a l'avantage d'inclure celle de Monge. Le livre \cite{villani2003topics} donne un cours de référence internationale sur les problématiques de transport optimal. 
+Nous présenterons ici la formulation établie par Kantorovitch dans les années $70$ qui a l'avantage d'inclure celle de Monge. Les notations que nous utilisons viennent du livre \cite{villani2003topics} qui fournit un cours de référence internationale sur les problématiques de transport optimal. 
+
+\vspace{0.7cm}
 
 Considérons deux fonctions de répartitions pour des variables aléatoires $U$ et $V$ à valeurs dans $A$ et $B$, on appelle ces fonctions $\mathcal{F}$ et $\mathcal{G}$ et on appelle $f$ et $g$ leurs fonctions de densités. On cherche alors une mesure $\pi$ sur  $A \times B$ satisfaisant
 \[\int_{B} d\pi(x,y)= f(x), \hspace{4mm} \int_{A}  d \pi(x,y)= g(y),\]
@@ -383,7 +389,7 @@ Cette section reprend brièvement les principaux mécanismes entrant en compte d
  
 \subsubsection{Les écoulements}
 
-Les processus hydrologiques sont classiquement étudiés à l’échelle du bassin versant (voir). En hydrologie, le bassin versant est une unité géographique définie par les limites topographiques que sont les lignes de crête. L’ensemble des écoulements converge vers les dépressions, formant ainsi un réseau hydrographique qui se dirige vers le point bas du bassin versant, l’exutoire.
+Les processus hydrologiques sont classiquement étudiés à l’échelle du bassin versant. En hydrologie, le bassin versant est une unité géographique définie par les limites topographiques que sont les lignes de crête. L’ensemble des écoulements converge vers les dépressions, formant ainsi un réseau hydrographique qui se dirige vers le point bas du bassin versant, l’exutoire.
 
 Il possède son équivalent en mathématiques, soit $(E,d)$ un espace métrique et $S:E\to E$ un endomorphisme sur $E$. On définit le bassin d'attraction d'un point $a$ qu'on appelle $B(a)$ l'ensemble des points $x$ dans $E$ tels que la suite $(x_n)_{n \in \mathbb{N}}=(S^n(x))_{n \in \mathbb{N}}$ converge vers $a$. En considérant qu'il existe une fonction $S$ définissant la trajectoire d'une goutte d'eau déposée au point $x$ les deux définitions ont la même signification.
 
@@ -560,7 +566,7 @@ Le modèle continentale Orchidée est un modèle dynamique, développé à l’�
 
 \subsubsection{Modèle à base physique: Hydrogéosphère}
 
-HydroGéoSphère (HGS) est un code de calcul hydrologique tri-dimensionnel, intégré et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de subsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes.
+HydroGéoSphère (HGS) est un code de calcul hydrologique tri-dimensionnel, intégré et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de subsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes. Le niveau de maillage doit être relativement fin pour que les équations de la physique aient encore un sens. 
 
 
 
