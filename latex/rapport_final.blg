@@ -14,45 +14,45 @@ I'm skipping whatever remains of this entry
 Warning--empty journal in gumiberteau2016
 Warning--empty journal in gumiberteau2017
 Warning--there's a number but no series in villani2003topics
-You've used 26 entries,
+You've used 30 entries,
             1935 wiz_defined-function locations,
-            625 strings with 8722 characters,
-and the built_in function-call counts, 9462 in all, are:
-= -- 922
-> -- 368
-< -- 20
-+ -- 130
-- -- 122
-* -- 789
-:= -- 1697
-add.period$ -- 76
-call.type$ -- 26
-change.case$ -- 185
-chr.to.int$ -- 26
-cite$ -- 29
-duplicate$ -- 357
-empty$ -- 655
-format.name$ -- 152
-if$ -- 1805
+            642 strings with 9179 characters,
+and the built_in function-call counts, 10719 in all, are:
+= -- 1038
+> -- 429
+< -- 22
++ -- 150
+- -- 142
+* -- 884
+:= -- 1934
+add.period$ -- 87
+call.type$ -- 30
+change.case$ -- 212
+chr.to.int$ -- 30
+cite$ -- 33
+duplicate$ -- 408
+empty$ -- 736
+format.name$ -- 178
+if$ -- 2042
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 27
-newline$ -- 130
-num.names$ -- 78
-pop$ -- 158
+missing$ -- 32
+newline$ -- 149
+num.names$ -- 90
+pop$ -- 190
 preamble$ -- 1
-purify$ -- 191
+purify$ -- 220
 quote$ -- 0
-skip$ -- 282
+skip$ -- 321
 stack$ -- 0
-substring$ -- 645
-swap$ -- 33
+substring$ -- 693
+swap$ -- 36
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 146
+type$ -- 166
 warning$ -- 3
-while$ -- 77
+while$ -- 85
 width$ -- 0
-write$ -- 328
+write$ -- 374
 (There were 2 error messages)

@@ -6,12 +6,23 @@ Allaire, G. (2005).
   mod{\'e}lisation math{\'e}matique et {\`a} la simulation num{\'e}rique}.
 \newblock Editions Ecole Polytechnique.
 
+\bibitem[Allen, 1991]{allen1991hydrology}
+Allen, P.~B. (1991).
+\newblock Hydrology of the little washita river watershed, oklahoma: Data and
+  analysis.
+\newblock {\em Tech. Rep. ARS-90, US Dept. of Agri., Agri. Res. Serv.}
+
 \bibitem[Ayar et~al., 2016]{ayar2016intercomparison}
 Ayar, P.~V., Vrac, M., Bastin, S., Carreau, J., D{\'e}qu{\'e}, M., and
   Gallardo, C. (2016).
 \newblock Intercomparison of statistical and dynamical downscaling models under
   the euro-and med-cordex initiative framework: present climate evaluations.
 \newblock {\em Climate dynamics}, 46(3-4):1301--1329.
+
+\bibitem[Boyd et~al., 2004]{boyd2004convex}
+Boyd, S., Boyd, S.~P., and Vandenberghe, L. (2004).
+\newblock {\em Convex optimization}.
+\newblock Cambridge university press.
 
 \bibitem[B{\"u}ning, 2002]{buning2002robustness}
 B{\"u}ning, H. (2002).
@@ -58,6 +69,11 @@ Golse, F. (2020).
   d{\'e}riv{\'e}es partielles}.
 \newblock Les {\'e}ditions de l'{\'e}cole polytechnique.
 
+\bibitem[Grafarend and Krumm, 2014]{grafarend2014map}
+Grafarend, E.~W. and Krumm, F.~W. (2014).
+\newblock {\em Map projections}.
+\newblock Springer.
+
 \bibitem[Guimberteau, 2016]{gumiberteau2016}
 Guimberteau, M. (2016).
 \newblock Introduction to the current routing schemeand its ongoing evolutions
@@ -83,6 +99,10 @@ Huang, W.-L. and Chen, S.-P. (2012).
 \newblock Optimal aggregate production planning with fuzzy data.
 \newblock {\em International Journal of Industrial and Manufacturing
   Engineering}, 6(8):1633--1638.
+
+\bibitem[Jones et~al., 01  ]{scipy}
+Jones, E., Oliphant, T., Peterson, P., et~al. (2001--).
+\newblock {SciPy}: Open source scientific tools for {Python}.
 
 \bibitem[Kristensen and Jensen, 1975]{kristensen1975model}
 Kristensen, K. and Jensen, S. (1975).
