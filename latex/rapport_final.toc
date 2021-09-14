@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {3.3}Les concepts hydrologiques: mod\IeC {\'e}lisation de l'\IeC {\'e}coulement dans le sol}{19}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Quelques d\IeC {\'e}finitions pour l'\IeC {\'e}tude en milieu poreux}{20}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}Les \IeC {\'e}quations pour mod\IeC {\'e}liser l'\IeC {\'e}coulement}{20}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}La loi de Darcy et l'\IeC {\'e}quation de diffusivit\IeC {\'e} en milieu poreux}{22}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3}Les \IeC {\'e}quations des \IeC {\'e}coulements en milieu poreux}{22}{subsubsection.3.3.3}
 \contentsline {subsection}{\numberline {3.4}La probl\IeC {\'e}matique de l'upscaling dans l'\IeC {\'e}tude des mod\IeC {\`e}les hydrologiques}{23}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Le mod\IeC {\`e}le d'hydrog\IeC {\'e}osph\IeC {\`e}re}{23}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}Le mod\IeC {\`e}le d'Orchid\IeC {\'e}e}{25}{subsubsection.3.4.2}
@@ -36,17 +36,17 @@
 \contentsline {subsection}{\numberline {4.3}Downscaling des donn\IeC {\'e}es d\IeC {\'e}grad\IeC {\'e}es et des donn\IeC {\'e}es IPSL}{36}{subsection.4.3}
 \contentsline {subsubsection}{\numberline {4.3.1}Analyse variationnelle des diff\IeC {\'e}rentes s\IeC {\'e}ries de projection de la pr\IeC {\'e}cipitation}{36}{subsubsection.4.3.1}
 \contentsline {subsubsection}{\numberline {4.3.2}\IeC {\'E}tude du downscaling sur la correction de biais}{37}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}Analyse des distances de Cram\IeC {\'e}r-Von Mise et explication du choix de la m\IeC {\'e}thode de downscaling}{38}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.3}Analyse des s\IeC {\'e}ries downscal\IeC {\'e}es et explication du choix de la m\IeC {\'e}thode de downscaling}{38}{subsubsection.4.3.3}
 \contentsline {subsection}{\numberline {4.4}Simulation hydrologique avec HydroG\IeC {\'e}osph\IeC {\`e}re}{40}{subsection.4.4}
 \contentsline {subsubsection}{\numberline {4.4.1}Mod\IeC {\'e}lisation Little Washita HGS}{40}{subsubsection.4.4.1}
 \contentsline {subsubsection}{\numberline {4.4.2}La probl\IeC {\'e}matique du spin-up}{40}{subsubsection.4.4.2}
 \contentsline {subsection}{\numberline {4.5}Comparaison et analyse des r\IeC {\'e}sultats des simulations hydrologiques}{40}{subsection.4.5}
 \contentsline {subsubsection}{\numberline {4.5.1}L'efficacit\IeC {\'e} du downscaling}{41}{subsubsection.4.5.1}
 \contentsline {subsubsection}{\numberline {4.5.2}Non lin\IeC {\'e}arit\IeC {\'e} de la r\IeC {\'e}ponse d\IeC {\'e}bit/pr\IeC {\'e}cipitation}{43}{subsubsection.4.5.2}
-\contentsline {subsubsection}{\numberline {4.5.3}Classifications des donn\IeC {\'e}es r\IeC {\'e}actives et non r\IeC {\'e}actives aux pr\IeC {\'e}cipitations}{44}{subsubsection.4.5.3}
-\contentsline {subsection}{\numberline {4.6}Conclusion de l'analyse des donn\IeC {\'e}es sur le bassin du Little Washita}{46}{subsection.4.6}
-\contentsline {section}{\numberline {5}Annexes}{47}{section.5}
-\contentsline {subsection}{\numberline {5.1}Annexe 1: Preuves et outils utilis\IeC {\'e}s dans le downscaling}{47}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Annexe 2: La statistique de Cram\IeC {\'e}r-von Mises}{48}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Annexe 3: La projection conique conforme de Lambert}{50}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Annexe 4: Classification des populations de d\IeC {\'e}bit}{52}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {4.5.3}Classifications des donn\IeC {\'e}es r\IeC {\'e}actives et non r\IeC {\'e}actives aux pr\IeC {\'e}cipitations}{45}{subsubsection.4.5.3}
+\contentsline {subsection}{\numberline {4.6}Conclusion de l'analyse des donn\IeC {\'e}es sur le bassin du Little Washita}{47}{subsection.4.6}
+\contentsline {section}{\numberline {5}Annexes}{48}{section.5}
+\contentsline {subsection}{\numberline {5.1}Annexe 1: Preuves et outils utilis\IeC {\'e}s dans le downscaling}{48}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Annexe 2: La statistique de Cram\IeC {\'e}r-von Mises}{49}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Annexe 3: La projection conique conforme de Lambert}{51}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Annexe 4: Classification des populations de d\IeC {\'e}bit}{53}{subsection.5.4}

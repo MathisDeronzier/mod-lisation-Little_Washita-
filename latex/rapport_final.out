@@ -21,7 +21,7 @@
 \BOOKMARK [2][-]{subsection.3.3}{Les concepts hydrologiques: mod\351lisation de l'\351coulement dans le sol}{section.3}% 21
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Quelques d\351finitions pour l'\351tude en milieu poreux}{subsection.3.3}% 22
 \BOOKMARK [3][-]{subsubsection.3.3.2}{Les \351quations pour mod\351liser l'\351coulement}{subsection.3.3}% 23
-\BOOKMARK [3][-]{subsubsection.3.3.3}{La loi de Darcy et l'\351quation de diffusivit\351 en milieu poreux}{subsection.3.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Les \351quations des \351coulements en milieu poreux}{subsection.3.3}% 24
 \BOOKMARK [2][-]{subsection.3.4}{La probl\351matique de l'upscaling dans l'\351tude des mod\350les hydrologiques}{section.3}% 25
 \BOOKMARK [3][-]{subsubsection.3.4.1}{Le mod\350le d'hydrog\351osph\350re}{subsection.3.4}% 26
 \BOOKMARK [3][-]{subsubsection.3.4.2}{Le mod\350le d'Orchid\351e}{subsection.3.4}% 27
@@ -36,7 +36,7 @@
 \BOOKMARK [2][-]{subsection.4.3}{Downscaling des donn\351es d\351grad\351es et des donn\351es IPSL}{section.4}% 36
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Analyse variationnelle des diff\351rentes s\351ries de projection de la pr\351cipitation}{subsection.4.3}% 37
 \BOOKMARK [3][-]{subsubsection.4.3.2}{\311tude du downscaling sur la correction de biais}{subsection.4.3}% 38
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Analyse des distances de Cram\351r-Von Mise et explication du choix de la m\351thode de downscaling}{subsection.4.3}% 39
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Analyse des s\351ries downscal\351es et explication du choix de la m\351thode de downscaling}{subsection.4.3}% 39
 \BOOKMARK [2][-]{subsection.4.4}{Simulation hydrologique avec HydroG\351osph\350re}{section.4}% 40
 \BOOKMARK [3][-]{subsubsection.4.4.1}{Mod\351lisation Little Washita HGS}{subsection.4.4}% 41
 \BOOKMARK [3][-]{subsubsection.4.4.2}{La probl\351matique du spin-up}{subsection.4.4}% 42

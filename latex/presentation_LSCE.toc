@@ -1,0 +1,18 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Mod\IeC {\`e}les de climat et mod\IeC {\'e}lisation hydrologique}{5}{0}{1}
+\beamer@subsectionintoc {1}{1}{Les mod\IeC {\`e}les de climat}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{Les interaction sol-atmosph\IeC {\`e}re}{6}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{1}{Les pr\IeC {\'e}cipitations}{6}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{2}{L'\IeC {\'e}vapotranspiration}{7}{0}{1}
+\beamer@subsubsectionintoc {1}{2}{3}{Bilan hydrique}{8}{0}{1}
+\beamer@sectionintoc {2}{Mod\IeC {\'e}lisation hydrologique du Little Washita}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{Le little Washita}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Les donn\IeC {\'e}es NARR et IPSL}{11}{0}{2}
+\beamer@subsectionintoc {2}{3}{La d\IeC {\'e}gradation des donn\IeC {\'e}es}{12}{0}{2}
+\beamer@subsectionintoc {2}{4}{Downscaling des donn\IeC {\'e}es}{13}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{1}{M\IeC {\'e}thode de downscaling}{13}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{2}{R\IeC {\'e}sultats du downscaling des donn\IeC {\'e}es}{14}{0}{2}
+\beamer@subsectionintoc {2}{5}{Mod\IeC {\'e}lisation hydrologique}{15}{0}{2}
+\beamer@subsectionintoc {2}{6}{R\IeC {\'e}sultats hydrologiques pr\IeC {\'e}cipitations d\IeC {\'e}bits}{16}{0}{2}
+\beamer@subsubsectionintoc {2}{6}{1}{Analyse des r\IeC {\'e}sultats}{17}{0}{2}
+\beamer@subsubsectionintoc {2}{6}{2}{Classification de population pr\IeC {\'e}cipitations-d\IeC {\'e}bits}{18}{0}{2}
