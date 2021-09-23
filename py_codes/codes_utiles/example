@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Sep 16 12:10:25 2021
+
+@author: mathis
+"""
+
+
+import numpy as np
+import matplotlib.pyplot as plt 
+from math import sqrt
+plt.rcParams['text.usetex'] = True
+
+
+############################### Les fonctions #################################
+def Cum_Dist_Fun(X):
+#On suppose X un vecteur de tirages aléatoires la fonction renvoie un tableau 
+    n=len(X)
+    Y=X
+    Y.sort()
+    m=Y[0]
+    s=0
+    Z=[]
+    for i in range(n):
+        if Y[i]>m:
+            Z.append([m,s/n])
+            m=Y[i]
+        s+=1
+        if i==n-1:
+            Z.append([m,s/n])
+    return np.array(Z)
+            
+def find(x,X):
+#On suppose que la liste X est triée et l'on cherche la position dans la liste 
+#telle que l'élément soit dedans
+    a=0
+    b=len(X)
+    while b-a>1:
+        m=(a+b)//2
+        if x<X[m]:
+            b=m
+        else:
+            a=m
+    return a
+
+def find_t(x,a,b):
+    #On a a<=x<b on renvoie t vérifiant x=ta+(1-t)b
+    return (b-x)/(b-a)
+    
+
+def QQ(X,Y,Xf):
+#Cette fonction prend en entrée Les listes X, Y et la liste Xf à downscaler
+    F_X=Cum_Dist_Fun(X)
+    F_Y=Cum_Dist_Fun(Y)
+    Y_pred=[]
+    nx=F_X.shape[0]
+    ny=F_Y.shape[0]
+    for x in Xf:
+        rx=find(x,F_X[:,0])
+        if rx<(nx-1):
+            tx=find_t(x, F_X[rx,0],F_X[rx+1,0])
+            px=tx*F_X[rx,1]+(1-tx)*F_X[rx+1,1]
+            ry=find(px,F_Y[:,1])
+            ty=find_t(px, F_Y[ry,1],F_Y[ry+1,1])
+            py=ty*F_Y[ry,0]+(1-ty)*F_Y[ry+1,0]
+        else:
+            py=F_Y[ny-1,0]
+        Y_pred.append(py)
+    return np.array(Y_pred)
+
+
+####################### Application des résultats #############################
+def G(F_Y,F_X,y):
+#Cette fonction prend en entrée Les listes X, Y et la liste Xf à downscaler
+    Y_pred=[]
+    nx=F_X.shape[0]
+    ny=F_Y.shape[0]
+    for x in y:
+        rx=find(x,F_X[:,0])
+        if rx<(nx-1):
+            tx=find_t(x, F_X[rx,0],F_X[rx+1,0])
+            px=tx*F_X[rx,1]+(1-tx)*F_X[rx+1,1]
+            ry=find(px,F_Y[:,1])
+            ty=find_t(px, F_Y[ry,1],F_Y[ry+1,1])
+            py=ty*F_Y[ry,0]+(1-ty)*F_Y[ry+1,0]
+        else:
+            py=F_Y[ny-1,0]
+        Y_pred.append(py)
+    return np.array(Y_pred)
+
+
+
+dx = 0.005
+x  = np.arange(-6, 6, dx)
+y1  = 0.25*np.exp((-x ** 2)/8)
+y2  = 0.5*np.exp((-(1-x) ** 2)/2)
+
+
+y1=y1/ (np.sum(dx * y1))
+y2=y2/ (np.sum(dx * y2))
+cdf1 = np.cumsum(y1 * dx)
+cdf2 = np.cumsum(y2 * dx)
+
+X=np.column_stack((x,cdf2))
+Y=np.column_stack((x,cdf1))
+
+
+G_X= G(Y,X,x)
+
+plt.plot(x,G_X,label="$\mathcal{F}_Y^{-1} \circ \mathcal{F}_X(x)$",color="green")
+#plt.plot(x,cdf2,label="cdf $\mathcal{F}_X$")
+plt.xlabel("x")
+plt.ylabel("G(x)")
+plt.title("Transformation quantile-quantile")
+plt.legend()
+plt.show()
+
+
+

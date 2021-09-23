@@ -1,52 +1,51 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Contextualisation et motivations du stage}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Pr\351sentation du plan}{section.1}% 3
-\BOOKMARK [1][-]{section.2}{Changement d'\351chelle, downscaling et analyse des r\351sultats}{}% 4
-\BOOKMARK [2][-]{subsection.2.1}{Introduction \340 la probl\351matique du downscaling}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.2}{Cumulative Distribution Function transform \(CDFt\)}{section.2}% 6
-\BOOKMARK [3][-]{subsubsection.2.2.1}{Quantile-Quantile}{subsection.2.2}% 7
-\BOOKMARK [3][-]{subsubsection.2.2.2}{CDFt}{subsection.2.2}% 8
-\BOOKMARK [2][-]{subsection.2.3}{Transport optimal}{section.2}% 9
-\BOOKMARK [3][-]{subsubsection.2.3.1}{Probl\351matique}{subsection.2.3}% 10
-\BOOKMARK [3][-]{subsubsection.2.3.2}{R\351solution du probl\350me dans le cas fini et downscaling}{subsection.2.3}% 11
-\BOOKMARK [2][-]{subsection.2.4}{Analyse des r\351sultats obtenus par downscaling}{section.2}% 12
-\BOOKMARK [3][-]{subsubsection.2.4.1}{Distance de Kolmogorov-Smirnov}{subsection.2.4}% 13
-\BOOKMARK [3][-]{subsubsection.2.4.2}{Distance de Cram\351r-von Mises}{subsection.2.4}% 14
-\BOOKMARK [1][-]{section.3}{Pr\351sentation des mod\350les de climat et hydrologiques}{}% 15
-\BOOKMARK [2][-]{subsection.3.1}{Pr\351sentation d'un mod\350le de climat}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.2}{G\351n\351ralit\351s sur les interactions atmosph\350re - surface continentale - sol}{section.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Les pr\351cipitations}{subsection.3.2}% 18
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Les \351coulements}{subsection.3.2}% 19
-\BOOKMARK [3][-]{subsubsection.3.2.3}{Transferts d'eau entre le sol et l'atmosph\350re}{subsection.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.3}{Les concepts hydrologiques: mod\351lisation de l'\351coulement dans le sol}{section.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Quelques d\351finitions pour l'\351tude en milieu poreux}{subsection.3.3}% 22
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Les \351quations pour mod\351liser l'\351coulement}{subsection.3.3}% 23
-\BOOKMARK [3][-]{subsubsection.3.3.3}{Les \351quations des \351coulements en milieu poreux}{subsection.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.4}{La probl\351matique de l'upscaling dans l'\351tude des mod\350les hydrologiques}{section.3}% 25
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Le mod\350le d'hydrog\351osph\350re}{subsection.3.4}% 26
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Le mod\350le d'Orchid\351e}{subsection.3.4}% 27
-\BOOKMARK [3][-]{subsubsection.3.4.3}{Questions ouvertes par la probl\351matique de l'upscaling}{subsection.3.4}% 28
-\BOOKMARK [1][-]{section.4}{Projections Climatiques et mod\351lisation hydrologique sur le bassin versant du Little Washita}{}% 29
-\BOOKMARK [2][-]{subsection.4.1}{\311tude du Little Washita et des donn\351es NARR}{section.4}% 30
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Le bassin versant du Little Washita}{subsection.4.1}% 31
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Les donn\351es North American Regional Reanalysis \(NARR\)}{subsection.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.2}{D\351gradation spatiale des donn\351es NARR}{section.4}% 33
-\BOOKMARK [3][-]{subsubsection.4.2.1}{M\351thode de d\351gradation}{subsection.4.2}% 34
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Analyse spatiale de la r\351gion du Washita}{subsection.4.2}% 35
-\BOOKMARK [2][-]{subsection.4.3}{Downscaling des donn\351es d\351grad\351es et des donn\351es IPSL}{section.4}% 36
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Analyse variationnelle des diff\351rentes s\351ries de projection de la pr\351cipitation}{subsection.4.3}% 37
-\BOOKMARK [3][-]{subsubsection.4.3.2}{\311tude du downscaling sur la correction de biais}{subsection.4.3}% 38
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Analyse des s\351ries downscal\351es et explication du choix de la m\351thode de downscaling}{subsection.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.4}{Simulation hydrologique avec HydroG\351osph\350re}{section.4}% 40
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Mod\351lisation Little Washita HGS}{subsection.4.4}% 41
-\BOOKMARK [3][-]{subsubsection.4.4.2}{La probl\351matique du spin-up}{subsection.4.4}% 42
-\BOOKMARK [2][-]{subsection.4.5}{Comparaison et analyse des r\351sultats des simulations hydrologiques}{section.4}% 43
-\BOOKMARK [3][-]{subsubsection.4.5.1}{L'efficacit\351 du downscaling}{subsection.4.5}% 44
-\BOOKMARK [3][-]{subsubsection.4.5.2}{Non lin\351arit\351 de la r\351ponse d\351bit/pr\351cipitation}{subsection.4.5}% 45
-\BOOKMARK [3][-]{subsubsection.4.5.3}{Classifications des donn\351es r\351actives et non r\351actives aux pr\351cipitations}{subsection.4.5}% 46
-\BOOKMARK [2][-]{subsection.4.6}{Conclusion de l'analyse des donn\351es sur le bassin du Little Washita}{section.4}% 47
-\BOOKMARK [1][-]{section.5}{Annexes}{}% 48
-\BOOKMARK [2][-]{subsection.5.1}{Annexe 1: Preuves et outils utilis\351s dans le downscaling}{section.5}% 49
-\BOOKMARK [2][-]{subsection.5.2}{Annexe 2: La statistique de Cram\351r-von Mises}{section.5}% 50
-\BOOKMARK [2][-]{subsection.5.3}{Annexe 3: La projection conique conforme de Lambert}{section.5}% 51
-\BOOKMARK [2][-]{subsection.5.4}{Annexe 4: Classification des populations de d\351bit}{section.5}% 52
+\BOOKMARK [1][-]{section.0}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.0.1}{Contextualisation et motivations du stage}{section.0}% 2
+\BOOKMARK [2][-]{subsection.0.2}{Pr\351sentation du plan}{section.0}% 3
+\BOOKMARK [1][-]{section.1}{Changement d'\351chelle, downscaling et analyse des r\351sultats}{}% 4
+\BOOKMARK [2][-]{subsection.1.1}{Introduction \340 la probl\351matique du downscaling}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.2}{Cumulative Distribution Function transform \(CDFt\)}{section.1}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Quantile-Quantile}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.2}{CDFt}{subsection.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.3}{Analyse des r\351sultats obtenus par downscaling}{section.1}% 9
+\BOOKMARK [3][-]{subsubsection.1.3.1}{Distance de Kolmogorov-Smirnov}{subsection.1.3}% 10
+\BOOKMARK [3][-]{subsubsection.1.3.2}{Distance de Cram\351r-von Mises}{subsection.1.3}% 11
+\BOOKMARK [1][-]{section.2}{Pr\351sentation des mod\350les de climat et hydrologiques}{}% 12
+\BOOKMARK [2][-]{subsection.2.1}{G\351n\351ralit\351s sur les interactions atmosph\350re - surface continentale - sol}{section.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Les pr\351cipitations}{subsection.2.1}% 14
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Les \351coulements}{subsection.2.1}% 15
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Transferts d'eau entre le sol et l'atmosph\350re}{subsection.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.2}{Les concepts hydrologiques: mod\351lisation de l'\351coulement dans le sol}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Quelques d\351finitions pour l'\351tude en milieu poreux}{subsection.2.2}% 18
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Les \351quations pour mod\351liser l'\351coulement}{subsection.2.2}% 19
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Les \351quations des \351coulements en milieu poreux}{subsection.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.3}{La probl\351matique de l'upscaling dans l'\351tude des mod\350les hydrologiques}{section.2}% 21
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Le mod\350le d'hydrog\351osph\350re}{subsection.2.3}% 22
+\BOOKMARK [3][-]{subsubsection.2.3.2}{Le mod\350le d'Orchid\351e}{subsection.2.3}% 23
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Questions ouvertes par la probl\351matique de l'upscaling}{subsection.2.3}% 24
+\BOOKMARK [1][-]{section.3}{Projections Climatiques et mod\351lisation hydrologique sur le bassin versant du Little Washita}{}% 25
+\BOOKMARK [2][-]{subsection.3.1}{\311tude du Little Washita et des donn\351es NARR}{section.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Le bassin versant du Little Washita}{subsection.3.1}% 27
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Les donn\351es North American Regional Reanalysis \(NARR\)}{subsection.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.2}{D\351gradation spatiale des donn\351es NARR}{section.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.2.1}{M\351thode de d\351gradation}{subsection.3.2}% 30
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Analyse spatiale de la r\351gion du Washita}{subsection.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.3}{Downscaling des donn\351es d\351grad\351es et des donn\351es IPSL}{section.3}% 32
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Analyse variationnelle des diff\351rentes s\351ries de projection}{subsection.3.3}% 33
+\BOOKMARK [3][-]{subsubsection.3.3.2}{\311tude du downscaling sur la correction de biais}{subsection.3.3}% 34
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Analyse des s\351ries downscal\351es et explication du choix de la m\351thode de downscaling}{subsection.3.3}% 35
+\BOOKMARK [2][-]{subsection.3.4}{Simulation hydrologique avec HydroG\351osph\350re}{section.3}% 36
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Mod\351lisation Little Washita HGS}{subsection.3.4}% 37
+\BOOKMARK [3][-]{subsubsection.3.4.2}{La probl\351matique du spin-up}{subsection.3.4}% 38
+\BOOKMARK [2][-]{subsection.3.5}{Comparaison et analyse des r\351sultats des simulations hydrologiques}{section.3}% 39
+\BOOKMARK [3][-]{subsubsection.3.5.1}{L'efficacit\351 du downscaling}{subsection.3.5}% 40
+\BOOKMARK [3][-]{subsubsection.3.5.2}{\311tude de la r\351ponse d\351bit/pr\351cipitation}{subsection.3.5}% 41
+\BOOKMARK [3][-]{subsubsection.3.5.3}{Classifications des donn\351es r\351actives et non r\351actives aux pr\351cipitations}{subsection.3.5}% 42
+\BOOKMARK [2][-]{subsection.3.6}{Conclusion et perspectives de l'analyse des donn\351es sur le bassin du Little Washita}{section.3}% 43
+\BOOKMARK [1][-]{section.4}{Annexes}{}% 44
+\BOOKMARK [2][-]{subsection.4.1}{Annexe 1: Preuves et outils utilis\351s dans le downscaling}{section.4}% 45
+\BOOKMARK [2][-]{subsection.4.2}{Annexe 2: Transport optimal}{section.4}% 46
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Probl\351matique}{subsection.4.2}% 47
+\BOOKMARK [3][-]{subsubsection.4.2.2}{R\351solution du probl\350me dans le cas fini et downscaling}{subsection.4.2}% 48
+\BOOKMARK [2][-]{subsection.4.3}{Annexe 3: La statistique de Cram\351r-von Mises}{section.4}% 49
+\BOOKMARK [2][-]{subsection.4.4}{Annexe 4: La projection conique conforme de Lambert}{section.4}% 50
+\BOOKMARK [2][-]{subsection.4.5}{Annexe 5: Classification des populations de d\351bit}{section.4}% 51

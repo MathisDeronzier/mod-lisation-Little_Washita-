@@ -52,7 +52,7 @@
 		\begin{block}{Les problématiques de ce stage:}
 			\begin{itemize}
 				\item Comment utiliser des modèles climatiques Globaux pour anticiper des modifications locales du climat?
-				\item Dans quelle mesure les modèles de climats respectent-ils les lois de la physique?
+				\item Dans quelle mesure les modèles de climat respectent-ils les lois de la physique?
 				\item Quel est l'impact des différentes échelles sur les prévisions climatiques?
 			\end{itemize}
 		\end{block}
@@ -98,7 +98,7 @@
 	
 	\subsubsection{Les précipitations}
 	
-	\begin{frame}{L'eau entrante dans le sol}
+	\begin{frame}{L'eau entrant dans le sol}
 		\begin{block}{Précipitations dans les modèle hydrologique}
 			\begin{itemize}
 				\item Définition: eau tombant sur la terre sous toutes ses formes (pluie, neige, grésil, grêle)
@@ -141,13 +141,13 @@
 		\begin{minipage}[b]{0.5\linewidth}
 			\begin{figure}
 				\begin{center}
-					\includegraphics[scale=0.13]{different_flows.png}
+					\includegraphics[scale=0.15]{different_flows.png}
 				\end{center}
 				\caption{L'évapotranspiration}
 			\end{figure} 
 		\end{minipage}\hfill
 		\begin{minipage}[b]{0.5\linewidth}
-			\begin{block}{Équations milieu poreux}
+			\begin{block}{Équations d'écoulement en milieu poreux}
 			Équation de conservation de la masse:
 			\begin{equation}
 				\label{eq-mass-por}
@@ -164,6 +164,7 @@
 				S_s(H)\frac{\partial H}{\partial t}=\frac{\partial\theta}{\partial t}.
 			\end{equation}
 			\end{block}
+		Avec $\theta$ la saturation en eau et $H$ la charge hydraulique.
 		\end{minipage}
 	\end{frame}
 	
@@ -223,7 +224,7 @@
 	\end{frame}
 	
 	\subsection{La dégradation des données}
-	\begin{frame}{Les données North American Regional Realanalysis et IPSL}
+	\begin{frame}{Dégradation des données NARR}
 		\begin{figure}[H]
 			\begin{center}
 				\includegraphics[scale=0.2]{Little_Washita_deg.png}
@@ -239,9 +240,10 @@
 		\begin{minipage}[b]{0.5\linewidth}
 			\begin{block}{Résultat du downscaling des données}
 				\begin{itemize}
-					\item $X=X_1,X_2,...,X_n$ et $X'=X'_1,X'_2,...,X'_m$ les réalisations des données downscalées passées et futures
-					\item $Y=Y_1,Y_2,...,Y_n$ et $Y'=Y'_1,Y'_2,...,Y'_m$ les réalisations des données réelle passées et futures
+					\item $X=X_1,X_2,...,X_n$ et $X'=X'_1,X'_2,...,X'_m$ les réalisations des données dégradées passées et futures
+					\item $Y=Y_1,Y_2,...,Y_n$ et $Y'=Y'_1,Y'_2,...,Y'_m$ les réalisations des données qu'on veut prédire passées et futures
 					\item $\mathcal{F}_{X}$ et $\mathcal{F}_{Y}$ les fonctions de répartitions empriques 
+					\item On cherche $G$ une transformation tq: $\mathcal{F}_{G(X)}= \mathcal{F}_Y$
 				\end{itemize} 
 			\end{block}
 		\end{minipage}\hfill

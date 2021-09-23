@@ -1,52 +1,51 @@
-\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}Contextualisation et motivations du stage}{4}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Pr\IeC {\'e}sentation du plan}{5}{subsection.1.2}
-\contentsline {section}{\numberline {2}Changement d'\IeC {\'e}chelle, downscaling et analyse des r\IeC {\'e}sultats}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Introduction \IeC {\`a} la probl\IeC {\'e}matique du downscaling}{7}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Cumulative Distribution Function transform (CDFt)}{8}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Quantile-Quantile}{8}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}CDFt}{8}{subsubsection.2.2.2}
-\contentsline {subsection}{\numberline {2.3}Transport optimal}{10}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Probl\IeC {\'e}matique}{10}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}R\IeC {\'e}solution du probl\IeC {\`e}me dans le cas fini et downscaling}{11}{subsubsection.2.3.2}
-\contentsline {subsection}{\numberline {2.4}Analyse des r\IeC {\'e}sultats obtenus par downscaling}{11}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Distance de Kolmogorov-Smirnov}{12}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Distance de Cram\IeC {\'e}r-von Mises}{12}{subsubsection.2.4.2}
-\contentsline {section}{\numberline {3}Pr\IeC {\'e}sentation des mod\IeC {\`e}les de climat et hydrologiques}{14}{section.3}
-\contentsline {subsection}{\numberline {3.1}Pr\IeC {\'e}sentation d'un mod\IeC {\`e}le de climat}{14}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur les interactions atmosph\IeC {\`e}re - surface continentale - sol}{15}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Les pr\IeC {\'e}cipitations}{15}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Les \IeC {\'e}coulements}{17}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Transferts d'eau entre le sol et l'atmosph\IeC {\`e}re}{18}{subsubsection.3.2.3}
-\contentsline {subsection}{\numberline {3.3}Les concepts hydrologiques: mod\IeC {\'e}lisation de l'\IeC {\'e}coulement dans le sol}{19}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Quelques d\IeC {\'e}finitions pour l'\IeC {\'e}tude en milieu poreux}{20}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Les \IeC {\'e}quations pour mod\IeC {\'e}liser l'\IeC {\'e}coulement}{20}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Les \IeC {\'e}quations des \IeC {\'e}coulements en milieu poreux}{22}{subsubsection.3.3.3}
-\contentsline {subsection}{\numberline {3.4}La probl\IeC {\'e}matique de l'upscaling dans l'\IeC {\'e}tude des mod\IeC {\`e}les hydrologiques}{23}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Le mod\IeC {\`e}le d'hydrog\IeC {\'e}osph\IeC {\`e}re}{23}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Le mod\IeC {\`e}le d'Orchid\IeC {\'e}e}{25}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Questions ouvertes par la probl\IeC {\'e}matique de l'upscaling}{26}{subsubsection.3.4.3}
-\contentsline {section}{\numberline {4}Projections Climatiques et mod\IeC {\'e}lisation hydrologique sur le bassin versant du Little Washita}{27}{section.4}
-\contentsline {subsection}{\numberline {4.1}\IeC {\'E}tude du Little Washita et des donn\IeC {\'e}es NARR}{28}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Le bassin versant du Little Washita}{28}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Les donn\IeC {\'e}es North American Regional Reanalysis (NARR)}{29}{subsubsection.4.1.2}
-\contentsline {subsection}{\numberline {4.2}D\IeC {\'e}gradation spatiale des donn\IeC {\'e}es NARR}{30}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}M\IeC {\'e}thode de d\IeC {\'e}gradation}{30}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Analyse spatiale de la r\IeC {\'e}gion du Washita}{31}{subsubsection.4.2.2}
-\contentsline {subsection}{\numberline {4.3}Downscaling des donn\IeC {\'e}es d\IeC {\'e}grad\IeC {\'e}es et des donn\IeC {\'e}es IPSL}{36}{subsection.4.3}
-\contentsline {subsubsection}{\numberline {4.3.1}Analyse variationnelle des diff\IeC {\'e}rentes s\IeC {\'e}ries de projection de la pr\IeC {\'e}cipitation}{36}{subsubsection.4.3.1}
-\contentsline {subsubsection}{\numberline {4.3.2}\IeC {\'E}tude du downscaling sur la correction de biais}{37}{subsubsection.4.3.2}
-\contentsline {subsubsection}{\numberline {4.3.3}Analyse des s\IeC {\'e}ries downscal\IeC {\'e}es et explication du choix de la m\IeC {\'e}thode de downscaling}{38}{subsubsection.4.3.3}
-\contentsline {subsection}{\numberline {4.4}Simulation hydrologique avec HydroG\IeC {\'e}osph\IeC {\`e}re}{40}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Mod\IeC {\'e}lisation Little Washita HGS}{40}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}La probl\IeC {\'e}matique du spin-up}{40}{subsubsection.4.4.2}
-\contentsline {subsection}{\numberline {4.5}Comparaison et analyse des r\IeC {\'e}sultats des simulations hydrologiques}{40}{subsection.4.5}
-\contentsline {subsubsection}{\numberline {4.5.1}L'efficacit\IeC {\'e} du downscaling}{41}{subsubsection.4.5.1}
-\contentsline {subsubsection}{\numberline {4.5.2}Non lin\IeC {\'e}arit\IeC {\'e} de la r\IeC {\'e}ponse d\IeC {\'e}bit/pr\IeC {\'e}cipitation}{43}{subsubsection.4.5.2}
-\contentsline {subsubsection}{\numberline {4.5.3}Classifications des donn\IeC {\'e}es r\IeC {\'e}actives et non r\IeC {\'e}actives aux pr\IeC {\'e}cipitations}{45}{subsubsection.4.5.3}
-\contentsline {subsection}{\numberline {4.6}Conclusion de l'analyse des donn\IeC {\'e}es sur le bassin du Little Washita}{47}{subsection.4.6}
-\contentsline {section}{\numberline {5}Annexes}{48}{section.5}
-\contentsline {subsection}{\numberline {5.1}Annexe 1: Preuves et outils utilis\IeC {\'e}s dans le downscaling}{48}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Annexe 2: La statistique de Cram\IeC {\'e}r-von Mises}{49}{subsection.5.2}
-\contentsline {subsection}{\numberline {5.3}Annexe 3: La projection conique conforme de Lambert}{51}{subsection.5.3}
-\contentsline {subsection}{\numberline {5.4}Annexe 4: Classification des populations de d\IeC {\'e}bit}{53}{subsection.5.4}
+\contentsline {section}{\numberline {0}Introduction}{4}{section.0}
+\contentsline {subsection}{\numberline {0.1}Contextualisation et motivations du stage}{4}{subsection.0.1}
+\contentsline {subsection}{\numberline {0.2}Pr\IeC {\'e}sentation du plan}{5}{subsection.0.2}
+\contentsline {section}{\numberline {1}Changement d'\IeC {\'e}chelle, downscaling et analyse des r\IeC {\'e}sultats}{7}{section.1}
+\contentsline {subsection}{\numberline {1.1}Introduction \IeC {\`a} la probl\IeC {\'e}matique du downscaling}{8}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Cumulative Distribution Function transform (CDFt)}{9}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Quantile-Quantile}{9}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}CDFt}{9}{subsubsection.1.2.2}
+\contentsline {subsection}{\numberline {1.3}Analyse des r\IeC {\'e}sultats obtenus par downscaling}{11}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Distance de Kolmogorov-Smirnov}{12}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Distance de Cram\IeC {\'e}r-von Mises}{12}{subsubsection.1.3.2}
+\contentsline {section}{\numberline {2}Pr\IeC {\'e}sentation des mod\IeC {\`e}les de climat et hydrologiques}{14}{section.2}
+\contentsline {subsection}{\numberline {2.1}G\IeC {\'e}n\IeC {\'e}ralit\IeC {\'e}s sur les interactions atmosph\IeC {\`e}re - surface continentale - sol}{15}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Les pr\IeC {\'e}cipitations}{15}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Les \IeC {\'e}coulements}{16}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Transferts d'eau entre le sol et l'atmosph\IeC {\`e}re}{18}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Les concepts hydrologiques: mod\IeC {\'e}lisation de l'\IeC {\'e}coulement dans le sol}{19}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Quelques d\IeC {\'e}finitions pour l'\IeC {\'e}tude en milieu poreux}{19}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Les \IeC {\'e}quations pour mod\IeC {\'e}liser l'\IeC {\'e}coulement}{20}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Les \IeC {\'e}quations des \IeC {\'e}coulements en milieu poreux}{21}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}La probl\IeC {\'e}matique de l'upscaling dans l'\IeC {\'e}tude des mod\IeC {\`e}les hydrologiques}{23}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Le mod\IeC {\`e}le d'hydrog\IeC {\'e}osph\IeC {\`e}re}{23}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Le mod\IeC {\`e}le d'Orchid\IeC {\'e}e}{24}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Questions ouvertes par la probl\IeC {\'e}matique de l'upscaling}{26}{subsubsection.2.3.3}
+\contentsline {section}{\numberline {3}Projections Climatiques et mod\IeC {\'e}lisation hydrologique sur le bassin versant du Little Washita}{27}{section.3}
+\contentsline {subsection}{\numberline {3.1}\IeC {\'E}tude du Little Washita et des donn\IeC {\'e}es NARR}{28}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Le bassin versant du Little Washita}{28}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Les donn\IeC {\'e}es North American Regional Reanalysis (NARR)}{29}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}D\IeC {\'e}gradation spatiale des donn\IeC {\'e}es NARR}{30}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}M\IeC {\'e}thode de d\IeC {\'e}gradation}{30}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Analyse spatiale de la r\IeC {\'e}gion du Washita}{31}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}Downscaling des donn\IeC {\'e}es d\IeC {\'e}grad\IeC {\'e}es et des donn\IeC {\'e}es IPSL}{35}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Analyse variationnelle des diff\IeC {\'e}rentes s\IeC {\'e}ries de projection}{35}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}\IeC {\'E}tude du downscaling sur la correction de biais}{36}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Analyse des s\IeC {\'e}ries downscal\IeC {\'e}es et explication du choix de la m\IeC {\'e}thode de downscaling}{38}{subsubsection.3.3.3}
+\contentsline {subsection}{\numberline {3.4}Simulation hydrologique avec HydroG\IeC {\'e}osph\IeC {\`e}re}{40}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Mod\IeC {\'e}lisation Little Washita HGS}{40}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}La probl\IeC {\'e}matique du spin-up}{41}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.5}Comparaison et analyse des r\IeC {\'e}sultats des simulations hydrologiques}{41}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}L'efficacit\IeC {\'e} du downscaling}{42}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}\IeC {\'E}tude de la r\IeC {\'e}ponse d\IeC {\'e}bit/pr\IeC {\'e}cipitation}{45}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}Classifications des donn\IeC {\'e}es r\IeC {\'e}actives et non r\IeC {\'e}actives aux pr\IeC {\'e}cipitations}{45}{subsubsection.3.5.3}
+\contentsline {subsection}{\numberline {3.6}Conclusion et perspectives de l'analyse des donn\IeC {\'e}es sur le bassin du Little Washita}{48}{subsection.3.6}
+\contentsline {section}{\numberline {4}Annexes}{50}{section.4}
+\contentsline {subsection}{\numberline {4.1}Annexe 1: Preuves et outils utilis\IeC {\'e}s dans le downscaling}{50}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Annexe 2: Transport optimal}{51}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Probl\IeC {\'e}matique}{51}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}R\IeC {\'e}solution du probl\IeC {\`e}me dans le cas fini et downscaling}{52}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Annexe 3: La statistique de Cram\IeC {\'e}r-von Mises}{52}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Annexe 4: La projection conique conforme de Lambert}{54}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Annexe 5: Classification des populations de d\IeC {\'e}bit}{57}{subsection.4.5}

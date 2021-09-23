@@ -136,6 +136,12 @@ Maxwell, R.~M., Chow, F.~K., and Kollet, S.~J. (2007).
   effects on the atmospheric boundary layer in fully-coupled simulations.
 \newblock {\em Advances in Water Resources}, 30(12):2447--2466.
 
+\bibitem[Michelangeli et~al., 2009]{michelangeli2009probabilistic}
+Michelangeli, P.-A., Vrac, M., and Loukos, H. (2009).
+\newblock Probabilistic downscaling approaches: Application to wind cumulative
+  distribution functions.
+\newblock {\em Geophysical Research Letters}, 36(11).
+
 \bibitem[Nahar et~al., 2017]{nahar2017assessing}
 Nahar, J., Johnson, F., and Sharma, A. (2017).
 \newblock Assessing the extent of non-stationary biases in gcms.
@@ -165,6 +171,13 @@ Vrac, M., Drobinski, P., Merlo, A., Herrmann, M., Lavaysse, C., Li, L., and
 \newblock Dynamical and statistical downscaling of the french mediterranean
   climate: uncertainty assessment.
 \newblock {\em Natural Hazards and Earth System Sciences}, 12(9):2769--2784.
+
+\bibitem[Vrac et~al., 2016]{vrac2016bias}
+Vrac, M., No{\"e}l, T., and Vautard, R. (2016).
+\newblock Bias correction of precipitation through singularity stochastic
+  removal: Because occurrences matter.
+\newblock {\em Journal of Geophysical Research: Atmospheres},
+  121(10):5237--5258.
 
 \bibitem[Zhifang et~al., 2010]{zhifang2010estimation}
 Zhifang, Y., Hua, O., Xingliang, X., Caiping, Z., Feng, Z., and Bin, S. (2010).
