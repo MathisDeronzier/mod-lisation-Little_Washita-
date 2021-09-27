@@ -32,10 +32,10 @@
 
 \textwidth16cm
 \oddsidemargin-0.55cm
-\textheight22.5cm
+\textheight22.6cm
 \topmargin-2cm
 \pagestyle{plain}
-\setlength{\skip\footins}{1.2cm}
+\setlength{\skip\footins}{2cm}
 
 
 \renewcommand {\algorithmicrequire } {\textbf{\textsc{Entrée(s):} } }
@@ -120,38 +120,55 @@
 \section{Introduction}
 \label{ch:introduction}
 
+\subsection{Remerciements}
+
+Je tiens à remercier Emmanuel Mouche et Mathieu Vrac de m'avoir fait confiance pour réaliser ce stage. Je les remercie aussi pour leur précieuse aide et leurs commentaires sur ma soutenance et ce rapport.
+
+\vspace{0.4cm} 
+
+Plus précisément, j'aimerais remercier Emmanuel pour le temps qu'il a pris à m'introduire les problématiques de l'upscaling et la physique des écoulements en milieu poreux. J'ai grâce à lui, pu retrouver des réflexions physiques avec lesquelles j'avais perdu contact. Ces réflexions m'ont enrichi et j'ai l'impression de mieux saisir les enjeux des simplifications des modèles physiques. Je le remercie aussi de m'avoir fait découvrir un excellent groupe de rock des 70's: \textit{Grateful Dead}.
+
+Je remercie aussi Mathieu pour le temps qu'il m'a accordé, de m'avoir présenté la problématique du downscaling et d'avoir répondu à mes interrogations. J'ai pu mieux comprendre les enjeux climatiques ainsi qu'entrevoir les problématiques actuelles de la recherche dans les statistiques appliquées au climat à travers ses remarques.    
+
+
 \subsection{Contextualisation et motivations du stage}
 \label{ch:Contextualisation et motivations du stage}
 
-Alors que le rapport du GIEC 2021 sorti cet été projette une augmentation de la température mondiale moyenne de $1.5^{\circ}$C d'ici $2050$ ainsi que des modifications des climats dans plusieurs régions du monde, il semble aujourd'hui primordial de comprendre les conséquences locales d'un changement climatique global. Les changements climatiques locaux sont des enjeux politiques et économiques majeurs et leurs projections sont des problématiques centrales pour la population mondiale.
+Alors que le rapport du GIEC 2021 sorti cet été projette une augmentation de la température mondiale moyenne de $1.5^{\circ}$C d'ici $2050$ ainsi que des modifications des climats dans plusieurs régions du monde, il semble aujourd'hui primordial de comprendre les conséquences locales d'un changement climatique global. Les changements climatiques locaux sont des problématiques politiques et économiques majeurs, leur projection est aujourd'hui un enjeux central pour la population mondiale.
 
-Ces projections sont données par des modèles de climat.
-Un modèle climatique simule les interactions entre l'atmosphère, l'océan et les surfaces continentales. Grâce au modèle, les scientifiques ont des représentations numériques de la répartition géographique de différents paramètres, tels que la répartition des vents, des nuages, des masses d'eau... Ce modèles possèdent des maillages de l'ordre d'une centaine de kilomètres en $3$ dimensions de la terre (voir figure \ref{fig-maillage multidimentionnel terre}).
+Les modèles de climat simulent les interactions entre l'atmosphère, l'océan et les surfaces continentales afin de fournir ces projections. Grâce aux modèles, les scientifiques ont des représentations numériques de la répartition géographique de différents paramètres, tels que la répartition des vents, des nuages, des masses d'eau... Ce modèles possèdent un maillage de l'ordre d'une centaine de kilomètres en $3$ dimensions de la terre (voir figure \ref{fig-maillage multidimentionnel terre}).
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.4]{maillage_terre.jpg}
+		\includegraphics[scale=0.45]{maillage_terre.jpg}
 	\end{center}
 	\caption{Illustration d'un maillage multidimensionnel pour les modèles de climat}
 	\label{fig-maillage multidimentionnel terre}
 \end{figure}
 
-On distingue trois sous-modèles des modèles de climats, les modèles océaniques, atmosphériques et continentaux. Nous nous intéresserons dans ce stage aux interactions entre les deux derniers modèles. Et plus particulièrement à la question du changement d'échelle dans ces modèles. La complexité des interactions entre les différents nœuds peuvent rendre les calculs laborieux. D'où l'intérêt de diminuer le nombre de mailles en passant à grande échelle puis de downscaler les résultats obtenus. Plus précisément, nous verrons que les résultats 
+La complexité des interactions entre les différents nœuds peuvent rendre les calculs laborieux et la puissance informatique actuelle ne permet pas de considérer des maillages plus fins.
 
-Le domaine du climat étudiant les questions de changement d'échelle du global au local est le \textit{downscaling}. La question inverse du changement d'échelle du local au global est non moins intéressante pour les climatologues. En effet, comment savoir si les modèles à grande échelle sont vraiment représentatifs de la réalité? Alors que les modèles climatiques et hydrologiques travaillent sur des échelles globales, les lois de la physique sont elles, locales. On cherche alors à comprendre à partir des équations de la physique les interactions ou équations qu'elles engendrent à grande échelle, ce domaine de recherche s'appelle l'\textit{upscaling}. 
+On distingue trois sous-modèles des modèles de climats, les modèles océaniques, atmosphériques et continentaux. Nous nous intéresserons dans ce stage aux interactions entre les deux derniers modèles. La problématique à laquelle nous avons cherché de répondre est: 
+\begin{itemize}
+	\item Dans quelle mesure les méthodes de changement d’échelle permettent-elles de corriger les simulations hydrologique dans un bassin?
+\end{itemize}
+
+Le domaine du climat étudiant les questions de changement d'échelle du global au local est le \textit{downscaling}. La question inverse du changement d'échelle du local au global est tout aussi intéressante pour les climatologues. En effet, comment savoir si les modèles à grande échelle sont vraiment représentatifs de la réalité? Alors que les modèles climatiques et hydrologiques travaillent sur des échelles globales, les lois de la physique sont elles, locales. On cherche alors à comprendre à partir des équations de la physique les interactions ou équations qu'elles engendrent à grande échelle, ce domaine de recherche s'appelle l'\textit{upscaling}. 
 
 C'est dans ces problématiques de changement d'échelle que s'ancre ce stage. Pour concentrer et enrichir nos réflexions, nous nous intéresserons plus précisément à la question de l'impact du downscaling sur les modélisations hydrologiques. Afin de concrétiser ces problématiques, nous avons modélisé le fonctionnement hydrologique du bassin du Little Washita. 
-Ce bassin, situé aux États-Unis dans l’état d’Oklahoma, possède de nombreuses caractéristiques qui le rendent intéressant. Sa superficie de $611km^2$ est de l'ordre de grandeur d'une maille de modèle Régional et il a déjà fait l'objet de nombreuses études (voir par exemple \cite{maxwell2007groundwater}, \cite{rosero2011ensemble}, \cite{maquin2016developpement}). 
+Ce bassin, situé aux États-Unis dans l’état d’Oklahoma, possède de nombreuses caractéristiques qui le rendent intéressant. Sa superficie de $611km^2$ est de l'ordre de grandeur d'une maille de modèle régional et il a déjà fait l'objet de nombreuses études (voir par exemple \cite{maxwell2007groundwater}, \cite{rosero2011ensemble}, \cite{maquin2016developpement}). 
 
 \vspace{0.7cm}
 
-Pour s'intéresser à la question du changement d'échelle il faut pouvoir comparer des données à grande échelle et à petite échelle. Les données NARR (North American Regional Reanalysis\footnote{Les reanalyses sont des modèles de climats simulés que l'on force à prendre certaine valeurs mesurées pour certains points et certains temps, nous considérerons les données NARR comme les données climatiques réelles.}) allant de l'année $1979$ à $2014$ constituent un jeux de données très pertinent pour l'étude du Little Washita. En effet, sa longueur de maille de $32km$ permettait à la fois de considérer l'upscaling hydrologique sur de ce bassin et le downscaling pour des jeux de données sur des échelles plus larges. Pour obtenir ces données à grande échelle nous avons opté pour deux types de données: les données de l'institut Pierre Simon Laplace\footnote{ L'IPSL est un institut de recherche universitaire Français qui fédère $9$ laboratoires regroupant $1400$ membres avec à part égale des chercheurs, des ingénieurs et des étudiants. Il y est développé en son sein un modèle de climat.} /(IPSL) qui possèdent une longueur de maille de $200km$ ainsi que les données NARR considérées à plusieurs échelles différente (ce point sera développé dans la section \ref{ch:proj-climatique-mod-hydro}).
-Ainsi, si les données IPSL et NARR sont des données de modèles différents, les données NARRs possèdent elle une structure commune. L'objectif aura été dans un premier temps d'étudier différentes méthodes de downscaling pour améliorer les projections des données à petite échelle. Une fois cette étape effectuée, il s'agissait de réaliser une simulation hydraulique sur les années prédites et de comparer l'impact du downscaling sur les résultats des simulations hydrologiques. La problématique de l'upscaling sera en fait cachée dans la modélisation hydrologique du bassin du Little Washita, bien qu'elle n'ait pas été concrètement traitée dans les faits, elle a été un fil conducteur de notre réflexion. Finalement, nous donnons les résultats obtenus ainsi que les conclusions que nous en avons tirées dans la section \ref{ch:proj-climatique-mod-hydro}.
+Pour s'intéresser à la question du changement d'échelle il faut pouvoir comparer des données à grande échelle et à petite échelle. Les données NARR (North American Regional Reanalysis\footnote{Les reanalyses sont des modèles de climats simulés que l'on force à prendre certaine valeurs mesurées pour certains points et certains temps, nous considérerons les données NARR comme les données climatiques réelles.}) allant de l'année $1979$ à $2014$ constituent un jeux de données très pertinent pour l'étude du Little Washita. En effet, sa longueur de maille de $32km$ permet à la fois de considérer l'upscaling hydrologique sur de ce bassin et le downscaling pour des jeux de données sur des échelles plus larges.
+
+Pour obtenir ces données à grande échelle nous avons opté pour deux types de données: les données de l'institut Pierre Simon Laplace\footnote{ L'IPSL est un institut de recherche universitaire Français qui fédère $9$ laboratoires regroupant $1400$ membres avec à part égale des chercheurs, des ingénieurs et des étudiants. Il y est développé en son sein un modèle de climat.} /(IPSL) qui possèdent une longueur de maille de $200km$ ainsi que les données NARR considérées à plusieurs échelles différentes (ce point sera développé dans la section \ref{ch:proj-climatique-mod-hydro}).
+L'objectif aura été dans un premier temps d'étudier différentes méthodes de downscaling pour améliorer les projections des données à petite échelle. Une fois cette étape effectuée, il s'agissait de réaliser une simulation hydraulique sur les années prédites et de comparer l'impact du downscaling sur les résultats des simulations hydrologiques. La problématique de l'upscaling sera en fait cachée dans la modélisation hydrologique du bassin du Little Washita, bien qu'elle n'ait pas été concrètement traitée dans les faits, elle a été un fil conducteur dans notre réflexion. Finalement, nous donnons les résultats obtenus ainsi que les conclusions que nous en avons tirées dans la section \ref{ch:proj-climatique-mod-hydro}.
 
 \subsection{Présentation du plan}
 \label{ch:presentation plan}
 
-Dans la première partie nous allons introduire rigoureusement le concept de downscaling et les outils utilisés pour mesurer la qualité de nos projections. Nous verrons l'algorithme \textit{Cumulative Distribution Function transfert} (CDFt), celui utilisé pour downscaler nos séries. Nous introduirons le transport optimal généralisant l'algorithme CDFt. Nous verrons ensuite comment estimer la qualité de nos projections, puis nous étudierons les distances de Kolmogorov Smirnov et celle de Cramér-von Mises permettant de quantifier la différence entre deux lois. 
+Dans la première partie nous allons introduire rigoureusement le concept de downscaling et les outils utilisés pour mesurer la qualité de nos projections. Nous verrons l'algorithme \textit{Cumulative Distribution Function transfert} (CDFt), celui utilisé pour downscaler nos séries. Nous verrons ensuite comment estimer la qualité de nos projections, puis nous étudierons les distances de Kolmogorov Smirnov et celle de Cramér-von Mises permettant de quantifier la différence entre deux lois. 
 
 La seconde partie sera consacrée à la physique et la modélisation. Elle présentera les principaux mécanismes de la modélisation hydrologique ainsi que les modèles d'Orchidée et d'HydroGéoSphère. Dans un premier temps nous présenterons les interactions sol-atmosphère ainsi que les caractéristique des sols et leur influence sur les débits. Nous présenterons ensuite les principales équations de la mécanique des fluides en milieu poreux, puis deux modèles utilisés pour les modélisations hydrologiques, Orchidée et HydroGéoSphère, en expliquant plus en détail la problématique de l'upscaling.
 
@@ -163,11 +180,11 @@ La troisième et dernière partie présentera la démarche, les résultats ainsi
 \label{ch:downscaling}
 Cette section se concentre sur la partie statistique du stage, on cherchera à partir de données à grande échelle issues de modèles climatiques et de données réelles à améliorer les projections des variables de précipitation et d'évapotranspiration sur le bassin versant du Little Washita. 
 
-Nous commencerons par formaliser rigoureusement le downscaling statistique, puis nous réintroduirons les concepts mathématiques essentiels à la compréhension de l'algorithme CDFt. Nous verrons ensuite comment nous pouvons généraliser le principe de l'algorithme CDFt avec la méthode du transport optimal. Pour terminer nous verrons les méthodes de test pour évaluer la qualité de projections sur plusieurs années.
+Nous commencerons par formaliser rigoureusement le downscaling statistique, puis nous réintroduirons les concepts mathématiques essentiels à la compréhension de l'algorithme CDFt. Pour terminer nous verrons les méthodes de test pour évaluer la qualité des projections sur plusieurs années.
 
 \vspace{0.7cm}
 
-Le downscaling statistique (voir par exemple \cite{vrac2012dynamical} et \cite{ayar2016intercomparison}) est une méthode utilisée dans les sciences du climat permettant d'améliorer les projections des modèles climatiques. À partir des données obtenues par un modèle de climat (modèle de circulation général, modèle climatique régional) et des données observées sur la zone que l'on cherche à prédire, on essaie de corriger les biais systématiques introduits par les modèles. Le nom ``downscaling'' vient du domaine d'application de cette méthode. On passe généralement d'un modèle à grande échelle à des données observées à petite échelle. Nous n'expliquerons que deux méthodes de downscaling mais d'autres méthodes existent, l'article de \cite{ayar2016intercomparison} donne un aperçu des différentes méthodes existantes.
+Il existe plusieurs méthodes de downscaling, le downscaling dynamique et le downscaling statistique, nous n'avons étudié que la deuxième méthode de downscaling. Le downscaling statistique (voir par exemple \cite{vrac2012dynamical} et \cite{ayar2016intercomparison}) est une méthode utilisée dans les sciences du climat permettant d'améliorer les projections des modèles climatiques. À partir des données obtenues par un modèle de climat (modèle de circulation général, modèle climatique régional) et des données observées sur la zone que l'on cherche à prédire, on essaie de corriger les biais systématiques introduits par les modèles. Le nom ``downscaling'' vient du domaine d'application de cette méthode. On passe généralement d'un modèle à grande échelle à des données observées à petite échelle. Nous n'expliquerons que deux méthodes de downscaling mais d'autres méthodes existent, l'article de \cite{ayar2016intercomparison} donne un aperçu des différentes méthodes existantes.
 
 \vspace{0.7cm}
 
@@ -303,7 +320,7 @@ On peut vérifier facilement que $G_{X,Y}$ ainsi défini respecte bien les propr
 
 \noindent \textbf{CDFt avec interpolation linéaire \cite{michelangeli2009probabilistic}}
 
-Pour répondre à la question du support \cite{michelangeli2009probabilistic} propose une approche d'interpolation des points. En appelant $m_X$ et $M_X$ le minimum et le maximum des valeurs de $X_1, X_2,...,X_n$, on suppose que l'on corrige bien les points dans l'ensemble $[m_X,M_X]$ à partir de la méthode quantile-quantile. En appelant $\mathcal{F}_n$ et $\mathcal{G}_n$ les fonctions de répartitions empiriques avec interpolation des points. C'est à dire en supposant les points $X_1\leq X_2\leq ...\leq X_n$, soit $x \in [m_X,M_X]$ tel qu'il y ait $i \in \llbracket 1, n-1 \rrbracket$ vérifiant $X_i\leq x \leq X_{i+1}$, on définit $t$ tel que $x= t X_i+(1-t)X_{i+1}$, on pose alors
+Pour répondre à la question du support \cite{michelangeli2009probabilistic} propose une approche d'interpolation des points. En appelant $m_X$ et $M_X$ le minimum et le maximum des valeurs de $X_1, X_2,...,X_n$, on suppose que l'on corrige bien les points dans l'ensemble $[m_X,M_X]$ à partir de la méthode quantile-quantile. En appelant $\mathcal{F}_n$ et $\mathcal{G}_n$ les fonctions de répartitions empiriques avec interpolation des points. C'est à dire en supposant les points $X_1\leq X_2\leq ...\leq X_n$, soit $x \in [m_X,M_X]$ tel qu'il y ait $i \in \llbracket 1, n-1 \rrbracket$ vérifiant $X_i\leq x < X_{i+1}$, on définit $t$ tel que $x= t X_i+(1-t)X_{i+1}$, on pose alors
 \[\mathcal{F}_n(x)= t\frac{i}{n} + (1-t)\frac{i+1}{n}= \frac{i+1-t}{n}.\]
 La fonction $G=\mathcal{G}_n^{-1}\circ \mathcal{F}_n$ est alors définie sur $[m_X,M_X]$. Si $x \notin [m_X,M_X]$ alors on cherche à extrapoler le résultat. La méthode proposer est de récupérer les fonctions tangentes à la courbe $G$ en $m_x$ et $M_X$ appelées $T_m$ et $T_M$ et de prolonger $G$ sur $\mathbb{R}$. On a alors,
 
@@ -319,7 +336,7 @@ La fonction $G=\mathcal{G}_n^{-1}\circ \mathcal{F}_n$ est alors définie sur $[m
 
 
 \begin{note}
-	Remarquons que l'efficacité des transformations que nous avons décrites repose en partie sur la stationnarité des lois suivies par les variables aléatoires aléatoires au cours du temps. Les questions de stationnarité ont été abordées dans \cite{maraun2012nonstationarities}, \cite{christensen2008need} ainsi que \cite{nahar2017assessing}. Il est notamment évident que la loi suivie par la température en été n'est pas la même que celle en hiver, et il en est de même pour toutes les autres variables climatiques.
+	Remarquons que l'efficacité des transformations que nous avons décrites repose en partie sur la stationnarité des lois suivies par les variables aléatoires aléatoires au cours du temps. Les questions de stationnarité ont été abordées dans \cite{maraun2012nonstationarities}, \cite{christensen2008need} ainsi que \cite{nahar2017assessing}. Il est notamment évident que la loi suivie par la température en été n'est pas la même que celle en hiver, il en est de même pour toutes les autres variables climatiques.
 \end{note}
 
 Finalement, une des limites de l'algorithme de CDFt est dans le cas où plusieurs réalisations de $X'$ sont égales, elle seront renvoyées sur le même points. C'est vraiment problématique dans le cas où $X'$ possède plusieurs réalisations égales et que $\mathcal{F}_Y$ est une fonction continue (sans Dirac).
@@ -330,7 +347,7 @@ Finalement, une des limites de l'algorithme de CDFt est dans le cas où plusieur
 	et $Y$ une variable aléatoire réelle suivant la loi uniforme sur $[0,1]$. Pour transormer $X$ en $Y$ on aimerait que pour chaque $i\in \{1,...,n\}$ tel que $X_i=0$, $G(X_i)$ suivent une loi uniforme sur $[0,1/2]$ ce qui n'est pas possible avec les transformations que nous avons considérées.
 \end{example}  
 
-L'algorithme CDFt-SSR (voir \cite{vrac2012dynamical}) répond à cette problématique. Une autre limite que l'on peut voir dans ces méthodes c'est qu'elles ne considèrent qu'une variable à la fois. C'est en partie à ce problème que répond le transport optimal (voir Annexe). 
+L'algorithme CDFt-SSR (voir \cite{vrac2012dynamical}) répond à cette problématique. Une autre limite que l'on peut voir dans ces méthodes c'est qu'elles ne considèrent qu'une variable à la fois. C'est en partie à ce problème que répond le transport optimal (voir Annexe \ref{annexe:transport-optimal}). 
 
 
 \subsection{Analyse des résultats obtenus par downscaling}
@@ -366,7 +383,7 @@ On peut alors l'approximer avec les premiers termes de la série pour construire
 
 \subsubsection{Distance de Cramér-von Mises}
 \label{ch:Cv-M distance}
-On considère ici les deux fonctions de répartitions $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ continues des variables aléatoires $X$ et $Y$. Nous voulons tester les hypothèses
+On considère ici les deux fonctions de répartitions empiriques $\mathcal{F}_{n}$ et $\mathcal{G}_{m}$ continues des variables aléatoires $X$ et $Y$. Nous voulons tester les hypothèses
 \begin{equation*}
 	\mathcal{H}_0 : \mathcal{F}_{n} = \mathcal{G}_{m} \hspace{3mm}\textrm{et}\hspace{3mm} \mathcal{H}_1 : \mathcal{F}_{n} \neq \mathcal{G}_{m}.
 \end{equation*}
@@ -399,7 +416,7 @@ Ce lemme permet de simplifier algorithmiquement le calcul de cette intégrale.
 \begin{note}
 	La démonstration de cette formule se trouve dans l'indexe \ref{C-v} et la formulation de cette égalité diffère de celle contenue dans le mémoire \cite{ethier2011propos}(sec 2.3.2) qui contient une erreur.
 \end{note}
-Cette formulation a le bon goût de nous indiquer que la statistique ne dépend pas de la loi. On peut alors calculr simplement sa statistique sous l'hypothèse $\mathcal{H}_0$ pour la loi uniforme sur $[0,1]$ et ainsi retrouver les quantiles présentés dans l'article de \cite{buning2002robustness}. Nous voyons que l'idée du test est aussi de pondérer la différence des fonctions de répartition empiriques par les observations (l'intégration selon $\mathcal{H}_{m,n}$). Ainsi, si le test de Kolmogorov-Smirnov est sensible aux outliers, celui-ci l’est beaucoup moins lorsque les échantillons sont suffisamment grands. Malheureusement, dans la pratique les résultats renvoient quasiment toujours que les lois ne sont pas les mêmes, nous allons tout de même considérer cette distance qui nous l'avons vu possède une interprétation statistique.  
+Cette formulation a le bon goût de nous indiquer que la statistique ne dépend pas de la loi. On peut alors calculr simplement sa statistique sous l'hypothèse $\mathcal{H}_0$ pour la loi uniforme sur $[0,1]$ et ainsi retrouver les quantiles présentés dans l'article de \cite{buning2002robustness}. Nous voyons que l'idée du test est aussi de pondérer la différence des fonctions de répartition empiriques par les observations (l'intégration selon $\mathcal{H}_{m,n}$). Ainsi, si le test de Kolmogorov-Smirnov est sensible aux outliers, celui-ci l’est beaucoup moins lorsque les échantillons sont suffisamment grands. Malheureusement, dans la pratique des projections des variables climatiques, les résultats renvoient très souvent que les lois ne sont pas les mêmes. Nous considérerons tout de même cette distance, qui nous l'avons vu, possède une interprétation statistique.  
 
 \newpage
 \section{Présentation des modèles de climat et hydrologiques}
@@ -421,7 +438,7 @@ Voici, figure \ref{fig-modele de climat}, une présentation des principales inte
 	\label{fig-modele de climat}
 \end{figure}
 
-Comme nous avons dit dans l'introduction, les modèles de climats peuvent-être séparés en trois sous modèles, les modèles océanique, atmosphériques et continentaux. Dans ce stage, nous nous sommes concentrés sur les modélisations continentales, à savoir, sur les interactions entre le modèle atmosphérique et de surface continentale. Nous avons aussi étudié les mécanismes d'écoulement de l'eau dans les sols et les rivières. 
+Comme nous avons dit dans l'introduction, les modèles de climats peuvent-être séparés en trois sous modèles, les modèles océanique, atmosphériques et continentaux. Dans ce stage, nous nous sommes concentrés sur les modélisations continentales, à savoir, sur les interactions entre le modèle atmosphérique et celui de surface continentale. Nous avons aussi étudié les mécanismes d'écoulement de l'eau dans les sols et les rivières. 
 
 \subsection{Généralités sur les interactions atmosphère - surface continentale - sol}
 \label{ch:generalite interaction atmosphere-surface continentale-sol}
@@ -430,7 +447,7 @@ Nous allons présenter ici les principales interactions entre la surface contine
 \subsubsection{Les précipitations}
 \label{ch:precipitations}
 
-Ici, nous allons majoritairement utiliser les explications de la page internet cours EPFL sur les précipitations pouvant être trouvé \href{https://echo2.epfl.ch/e-drologie/chapitres/chapitre3/chapitre3.html}{\underline{ici}}, nous avons reformulé certaines parties et enlevé des détails mais la majorité de ce qui est écrit dans cette section vient de cette page internet.
+Ici, nous allons majoritairement utiliser les explications de la page internet cours EPFL sur les précipitations pouvant être trouvé \href{https://echo2.epfl.ch/e-drologie/chapitres/chapitre3/chapitre3.html}{\underline{ici}}, nous avons reformulé certaines parties et enlevé des détails mais la majorité de ce qui est écrit dans cette section provient de cette page internet.
  
 \vspace{0.7cm}
  
@@ -451,9 +468,9 @@ La saturation n'est cependant pas une condition suffisante à la condensation, c
 \noindent \textbf{Types de précipitations}
 
 \begin{itemize}
-	\item Les précipitations convectives. Elles résultent d'une ascension rapide des masses d'air dans l'atmosphère. Elles sont associées aux cumulus et cumulo-nimbus, à développement vertical important. Les précipitations résultantes de ce processus sont en général orageuses, de courte durée (moins d'une heure), de forte intensité et de faible extension spatiale.
-	\item Les précipitations orographiques. Comme son nom l'indique (du grec oros, montagne), ce type de précipitations résulte de la rencontre entre une masse d'air chaude et humide et une barrière topographique particulière. Par conséquent, ce type de précipitations n’est pas ``spatialement mobile'' et se produit souvent au niveau des massifs montagneux. Les caractéristiques des précipitations orographiques dépendent de l'altitude, de la pente et de son orientation, mais aussi de la distance séparant l'origine de la masse d'air chaud du lieu de soulèvement. En général, elles présentent une intensité et une fréquence assez régulières.
-	\item Les précipitations frontales ou de type cyclonique. Elles sont associées aux surfaces de contact entre deux masses d'air de température, de gradient thermique vertical, d'humidité et de vitesse de déplacement différents, que l'on nomme ``fronts''. Les fronts froids (une masse d’air froide pénètre dans une région chaude) créent des précipitations brèves, peu étendues et intenses. Du fait d’une faible pente du front, les fronts chauds (une masse d’air chaude pénètre dans une région occupée par une masse d’air plus froide) génèrent des précipitations longues, étendues, mais peu intenses.
+	\item \textbf{Les précipitations convectives}. Elles résultent d'une ascension rapide des masses d'air dans l'atmosphère. Elles sont associées aux cumulus et cumulo-nimbus, à développement vertical important. Les précipitations résultantes de ce processus sont en général orageuses, de courte durée (moins d'une heure), de forte intensité et de faible extension spatiale.
+	\item \textbf{Les précipitations orographiques}. Comme son nom l'indique (du grec oros, montagne), ce type de précipitations résulte de la rencontre entre une masse d'air chaude et humide et une barrière topographique particulière. Par conséquent, ce type de précipitations n’est pas ``spatialement mobile'' et se produit souvent au niveau des massifs montagneux. Les caractéristiques des précipitations orographiques dépendent de l'altitude, de la pente et de son orientation, mais aussi de la distance séparant l'origine de la masse d'air chaud du lieu de soulèvement. En général, elles présentent une intensité et une fréquence assez régulières.
+	\item \textbf{Les précipitations frontales ou de type cyclonique}. Elles sont associées aux surfaces de contact entre deux masses d'air de température, de gradient thermique vertical, d'humidité et de vitesse de déplacement différents, que l'on nomme ``fronts''. Les fronts froids (une masse d’air froide pénètre dans une région chaude) créent des précipitations brèves, peu étendues et intenses. Du fait d’une faible pente du front, les fronts chauds (une masse d’air chaude pénètre dans une région occupée par une masse d’air plus froide) génèrent des précipitations longues, étendues, mais peu intenses.
 \end{itemize}
 
 \subsubsection{Les écoulements}
@@ -523,7 +540,7 @@ La transpiration amène l'eau du sol par les racines puis les stomates vers l'at
 
 Sur les surfaces de sol non recouvertes de végétation (sol nu), l’eau présente dans le sol, à proximité de la surface, peut s’évaporer. Ce phénomène apparaît en présence d’un gradient de pression de vapeur d’eau entre le sol et l’atmosphère et d’un apport d’énergie. L’évaporation effective dépend de l’état hydrique de la surface du sol, l’énergie pour extraire l’eau du sol augmentant à mesure que le sol s’assèche et des propriétés conductrices du sol (voir \cite{hillel2003introduction}).
 
-\vspace{0.9cm}
+\vspace{1.1cm}
 
 \noindent\textbf{Pertes par interception:}
 
@@ -558,7 +575,7 @@ On comprends intuitivement que la nature du sol aura un impact dans l'écoulemen
 	On peut passer d'une formule à l'autre par la relation 
 	\[e\omega=e-\omega.\]
 \end{definition}
-L'on peut trouver des méthodes de mesure de la porosité d'un sol dans le très bon cours de \cite{marsily_de1986quantitative}. On dit aussi que le sol n'est pas saturé lorsque l'eau n'a pas pris tout l'espace disponible, on parle alors de saturation volumique. Ce concept est fondamental pour comprendre la dynamique de l'écoulement, par exemple en dessous d'une certaine saturation les forces gravitationnelle seront négligeables par rapport aux forces de capillarités, il n'y a pas d'écoulement.
+L'on peut trouver des méthodes de mesure de la porosité d'un sol dans le très bon cours de \cite{marsily_de1986quantitative}. On dit aussi que le sol n'est pas saturé lorsque l'eau n'a pas pris tout l'espace disponible, on parle alors de saturation volumique. Ce concept est fondamental dans la compréhension de la dynamique de l'écoulement, par exemple en dessous d'une certaine saturation les forces gravitationnelle seront négligeables par rapport aux forces de capillarités, il n'y a pas d'écoulement.
  
 \begin{definition}
 	\label{def:saturation}
@@ -625,10 +642,8 @@ Remarquons que l'on considère la porosité $w$ comme continue, nous étudions d
 Henry Darcy, alors qu'il étudiait les fontaines de la ville de Dijon (1856), établit expérimentalement que le débit d'eau s'écoulant à travers un massif de sable peut se calculer. Il établit une expérience représentée en figure \ref{fig-Darcy}: consistant à toujours alimenter un massif de sable par un débit constant $a$ et à mesurer la quantité d'eau passant à travers le massif.
 
 \begin{figure}[H]
-	\begin{center}
-		\includegraphics[scale=0.4]{darcy.png}
-		\caption{Schéma de l'équipement utilisé par Darcy pour obtenir l'équation \eqref{eq-Darcy-1}}
-	\end{center}
+	\centering\includegraphics[scale=0.4]{darcy.png}
+	\caption{Schéma de l'équipement utilisé par Darcy pour obtenir l'équation \eqref{eq-Darcy-1}}
 	\label{fig-Darcy}
 \end{figure}
 
@@ -681,9 +696,9 @@ Nous allons présenter dans cette partie deux modèles hydrologiques, le premier
 
 \subsubsection{Le modèle d'hydrogéosphère}
 
-HydroGéoSphère (HGS) est un code de calcul hydrologique tri-dimensionnel, intégré et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de subsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes.
+HydroGéoSphère (HGS) est un code de calcul hydrologique tri-dimensionnel, intégré et à base physique. Il a été développé par R. Therrien puis conjointement à l’Université de Laval, à Québec et à l’Université de Waterloo. Ce code de calculs permet de simuler les écoulements de surface et de subsurface, ainsi que le transport de solutés et d’énergie de manière intégrée, c’est-à-dire que les équations gouvernant ces processus sont résolues simultanément. Le code est parallélisé permettant une efficacité numérique élevée et donc des applications à des échelles spatio-temporelles importantes (échelle d'un bassin).
 
-À chaque pas de temps le modèle résout les équations de transport d'eau de surface et de subsurface ainsi que celles conservation de la masse en même temps. En regardant la figure \ref{fig-HGS_water_balance} on a la conservation des quantités d'eau en surface s'écrit
+À chaque pas de temps le modèle résout les équations de transport d'eau de surface et de subsurface ainsi que celles conservation de la masse en même temps. D'après la figure \ref{fig-HGS_water_balance}, la conservation des quantités d'eau en surface s'écrit
 \begin{equation}
 	\label{eq-HGS-surface}
 	P = (Q_{S2}-Q_{S1})-Q_{GS}+I+ET_S+Q^W_S+\Delta S_S /\Delta t,
@@ -708,13 +723,13 @@ Avec $Q_{S1}$ et $Q_{S2}$ les flux entrant et sortant, $Q_{GS}$ le flot d'intera
 	\label{fig-HGS_water_balance}
 \end{figure}
 
-Hydrogésphère résout rigoureusement les équations de la physique cités dans la partie \ref{ch: eq meca-flu} et donne des résultats très précis. Cependant la capacité informatique actuelle ne permet pas d'implémenter HydroGéoSphère dans un modèle de climat. Il faut donc créer des modèles plus simples et plus grossiers pour résoudre le problème de la circulation de l'eau à l'échelle de la terre. C'est le principe du modèle de surface continentale Orchidée.
+Hydrogésphère résout rigoureusement les équations de la physique cités dans la partie \ref{ch: eq meca-flu} et donne des résultats très précis. Cependant, la capacité informatique actuelle ne permet pas d'implémenter HydroGéoSphère dans un modèle de climat. Il faut donc créer des modèles plus simples et plus grossiers pour résoudre le problème de la circulation de l'eau à l'échelle de la terre. C'est le principe du modèle de surface continentale Orchidée (section \ref{ch:Orchidee}).
 
 \subsubsection{Le modèle d'Orchidée}
-
+\label{ch:Orchidee}
 Orchidée est un modèle continental dans le continuum sol-végétation-atmosphère. Ses résultats sont intégrés comme condition à la limite basse du modèle général de circulation atmosphérique du Laboratoire de Météorologie Dynamique. Orchidée simule en particulier les flux d’énergie, d’eau et de carbone entre les surfaces continentales et l’atmosphère. Il est composé de trois modules qui représentent des processus différents et agissant à des échelles de temps différentes: SECHIBA (Schématisation des Échanges Hydriques à l’Interface entre la Biosphère et Atmosphère), STOMATE, qui modélise principalement la phénologie végétale\footnote{La phénologie végétale les étudie les phases de développement saisonnier des plantes liées au cycle climatique annuel et les échanges de carbone dans la biosphère.}. Dans le cadre de ce stage, seul le module SECHIBA a été étudié.
 
-La description que nous allons en donner ici est très sommaire et rassemble ce que nous en avons compris de la discussion que nous avons eu avec Emmanuel Mouche et de la lecture de la présentation \cite{gumiberteau2016}. Le modèle d'Orchidée est un modèle de réservoir, c'est à dire qu'on discrétise l'espace en plusieurs zones qui peuvent contenir de l'eau. Nous avons vu qu'il y avait plusieurs types d'écoulements qui intervenaient à différentes échelles de temps et à différents endroits dans le sol. Orchidée considère alors trois types de transfert d'eau dans trois types de réservoirs. Les écoulements considérés sont: les écoulements de surface, de subsurface et finalement les échanges entre la rivière et la nappe. 
+La description que nous allons en donner ici est très sommaire et rassemble ce que nous en avons compris au cours de discussions avec Emmanuel Mouche et durant la lecture de la présentation \cite{gumiberteau2016}. Le modèle d'Orchidée est un modèle de réservoir, c'est à dire qu'on discrétise l'espace en plusieurs colonnes pouvant contenir de l'eau. Nous avons vu qu'il y avait plusieurs types d'écoulements qui intervenaient à différentes échelles de temps et à différents endroits dans le sol. Orchidée considère alors trois types de transfert d'eau dans trois types de réservoirs. Les écoulements considérés sont: les écoulements de surface (et l'eau de la rivière), de subsurface et finalement les échanges entre la rivière et la nappe. 
 
 \begin{figure}[H]
 	\label{fig-HGS}
@@ -724,7 +739,7 @@ La description que nous allons en donner ici est très sommaire et rassemble ce 
 	\captionof{figure}{Schéma des cycles hydrologiques pris en compte par Orchidée (présentation \cite{gumiberteau2017})}
 \end{figure}
 
-La discrétisation de l'espace sera aussi par un maillage carré et l'on considérera pour chaque carré la découpe verticale du sol et l'on appellera ce volume une colonne. Orchidée discrétise le sol par colonnes. Alors dans chaque colonne considérée, il y a trois réservoirs d'eau. Un réservoir pour les écoulements de surface, un pour les écoulements de subsurface et un pour les interactions nappe-rivière (décrit dans la section \ref{ch:ecoulement}). La figure \ref{fig-Orchidee-interact} présente les interactions entre deux colonnes.
+Orchidée discrétise donc le sol par colonnes. Dans chacune des colonnes considérées, il y a trois réservoirs d'eau. Un réservoir pour les écoulements de surface, un pour les écoulements de subsurface et un pour les interactions nappe-rivière (décrit dans la section \ref{ch:ecoulement}). La figure \ref{fig-Orchidee-interact} présente les interactions entre deux colonnes discrétisant l'espace.
 
 \begin{figure}[H]
 	\begin{center}
@@ -734,17 +749,17 @@ La discrétisation de l'espace sera aussi par un maillage carré et l'on consid�
 	\label{fig-Orchidee-interact}
 \end{figure}
 
-Remarquons que la couche du haut, dont nous n'avons pas parlé, est le sol sur lequel on considère les précipitations ($P_X$, $P_Y$) et l'évapotranspiration ($ET_X$,$ET_Y$). Le \textit{stream réservoir} est le réservoir des écoulements de surface, le \textit{fast reservoir} correspond au réservoir des écoulements de subsurfaces et le \textit{slow reservoir} correspond à la nappe. Les écoulements verticaux $(Rs_X,Rs_Y)$ et $(D_X,D_Y$) simulent les proportions des précipitations stockées dans chaque sous-colonne. Le calcul de $Rs$ et $D$ en fonction des précipitations est détaillé dans la présentation \cite{gumiberteau2017}. On peut remarquer que d'après ce schéma il n'y a pas d'écoulement de surface.
-De plus, les écoulement ne vont que d'un réservoir à l'autre, ce paradigme semble raisonnable dans la mesure où les écoulements vont toujours dans le sens de la plus forte pente et ne se dispersent pas en général (le Nîl). Cependant, considérant la surface des colonnes ($>0.5^{\circ}$), il est fréquent que plusieurs bassins soient contenus dans le même colonne, alors ce choix devient discutable.
+Remarquons que la couche du haut dont nous n'avons pas parlé est le sol sur lequel on considère les précipitations ($P_X$, $P_Y$) et l'évapotranspiration ($ET_X$,$ET_Y$). Le \textit{stream réservoir} est le réservoir des écoulements de la rivière, le \textit{fast reservoir} correspond au réservoir des écoulements de subsurfaces et le \textit{slow reservoir} correspond à la nappe. Les écoulements verticaux $(Rs_X,Rs_Y)$ et $(D_X,D_Y$) simulent les proportions des précipitations stockées dans chaque sous-colonne. Le calcul de $Rs$ et $D$ en fonction des précipitations est détaillé dans la présentation \cite{gumiberteau2017}. On peut remarquer que d'après ce schéma il n'y a pas d'écoulement de surface.
+De plus, les écoulement ne vont que d'un réservoir à l'autre, ce paradigme semble raisonnable dans la mesure où les écoulements vont toujours dans le sens de la plus forte pente et ne se dispersent pas en général (le Nil). Cependant, considérant la surface des colonnes ($>0.5^{\circ}$), il est fréquent que plusieurs bassins soient contenus dans le même colonne, alors ce choix devient discutable.
 
 \subsubsection{Questions ouvertes par la problématique de l'upscaling}
 
-Ayant vu deux modélisations d'une surface continentale, leur comparaison peut enrichir la réflexion de l'upscaling. Voici, ci-dessous, les questionnements que nous avons eu par rapport à la problématique du downscaling:
+Ayant vu deux modélisations d'une surface continentale, leur comparaison peut enrichir la réflexion de l'upscaling. Voici, ci-dessous, les questionnements que nous avons eu par rapport à la problématique de l'upscaling du modèle Orchidée:
 
 \begin{itemize}
 	\item Quelles propriétés intéressantes voudrions nous pour les modèles upscalés? 
-	\subitem Convergence du modèle upscalé lorsqu'on fait tendre la discrétisation vers $0$? 
-	\subitem Majoration de la différence des grandeurs simulés par le modèle downscalé et les grandeur simulées par le modèle physique.   
+	\subitem Convergence du modèle upscalé vers le modèle réel lorsqu'on fait tendre la discrétisation vers $0$? 
+	\subitem Majoration de la différence des grandeurs simulées par le modèle downscalé et les grandeurs simulées par le modèle physique réel?   
 	\item Comment quantifier la différence d'un modèle upscalé à un modèle réel?
 	\item Peut-on segmenter le modèle d'HydroGéoSphère en trois réservoirs et regarder les bilans sur les différents réservoirs, puis injecter ces résultats dans le modèles Orchidée?
 	\item Faut-il commencer par résoudre les équations de la physique dans chaque réservoir? \item Pourquoi ne pas rajouter un paramètre au modèle d'Orchidée, celui de la pente, qui permettrait aussi de définir un écoulement dans plusieurs autre blocks.
@@ -765,9 +780,9 @@ Dans cette section nous présentons les résultats que nous avons obtenus par l'
 
 Commençons par rappeler les enjeux de ce stage, nous cherchons à étudier l'impact du changement d'échelle sur les prédictions climatiques et les modélisations Hydrologiques. Avant de commencer notre travail, nous avons fait l'étude de la région du Little Washita ainsi que des données NARR.
 
-Nous avons ensuite considéré des dégradations sur plusieurs échelles des données de précipitation et d'évapotranspiration NARR (le processus de dégradation est expliqué dans la section \ref{ch:degradation-NARR}). Les données de référence sont celles du point de maille NARR couvrant la majeur partie du bassin du Little Washita. Nous avons ensuite considéré la moyenne des variables sur des ensembles de mailles entourant le point correspondant au Little Washita de surface croissante (voir section \ref{ch:degradation-NARR}). Ces dégradations permettent d'avoir des données à plusieurs échelles.
+Nous avons ensuite considéré des dégradations sur plusieurs échelles des données de précipitation et d'évapotranspiration NARR (le processus de dégradation est expliqué dans la section \ref{ch:degradation-NARR}). Les données de référence sont celles du point de maille NARR couvrant la majeur partie du bassin du Little Washita (voir figure \ref{fig-Little-Washita_maillage}). Nous avons ensuite considéré la moyenne des variables sur des ensembles de mailles entourant le point correspondant au Little Washita de surface croissante (voir section \ref{ch:degradation-NARR}). Ces dégradations permettent d'avoir des données à plusieurs échelles.
 
-Finalement, nous avons considéré le jeux de données du modèle de climat de l'IPSL qui possède une largeur de maille de $200km\times 200km^2$. Une fois récupérées les séries des réalisations des variables à ces différentes échelles nous avons appliqué la méthode CDFt pour les downscaler, donc transformer les données à grande échelle pour améliorer les projections sur la maille du Little Washita à petite échelle. Nous avons ensuite simulé le bassin du Little Washita avec les différentes données de précipitation et d'évapotranspiration que nous possédions. Enfin, nous avons étudié et comparé les résultats des débits renvoyés par les différentes simulations. Comme un schéma vaut mieux qu'un long discours, voici celui résumant notre travail sur les données NARR (figure \ref{fig-methodo}).
+Finalement, nous avons considéré le jeu de données du modèle de climat de l'IPSL qui possède une largeur de maille de $200km\times 200km^2$. Une fois récupérées les séries des réalisations des variables à ces différentes échelles nous avons appliqué la méthode CDFt pour les downscaler, donc transformer les données à grande échelle pour améliorer les projections sur la maille du Little Washita à petite échelle. Nous avons ensuite simulé le bassin du Little Washita avec les différentes données de précipitation et d'évapotranspiration. Enfin, nous avons étudié et comparé les résultats des débits renvoyés par les différentes simulations. Comme un schéma vaut mieux qu'un long discours, voici celui résumant notre travail sur les données NARR (figure \ref{fig-methodo}).
 
 \begin{figure}[H]
 	\begin{center}
@@ -800,7 +815,7 @@ Le bassin versant est recouvert à environ $67\%$ de prairies (figure \ref{fig-l
 \subsubsection{Les données North American Regional Reanalysis (NARR)}
 \label{ch:NARR}
 
-Les données NARR (North American Regional Reanalysis) couvrent l'entièreté L'Amérique du Nord et fournissent un total de $29$ variables climatiques. Pour les latitudes de $40^{\circ} N$ la longueur de grille est $32km$, ce qui en fait un maillage de l'ordre de grandeur des modèles de climat régionaux. Les données NARR sont une extension du modèle NCEP Global Reanalysis couplée avec le système Regional Data Assimilation System (RDAS). Le premier modèle NCEP est un modèle de forçage climatique régional, c'est à dire un modèle climatique sur lequel on peut forcer les variables à avoir des valeurs précises à des temps et positions données (lieu et date des mesures) et RDAS un système utilisant à la fois les données satellites ainsi que les données récoltées sur terre pour fournir l'évaluation des variables climatiques avec une grande précision. Les résultats climatiques résultant de cette association permettent de considérer les données NARR comme des données climatiques d'observation réelles, c'est à dire comme $\mathcal{T}$ définit dans l'équation \eqref{terre}. 
+Les données NARR (North American Regional Reanalysis) couvrent l'entièreté de l'Amérique du Nord et fournissent un total de $29$ variables climatiques. Pour les latitudes de $40^{\circ} N$ la longueur de maille est $32km$, ce qui en fait un maillage de l'ordre de grandeur des modèles de climat régionaux. Les données NARR sont une extension du modèle NCEP Global Reanalysis couplée avec le système Regional Data Assimilation System (RDAS). Le premier modèle NCEP est un modèle de forçage climatique régional, c'est à dire un modèle climatique sur lequel on peut forcer les variables à avoir des valeurs précises à des temps et positions données (lieu et date des mesures) et RDAS un système utilisant à la fois les données satellites ainsi que les données récoltées sur terre pour fournir l'évaluation des variables climatiques avec une grande précision. Les résultats climatiques résultant de cette association permettent de considérer les données NARR comme des données climatiques d'observation réelles, c'est à dire comme $\mathcal{T}$ définit dans l'équation \eqref{terre}. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -821,11 +836,11 @@ Nous nous sommes limités à un sous ensemble des données NARR à savoir la ré
 	\begin{center}
 		\includegraphics[scale=0.3]{Little_Washita.png}
 	\end{center}
-	\captionof{figure}{Visualisation du maillage considéré $(32\times 32km^2)$ sur la rivière du Washita (en rouge) le point de grille de référence du Little Washita en jaune}
+	\captionof{figure}{Visualisation du maillage NARR considéré $(32\times 32km^2)$ sur la rivière du Washita (en rouge) le point de grille de référence du Little Washita en jaune}
 	\label{fig-Little-Washita_maillage}
 \end{figure}
 
-Sur chaque case de ce maillage, nous avons les données de précipitation et d'évaporation des années $1979$ à $2014$. Nous allons considérer par la suite le tenseur des données NARR $\mathcal{T}$ de dimension $T \times M\times N$ pour les deux variables considérées. $M$ et $N$ représentent les dimensions de l'axe vertical (latitudes) et horizontal (longitudes) de notre figure, et $T$ la période sur laquelle nous avons considéré nos dégradations. Nous voyons que la rivière du Little Washita (au centre du graphique en jaune) chevauche plusieurs cases, on considère les variables sur la case couvrant la plus grande surface de la rivière comme case recouvrant le Little Washita (case jaune de la figure \ref{fig-Little-Washita_maillage}).
+Sur chaque case de ce maillage, nous avons les données de précipitation et d'évaporation des années $1979$ à $2014$. Nous allons considérer par la suite le tenseur des données NARR, $\mathcal{T}$ de dimension $T \times M\times N$ pour les deux variables considérées. $M$ et $N$ représentent les dimensions de l'axe vertical (latitudes) et horizontal (longitudes) de notre figure, et $T$ la période sur laquelle nous avons considéré nos dégradations. Nous voyons que la rivière du Little Washita (au centre du graphique en jaune) chevauche plusieurs cases, on considère les variables sur la case couvrant la plus grande surface de la rivière comme case recouvrant le Little Washita (case jaune de la figure \ref{fig-Little-Washita_maillage}).
 
 \subsection{Dégradation spatiale des données NARR}
 \label{ch:degradation-NARR}
@@ -899,7 +914,8 @@ On peut donc tracer le noyau de covariance $K(i,j)$, $i \in\{-N/2,N/2\}$, $j \in
 
 \noindent \textbf{Résultats:}
 
-Pour obtenir nos résultats, nous avons pris en compte la saisonnalité. En effet, nous avons séparé notre tenseur $\mathcal{T}$ en $12$ tenseurs sur chaque mois de l'année. On a donc pour chaque série downscalé 12 fois selon chaque mois. Voici les résultats obtenus en fonction des mois de l'année:
+Pour obtenir nos résultats, nous avons pris en compte la saisonnalité. En effet, nous avons séparé notre tenseur $\mathcal{T}$ en $12$ tenseurs en le séparant selon des tranche de temps correspondant aux mois de l'année. Pour chaque série temporelle on les a divisées en 12 séries temporelles (par mois) sur lesquelles on a calculé la transformation $G$ puis on a downscalé la série de prédiction sur chaque mois. Les figures suivantes (\ref{fig-kernel-precip}, \ref{fig-kernel-evap}) montrent l'intérêt de considérer plusieurs sous-séries en fonction des périodes de l'année. 
+Voici les résultats obtenus en fonction des mois de l'année:
 
 \begin{figure}[H]
 \hspace{-1.3cm}
@@ -921,7 +937,7 @@ Pour obtenir nos résultats, nous avons pris en compte la saisonnalité. En effe
 \end{figure}
 
 D'après la figure \ref{fig-kernel-precip}, nous voyons qu'en été la covariance entre deux points diminue relativement vite alors qu'en hiver c'est plutôt l'inverse. Ce résultat était attendu car en été les précipitations sont essentiellement convectives, donc locales, alors qu'en hiver c'est plus lié à des structures stratiformes à grande échelle donc plus similaire spatialement (c.f. \ref{ch:precipitations}).
-Il est intéressant de constater que même à plusieurs centaines de kilomètres il y a encore une covariance positive entre les précipitations. On voit aussi que la covariance spatiale des précipitations diminue plus vite selon les latitudes. Ces phénomènes sont liés aux types de nuages qui dépendent des saisons.
+Il est intéressant de constater que même à plusieurs centaines de kilomètres il y a encore une covariance positive entre les précipitations. On voit aussi que la covariance spatiale des précipitations diminue plus vite selon les latitudes. 
 
 \begin{figure}[H]
 \hspace{-1.3cm}
@@ -945,9 +961,9 @@ Dans la figure \ref{fig-kernel-evap}, nous voyons que la variance spatiale de l'
 \subsection{Downscaling des données dégradées et des données IPSL}
 \label{ch:downscaling des donnees}
 
-Dans cette partie l'on possède maintenant la série de référence ($(Y_t)_{t \in T}$) ainsi que les séries dégradées ($(X^d_t)_{t\in T}$) pour les variables de précipitation et d'évapotranspiration. Rappelons que les processus stochastiques $(X^d_t)_{t\in T}$ sont des estimateurs de $(Y_t)=\mathcal{T}_{t,0,0}$. Nous allons considérer les données journalières des précipitations et de l'évapotranspiration sur la période allant de $1979$ à $1996$ comme données d'apprentissage pour définir la transformation $G$ définie dans la partie \ref{ch:CDFt}, puis nous allons downscaler les données de l'année $1997$ à $2014$.
+Dans cette partie l'on possède maintenant la série de référence ($(Y_t)_{t \in T}$) ainsi que les séries dégradées ($(X^d_t)_{t\in T}$) pour les variables de précipitation et d'évapotranspiration. Rappelons que les processus stochastiques $(X^d_t)_{t\in T}$ sont des estimateurs de $Y_t=\mathcal{T}_{t,0,0}$. Nous allons considérer les données journalières des précipitations et de l'évapotranspiration sur la période allant de $1979$ à $1996$ comme données d'apprentissage pour définir la transformation $G$ définie dans la partie \ref{ch:CDFt}, puis nous allons downscaler les données de l'année $1997$ à $2014$.
 
-Nous avons essayé plusieurs versions CDFt avec des méthodes utilisant des prédictions sur la moyenne et la covariance, comme expliqué dans la section \ref{ch:CDFt}. Cependant, les résultats n'ont pas été convaincants. Après plusieurs tentatives, l'algorithme CDFt le plus convaincant au sens de la distance de Cramér-von Mises était finalement celui où l'on effectuait aucune transformation, c'est à dire, celui où l'on utilisait la transformation du quantile-quantile sur les données. Néanmoins, nous verrons que cette transformation sous-estimait les derniers quantiles.
+Nous avons essayé plusieurs versions de CDFt avec des méthodes utilisant des prédictions sur la moyenne et la covariance, comme expliqué dans la section \ref{ch:CDFt}. Cependant, les résultats n'ont pas été convaincants. Après plusieurs tentatives, l'algorithme CDFt le plus convaincant au sens de la distance de Cramér-von Mises était finalement celui où l'on effectuait aucune transformation, c'est à dire, celui où l'on utilisait la transformation du quantile-quantile sur les données. Néanmoins, nous verrons que cette transformation sous-estimait les derniers quantiles.
 
 Il resterait alors très intéressant de développer et de tester les idées énoncées dans la partie \ref{ch:downscaling} car les résultats du quantile-quantile ne prennent pas en compte l'évolution du support des variables $X^d$ (les résultats obtenus ont montré que la dilatation n'est certainement pas la meilleure option).
 
@@ -975,11 +991,11 @@ Les colonnes représentent pour chaque variable:
 	\item 7-8-9-10- Les séries des dégradations $d \in \{1,2,3,4\}$.
 	\item 11- La série de l'IPSL. 
 \end{itemize}
-On voit que la dégradation de l'évapotranspiration n'a quasiment aucune influence sur les séries temporelle, ce qui était à prévoir d'après le noyau de covariance que nous obtenu précédemment (figure \ref{fig-kernel-evap}) pour l'évapotranspiration. On peut aussi voir que le modèle de climat de l'IPSL projette très mal l'évapotranspiration sur la région du Little Washita. Nous verrons que le downscaling dans ce cas là améliore nettement les résultats.
+On voit que la dégradation de l'évapotranspiration n'a quasiment aucune influence sur les séries temporelles, ce qui était à prévoir d'après le noyau de covariance que nous obtenu précédemment (figure \ref{fig-kernel-evap}) pour l'évapotranspiration. On peut aussi voir que le modèle de climat de l'IPSL projette très mal l'évapotranspiration sur la région du Little Washita. Nous verrons que le downscaling dans ce cas là améliore nettement les résultats.
 
 \subsubsection{Étude du downscaling sur la correction de biais}
 
-D'après les boxplot il semble que plus la dégradation est grande, plus on sous-estime les données. Nous allons afficher les précipitations projetées (dégradées ou dégradées puis downscalées) en fonction des précipitations réelles. Cette méthode, permet de juger visuellement de l'efficacité du downscaling sur les données. Les figures qui sont affichées en dessous ont un titre indiquant le degré de déformation sous la forme $(2d+1)^2$ où $d$ est le degré dans l'équation de dégradation \eqref{eq-degradation}. Les figures de gauches sont les figure dégradées puis downscalées et celles de droites les figures dégradée, une ligne correspond à la même dégradation.	
+D'après les boxplot il semble que plus la dégradation est grande, plus on sous-estime les données. Nous allons afficher les précipitations projetées (dégradées ou dégradées puis downscalées) en fonction des précipitations réelles. Cette méthode, permet de juger visuellement de l'efficacité du downscaling sur les données. Les figures qui sont affichées en dessous ont un titre indiquant le degré de déformation sous la forme $(2d+1)^2$ où $d$ est le degré dans l'équation de dégradation \eqref{eq-degradation}. Les figures de gauche sont les figures dégradées puis downscalées et celles de droite les figures dégradées, les dégradations sont les mêmes sur une même ligne.	
 
 \vspace{0.7cm}
 
@@ -1003,9 +1019,10 @@ D'après les boxplot il semble que plus la dégradation est grande, plus on sous
 	\caption{Tracé des précipitations downscalées (CDFt-SSR) en fonction des précipitations de référence pour les dégradations $3$ et $4$}
 \end{figure} 
 
-Visuellement, il semble que le downscaling améliore les projections. Nous avons tracé pour chaque figure en noire la droite identité et en rouge les droites de régression linéaire de la forme $y=ax+b$, où $x$ est la précipitation de référence et $y$ la donnée projetée de $x$. Dans notre cas c'est soit la dégradation $(X'^d_t)$, soit son downscalé $G_{X^d,Y}(X'^{d}_t)$. Remarquons que la dégradation de nos données ne crée pas de changement important de l'éparpillement des points dans les graphiques, c'est en accord avec les figures obtenues dans la section \ref{ch:analyse spatiale Washita} montrant une relativement grande covariance spatiale. De plus le downscaling semble augmenter l'éparpillement des points, ce qui ne pose pas de problème.
+Visuellement, il semble que le downscaling améliore les projections. Nous avons tracé pour chaque figure en noire la droite identité et en rouge les droites de régression linéaire de la forme $y=ax+b$, où $x$ est la précipitation de référence et $y$ la donnée projetée de $x$. Dans notre cas c'est soit la dégradation $(X'^d_t)$, soit son downscalé $G_{X^d,Y}(X'^{d}_t)$. Remarquons que la dégradation de nos données ne crée pas de changement important de l'éparpillement des points dans les graphiques, c'est en accord avec les figures obtenues dans la section \ref{ch:analyse spatiale Washita} montrant une grande covariance spatiale.
+Remarquons que le downscaling augmente l'éparpillement des points, ce qui ne pose pas de problème, puisque encore une fois nous cherchons à prédire en lois pas en norme RMSE.
 
-Il semble que la dégradation ait une tendance à sous-évaluer les précipitations élevées, ce qui n'est pas aberrant si l'on considère les tailles des cumulonimbus\footnote{Les cumulonimbus sont des nuages très hauts se formant à partir des mouvements convectifs d'air chaud en été et leur taille va de $2$ à $10$km de diamètre.}, inférieur à la largeur de grille des données NARRs ($32$km). Alors on peut considérer les précipitations importantes comme des évènements localisés sur un seul point de grille NARR.
+Il semble que la dégradation ait une tendance à sous-évaluer les précipitations élevées, ce qui n'est pas aberrant si l'on considère la taille des cumulonimbus\footnote{Les cumulonimbus sont des nuages très hauts se formant à partir des mouvements convectifs d'air chaud en été et leur taille va de $2$ à $10$km de diamètre.}, inférieur à la largeur de grille des données NARRs ($32$km). Alors on peut considérer les précipitations importantes comme des évènements localisés sur un seul point de grille NARR.
 
 
 \subsubsection{Analyse des séries downscalées et explication du choix de la méthode de downscaling}
@@ -1014,35 +1031,36 @@ Il semble que la dégradation ait une tendance à sous-évaluer les précipitati
 	\label{fig-res_CVM_CDFt}
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[scale=0.4]{images/Dist_CVM_precip_CDFt.png}
+		\includegraphics[scale=0.38]{images/Dist_CVM_precip_CDFt.png}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[scale=0.4]{images/Dist_CVM_evap_CDFt.png}
+		\includegraphics[scale=0.38]{images/Dist_CVM_evap_CDFt.png}
 	\end{subfigure}
 	\caption{Tracé de la distance de Cramér-von Mises: séries dégradées en rouge et séries downscalées avec l'algorithme CDFt en bleu}
+	\label{fig-CVM-Var}
 \end{figure}
 
-L'on voit da que la projection après downscaling est plus mauvaise  pour les précipitations que seulement la série dégradée pour la distance de Cramer-von Mises, jusqu`à la dégradation $d=3$, et qu'à partir de la dégradation $4$ la série donwscalées est plus proche pour la distance de Cramér-von Mises ($d=5$ sont les données $IPSL$). L'algorithme CDFt est très efficace pour les données IPSL. Il semble que la correction ne soit efficace qu'à partir d'une certaine dégradation ce qui paraît tout de même étonnant. Une explication que nous pouvonss conjecturer est que les erreurs arithmétiques induites par les manipulation informatique des valeurs numériques peut augmenter naturellement ce type d'erreur. Cette explication ne semble pas vraiment convaincante, puisque la courbe devrait quand même suivre la tendance de dégradation et il semble d'après ce graphique que ca ne soit pas le cas.
+L'on voit dans la figure \ref{fig-CVM-Var} que la projection après downscaling est plus mauvaise pour les précipitations pour les petites dégradations. À partir de la dégradation $4$ la série donwscalées est plus proche pour la distance de Cramér-von Mises ($d=5$ sont les données $IPSL$). L'algorithme CDFt-SSR est très efficace pour les données IPSL. Il semble que la correction ne soit efficace qu'à partir d'une certaine dégradation (ou distance entre les lois) ce qui paraît étonnant. Une explication que nous pouvons conjecturer est que les erreurs arithmétiques induites par les manipulation informatique des valeurs numériques peut augmenter naturellement ce type d'erreur. Cette explication ne semble pas vraiment convaincante, puisque la courbe devrait quand même suivre la tendance de dégradation et il semble d'après ce graphique que ca ne soit pas le cas.
 
 Cette erreur manifestée par la distance Cramér-von Mises soulève un point que nous n'avons pas encore abordé, c'est le fait que notre échantillon des précipitations possède de nombreuses valeurs à $0$. Cela signifie que la densité n'est plus une fonction mais une distribution avec une dirac en $0$. Nous avons parlé à la fin de la section \ref{ch:CDFt} que les transformations de CDFt gérait mal les variables aléatoire à la fois discrètes et continues.
 
 Regardons maintenant les résultats de l'évaluation de la distance de Cramer-Von Mises pour les séries donscalées par l'algorithme quantile-quantile:
 
 \begin{figure}[H]
- 	\label{fig-res_CVM_QQ}
  	\centering
  	\begin{subfigure}[b]{0.45\textwidth}
- 		\includegraphics[scale=0.4]{images/Dist_CVM_precip_QQ.png}
+ 		\includegraphics[scale=0.38]{images/Dist_CVM_precip_QQ.png}
  	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[scale=0.4]{images/Dist_CVM_evap_QQ.png}
+		\includegraphics[scale=0.38]{images/Dist_CVM_evap_QQ.png}
 	\end{subfigure}
  	\caption{Tracé de la distance de Cramér-von Mises: séries dégradées en rouge et séries downscalées avec l'algorithme quantile-quantile en bleu}
+ 	\label{fig-res_CVM_QQ}
 \end{figure}
 
-Nous voyons que la distance de Cramér-von Mises s'est considérablement améliorée pour les précipitations, les distances pour l'évapotranspiration sont étonnament proches. Néanmoins regardons les droites de régression quand on affiche les points des séries projetées en fonction des points des séries de référence. 
+Nous voyons que la distance de Cramér-von Mises s'est considérablement améliorée pour les précipitations, les distances pour l'évapotranspiration sont très semblables entre CDFt et quantile-quantile. Néanmoins regardons les droites de régression quand on affiche les points des séries projetées en fonction des points des séries de référence. 
 
 \begin{figure}[H]
 	\begin{minipage}[b]{0.4\linewidth}
@@ -1058,42 +1076,39 @@ Nous voyons que la distance de Cramér-von Mises s'est considérablement amélio
 		\centering \includegraphics[scale=0.4]{images/pr_4_dg.png}
 	\end{minipage}
 	\caption{Tracé des précipitations downscalées (quantile-quantile) en fonction des précipitations de référence pour différentes dégradations}
+	\label{fig-precip-QQ}
 \end{figure} 
 
 
-Pour l'algorithme quantile-quantile, on observe que la correction des droites de régression est assez mauvaise comparée à celle obtenue avec CDFt. On choisit finalement les données downscalées par l'algorithme \textbf{CDFt-SSR} (voir \cite{vrac2016bias}).
+Pour l'algorithme quantile-quantile, on observe (figure \ref{fig-precip-QQ}) que la correction des droites de régression est assez mauvaise comparée à celle obtenue avec CDFt. On choisit finalement les données downscalées par l'algorithme \textbf{CDFt-SSR} (voir \cite{vrac2016bias}) qui corrige mieux les valeurs extrêmes qui ont un gros impact sur les lois des débits.
 
 \subsection{Simulation hydrologique avec HydroGéosphère}
 
-Une fois que l'on a nos données downscalées, il a fallu faire la simulation hydrologique du bassin du Little Washita. Cependant, une modélisation complète du Little Washita ne permettait pas de faire tourner nos modèles dans des délais raisonnables comparés au temps du stage (plus de 2 mois selon l'étudiante avec qui j'ai eu la chance de travailler). Il fallait donc utiliser le modèle simplifié que celle-ci avait développé. Nous commencerons par expliquer ce modèle, puis nous donnerons un aperçu des problématiques de spin-up pour l'initialisation des modèles.  
+Une fois que l'on a nos données downscalées, il a fallu faire la simulation hydrologique du bassin du Little Washita. Cependant, une modélisation complète du Little Washita ne permettait pas de faire tourner nos modèles dans des délais raisonnables comparés au temps du stage (plus de 2 mois selon l'étudiante avec qui j'ai eu la chance de travailler). Il fallait donc utiliser le modèle simplifié que celle-ci avait développé. Nous commencerons par expliquer ce modèle, puis nous donnerons un aperçu des problématiques de spin-up pour l'initialisation des modèles.
 
 \subsubsection{Modélisation Little Washita HGS}
 
-Une modélisation très rigoureuse du bassin du Little Washita a été faite durant la thèse de \cite{maquin2016developpement}, elle a discrétisé le bassin versant par triangulation (voir figure \ref{fig-Little Washita 3D})
+Une modélisation très rigoureuse du bassin du Little Washita a été faite durant la thèse de \cite{maquin2016developpement}, elle a discrétisé le bassin versant par triangulation (voir figure \ref{fig-Little Washita 3D}).
 
 \begin{figure}[H]
-	\label{fig-Little Washita 3D}
-	\begin{center}
-		\includegraphics[scale=0.2]{images/little_washita3D.png}
-	\end{center}
+	\centering\includegraphics[scale=0.2]{images/little_washita3D.png}
 	\caption{Maillage tridimensionnel du bassin versant du Little Washita (thèse \cite{maquin2016developpement})}
+	\label{fig-Little Washita 3D}
 \end{figure}
 
-L'idée est alors de proposer un modèle beaucoup plus simple permettant de simuler les écoulements ainsi que l'état de la nappe pour un temps de calcul raisonnable. On passe à un modèle 2D. Voici le modèle 2D proposé par Fanny Picourlat l'étudiante en thèse avec qui j'ai eu la chance de travailler et discuter. 
+L'idée est alors de proposer un modèle beaucoup plus simple permettant de simuler les écoulements ainsi que l'état de la nappe dans un temps de calcul raisonnable (quelques heures au lieu de quelques mois). On passe à un modèle 2D. Voici le modèle 2D proposé par Fanny Picourlat l'étudiante en thèse avec qui j'ai eu la chance de travailler et discuter. 
 
 \begin{figure}[H]
-	\label{fig-Little Washita 2D}
-	\begin{center}
-		\includegraphics[scale=0.2]{images/upscaling_Little_Washita2D.png}
-	\end{center}
+	\centering\includegraphics[scale=0.2]{images/upscaling_Little_Washita2D.png}
 	\caption{Modèle bidimensionnel du bassin versant du Little Washita (travail Fanny Picourlat)}
+	\label{fig-Little Washita 2D}
 \end{figure}
 
-Ce modèle ne dépend que de deux paramètres, la longueur du bassin et sa pente. Elle a trouver ces deux paramètres tels qu'ils minimisent la distance des écoulements et de l'état de la nappe simulés par le modèle présenté en figure \ref{fig-Little Washita 3D}. Cette approche est dans l'esprit un modèle upscalé. Cependant, la réflexion est plus expérimentale (on cherche expérimentalement les paramètres minimisant une distance) que physique, l'autre pilié de l' upscaling.
+Ce modèle ne dépend que de deux paramètres, la longueur du bassin et sa pente. Elle a trouvé ces deux paramètres tels qu'ils minimisent la distance des écoulements et de l'état de la nappe simulée par le modèle présenté en figure \ref{fig-Little Washita 3D}. Cette approche est dans l'esprit un modèle d'upscaling. Cependant, la réflexion est plus expérimentale (on cherche expérimentalement les paramètres minimisant une distance) que physique.
 
 \subsubsection{La problématique du spin-up}
 
-Avant de lancer une simulation, il faut déterminer plusieurs paramètres initiaux. Un de ces paramètre est la hauteur de nappe. Il faut alors déterminer un méthode pour initialisée la hauteur de nappe de façon à ce qu'elle soit la plus ``réaliste possible''. Le spin-up consiste à initialiser le système avec une hauteur de nappe donnée, puis de réaliser la simulation sur la première année plusieurs fois, jusqu'à ce que l'on obtienne une hauteur de nappe périodique. 
+Avant de lancer une simulation, il faut déterminer plusieurs paramètres initiaux. Un de ces paramètre est la hauteur de nappe. Il faut alors déterminer un méthode pour initialiser la hauteur de nappe de façon à ce qu'elle soit la plus ``réaliste possible''. Le spin-up consiste à initialiser le système avec une hauteur de nappe donnée, puis de réaliser la simulation hydrologique sur la première année plusieurs fois, jusqu'à ce que l'on obtienne une hauteur de nappe (ou un débit) périodique. 
 
 Cette méthode possède de nombreuses limites, par exemple si la première année est une année plus sèche que les autres, on y verra un phénomène d'aridification qui ne devrait pas avoir lieu. Aussi, si l'on observe naturellement un phénomène d'aridification, sur le bassin qu'on étudie, alors l'état stable du système est un état de nappe vide. C'est ce que l'on observe sur la hauteur de nappe du Little Washita avec le modèle de la figure \ref{fig-Little Washita 2D}.
 
@@ -1101,7 +1116,7 @@ Nous avons finalement réalisé une initialisation empirique en décidant de sim
 
 \subsection{Comparaison et analyse des résultats des simulations hydrologiques}
 
-Pour chacune de nos séries (référence, dégradées, downscalées) nous les avons injectées dans le simulateur HydroGéoSphère, et nous nous sommes intéressés à seulement quelques données de sorties telles que: les débits, l'évapotranspiration réelle.
+Nous avons rentrer chacune de nos séries (référence, dégradées, downscalées) dans le simulateur HydroGéoSphère et nous nous sommes intéressés à seulement quelques données de sorties telles que les débits et l'évapotranspiration réelle.
 
 Nous commençons par regarder si la modélisation hydrologique avec downscaling permet de meilleures simulations qu'avec des séries dégradées en comparant les résultats avec ceux obtenus à partir de la série de référence. Nous analyserons ensuite brièvement la réponse des débits de sorti du modèle en fonction des précipitations entrantes. Nous verrons qu'il y a une non linéarité de la réponse des débits en fonctions de l'entrée des précipitations.
  
@@ -1109,7 +1124,7 @@ Nous commençons par regarder si la modélisation hydrologique avec downscaling 
 
 Nous allons utiliser les mêmes outils que ceux utilisés dans la partie \ref{ch:downscaling des donnees} pour étudier la qualité de nos simulations.
 
-L'on considérera cette fois-ci les simulations obtenues à partir des données de référence comme les données de référence et les simulations obtenues à partir des séries dégradées ou downscalées comme des données elles-même dégradées ou downscalées. Les comparaisons seront encore les données conjointes et la distance de Cramér-von Mises.
+L'on appellera dans la suite, les simulations obtenues à partir des données de référence comme les données de référence, les simulations obtenues à partir des séries dégradées ou downscalées comme des données elles-même dégradées ou downscalées. Les comparaisons seront encore les données conjointes et la distance de Cramér-von Mises.
 
 \vspace{0.7 cm}
 
@@ -1138,9 +1153,10 @@ L'on considérera cette fois-ci les simulations obtenues à partir des données 
 		\includegraphics[scale=0.35]{images/multi_comparaison_5.png}\\
 	\end{center}
 \caption{Comparaison conjointe des séries de précipitation et de débit pour la dégradation 4}
+\label{fig-comparaison}
 \end{figure} 
 
-Nous voyons deux choses à partir de ces résultats, la première c'est qu'il y a une forte correspondance entre les droites de régressions pour les séries de précipitation et les séries des débits et la deuxième c'est que la simulation amplifie le biais des séries d'entrées. Le fait que les séries d'entrées downscalées sous-estiment légèrement les précipitations et que les séries de débits de sortie les surestiment nous donnent à penser que le comportement entre les données d'entrées et de sorties n'est pas linéaire.
+Nous voyons deux choses à partir de ces résultats (figure \ref{fig-comparaison}). La première c'est qu'il y a une forte correspondance entre les droites de régressions pour les séries de précipitation et les séries des débits. La deuxième c'est que la simulation amplifie le biais des séries de précipitation d'entrées. Le fait que les séries d'entrées downscalées sous-estiment légèrement les précipitations et que les séries de débits de sortie les surestiment nous donnent à penser que le comportement entre les données d'entrées et de sorties n'est pas linéaire.
  
 \noindent\textbf{Études des lois de distribution pour les séries downscalées et dégradées et distance de Cramér-von Mises}
 
@@ -1159,11 +1175,11 @@ Nous voyons deux choses à partir de ces résultats, la première c'est qu'il y 
 
 On remarque que les distances de Cramér-von Mises se sont fortement réduites après passage dans le modèle de simulation hydrologique (environ division par $10$). Ce résultat est très intéressant, il montre que le filtre de simulation hydrologique contracte les lois de répartitions. 
 
-De plus, les résultats de la distance Cramér-von Mises se sont inversés pour les débits par rapport aux précipitations. Ceux de l'évapotranspiration réelle sont à peu-près du même ordre que ceux de l'évaporation potentielle. 
+De plus, les résultats de la distance Cramér-von Mises se sont inversés pour les débits par rapport aux précipitations. Les résultats de l'évapotranspiration réelle sont à très similaires à ceux de l'évaporation potentielle. 
 
 \subsubsection{Étude de la réponse débit/précipitation}
 
-Pour étudier la non linéarité des sorties des débits en fonction des entrées des précipitations, on trace la série des débits en fonction de la série des précipitations. On fait alors une régression linéaire à l'ordre 3 pour caractériser la non linéarité de la réponse. Nous ne le ferons que pour la série de référence, mais il est intéressant de voir que la régression linéaire donne parfois un coefficient négatif à l'ordre 3.
+Pour étudier la non linéarité des débits de sortie en fonction des précipitations d'entrée, on trace la série des débits en fonction de la série des précipitations. On fait alors une régression linéaire à l'ordre 3 pour caractériser la non linéarité de la réponse. Nous ne le ferons que pour la série de référence, mais il est intéressant de dire que la régression linéaire donne parfois un coefficient négatif à l'ordre 3.
   
 \begin{figure}[H]
 	\begin{center}
@@ -1227,11 +1243,11 @@ Cette partie a pour objectif de résumer les résultats que nous avons obtenus a
 
 \vspace{0.7cm}
 
-Les premiers résultats, qui étaient prévisibles, sont que le downscaling améliore les prédictions des variables climatiques des précipitations et d'évapotranspiration. Il reste néanmoins des discussions à avoir sur les méthodes de downscaling à utiliser en fonction des variables auxquelles nous sommes confrontés. Il est certain que les différentes méthodes de downscaling sont adaptées aux lois sur lesquelles on travail et à leut stationnarité dans le temps. Une idée d'amélioration de la méthode de downscaling pourrait être de considérer la non-stationnarité du modèle et de proposer une transformation qui évoluerait dans le temps. Un autre travail qui n'a pas été fait serait de développer un outils informatique permettant de tester rapidement les différentes méthodes de downscaling sur des données et d'afficher les résultats à partir des différentes analyses.
+Les premiers résultats, qui étaient prévisibles, sont que le downscaling améliore les prédictions des variables climatiques des précipitations et d'évapotranspiration. Il reste néanmoins des discussions à avoir sur les méthodes de downscaling à utiliser en fonction des variables auxquelles nous sommes confrontés. Il est certain que les différentes méthodes de downscaling sont adaptées aux différentes variables sur lesquelles on travail et à leur stationnarité dans le temps. Une idée d'amélioration de la méthode de downscaling pourrait être de considérer la non-stationnarité du modèle et de proposer une transformation qui évoluerait dans le temps. Un autre travail qui n'a pas été fait serait de développer un outils informatique permettant de tester rapidement les différentes méthodes de downscaling sur des données et d'afficher les résultats à partir des différentes analyses.
 
 Nous avons aussi vu que la distance de Cramér-von Mises n'est pas toujours le meilleur estimateur de la qualité des prédictions. Il serait intéressant de réfléchir à d'autres tests statistiques pour évaluer la qualité du downscaling. 
 
-Nous avons aussi vu que la méthode d'upscaling du bassin du Little Washita (figure \ref{fig-Little Washita 2D}) qui permettait de réduire les coûts algorithmique de la simulation, négligeait l'étude physique du bassin. Une méthode plus analytique, se basant sur l'étude de la topographie pour déterminer les paramètres caractérisant le système $2D$ seraient plus dans l'esprit de l'upscaling et pourrait aussi se généraliser à plusieurs modèles.
+Nous avons aussi vu que la méthode d'upscaling du bassin du Little Washita (figure \ref{fig-Little Washita 2D}) qui permettait de réduire les coûts algorithmique de la simulation, négligeait l'étude physique du bassin. Une méthode plus analytique, se basant sur l'étude de la topographie pour déterminer les paramètres caractérisant le système $2D$ seraient plus dans l'esprit de l'upscaling et pourrait aussi se généraliser aux autres modèles.
 
 Nous avons aussi vu que les résultats du downscaling sur les précipitations et l'évapotranspiration donnaient de très bons résultats après la simulation hydrologique. Mais nous avons aussi vu que l'on pouvait caractériser deux types de réponses en fonction des débits, les réponses décorélées et les réponses corélées en fonction des entrées. Il serait intéressant de trouver ou prouver la cause de ces corrélations en faisant une analyse de l'état de la nappe et la comparant avec les données obtenues. 
 
@@ -1245,6 +1261,7 @@ Ces annexes ont été écrites pour la joie de faire des mathématiques et ne so
 \subsection{Annexe 1: Preuves et outils utilisés dans le downscaling}
 \label{ch:outils-mathematiques}
 
+Nous introduisons ici quelques propriétés qui montrent que le travail avec les lois empiriques que nous effectuons est pertinent.
 \begin{proposition}
 	Soit $X$ et $Y$ deux variables aléatoires réelles ayant des fonctions de répartition $\mathcal{F}_{X}$ et $\mathcal{F}_{Y}$ continues, alors 
 	$\mathcal{F}^{-1}_Y (\mathcal{F}_X(X))$ et $Y$ suivent la même loi. 
@@ -1289,7 +1306,10 @@ Ces annexes ont été écrites pour la joie de faire des mathématiques et ne so
 Le cas où $\mathcal{F}_{X}$ n'est pas continue est géré par \cite{durrett2019probability} (ex 7.2 chap 1). On voit d'après le théorème \ref{th:glivenko} que la fonction de répartition empirique est le bon estimateur de la fonction de répartition. 
 
 \subsection{Annexe 2: Transport optimal}
-\label{ch:transport-optimal}
+\label{annexe:transport-optimal}
+Cette Annexe se lit à la suite de la section \ref{ch:downscaling}.
+
+\vspace{0.7cm}
 
 Nous voulons à la fois projeter la précipitation et l'évapotranspiration, on peut alors considérer une seule variable aléatoire dans $\mathbb{R}^2$. On peut généraliser l'idée utilisée précédemment pour trouver une méthode permettant de corriger les biais statistiques introduits par les modèles de projection. Cette méthode a d'autant plus d'intérêt que la variable utile dans les modèles hydrologique est 
 \begin{equation}

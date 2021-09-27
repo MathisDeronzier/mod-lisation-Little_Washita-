@@ -1,6 +1,7 @@
 \contentsline {section}{\numberline {0}Introduction}{4}{section.0}
-\contentsline {subsection}{\numberline {0.1}Contextualisation et motivations du stage}{4}{subsection.0.1}
-\contentsline {subsection}{\numberline {0.2}Pr\IeC {\'e}sentation du plan}{5}{subsection.0.2}
+\contentsline {subsection}{\numberline {0.1}Remerciements}{4}{subsection.0.1}
+\contentsline {subsection}{\numberline {0.2}Contextualisation et motivations du stage}{4}{subsection.0.2}
+\contentsline {subsection}{\numberline {0.3}Pr\IeC {\'e}sentation du plan}{6}{subsection.0.3}
 \contentsline {section}{\numberline {1}Changement d'\IeC {\'e}chelle, downscaling et analyse des r\IeC {\'e}sultats}{7}{section.1}
 \contentsline {subsection}{\numberline {1.1}Introduction \IeC {\`a} la probl\IeC {\'e}matique du downscaling}{8}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Cumulative Distribution Function transform (CDFt)}{9}{subsection.1.2}
@@ -33,19 +34,19 @@
 \contentsline {subsubsection}{\numberline {3.3.1}Analyse variationnelle des diff\IeC {\'e}rentes s\IeC {\'e}ries de projection}{35}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}\IeC {\'E}tude du downscaling sur la correction de biais}{36}{subsubsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.3}Analyse des s\IeC {\'e}ries downscal\IeC {\'e}es et explication du choix de la m\IeC {\'e}thode de downscaling}{38}{subsubsection.3.3.3}
-\contentsline {subsection}{\numberline {3.4}Simulation hydrologique avec HydroG\IeC {\'e}osph\IeC {\`e}re}{40}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Mod\IeC {\'e}lisation Little Washita HGS}{40}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}La probl\IeC {\'e}matique du spin-up}{41}{subsubsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4}Simulation hydrologique avec HydroG\IeC {\'e}osph\IeC {\`e}re}{39}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Mod\IeC {\'e}lisation Little Washita HGS}{39}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}La probl\IeC {\'e}matique du spin-up}{40}{subsubsection.3.4.2}
 \contentsline {subsection}{\numberline {3.5}Comparaison et analyse des r\IeC {\'e}sultats des simulations hydrologiques}{41}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}L'efficacit\IeC {\'e} du downscaling}{42}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}\IeC {\'E}tude de la r\IeC {\'e}ponse d\IeC {\'e}bit/pr\IeC {\'e}cipitation}{45}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.1}L'efficacit\IeC {\'e} du downscaling}{41}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}\IeC {\'E}tude de la r\IeC {\'e}ponse d\IeC {\'e}bit/pr\IeC {\'e}cipitation}{44}{subsubsection.3.5.2}
 \contentsline {subsubsection}{\numberline {3.5.3}Classifications des donn\IeC {\'e}es r\IeC {\'e}actives et non r\IeC {\'e}actives aux pr\IeC {\'e}cipitations}{45}{subsubsection.3.5.3}
-\contentsline {subsection}{\numberline {3.6}Conclusion et perspectives de l'analyse des donn\IeC {\'e}es sur le bassin du Little Washita}{48}{subsection.3.6}
-\contentsline {section}{\numberline {4}Annexes}{50}{section.4}
-\contentsline {subsection}{\numberline {4.1}Annexe 1: Preuves et outils utilis\IeC {\'e}s dans le downscaling}{50}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Annexe 2: Transport optimal}{51}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Probl\IeC {\'e}matique}{51}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}R\IeC {\'e}solution du probl\IeC {\`e}me dans le cas fini et downscaling}{52}{subsubsection.4.2.2}
-\contentsline {subsection}{\numberline {4.3}Annexe 3: La statistique de Cram\IeC {\'e}r-von Mises}{52}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Annexe 4: La projection conique conforme de Lambert}{54}{subsection.4.4}
-\contentsline {subsection}{\numberline {4.5}Annexe 5: Classification des populations de d\IeC {\'e}bit}{57}{subsection.4.5}
+\contentsline {subsection}{\numberline {3.6}Conclusion et perspectives de l'analyse des donn\IeC {\'e}es sur le bassin du Little Washita}{47}{subsection.3.6}
+\contentsline {section}{\numberline {4}Annexes}{49}{section.4}
+\contentsline {subsection}{\numberline {4.1}Annexe 1: Preuves et outils utilis\IeC {\'e}s dans le downscaling}{49}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Annexe 2: Transport optimal}{50}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Probl\IeC {\'e}matique}{50}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}R\IeC {\'e}solution du probl\IeC {\`e}me dans le cas fini et downscaling}{51}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Annexe 3: La statistique de Cram\IeC {\'e}r-von Mises}{51}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Annexe 4: La projection conique conforme de Lambert}{53}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Annexe 5: Classification des populations de d\IeC {\'e}bit}{56}{subsection.4.5}
